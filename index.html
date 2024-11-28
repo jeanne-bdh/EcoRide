@@ -10,25 +10,34 @@
     <title>EcoRide</title>
 </head>
 
-<body class="bg-info">
+<body class="bg-dark">
 
     <header>
         <!-- NAVBAR -->
-        <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                    <img src="/images/logo_ecoride.png" alt="logo EcoRide">
-                </a>
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="/" class="nav-link px-2 text-secondary">Accueil</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">Accès aux covoiturages</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">Conatct</a></li>
-                </ul>
-                <div class="text-end">
-                    <button type="button" class="btn btn-warning">Connexion</button>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <div>
+                    <a class="navbar-logo" href="/"><img src="/images/logo_ecoride.png" alt="Logo EcoRide"></a>
+                    <a class="navbar-brand ms-4" href="/">EcoRide</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Accès aux covoiturages</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="text-end">
+                        <button type="button" class="btn btn-secondary mx-4">Connexion</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </nav>
     </header>
 
     <main id="main-page">

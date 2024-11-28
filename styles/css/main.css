@@ -11847,4 +11847,31 @@ textarea.form-control-lg {
 }
 body {
   font-family: Roboto, sans-serif;
+}
+
+body {
+  background-color: #081F34;
+}
+
+.hero-section p {
+  color: #fff;
+}
+
+.btn {
+  color: white;
+}
+
+nav {
+  background-color: #081F34;
+}
+nav .navbar-logo img {
+  width: 10%;
+}
+nav .navbar-brand {
+  color: white;
+  font-size: 30px;
+}
+nav .nav-link {
+  color: white;
+  margin: 0 15px;
 }/*# sourceMappingURL=main.css.map */
