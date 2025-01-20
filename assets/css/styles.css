@@ -1,0 +1,95 @@
+.btn {
+    color: white;
+}
+
+/* HERO SECTION */
+
+
+
+/* ICONS SECTION */
+.icons-wave-section {
+    position: relative;
+
+    .bg-wave-bottom {
+        height: 337px;
+        background-color: $dark;
+
+        @media screen and (max-width: 450px) {
+            height: 40vh;
+        }
+
+    }
+
+    .icons-section {
+        position: absolute;
+        z-index: 1;
+        top : 50%;
+        left: 50%;
+        transform: translate(-50%, -95%);
+    }
+
+    svg {
+        color: $dark;
+        width: 10%;
+    }
+
+    p{
+        color: $dark;
+        margin-top: 10px;
+    }
+
+}
+
+footer {
+
+    p {
+        color: white
+    }
+
+    h5 {
+        color: white;
+        margin-bottom: 25px;
+    }
+
+    img {
+        width: 25%;
+    }
+
+    .icon-social {
+        font-size: 40px;
+        color: white;
+        margin: 0 10px;
+    }
+
+    .legacy {
+        a {
+            margin: 10px 0;
+            color: white;
+        }
+    }
+}
+
+nav {
+    background-color: $dark;
+
+    .navbar-logo {
+        img {
+            width: 10%;
+        }
+    }
+
+    .navbar-brand {
+        color: white;
+        font-size: 30px;
+    }
+
+    .nav-link {
+        color: white;
+        margin: 0 15px;
+    }
+
+}
+
+body {
+    font-family : Roboto, sans-serif;
+}
