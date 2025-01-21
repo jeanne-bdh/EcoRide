@@ -1,14 +1,8 @@
-// Custom.scss
-// Option A: Include all of Bootstrap
+$primary: #0EE6B1;
+$secondary: #528DB9;
+$tertiary: #D6D6D6;
+$dark: #757575;
+$black: #081F34;
+$white: #ffffff;
+$font-family-sans-serif: "Roboto", sans-serif !default;
 
-// Include any default variable overrides here (though functions won't be available)
-$primary : #0EE6B1;
-$secondary : #528DB9;
-$lightgrey : #D6D6D6;
-$darkgrey : #757575;
-$dark : #081F34;
-
-
-@import "../node_modules/bootstrap/scss/bootstrap";
-
-// Then add additional custom code here

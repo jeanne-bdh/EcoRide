@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+nav {
+  background-color: #081F34;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .container-logo {
+  display: flex;
+  align-items: center;
+}
+nav .container-logo .logo-ecoride {
+  margin: 5px 20px;
+}
+nav .container-logo .name-ecoride {
+  font-size: 2rem;
+  text-align: left;
+}
+nav .container-logo .name-ecoride a:hover {
+  color: #0EE6B1;
+  font-size: 2.1rem;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+}
+nav ul li {
+  margin: 0 20px;
+}
+nav ul li a:hover {
+  color: #0EE6B1;
+  text-decoration: underline;
+}
+nav ul .btn-login {
+  background-color: #528DB9;
+  color: #ffffff;
+  font-size: 0.97rem;
+  padding: 8px 20px;
+  border-radius: 5px;
+  border: 2px solid #528DB9;
+  cursor: pointer;
+}
+nav ul .btn-login:hover {
+  border-color: #ffffff;
+  background-color: #081F34;
+}/*# sourceMappingURL=main.css.map */

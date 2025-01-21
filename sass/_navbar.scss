@@ -1,0 +1,58 @@
+nav {
+    background-color: $black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .container-logo {
+        display: flex;
+        align-items: center;
+
+        .logo-ecoride {
+            margin: 5px 20px;
+        }
+
+        .name-ecoride {
+            font-size: 2rem;
+            text-align: left;
+
+            a {
+                &:hover {
+                    color: $primary;
+                    font-size: 2.1rem;
+                }
+            }
+        }
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+
+        li {
+            margin: 0 20px;
+
+            a {
+                &:hover {
+                    color: $primary;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .btn-login {
+            background-color: $secondary;
+            color: $white;
+            font-size: 0.97rem;
+            padding: 8px 20px;
+            border-radius: 5px;
+            border: 2px solid $secondary;
+            cursor: pointer;
+
+            &:hover {
+                border-color: $white;
+                background-color: $black;
+            }
+        }
+    }
+}
