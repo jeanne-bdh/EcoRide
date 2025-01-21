@@ -104,6 +104,9 @@ footer .section-wave-bottom .section-icons-eco p {
 footer .section-wave-bottom .bg-wave-bottom {
   position: relative;
 }
+footer .section-wave-bottom .bg-wave-bottom img {
+  width: 100%;
+}
 footer .section-legal-infos {
   display: flex;
   justify-content: space-around;
