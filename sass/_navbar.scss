@@ -17,6 +17,8 @@ nav {
             text-align: left;
 
             a {
+                text-decoration: none;
+                
                 &:hover {
                     color: $primary;
                     font-size: 2.1rem;
@@ -33,6 +35,8 @@ nav {
             margin: 0 20px;
 
             a {
+                text-decoration: none;
+
                 &:hover {
                     color: $primary;
                     text-decoration: underline;
@@ -55,4 +59,17 @@ nav {
             }
         }
     }
+}
+
+@media (min-width: 768px) {
+    .menu-burger {
+        display: none;
+    }
+}
+
+
+/* MOBILE */
+
+.menu-burger {
+    display: none;
 }

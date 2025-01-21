@@ -1,7 +1,3 @@
-/* HERO SECTION */
-
-
-
 /* ICONS SECTION */
 .icons-wave-section {
     position: relative;
@@ -32,35 +28,5 @@
     p {
         color: #081F34;
         margin-top: 10px;
-    }
-
-}
-
-footer {
-
-    p {
-        color: white
-    }
-
-    h5 {
-        color: white;
-        margin-bottom: 25px;
-    }
-
-    img {
-        width: 25%;
-    }
-
-    .icon-social {
-        font-size: 40px;
-        color: white;
-        margin: 0 10px;
-    }
-
-    .legacy {
-        a {
-            margin: 10px 0;
-            color: white;
-        }
     }
 }
