@@ -131,7 +131,7 @@ footer .section-wave-bottom .bg-wave-bottom img {
 footer .section-legal-infos {
   display: flex;
   justify-content: space-around;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 footer .section-legal-infos .logo-slogan-bottom p {
   color: #0EE6B1;
@@ -164,10 +164,10 @@ footer .copyright hr {
 }
 footer .copyright p {
   text-align: center;
-  padding: 20px 0;
+  padding: 30px 0;
 }
 
-.main-home-section {
+.container-main-home {
   background-color: #081F34;
 }
 
@@ -183,6 +183,55 @@ footer .copyright p {
   z-index: 1;
   top: 20%;
   right: 10%;
+}
+.hero-section .form-home {
+  position: absolute;
+  z-index: 2;
+  top: 30%;
+  left: 20%;
+}
+
+/* FORMULAIRE */
+.form-home {
+  background-color: #ffffff;
+  border: 1px solid rgba(8, 31, 52, 0.5);
+  border-radius: 10px;
+  width: 400px;
+  height: 300px;
+}
+.form-home form {
+  text-align: center;
+  padding-top: 20px;
+}
+.form-home form .depart-city,
+.form-home form .arrival-city,
+.form-home form .date-label {
+  padding: 15px;
+}
+.form-home form input {
+  background-color: #D6D6D6;
+  border: 1px solid rgba(8, 31, 52, 0.4);
+  border-radius: 5px;
+  width: 325px;
+  height: 40px;
+  text-align: start;
+  font-size: 1rem;
+  padding-left: 10px;
+}
+.form-home form .btn-search {
+  background-color: #528DB9;
+  color: #ffffff;
+  font-size: 1.1rem;
+  padding: 8px 20px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 2px solid #528DB9;
+  cursor: pointer;
+}
+.form-home form .btn-search:hover {
+  color: #081F34;
+  border-color: rgba(8, 31, 52, 0.4);
+  background-color: #0EE6B1;
 }
 
 /* MAIN SECTION */
@@ -237,7 +286,7 @@ footer .copyright p {
 
 .text-ecoweb {
   text-align: center;
-  padding: 50px 0;
+  padding: 50px 0 70px 0;
 }
 .text-ecoweb h5 {
   margin-bottom: 20px;
