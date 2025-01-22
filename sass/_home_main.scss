@@ -56,6 +56,10 @@
             text-align: start;
             font-size: 1rem;
             padding-left: 10px;
+
+            &:focus {
+                outline: none;
+            }
         }
 
         .btn-search {
@@ -76,7 +80,6 @@
         }
     }
 }
-
 
 
 /* MAIN SECTION */

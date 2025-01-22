@@ -218,6 +218,9 @@ footer .copyright p {
   font-size: 1rem;
   padding-left: 10px;
 }
+.form-home form input:focus {
+  outline: none;
+}
 .form-home form .btn-search {
   background-color: #528DB9;
   color: #ffffff;
