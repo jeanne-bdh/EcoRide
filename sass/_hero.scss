@@ -1,0 +1,27 @@
+.hero-section {
+    position: relative;
+
+    .wave-top {
+        position: relative;
+
+        .img-hero {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .svg-wave {
+            width: 100%;
+        }
+    }
+
+    h2 {
+        color: $black;
+        position: relative;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+}

@@ -32,10 +32,11 @@ nav {
         align-items: center;
 
         li {
-            margin: 0 20px;
+            margin: 0 30px;
 
             a {
                 text-decoration: none;
+                font-size: 1.2rem;
 
                 &:hover {
                     color: $primary;
@@ -47,7 +48,7 @@ nav {
         .btn-login {
             background-color: $secondary;
             color: $white;
-            font-size: 0.97rem;
+            font-size: 1.1rem;
             padding: 8px 20px;
             border-radius: 5px;
             border: 2px solid $secondary;
