@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 * {
   box-sizing: border-box;
@@ -200,13 +201,9 @@ footer .copyright p {
   top: 20%;
   right: 10%;
 }
-.hero-section .form-container {
-  position: absolute;
-  z-index: 2;
-  top: 30%;
-  left: 20%;
-}
-.hero-section .form-container-contact {
+.hero-section .form-container,
+.hero-section .form-container-contact,
+.hero-section .form-container-register {
   position: absolute;
   z-index: 2;
   top: 30%;
@@ -368,6 +365,37 @@ footer .copyright p {
   text-align: left;
 }
 
+/* FORM REGISTER */
+.form-container-register {
+  background-color: #ffffff;
+  border: 1px solid rgba(8, 31, 52, 0.5);
+  border-radius: 10px;
+  width: 400px;
+  height: 750px;
+  margin: auto;
+}
+.form-container-register form {
+  text-align: center;
+  padding: 20px 0;
+}
+.form-container-register form label {
+  margin-left: 20px;
+  color: #081F34;
+}
+.form-container-register form input {
+  background-color: #D6D6D6;
+  border: 1px solid rgba(8, 31, 52, 0.4);
+  border-radius: 5px;
+  width: 325px;
+  height: 40px;
+  text-align: start;
+  font-size: 1rem;
+  margin: 10px 0 0 20px;
+}
+.form-container-register form input:focus {
+  outline: none;
+}
+
 .link-account {
   text-align: center;
 }
@@ -383,4 +411,93 @@ footer .copyright p {
 .container-black {
   background-color: #081F34;
   min-height: 700px;
+}
+
+/* Styles généraux */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: white;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 0.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: #555;
+}
+
+/* Styles pour mobile */
+.burger {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.burger img {
+  background-color: #ffffff;
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  background-color: #333;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  width: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.nav-links.show {
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+/* Media Query pour Desktop */
+@media (min-width: 768px) {
+  .burger {
+    display: none;
+  }
+  .nav-links {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    background: none;
+    width: auto;
+  }
 }/*# sourceMappingURL=main.css.map */

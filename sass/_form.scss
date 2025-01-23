@@ -108,6 +108,45 @@
     text-align: left;
 }
 
+
+/* FORM REGISTER */
+
+.form-container-register {
+    background-color: $white;
+    border: 1px solid rgba($color: $black, $alpha: 0.5);
+    border-radius: 10px;
+    width: 400px;
+    height: 750px;
+    margin: auto;
+
+    form {
+        text-align: center;
+        padding: 20px 0;
+
+
+        label {
+            margin-left: 20px;
+            color: $black;
+        }
+
+        input {
+            background-color: $tertiary;
+            border: 1px solid rgba($color: $black, $alpha: 0.4);
+            border-radius: 5px;
+            width: 325px;
+            height: 40px;
+            text-align: start;
+            font-size: 1rem;
+            margin: 10px 0 0 20px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+
 .link-account {
     text-align: center;
 

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche de covoiturage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        input,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Recherche de covoiturage</h1>
+    <form id="ride-form">
+        <label for="from">Départ :</label>
+        <input type="text" id="from" name="from" placeholder="Ville de départ" required>
+
+        <label for="to">Destination :</label>
+        <input type="text" id="to" name="to" placeholder="Ville de destination" required>
+
+        <label for="date">Date :</label>
+        <input type="date" id="date" name="date" required>
+
+        <button type="submit">Rechercher</button>
+    </form>
+
+    <div id="results"></div>
+
+    <script src="/pages/test.js"></script>
+</body>
+
+</html>

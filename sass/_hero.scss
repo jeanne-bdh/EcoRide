@@ -12,14 +12,9 @@
         right: 10%;
     }
 
-    .form-container {
-        position: absolute;
-        z-index: 2;
-        top: 30%;
-        left: 20%;
-    }
-
-    .form-container-contact {
+    .form-container,
+    .form-container-contact,
+    .form-container-register {
         position: absolute;
         z-index: 2;
         top: 30%;
