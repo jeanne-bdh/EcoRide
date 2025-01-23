@@ -14,6 +14,11 @@ h1 {
   font-size: 2rem;
 }
 
+h2 {
+  color: #ffffff;
+  font-size: 1.8rem;
+}
+
 h4 {
   color: #ffffff;
   font-size: 1.3rem;
@@ -286,6 +291,9 @@ footer .copyright p {
 .form-container form .date-label {
   padding: 15px;
 }
+.form-container form label {
+  color: #081F34;
+}
 .form-container form input {
   background-color: #D6D6D6;
   border: 1px solid rgba(8, 31, 52, 0.4);
@@ -336,6 +344,7 @@ footer .copyright p {
 }
 .form-container-contact form label {
   margin-left: 20px;
+  color: #081F34;
 }
 .form-container-contact form input {
   background-color: #D6D6D6;
@@ -349,6 +358,26 @@ footer .copyright p {
 }
 .form-container-contact form input:focus {
   outline: none;
+}
+
+.invalid-feedback {
+  color: red;
+  font-size: 0.8rem;
+  margin-inline: 20px;
+  padding-top: 5px;
+  text-align: left;
+}
+
+.link-account {
+  text-align: center;
+}
+.link-account p,
+.link-account a {
+  color: #081F34;
+  font-size: 0.9rem;
+}
+.link-account a:hover {
+  color: #0EE6B1;
 }
 
 .container-black {

@@ -17,6 +17,10 @@
             padding: 15px;
         }
 
+        label {
+            color: $black;
+        }
+
         input {
             background-color: $tertiary;
             border: 1px solid rgba($color: $black, $alpha: 0.4);
@@ -75,6 +79,7 @@
 
         label {
             margin-left: 20px;
+            color: $black;
         }
 
         input {
@@ -91,5 +96,28 @@
                 outline: none;
             }
         }
+    }
+}
+
+
+.invalid-feedback {
+    color: red;
+    font-size: 0.8rem;
+    margin-inline: 20px;
+    padding-top: 5px;
+    text-align: left;
+}
+
+.link-account {
+    text-align: center;
+
+    p,
+    a {
+        color: $black;
+        font-size: 0.9rem;
+    }
+
+    a:hover {
+        color: $primary;
     }
 }
