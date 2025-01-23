@@ -24,3 +24,20 @@ a {
 li {
     list-style: none;
 }
+
+.btn-search {
+    background-color: $secondary;
+    color: $white;
+    font-size: 1.1rem;
+    padding: 8px 20px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid $secondary;
+    cursor: pointer;
+
+    &:hover {
+        color: $black;
+        border-color: rgba($color: $black, $alpha: 0.4);
+        background-color: $primary;
+    }
+}

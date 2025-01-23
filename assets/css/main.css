@@ -36,6 +36,22 @@ li {
   list-style: none;
 }
 
+.btn-search {
+  background-color: #528DB9;
+  color: #ffffff;
+  font-size: 1.1rem;
+  padding: 8px 20px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #528DB9;
+  cursor: pointer;
+}
+.btn-search:hover {
+  color: #081F34;
+  border-color: rgba(8, 31, 52, 0.4);
+  background-color: #0EE6B1;
+}
+
 nav {
   background-color: #081F34;
   display: flex;
@@ -167,11 +183,6 @@ footer .copyright p {
   padding: 30px 0;
 }
 
-.container-main-home {
-  background-color: #081F34;
-}
-
-/* HERO SECTION */
 .hero-section {
   position: relative;
 }
@@ -184,60 +195,23 @@ footer .copyright p {
   top: 20%;
   right: 10%;
 }
-.hero-section .form-home {
+.hero-section .form-container {
+  position: absolute;
+  z-index: 2;
+  top: 30%;
+  left: 20%;
+}
+.hero-section .form-container-contact {
   position: absolute;
   z-index: 2;
   top: 30%;
   left: 20%;
 }
 
-/* FORMULAIRE */
-.form-home {
-  background-color: #ffffff;
-  border: 1px solid rgba(8, 31, 52, 0.5);
-  border-radius: 10px;
-  width: 400px;
-  height: 300px;
-}
-.form-home form {
-  text-align: center;
-  padding-top: 20px;
-}
-.form-home form .depart-city,
-.form-home form .arrival-city,
-.form-home form .date-label {
-  padding: 15px;
-}
-.form-home form input {
-  background-color: #D6D6D6;
-  border: 1px solid rgba(8, 31, 52, 0.4);
-  border-radius: 5px;
-  width: 325px;
-  height: 40px;
-  text-align: start;
-  font-size: 1rem;
-  padding-left: 10px;
-}
-.form-home form input:focus {
-  outline: none;
-}
-.form-home form .btn-search {
-  background-color: #528DB9;
-  color: #ffffff;
-  font-size: 1.1rem;
-  padding: 8px 20px;
-  margin-top: 5px;
-  border-radius: 5px;
-  border: 2px solid #528DB9;
-  cursor: pointer;
-}
-.form-home form .btn-search:hover {
-  color: #081F34;
-  border-color: rgba(8, 31, 52, 0.4);
-  background-color: #0EE6B1;
+.container-main-home {
+  background-color: #081F34;
 }
 
-/* MAIN SECTION */
 .img-main-section {
   display: flex;
   justify-content: flex-end;
@@ -293,4 +267,91 @@ footer .copyright p {
 }
 .text-ecoweb h5 {
   margin-bottom: 20px;
+}
+
+/* FORM HOME */
+.form-container {
+  background-color: #ffffff;
+  border: 1px solid rgba(8, 31, 52, 0.5);
+  border-radius: 10px;
+  width: 400px;
+  height: 300px;
+}
+.form-container form {
+  text-align: center;
+  padding-top: 20px;
+}
+.form-container form .depart-city,
+.form-container form .arrival-city,
+.form-container form .date-label {
+  padding: 15px;
+}
+.form-container form input {
+  background-color: #D6D6D6;
+  border: 1px solid rgba(8, 31, 52, 0.4);
+  border-radius: 5px;
+  width: 325px;
+  height: 40px;
+  text-align: start;
+  font-size: 1rem;
+  padding-left: 10px;
+}
+.form-container form input:focus {
+  outline: none;
+}
+
+/* FORM CONTACT */
+.form-container-contact {
+  background-color: #ffffff;
+  border: 1px solid rgba(8, 31, 52, 0.5);
+  border-radius: 10px;
+  width: 400px;
+  height: 500px;
+  margin: auto;
+}
+.form-container-contact form {
+  text-align: center;
+  padding: 20px 0;
+}
+.form-container-contact form .title-contact,
+.form-container-contact form .email-contact,
+.form-container-contact form .message-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px;
+}
+.form-container-contact form textarea {
+  background-color: #D6D6D6;
+  border: 1px solid rgba(8, 31, 52, 0.4);
+  border-radius: 5px;
+  width: 325px;
+  height: 150px;
+  text-align: start;
+  padding: 5px 0 0 5px;
+  margin: 10px 0 0 20px;
+}
+.form-container-contact form textarea:focus {
+  outline: none;
+}
+.form-container-contact form label {
+  margin-left: 20px;
+}
+.form-container-contact form input {
+  background-color: #D6D6D6;
+  border: 1px solid rgba(8, 31, 52, 0.4);
+  border-radius: 5px;
+  width: 325px;
+  height: 40px;
+  text-align: start;
+  font-size: 1rem;
+  margin: 10px 0 0 20px;
+}
+.form-container-contact form input:focus {
+  outline: none;
+}
+
+.container-black {
+  background-color: #081F34;
+  min-height: 700px;
 }/*# sourceMappingURL=main.css.map */

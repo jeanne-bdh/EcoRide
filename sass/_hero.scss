@@ -3,25 +3,26 @@
 
     .wave-top {
         position: relative;
-
-        .img-hero {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-        }
-
-        .svg-wave {
-            width: 100%;
-        }
     }
 
-    h2 {
-        color: $black;
-        position: relative;
-        width: 100%;
-        top: 0;
-        left: 0;
+    h1 {
+        position: absolute;
+        z-index: 1;
+        top: 20%;
+        right: 10%;
+    }
+
+    .form-container {
+        position: absolute;
         z-index: 2;
+        top: 30%;
+        left: 20%;
+    }
+
+    .form-container-contact {
+        position: absolute;
+        z-index: 2;
+        top: 30%;
+        left: 20%;
     }
 }
