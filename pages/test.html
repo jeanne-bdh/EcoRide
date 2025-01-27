@@ -6,53 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recherche de covoiturage</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
+        .form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
-        form {
-            max-width: 400px;
-            margin: 0 auto;
-        }
+/* Styles pour la div contenant l'input de type date */
+.date {
+    position: relative;
+}
 
-        input,
-        button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 16px;
-        }
+.date input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
 
-        button {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
+.date input[type="date"]:focus {
+    border-color: #007bff;
+}
 
-        button:hover {
-            background-color: #0056b3;
-        }
+.date .placeholder {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #aaa;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+/* Lorsque l'utilisateur interagit avec l'input */
+.date input[type="date"]:valid + .placeholder,
+.date input[type="date"]:focus + .placeholder {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: #007bff;
+}
     </style>
 </head>
 
 <body>
-    <h1>Recherche de covoiturage</h1>
-    <form id="ride-form">
-        <label for="from">Départ :</label>
-        <input type="text" id="from" name="from" placeholder="Ville de départ" required>
-
-        <label for="to">Destination :</label>
-        <input type="text" id="to" name="to" placeholder="Ville de destination" required>
-
-        <label for="date">Date :</label>
-        <input type="date" id="date" name="date" required>
-
-        <button type="submit">Rechercher</button>
-    </form>
-
-    <div id="results"></div>
+    <div class="form-container">
+        <form>
+            <div class="depart-city">
+                <label for="inputDepartCity">
+                    <input type="text" id="inputDepartCity" placeholder="Ville de départ">
+                </label>
+            </div>
+            <div class="arrival-city">
+                <label for="inputArrivalCity">
+                    <input type="text" id="inputArrivalCity" placeholder="Ville d'arrivée">
+                </label>
+            </div>
+            <div class="date">
+                <label for="date">
+                    <input type="date" id="date" name="date" required>
+                    <span class="placeholder">Date de départ</span>
+                </label>
+            </div>
+            <button type="submit" class="btn-search">Rechercher</button>
+        </form>
+    </div>
 
     <script src="/pages/test.js"></script>
 </body>

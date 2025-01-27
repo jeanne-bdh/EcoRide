@@ -12,19 +12,19 @@
         <h1>La mobilité partagée au <br> service de la planète</h1>
 
         <!-- FORMULAIRE -->
-        <div class="form-container">
+        <div class="container-form">
             <form>
-                <div class="depart-city">
-                    <label for="inputDepartCity">
+                <div class="inputForm">
+                    <label for="inputDepartCity">Départ :</label>
                     <input type="text" id="inputDepartCity" placeholder="Ville de départ">
                 </div>
-                <div class="arrival-city">
-                    <label for="inputArrivalCity">
+                <div class="inputForm">
+                    <label for="inputArrivalCity">Destination :</label>
                     <input type="text" id="inputArrivalCity" placeholder="Ville d'arrivée">
                 </div>
-                <div class="date-label">
-                    <label for="inputDateLabel">
-                    <input type="text" id="inputDateLabel" placeholder="Date">
+                <div class="inputForm">
+                    <label for="date">Date de départ :</label>
+                    <input type="date" id="date" name="date" placeholder="Date" required>
                 </div>
                 <button type="submit" class="btn-search">Rechercher</button>
             </form>

@@ -1,101 +1,58 @@
-/* FORM HOME */
-
-.form-container {
+.container-form {
     background-color: $white;
     border: 1px solid rgba($color: $black, $alpha: 0.5);
     border-radius: 10px;
     width: 400px;
-    height: 300px;
+    height: 400px;
 
     form {
         text-align: center;
         padding-top: 20px;
 
-        .depart-city,
-        .arrival-city,
-        .date-label {
+        .inputForm {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
             padding: 15px;
-        }
 
-        label {
-            color: $black;
-        }
 
-        input {
-            background-color: $tertiary;
-            border: 1px solid rgba($color: $black, $alpha: 0.4);
-            border-radius: 5px;
-            width: 325px;
-            height: 40px;
-            text-align: start;
-            font-size: 1rem;
-            padding-left: 10px;
+            label {
+                color: $black;
+                margin-left: 20px;
+            }
 
-            &:focus {
-                outline: none;
+            input {
+                background-color: $tertiary;
+                border: 1px solid rgba($color: $black, $alpha: 0.4);
+                border-radius: 5px;
+                width: 325px;
+                height: 40px;
+                text-align: start;
+                font-size: 1rem;
+                padding-left: 10px;
+                margin: 10px 0 0 20px;
+
+                &:focus {
+                    outline: none;
+                }
             }
         }
     }
 }
 
 
-/* FORM CONTACT */
+textarea {
+    background-color: $tertiary;
+    border: 1px solid rgba($color: $black, $alpha: 0.4);
+    border-radius: 5px;
+    width: 325px;
+    height: 150px;
+    text-align: start;
+    padding: 5px 0 0 5px;
+    margin: 10px 0 0 20px;
 
-.form-container-contact {
-    background-color: $white;
-    border: 1px solid rgba($color: $black, $alpha: 0.5);
-    border-radius: 10px;
-    width: 400px;
-    height: 500px;
-    margin: auto;
-
-    form {
-        text-align: center;
-        padding: 20px 0;
-
-        .title-contact,
-        .email-contact,
-        .message-contact {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 15px;
-        }
-
-        textarea {
-            background-color: $tertiary;
-            border: 1px solid rgba($color: $black, $alpha: 0.4);
-            border-radius: 5px;
-            width: 325px;
-            height: 150px;
-            text-align: start;
-            padding: 5px 0 0 5px;
-            margin: 10px 0 0 20px;
-
-            &:focus {
-                outline: none;
-            }
-        }
-
-        label {
-            margin-left: 20px;
-            color: $black;
-        }
-
-        input {
-            background-color: $tertiary;
-            border: 1px solid rgba($color: $black, $alpha: 0.4);
-            border-radius: 5px;
-            width: 325px;
-            height: 40px;
-            text-align: start;
-            font-size: 1rem;
-            margin: 10px 0 0 20px;
-
-            &:focus {
-                outline: none;
-            }
-        }
+    &:focus {
+        outline: none;
     }
 }
 
@@ -106,44 +63,6 @@
     margin-inline: 20px;
     padding-top: 5px;
     text-align: left;
-}
-
-
-/* FORM REGISTER */
-
-.form-container-register {
-    background-color: $white;
-    border: 1px solid rgba($color: $black, $alpha: 0.5);
-    border-radius: 10px;
-    width: 400px;
-    height: 750px;
-    margin: auto;
-
-    form {
-        text-align: center;
-        padding: 20px 0;
-
-
-        label {
-            margin-left: 20px;
-            color: $black;
-        }
-
-        input {
-            background-color: $tertiary;
-            border: 1px solid rgba($color: $black, $alpha: 0.4);
-            border-radius: 5px;
-            width: 325px;
-            height: 40px;
-            text-align: start;
-            font-size: 1rem;
-            margin: 10px 0 0 20px;
-
-            &:focus {
-                outline: none;
-            }
-        }
-    }
 }
 
 
@@ -160,3 +79,25 @@
         color: $primary;
     }
 }
+
+
+/* CONTACT */
+
+#container-form-contact {
+    height: 500px;
+}
+
+
+
+
+
+
+/* FORM
+
+.form-container-contact {
+    height: 500px;
+}
+
+.form-container-register {
+    height: 750px;
+} */
