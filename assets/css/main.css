@@ -273,7 +273,6 @@ footer .copyright p {
   border: 1px solid rgba(8, 31, 52, 0.5);
   border-radius: 10px;
   width: 400px;
-  height: 400px;
 }
 .container-form form {
   text-align: center;
@@ -318,8 +317,16 @@ textarea:focus {
   outline: none;
 }
 
-.invalid-feedback {
+.invalid-feedback, .is-invalid {
   color: red;
+  font-size: 0.8rem;
+  margin-inline: 20px;
+  padding-top: 5px;
+  text-align: left;
+}
+
+.valid-feedback, .is-valid {
+  color: green;
   font-size: 0.8rem;
   margin-inline: 20px;
   padding-top: 5px;
@@ -328,6 +335,7 @@ textarea:focus {
 
 .link-account {
   text-align: center;
+  margin-top: 20px;
 }
 .link-account p,
 .link-account a {
@@ -338,21 +346,27 @@ textarea:focus {
   color: #0EE6B1;
 }
 
-/* CONTACT */
+#container-form-home {
+  height: 400px;
+}
+
 #container-form-contact {
   height: 500px;
 }
 
-/* FORM
-
-.form-container-contact {
-    height: 500px;
+#container-form-login {
+  height: 450px;
 }
 
-.form-container-register {
-    height: 750px;
-} */
+#container-form-register {
+  height: 900px;
+}
+
 .container-black {
   background-color: #081F34;
   min-height: 700px;
+}
+
+#container-black-register {
+  height: 1100px;
 }/*# sourceMappingURL=main.css.map */

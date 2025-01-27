@@ -12,25 +12,25 @@
         <h1>Espace de connexion</h1>
 
         <!-- FORMULAIRE -->
-        <div class="container-form">
+        <div class="container-form" id="container-form-login">
             <form>
                 <div class="inputForm">
                     <label for="inputIdLogin">Pseudo ou Email :</label>
                     <input type="text" id="inputIdLogin" required>
-                    <div class="invalid-feedback">
+                    <div class="invalid-feedback" id="is-invalid">
                         Veuillez entrer un pseudo ayant entre 3 à 50 caractères ou un email valide
                     </div>
                 </div>
                 <div class="inputForm">
-                    <label for="inputEmailLogin">Mot de passe :</label>
-                    <input type="text" id="inputEmailLogin" required>
-                    <div class="invalid-feedback">
+                    <label for="inputPwdLogin">Mot de passe :</label>
+                    <input type="password" id="inputPwdLogin" required>
+                    <div class="invalid-feedback" id="is-invalid">
                         Le mot de passe doit contenir au moins 8 caractères comprenant une lettre majuscule, une
                         minuscule, un chiffre et un caractère
                         spécial
                     </div>
                 </div>
-                <button type="submit" class="btn-search">Se connecter</button>
+                <button type="submit" class="btn-search" id="btn-valid-login">Se connecter</button>
             </form>
             <div class="link-account">
                 <p>Vous n’avez pas de compte ?</p>
