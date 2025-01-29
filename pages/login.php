@@ -13,18 +13,18 @@
 
         <!-- FORMULAIRE -->
         <div class="container-form" id="container-form-login">
-            <form>
+            <form action="loginPost.php" method="post">
                 <div class="inputForm">
                     <label for="inputIdLogin">Pseudo ou Email :</label>
-                    <input type="text" id="inputIdLogin" required>
-                    <div class="invalid-feedback" id="is-invalid">
+                    <input type="text" name="id" id="inputIdLogin" required>
+                    <div class="invalid-feedback">
                         Veuillez entrer un pseudo ayant entre 3 à 50 caractères ou un email valide
                     </div>
                 </div>
                 <div class="inputForm">
                     <label for="inputPwdLogin">Mot de passe :</label>
-                    <input type="password" id="inputPwdLogin" required>
-                    <div class="invalid-feedback" id="is-invalid">
+                    <input type="password" name="password" id="inputPwdLogin" required>
+                    <div class="invalid-feedback">
                         Le mot de passe doit contenir au moins 8 caractères comprenant une lettre majuscule, une
                         minuscule, un chiffre et un caractère
                         spécial

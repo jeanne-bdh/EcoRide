@@ -1,3 +1,11 @@
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("formLogin").addEventListener("submit", function(event) {
+        event.preventDefault();
+        alert("Formulaire envoyé!");
+    });
+});
+
+
 const inputIdLog = document.getElementById("inputIdLogin");
 const inputPwdLog = document.getElementById("inputPwdLogin");
 const btnValidLog = document.getElementById("btn-valid-login");
