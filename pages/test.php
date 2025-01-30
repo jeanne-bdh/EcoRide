@@ -16,6 +16,7 @@ try {
     foreach ($users as $user) {
         echo "Id : " . $user['id_users'] . "<br>";
         echo "Pseudo : " . $user['pseudo'] . "<br>";
+        echo "Email : " . $user['email'] . "<br>";
         echo "Nom : " . $user['nom'] . "<br>";
         echo "Prenom : " . $user['prenom'] . "<br>";
         echo "Mot de passe : " . $user['password'] . "<br>";
