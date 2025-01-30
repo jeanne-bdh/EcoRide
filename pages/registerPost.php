@@ -27,7 +27,7 @@ try {
     }
 
     // Hashage (encryptage)
-    $hashedPassword = password_hash($passwordForm, PASSWORD_BCRYPT);
+    $hashedPassword = password_hash($passwordForm, PASSWORD_DEFAULT);
 
     // Insérer les données dans la base
     $insertQuery = "INSERT INTO users (pseudo, email, nom, prenom, password) VALUES (:pseudo, :email, :nom, :prenom, :password)";

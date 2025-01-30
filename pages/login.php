@@ -1,15 +1,10 @@
 <section class="container-black">
 
     <!-- HERO SECTION -->
-    <div class="hero-section">
-        <div class="wave-top">
-            <svg viewBox="0 0 1442 355" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M1441 1H1V199.998C1 199.998 244.436 327.657 415.075 349.247C662.108 380.501 810.624 248.255 1040.44 225.37C1270.26 202.486 1441 317.904 1441 317.904V1Z"
-                    fill="#0EE6B1" stroke="#0EE6B1" />
-            </svg>
-        </div>
-        <h1>Espace de connexion</h1>
+    <?php
+    include_once __DIR__ . "/templates/hero-section.php";
+    heroSection("Espace de connexion");
+    ?>
 
         <!-- FORMULAIRE -->
         <div class="container-form" id="container-form-login">
@@ -17,20 +12,12 @@
                 <div class="inputForm">
                     <label for="inputIdLogin">Pseudo ou Email :</label>
                     <input type="text" name="id" id="inputIdLogin" required>
-                    <div class="invalid-feedback">
-                        Veuillez entrer un pseudo ayant entre 3 à 50 caractères ou un email valide
-                    </div>
                 </div>
                 <div class="inputForm">
                     <label for="inputPwdLogin">Mot de passe :</label>
                     <input type="password" name="password" id="inputPwdLogin" required>
-                    <div class="invalid-feedback">
-                        Le mot de passe doit contenir au moins 8 caractères comprenant une lettre majuscule, une
-                        minuscule, un chiffre et un caractère
-                        spécial
-                    </div>
                 </div>
-                <button type="submit" class="btn-search" id="btn-valid-login">Se connecter</button>
+                <button type="submit" class="btn-search" name="loginUser" id="btn-valid-login">Se connecter</button>
             </form>
             <div class="link-account">
                 <p>Vous n’avez pas de compte ?</p>
