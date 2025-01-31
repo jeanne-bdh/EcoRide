@@ -1,8 +1,7 @@
 <?php
 
-$dsn = 'mysql:host=127.0.0.1;port=3306;dbname=ecoride';
-$username = 'ecoride_php';
-$password = 'D-m1m2ppuPEs';
+require_once __DIR__. "/pages/lib/pdo.php";
+require_once __DIR__. "/pages/lib/user.php";
 
 try {
     $pdo = new PDO($dsn, $username, $password);

@@ -8,7 +8,7 @@
 
         <!-- FORMULAIRE -->
         <div class="container-form" id="container-form-register">
-            <form action="registerPost.php" method="post">
+            <form action="registerPost.php" method="POST">
                 <div class="inputForm">
                     <label for="inputPseudoRegister">Pseudo :</label>
                     <input type="text" name="pseudo" id="inputPseudoRegister" required>
