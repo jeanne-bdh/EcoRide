@@ -38,7 +38,11 @@
                     <a class="nav-link" href="/contact">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/login"><button class="btn-login" type="button">Connexion</button></a>
+                    <?php if (isset($_SESSION['user'])) { ?>
+                        <a href="/pages/auth/logout.php"><button class="btn-login" type="button">Déconnexion</button></a>
+                    <?php } else { ?>
+                        <a href="/login"><button class="btn-login" type="button">Connexion</button></a>
+                    <?php } ?>
                 </li>
             </ul>
         </nav>

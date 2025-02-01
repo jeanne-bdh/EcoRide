@@ -1,7 +1,8 @@
 <?php
 
-require_once __DIR__ . "/lib/pdo.php";
-require_once __DIR__ . "/lib/user.php";
+require_once __DIR__ . "/../lib/session.php";
+require_once __DIR__ . "/../lib/pdo.php";
+require_once __DIR__ . "/../lib/user.php";
 
 $errors = [];
 
@@ -9,11 +10,12 @@ if (isset($_POST['loginUser'])) {
     $user = verifyUserLoginPassword($pdo, $_POST['id'], $_POST['password']);
 
     if ($user) {
-        //on va se connecter => session
+        $_SESSION['users'] = $user;
+        header('location:/userSession');
     } else {
-        //Afficher une erreur
         $errors[] = "Email ou mot de passe incorrect";
     }
+    var_dump($_SESSION);
 }
 
 ?>
@@ -22,7 +24,7 @@ if (isset($_POST['loginUser'])) {
 
     <!-- HERO SECTION -->
     <?php
-    include_once __DIR__ . "/templates/hero-section.php";
+    include_once __DIR__ . "/../templates/hero-section.php";
     heroSection("Espace de connexion");
 
     foreach ($errors as $error) {

@@ -6,6 +6,7 @@ try {
     $password = 'D-m1m2ppuPEs';
 
     $pdo = new PDO($dsn, $username, $password);
+    
 } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }

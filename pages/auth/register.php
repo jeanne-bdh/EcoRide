@@ -2,7 +2,7 @@
 
     <!-- HERO SECTION -->
     <?php
-    include_once __DIR__ . "/templates/hero-section.php";
+    include_once __DIR__ . "/../templates/hero-section.php";
     heroSection("Créer un compte");
     ?>
 

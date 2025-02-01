@@ -1,5 +1,5 @@
 <?php
-
+/*
 require_once __DIR__. "/pages/lib/pdo.php";
 require_once __DIR__. "/pages/lib/user.php";
 
@@ -31,3 +31,4 @@ try {
 } catch (PDOException $e) {
     echo "Erreur de connexion à la base de donnée : " . $e->getMessage();
 }
+    */
