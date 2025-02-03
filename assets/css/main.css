@@ -299,7 +299,7 @@ footer .copyright p {
   margin-left: 20px;
 }
 .container-form form .inputForm input {
-  background-color: #D6D6D6;
+  background-color: hsl(0, 0%, 84%);
   border: 1px solid rgba(8, 31, 52, 0.4);
   border-radius: 5px;
   width: 325px;
@@ -314,7 +314,7 @@ footer .copyright p {
 }
 
 textarea {
-  background-color: #D6D6D6;
+  background-color: hsl(0, 0%, 84%);
   border: 1px solid rgba(8, 31, 52, 0.4);
   border-radius: 5px;
   width: 325px;
@@ -403,7 +403,7 @@ textarea:focus {
   border-radius: 1rem;
   border: 2px solid rgba(255, 255, 255, 0.7);
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-  background-color: #D6D6D6;
+  background-color: hsl(0, 0%, 84%);
   position: relative;
   display: flex;
   justify-content: center;
@@ -422,4 +422,125 @@ textarea:focus {
   position: absolute;
   z-index: 3;
   text-align: center;
+}
+
+.hero-section {
+  position: relative;
+}
+.hero-section .wave-top {
+  position: relative;
+  z-index: 1;
+}
+.hero-section .carpool-card {
+  border-radius: 1rem;
+  background-color: #ffffff;
+  width: 60%;
+  height: 15rem;
+  position: absolute;
+  z-index: 2;
+  top: 70%;
+  left: 20%;
+}
+.hero-section .carpool-card p {
+  color: #081F34;
+}
+.hero-section .carpool-card .tag-date {
+  background-color: #528DB9;
+  border-radius: 2rem;
+  width: 8rem;
+  height: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-section .carpool-card .tag-date p {
+  color: #ffffff;
+}
+.hero-section .carpool-card .carpool-card-bottom {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 1rem;
+}
+.hero-section .carpool-card .carpool-card-bottom .p-rating {
+  font-size: 1.6rem;
+  color: #757575;
+}
+.hero-section .carpool-card .carpool-card-bottom hr {
+  width: 50%;
+  margin-inline: auto;
+}
+.hero-section .carpool-card .carpool-card-bottom .profil-icon {
+  width: 5%;
+}
+.hero-section .carpool-card .carpool-card-bottom .tag-voyage {
+  background-color: #0EE6B1;
+  border-radius: 2rem;
+  width: 5rem;
+  height: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-section .carpool-card .carpool-card-bottom .details-link {
+  display: flex;
+  flex-direction: row;
+}
+.hero-section .carpool-card .carpool-card-bottom .details-link p {
+  color: #528DB9;
+  font-size: 1.2rem;
+}
+
+.travel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.travel .travel-circle {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #081F34;
+}
+.travel .travel-line {
+  width: 20rem;
+}
+
+.card-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem;
+}
+
+.p-credit {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.p-place {
+  font-size: 1.1rem;
+  text-align: end;
+}
+
+.duree {
+  margin-inline: 1rem;
+}
+
+.heure-depart {
+  margin-right: 1rem;
+}
+
+.heure-arrivee {
+  margin-left: 1rem;
+}
+
+.cities {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 4% 1rem 4%;
 }/*# sourceMappingURL=main.css.map */

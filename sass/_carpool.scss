@@ -1,0 +1,136 @@
+.hero-section {
+    position: relative;
+
+    .wave-top {
+        position: relative;
+        z-index: 1;
+    }
+
+    .carpool-card {
+        border-radius: 1rem;
+        background-color: $white;
+        width: 60%;
+        height: 15rem;
+        position: absolute;
+        z-index: 2;
+        top: 70%;
+        left: 20%;
+
+        p {
+            color: $black;
+        }
+
+        .tag-date {
+            background-color: $secondary;
+            border-radius: 2rem;
+            width: 8rem;
+            height: 1.8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
+                color: $white;
+            }
+        }
+
+        .carpool-card-bottom {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            margin: 1rem;
+
+            .p-rating {
+                font-size: 1.6rem;
+                color: $dark;
+            }
+
+
+            hr {
+                width: 50%;
+                margin-inline: auto;
+            }
+
+            .profil-icon {
+                width: 5%;
+            }
+
+            .tag-voyage {
+                background-color: $primary;
+                border-radius: 2rem;
+                width: 5rem;
+                height: 1.8rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .details-link {
+                display: flex;
+                flex-direction: row;
+
+                p {
+                    color: $secondary;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
+
+.travel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+
+    .travel-circle {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background-color: $black;
+    }
+
+    .travel-line {
+        width: 20rem;
+    }
+
+}
+
+.card-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem;
+}
+
+.p-credit {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.p-place {
+    font-size: 1.1rem;
+    text-align: end;
+}
+
+.duree {
+    margin-inline: 1rem;
+}
+
+.heure-depart {
+    margin-right: 1rem;
+}
+
+.heure-arrivee {
+    margin-left: 1rem;
+}
+
+.cities {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 4% 1rem 4%;
+}
