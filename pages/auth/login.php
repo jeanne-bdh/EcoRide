@@ -2,21 +2,9 @@
 
 require_once __DIR__ . "/../lib/session.php";
 require_once __DIR__ . "/../lib/pdo.php";
-require_once __DIR__ . "/../lib/user.php";
+require_once __DIR__ . "/../templates/header.php";
 
 $errors = [];
-
-if (isset($_POST['loginUser'])) {
-    $user = verifyUserLoginPassword($pdo, $_POST['id'], $_POST['password']);
-
-    if ($user) {
-        $_SESSION['users'] = $user;
-        header('location:/userSession');
-    } else {
-        $errors[] = "Email ou mot de passe incorrect";
-    }
-    var_dump($_SESSION);
-}
 
 ?>
 
@@ -27,17 +15,18 @@ if (isset($_POST['loginUser'])) {
     include_once __DIR__ . "/../templates/hero-section.php";
     heroSection("Espace de connexion");
 
-    foreach ($errors as $error) {
-        $error;
-    }
-    ?>
+    foreach ($errors as $error) { ?>
+        <div class="alert">
+            <?= $error; ?>
+        </div>
+    <?php } ?>
 
     <!-- FORMULAIRE -->
     <div class="container-form" id="container-form-login">
-        <form action="" method="POST">
+        <form action="/pages/auth/loginPost.php" method="POST">
             <div class="inputForm">
-                <label for="inputIdLogin">Pseudo ou Email :</label>
-                <input type="text" name="id" id="inputIdLogin" required>
+                <label for="inputPseudoEmailLogin">Pseudo ou Email :</label>
+                <input type="text" name="pseudoEmail" id="inputPseudoEmailLogin" required>
             </div>
             <div class="inputForm">
                 <label for="inputPwdLogin">Mot de passe :</label>
@@ -53,3 +42,6 @@ if (isset($_POST['loginUser'])) {
     </div>
 
 </section>
+
+<?php
+require_once __DIR__ . "/../templates/footer.php";

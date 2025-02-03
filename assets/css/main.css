@@ -19,6 +19,11 @@ h2 {
   font-size: 1.8rem;
 }
 
+h3 {
+  color: #081F34;
+  font-size: 1.5rem;
+}
+
 h4 {
   color: #ffffff;
   font-size: 1.3rem;
@@ -55,6 +60,11 @@ li {
   color: #081F34;
   border-color: rgba(8, 31, 52, 0.4);
   background-color: #0EE6B1;
+}
+
+.alert {
+  background-color: red;
+  color: #081F34;
 }
 
 nav {
@@ -369,4 +379,47 @@ textarea:focus {
 
 #container-black-register {
   height: 1100px;
+}
+
+.hero-section {
+  position: relative;
+}
+.hero-section .wave-top {
+  position: relative;
+  z-index: 1;
+}
+.hero-section .menu-session {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: absolute;
+  z-index: 2;
+  top: 80%;
+  width: 100%;
+}
+.hero-section .menu-session .card-session {
+  width: 18rem;
+  height: 10rem;
+  border-radius: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  background-color: #D6D6D6;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-section .menu-session .card-session:hover {
+  cursor: pointer;
+  width: 18.7rem;
+  height: 10.4rem;
+  background-color: #b0b0b0;
+}
+.hero-section .menu-session .card-session:hover h3 {
+  font-size: 1.6rem;
+}
+.hero-section .menu-session .card-session h3 {
+  position: absolute;
+  z-index: 3;
+  text-align: center;
 }/*# sourceMappingURL=main.css.map */

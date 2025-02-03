@@ -11,4 +11,4 @@ session_destroy();
 // Supprime les données du tableau $_SESSION
 unset($_SESSION);
 
-header('location: /login');
+header('location:login.php');

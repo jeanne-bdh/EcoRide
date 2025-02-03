@@ -8,6 +8,11 @@ h2 {
     font-size: 1.8rem;
 }
 
+h3 {
+    color: $black;
+    font-size: 1.5rem;
+}
+
 h4 {
     color: $white;
     font-size: 1.3rem;
@@ -45,4 +50,10 @@ li {
         border-color: rgba($color: $black, $alpha: 0.4);
         background-color: $primary;
     }
+}
+
+.alert {
+    background-color: red;
+    color: $black;
+
 }
