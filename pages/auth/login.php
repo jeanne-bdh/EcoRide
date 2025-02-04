@@ -1,10 +1,21 @@
 <?php
 
-require_once __DIR__ . "/../lib/session.php";
-require_once __DIR__ . "/../lib/pdo.php";
 require_once __DIR__ . "/../templates/header.php";
+require_once __DIR__ . "/../lib/pdo.php";
+require_once __DIR__ . "/../lib/user.php";
 
 $errors = [];
+
+if (isset($_POST['loginUser'])) {
+    $user = verifyUserLoginPassword($pdo, $_POST['pseudoEmail'], $_POST['password']);
+
+    if ($user) {
+        $_SESSION['users'] = $user;
+        header('location: /pages/users/userSession.php');
+    } else {
+        $errors[] = "Identifiants incorrects";
+    }
+}
 
 ?>
 
@@ -23,7 +34,7 @@ $errors = [];
 
     <!-- FORMULAIRE -->
     <div class="container-form" id="container-form-login">
-        <form action="/pages/auth/loginPost.php" method="POST">
+        <form action="" method="POST">
             <div class="inputForm">
                 <label for="inputPseudoEmailLogin">Pseudo ou Email :</label>
                 <input type="text" name="pseudoEmail" id="inputPseudoEmailLogin" required>
@@ -36,7 +47,7 @@ $errors = [];
         </form>
         <div class="link-account">
             <p>Vous n’avez pas de compte ?</p>
-            <a href="/register">Inscrivez-vous ici !</a>
+            <a href="/pages/auth/register.php">Inscrivez-vous ici !</a>
         </div>
     </div>
     </div>

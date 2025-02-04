@@ -42,7 +42,7 @@ require_once __DIR__ . "/../lib/session.php";
                     <a class="nav-link" href="/contact">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <?php if (isset($_SESSION['users'])) { ?>
+                    <?php if (isUserConnected()) { ?>
                         <a href="/pages/auth/logout.php"><button class="btn-login" type="button">Déconnexion</button></a>
                     <?php } else { ?>
                         <a href="/pages/auth/login.php"><button class="btn-login" type="button">Connexion</button></a>

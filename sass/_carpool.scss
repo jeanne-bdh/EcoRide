@@ -20,18 +20,72 @@
             color: $black;
         }
 
-        .tag-date {
-            background-color: $secondary;
-            border-radius: 2rem;
-            width: 8rem;
-            height: 1.8rem;
+        .carpool-card-top {
             display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 1rem;
+
+            .tag-date {
+                background-color: $secondary;
+                border-radius: 2rem;
+                width: 8rem;
+                height: 1.8rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                p {
+                    color: $white;
+                }
+            }
+
+            .p-credit {
+                font-size: 1.3rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .p-place {
+                font-size: 1.1rem;
+                text-align: end;
+            }
+        }
+
+        .travel {
+            display: flex;
+            flex-direction: row;
             justify-content: center;
             align-items: center;
+            margin: 1.5rem 0;
 
-            p {
-                color: $white;
+
+            .div-depart {
+                margin-right: 2rem;
             }
+
+            .div-arrivee {
+                margin-left: 2rem;
+            }
+
+            .travel-circle {
+                width: 0.5rem;
+                height: 0.5rem;
+                border-radius: 50%;
+                background-color: $black;
+            }
+
+            .travel-line {
+                width: 10rem;
+            }
+
+            .duree {
+                margin-inline: 1rem;
+            }
+        }
+
+        hr {
+            width: 50%;
+            margin-inline: auto;
         }
 
         .carpool-card-bottom {
@@ -40,34 +94,45 @@
             align-items: center;
             margin: 1rem;
 
-            .p-rating {
-                font-size: 1.6rem;
-                color: $dark;
-            }
+            .div-infos-driver {
 
+                .div-profil {
+                    .profil-icon {
+                        width: 5%;
+                        margin-right: 1rem;
+                    }
+                }
 
-            hr {
-                width: 50%;
-                margin-inline: auto;
-            }
+                .div-star {
+                    .star-fill {
+                        margin: 0 0.5rem 0 1.5rem;
+                    }
 
-            .profil-icon {
-                width: 5%;
-            }
+                    .p-rating {
+                        font-size: 1.6rem;
+                        color: $dark;
+                    }
+                }
 
-            .tag-voyage {
-                background-color: $primary;
-                border-radius: 2rem;
-                width: 5rem;
-                height: 1.8rem;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                .tag-voyage {
+                    background-color: $primary;
+                    border-radius: 2rem;
+                    width: 5rem;
+                    height: 1.8rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-left: 4rem;
+                }
             }
 
             .details-link {
                 display: flex;
                 flex-direction: row;
+
+                .chevron-double-right {
+                    margin: 0 0.5rem 0 25rem;
+                }
 
                 p {
                     color: $secondary;
@@ -76,61 +141,4 @@
             }
         }
     }
-}
-
-.travel {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
-
-    .travel-circle {
-        width: 0.5rem;
-        height: 0.5rem;
-        border-radius: 50%;
-        background-color: $black;
-    }
-
-    .travel-line {
-        width: 20rem;
-    }
-
-}
-
-.card-bottom {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 1rem;
-}
-
-.p-credit {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-}
-
-.p-place {
-    font-size: 1.1rem;
-    text-align: end;
-}
-
-.duree {
-    margin-inline: 1rem;
-}
-
-.heure-depart {
-    margin-right: 1rem;
-}
-
-.heure-arrivee {
-    margin-left: 1rem;
-}
-
-.cities {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 4% 1rem 4%;
 }
