@@ -204,15 +204,32 @@ footer .copyright p {
 .hero-section .wave-top {
   position: relative;
 }
-.hero-section h1 {
+.hero-section .div-return {
   position: absolute;
   z-index: 1;
-  top: 20%;
+  top: 50px;
+  left: 5%;
+  display: flex;
+  flex-direction: row;
+}
+.hero-section .div-return svg {
+  width: 6%;
+  color: #081F34;
+  margin-right: 0.5rem;
+}
+.hero-section .div-return a, .hero-section .div-return p {
+  color: #081F34;
+  font-size: 1.2rem;
+}
+.hero-section h1 {
+  position: absolute;
+  z-index: 2;
+  top: 80px;
   right: 10%;
 }
 .hero-section .container-form {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   top: 30%;
   left: 20%;
 }
@@ -375,6 +392,7 @@ textarea:focus {
 .container-black {
   background-color: #081F34;
   min-height: 700px;
+  padding-bottom: 2rem;
 }
 
 #container-black-register {
@@ -436,10 +454,10 @@ textarea:focus {
   background-color: #ffffff;
   width: 60%;
   height: 15rem;
-  position: absolute;
-  z-index: 2;
   top: 70%;
   left: 20%;
+  margin-inline: auto;
+  margin-bottom: 3rem;
 }
 .hero-section .carpool-card p {
   color: #081F34;
@@ -448,7 +466,7 @@ textarea:focus {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 1rem;
+  padding: 1rem 1rem 0 1rem;
 }
 .hero-section .carpool-card .carpool-card-top .tag-date {
   background-color: #528DB9;
@@ -533,7 +551,7 @@ textarea:focus {
 .hero-section .carpool-card .carpool-card-bottom .div-infos-driver .tag-voyage {
   background-color: #0EE6B1;
   border-radius: 2rem;
-  width: 5rem;
+  width: 6rem;
   height: 1.8rem;
   display: flex;
   justify-content: center;

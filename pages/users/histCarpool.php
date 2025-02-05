@@ -12,8 +12,8 @@ require_once __DIR__ . "/../templates/header.php";
     heroSection("Historique des covoiturages");
     ?>
 
-<div class="menu-session">
-        <a href="/pages/users/oldCarpool.php" class="card-session">
+    <div class="menu-session">
+        <a href="/pages/users/pastCarpool.php" class="card-session">
             <h3>Covoiturages passés</h3>
         </a>
         <a href="/pages/users/futureCarpool.php" class="card-session">
