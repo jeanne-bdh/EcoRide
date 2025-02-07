@@ -1,0 +1,59 @@
+h1 {
+    color: $black;
+    font-size: 2rem;
+}
+
+h2 {
+    color: $white;
+    font-size: 1.8rem;
+}
+
+h3 {
+    color: $black;
+    font-size: 1.5rem;
+}
+
+h4 {
+    color: $white;
+    font-size: 1.3rem;
+}
+
+h5 {
+    color: $white;
+    font-size: 1.1rem;
+}
+
+p {
+    color: $white;
+}
+
+a {
+    color: $white;
+}
+
+li {
+    list-style: none;
+}
+
+.btn-search {
+    background-color: $secondary;
+    color: $white;
+    font-size: 1.1rem;
+    padding: 8px 20px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid $secondary;
+    cursor: pointer;
+
+    &:hover {
+        color: $black;
+        border-color: rgba($color: $black, $alpha: 0.4);
+        background-color: $primary;
+    }
+}
+
+.alert {
+    background-color: red;
+    color: $black;
+
+}

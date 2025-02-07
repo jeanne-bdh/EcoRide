@@ -1,0 +1,106 @@
+.container-form {
+    background-color: $white;
+    border: 1px solid rgba($color: $black, $alpha: 0.5);
+    border-radius: 10px;
+    width: 400px;
+
+    form {
+        text-align: center;
+        padding-top: 20px;
+
+        .inputForm {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 15px;
+
+
+            label {
+                color: $black;
+                margin-left: 20px;
+            }
+
+            input {
+                background-color: $tertiary;
+                border: 1px solid rgba($color: $black, $alpha: 0.4);
+                border-radius: 5px;
+                width: 325px;
+                height: 40px;
+                text-align: start;
+                font-size: 1rem;
+                padding-left: 10px;
+                margin: 10px 0 0 20px;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+
+textarea {
+    background-color: $tertiary;
+    border: 1px solid rgba($color: $black, $alpha: 0.4);
+    border-radius: 5px;
+    width: 325px;
+    height: 150px;
+    text-align: start;
+    padding: 5px 0 0 5px;
+    margin: 10px 0 0 20px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+
+.invalid-feedback {
+    color: red;
+    font-size: 0.8rem;
+    margin-inline: 20px;
+    padding-top: 5px;
+    text-align: left;
+}
+
+.valid-feedback {
+    color: green;
+    font-size: 0.8rem;
+    margin-inline: 20px;
+    padding-top: 5px;
+    text-align: left;
+}
+
+
+.link-account {
+    text-align: center;
+    margin-top: 20px;
+
+    p,
+    a {
+        color: $black;
+        font-size: 0.9rem;
+    }
+
+    a:hover {
+        color: $primary;
+    }
+}
+
+
+#container-form-home {
+    height: 400px;
+}
+
+#container-form-contact {
+    height: 500px;
+}
+
+#container-form-login {
+    height: 450px;
+}
+
+#container-form-register {
+    height: 700px;
+}
