@@ -1,3 +1,5 @@
+// CARD SEARCH + EN COMMUN
+
 .hero-section {
     position: relative;
 
@@ -93,58 +95,100 @@
             justify-content: space-between;
             margin: 1rem;
 
-            .div-infos-driver {
-                display: grid;
-                grid-template-columns: 33.33% 33.33% 33.33%;
+            .tag-voyage {
+                background-color: $primary;
+                border-radius: 2rem;
+                width: 6rem;
+                height: 1.8rem;
+                display: flex;
+                justify-content: center;
                 align-items: center;
+            }
+        }
 
-                .div-profil {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
+        .details-link {
+            display: flex;
+            flex-direction: row;
 
-                    .profil-icon {
-                        width: 25%;
-                        margin-right: 1rem;
-                    }
-                }
-
-                .div-star {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-
-                    .star-fill {
-                        margin-right: 0.5rem;
-                    }
-
-                    .p-rating {
-                        font-size: 1.6rem;
-                        color: $dark;
-                    }
-                }
-
-                .tag-voyage {
-                    background-color: $primary;
-                    border-radius: 2rem;
-                    width: 6rem;
-                    height: 1.8rem;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
+            p {
+                color: $secondary;
+                font-size: 1.2rem;
+                margin-left: 0.5rem;
             }
 
-            .details-link {
-                display: flex;
-                flex-direction: row;
-
-                p {
-                    color: $secondary;
-                    font-size: 1.2rem;
-                    margin-left: 0.5rem;
-                }
+            a:hover {
+                text-decoration: underline;
+                color: $secondary;
             }
         }
     }
+}
+
+
+// Spécidique card carpool search
+
+.div-infos-driver {
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    align-items: center;
+
+    .div-profil {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .profil-icon {
+            width: 25%;
+            margin-right: 1rem;
+        }
+    }
+
+    .div-star {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .star-fill {
+            margin-right: 0.5rem;
+        }
+
+        .p-rating {
+            font-size: 1.6rem;
+            color: $dark;
+        }
+    }
+}
+
+// SPECIFIQUE CARD USER SESSION
+
+.carpool-card-bottom {
+    padding-top: 0.5rem;
+
+    .tag-status {
+        border: 2px solid $primary;
+        border-radius: 2rem;
+        width: 6rem;
+        height: 1.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            color: $dark;
+        }
+    }
+}
+
+$status: (
+    "Annulé" : #FF4D4D,
+    "Confirmé" : $secondary
+);
+
+@function status-color($statusColor) {
+    @return map-get($status, $statusColor);
+}
+
+// Mixin pour appliquer les styles de statut
+@mixin tag-status($statusColor) {
+    background-color: status-color($statusColor);
 }

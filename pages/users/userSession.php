@@ -21,7 +21,7 @@ require_once __DIR__ . "/../templates/header.php";
         <a href="/pages/users/histCarpool.php" class="card-session">
             <h3>Historique <br> des covoiturages</h3>
         </a>
-        <a href="/pages/users/profil.php" class="card-session">
+        <a href="/pages/users/infosProfil.php" class="card-session">
             <h3>Modifications <br> du profil</h3>
         </a>
     </div>
