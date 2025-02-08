@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . "/../lib/session.php";
-require_once __DIR__ . "/../lib/pdo.php";
-require_once __DIR__ . "/../templates/header.php";
+require_once __DIR__ . "/../../lib/session.php";
+require_once __DIR__ . "/../../lib/pdo.php";
+require_once __DIR__ . "/../../templates/header.php";
 
 ?>
 
@@ -10,7 +10,7 @@ require_once __DIR__ . "/../templates/header.php";
 
     <!-- HERO SECTION -->
     <?php
-    include_once __DIR__ . "/../templates/hero-section.php";
+    include_once __DIR__ . "/../../templates/hero-section.php";
     heroSection("Espace utilisateur");
     ?>
 
@@ -28,4 +28,4 @@ require_once __DIR__ . "/../templates/header.php";
 
 </section>
 
-<?php require_once __DIR__ . "/../templates/footer.php" ?>
+<?php require_once __DIR__ . "/../../templates/footer.php" ?>

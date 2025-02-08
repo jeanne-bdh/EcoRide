@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . "/../templates/header.php";
-require_once __DIR__ . "/../lib/pdo.php";
-require_once __DIR__ . "/../lib/user.php";
+require_once __DIR__ . "/../../templates/header.php";
+require_once __DIR__ . "/../../lib/pdo.php";
+require_once __DIR__ . "/../../lib/user.php";
 
 $errors = [];
 
@@ -12,7 +12,7 @@ $errors = [];
 
     <!-- HERO SECTION -->
     <?php
-    include_once __DIR__ . "/../templates/hero-section.php";
+    include_once __DIR__ . "/../../templates/hero-section.php";
     heroSection("Créer un compte");
     ?>
 
@@ -39,7 +39,7 @@ $errors = [];
             </form>
             <div class="link-account">
                 <p>Vous avez déjà un compte ?</p>
-                <a href="/login">Connectez-vous ici !</a>
+                <a href="/pages/auth/login.php">Connectez-vous ici !</a>
             </div>
         </div>
     </div>
@@ -47,4 +47,4 @@ $errors = [];
 </section>
 
 <?php
-require_once __DIR__ . "/../templates/footer.php";
+require_once __DIR__ . "/../../templates/footer.php";

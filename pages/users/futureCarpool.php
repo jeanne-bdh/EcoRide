@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . "/../templates/header.php";
-require_once __DIR__ . "/../lib/pdo.php";
-require_once __DIR__ . "/../lib/carpool.php";
+require_once __DIR__ . "/../../templates/header.php";
+require_once __DIR__ . "/../../lib/pdo.php";
+require_once __DIR__ . "/../../lib/carpool.php";
 
 ?>
 
@@ -10,7 +10,7 @@ require_once __DIR__ . "/../lib/carpool.php";
 
     <!-- HERO SECTION -->
     <?php
-    include_once __DIR__ . "/../templates/hero-section.php";
+    include_once __DIR__ . "/../../templates/hero-section.php";
     heroSection("Covoiturages à venir");
 
     if (isset($_SESSION['users'])) {
@@ -21,7 +21,7 @@ require_once __DIR__ . "/../lib/carpool.php";
             foreach ($carpools as $carpool) {
                 $pastCarpool = true;
 
-                require __DIR__ . "/../templates/carpool-card.php";
+                require __DIR__ . "/../../templates/carpool-card.php";
             }
 
             if (!$pastCarpool) { ?>
@@ -34,4 +34,4 @@ require_once __DIR__ . "/../lib/carpool.php";
 
 </section>
 
-<?php require_once __DIR__ . "/../templates/footer.php" ?>
+<?php require_once __DIR__ . "/../../templates/footer.php" ?>

@@ -36,7 +36,7 @@ require_once __DIR__ . "/../lib/session.php";
                     <a class="nav-link" href="/">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/covoit">Accès aux covoiturages</a>
+                    <a class="nav-link" href="/pages/carpoolSearch.php">Accès aux covoiturages</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/contact">Contact</a>
