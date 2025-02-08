@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 * {
   box-sizing: border-box;
@@ -586,4 +587,11 @@ textarea:focus {
 }
 .carpool-card-bottom .tag-status p {
   color: #757575;
+}
+
+.tag-status[data-status=Annulé] {
+  border-color: #FF4D4D;
+}
+.tag-status[data-status=Confirmé] {
+  border-color: #0EE6B1;
 }/*# sourceMappingURL=main.css.map */

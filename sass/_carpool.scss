@@ -179,16 +179,16 @@
     }
 }
 
+// Fonction : border-color en fonction du status du covoit
 $status: (
     "Annulé" : #FF4D4D,
-    "Confirmé" : $secondary
+    "Confirmé" : $primary
 );
 
-@function status-color($statusColor) {
-    @return map-get($status, $statusColor);
-}
-
-// Mixin pour appliquer les styles de statut
-@mixin tag-status($statusColor) {
-    background-color: status-color($statusColor);
+.tag-status {
+    @each $key, $color in $status {
+        &[data-status="#{$key}"] {
+            border-color: $color;
+        }
+    }
 }
