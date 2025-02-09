@@ -1,5 +1,6 @@
 <?php
-require_once __DIR__ . "/../lib/session.php";
+require_once __DIR__ . "/../libs/session.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -9,6 +10,8 @@ require_once __DIR__ . "/../lib/session.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="icon" type="image/x-icon" href="/assets/images/navbar/favicon.png">
+
     <title>EcoRide</title>
 </head>
 
@@ -36,7 +39,7 @@ require_once __DIR__ . "/../lib/session.php";
                     <a class="nav-link" href="/">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/pages/carpoolSearch.php">Accès aux covoiturages</a>
+                    <a class="nav-link" href="/pages/carpoolsSearch.php">Accès aux covoiturages</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/contact">Contact</a>
