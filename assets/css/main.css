@@ -41,6 +41,7 @@ p {
 
 a {
   color: #ffffff;
+  text-decoration: none;
 }
 
 li {
@@ -542,10 +543,7 @@ textarea:focus {
   font-size: 1.2rem;
   margin-left: 0.5rem;
 }
-.hero-section .carpool-card .details-link a {
-  text-decoration: none;
-}
-.hero-section .carpool-card .details-link a:hover {
+.hero-section .carpool-card .details-link a :hover {
   text-decoration: underline;
   color: #528DB9;
 }
@@ -600,31 +598,114 @@ textarea:focus {
   border-color: #0EE6B1;
 }
 
-.container-details-covoit {
+#date-details-covoit {
+  text-align: center;
+}
+
+.container-carpool-details {
   display: grid;
   grid-template-columns: 50% 50%;
+}
+
+.profil-icon {
+  width: 10%;
+}
+
+.long-frame {
+  margin: 3rem;
+  border: 1px solid #ffffff;
+  border-radius: 15px;
 }
 
 .small-frame {
   border: 1px solid #ffffff;
   border-radius: 5px;
-  margin: 2rem 3rem;
+  margin: 2rem;
 }
 
-.long-frame {
-  margin-inline: 3rem;
-  border: 1px solid #ffffff;
-  border-radius: 15px;
+.travel-infos {
+  display: flex;
+  flex-direction: row;
+  height: 10rem;
+}
+.travel-infos .travel-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0 1rem 1rem;
+}
+.travel-infos .travel-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(90deg);
+}
+.travel-infos .travel-line .circle {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+.travel-infos .travel-line .line {
+  width: 5rem;
 }
 
-#date-details-covoit {
-  text-align: center;
+.tag-voyage {
+  background-color: #0EE6B1;
+  border-radius: 2rem;
+  width: 6rem;
+  height: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0 0 8rem;
+}
+.tag-voyage p {
+  color: #081F34;
 }
 
-.icons-details-carpool {
+.container-seat-credit {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin: 1rem 1rem 0 1rem;
+}
+.container-seat-credit .infos-seat-credit {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.container-seat-credit .icons-details-carpool {
   fill: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  padding: 0.1rem;
+  width: 20px;
+  height: 20px;
+}
+.container-seat-credit p {
+  text-align: right;
 }
 
-.profil-icon {
-  width: 10%;
+.btn-blue {
+  background-color: #528DB9;
+  color: #ffffff;
+  font-size: 1.1rem;
+  padding: 8px 20px;
+  border-radius: 5px;
+  border: 2px solid #528DB9;
+  cursor: pointer;
+}
+.btn-blue:hover {
+  border-color: #ffffff;
+  background-color: #081F34;
+}
+
+.btn-details-carpool {
+  display: block;
+  margin: auto;
+  margin-bottom: 2rem;
 }/*# sourceMappingURL=main.css.map */

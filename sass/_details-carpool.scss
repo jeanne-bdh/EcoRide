@@ -1,31 +1,129 @@
-.container-details-covoit {
-    display: grid;
-    grid-template-columns: 50% 50%;
-}
-
-.small-frame {
-    border: 1px solid $white;
-    border-radius: 5px;
-    margin: 2rem 3rem;  
-}
-.long-frame {
-    margin-inline: 3rem;
-    border: 1px solid $white;
-    border-radius: 15px;
-}
-
 #date-details-covoit {
     text-align: center;
 }
 
-.icons-details-carpool {
-    fill: $white;
+.container-carpool-details {
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
 
 
-
+//PARTIE GAUCHE
 
 .profil-icon {
     width: 10%;
 }
 
+
+
+
+
+//PARTIE DROITE
+
+.long-frame {
+    margin: 3rem;
+    border: 1px solid $white;
+    border-radius: 15px;
+}
+
+.small-frame {
+    border: 1px solid $white;
+    border-radius: 5px;
+    margin: 2rem;
+}
+
+.travel-infos {
+    display: flex;
+    flex-direction: row;
+    height: 10rem;
+
+    .travel-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1rem 0 1rem 1rem;
+    }
+
+    .travel-line {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(90deg);
+
+        .circle {
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            background-color: $white;
+        }
+
+        .line {
+            width: 5rem;
+        }
+    }
+}
+
+.tag-voyage {
+    background-color: $primary;
+    border-radius: 2rem;
+    width: 6rem;
+    height: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0 0 8rem;
+
+    p {
+        color: $black;
+    }
+}
+
+.container-seat-credit {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 1rem 1rem 0 1rem;
+
+    .infos-seat-credit {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .icons-details-carpool {
+        fill: $white;
+        border: 1px solid $white;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+        padding: 0.1rem;
+        width: 20px;
+        height: 20px;
+    }
+
+    p {
+        text-align: right;
+    }
+}
+
+.btn-blue {
+    background-color: $secondary;
+    color: $white;
+    font-size: 1.1rem;
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: 2px solid $secondary;
+    cursor: pointer;
+
+    &:hover {
+        border-color: $white;
+        background-color: $black;
+    }
+}
+
+.btn-details-carpool {
+    display: block;
+    margin: auto;
+    margin-bottom: 2rem;
+}
