@@ -116,14 +116,17 @@
                 margin-left: 0.5rem;
             }
 
-            a:hover {
-                text-decoration: underline;
-                color: $secondary;
+            a {
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: $secondary;
+                }
             }
         }
     }
 }
-
 
 // Spécidique card carpool search
 

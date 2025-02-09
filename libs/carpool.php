@@ -48,6 +48,7 @@ function getCarpoolBySearch(int $carpoolId): array
             'lieu_arrivee' => 'Lyon',
             'type_voyage' => 'Ecolo',
             'photo' => 'smiley-man.jpg',
+            'pseudo' => 'Luke'
         ],
         [
             'date_depart' => '2025-02-08',
@@ -60,6 +61,7 @@ function getCarpoolBySearch(int $carpoolId): array
             'lieu_arrivee' => 'Lyon',
             'type_voyage' => 'Non écolo',
             'photo' => 'smiley-woman.jpg',
+            'pseudo' => 'Jane'
         ],
         [
             'date_depart' => '2025-02-08',
@@ -72,6 +74,7 @@ function getCarpoolBySearch(int $carpoolId): array
             'lieu_arrivee' => 'Lyon',
             'type_voyage' => 'Non écolo',
             'photo' => 'person-circle.svg',
+            'pseudo' => 'Luke'
         ],
     ];
 }

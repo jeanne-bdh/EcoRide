@@ -78,17 +78,17 @@ nav .container-logo {
   display: flex;
   align-items: center;
 }
-nav .container-logo .logo-ecoride {
+nav .logo-ecoride {
   margin: 5px 20px;
 }
-nav .container-logo .name-ecoride {
+nav .name-ecoride {
   font-size: 2rem;
   text-align: left;
 }
-nav .container-logo .name-ecoride a {
+nav .name-ecoride a {
   text-decoration: none;
 }
-nav .container-logo .name-ecoride a:hover {
+nav .name-ecoride a:hover {
   color: #0EE6B1;
   font-size: 2.1rem;
 }
@@ -107,7 +107,8 @@ nav ul li a:hover {
   color: #0EE6B1;
   text-decoration: underline;
 }
-nav ul .btn-login {
+
+.btn-login {
   background-color: #528DB9;
   color: #ffffff;
   font-size: 1.1rem;
@@ -116,7 +117,7 @@ nav ul .btn-login {
   border: 2px solid #528DB9;
   cursor: pointer;
 }
-nav ul .btn-login:hover {
+.btn-login:hover {
   border-color: #ffffff;
   background-color: #081F34;
 }
@@ -541,6 +542,9 @@ textarea:focus {
   font-size: 1.2rem;
   margin-left: 0.5rem;
 }
+.hero-section .carpool-card .details-link a {
+  text-decoration: none;
+}
 .hero-section .carpool-card .details-link a:hover {
   text-decoration: underline;
   color: #528DB9;
@@ -594,4 +598,33 @@ textarea:focus {
 }
 .tag-status[data-status=Confirmé] {
   border-color: #0EE6B1;
+}
+
+.container-details-covoit {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.small-frame {
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  margin: 2rem 3rem;
+}
+
+.long-frame {
+  margin-inline: 3rem;
+  border: 1px solid #ffffff;
+  border-radius: 15px;
+}
+
+#date-details-covoit {
+  text-align: center;
+}
+
+.icons-details-carpool {
+  fill: #ffffff;
+}
+
+.profil-icon {
+  width: 10%;
 }/*# sourceMappingURL=main.css.map */
