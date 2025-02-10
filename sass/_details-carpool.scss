@@ -10,9 +10,47 @@
 
 //PARTIE GAUCHE
 
-.profil-icon {
-    width: 10%;
+.middle-frame {
+    border: 1px solid $white;
+    border-radius: 15px;
+    margin: 2rem;
+
+    h5 {
+        padding: 1rem 0 0.5rem 1rem;
+    }
+
+    ul {
+        padding: 0 0 1rem 2rem;
+    }
+
+    li {
+        color: $white;
+    }
 }
+
+#car-infos {
+    margin-top: 5rem;
+}
+
+.profil-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+
+    img {
+        border: 1px solid $white;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        text-align: end;
+    }
+}
+
+.comment-container {
+    text-align: center;
+}
+
+
 
 
 
@@ -32,10 +70,16 @@
     margin: 2rem;
 }
 
-.travel-infos {
+.container-details-travel {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     height: 10rem;
+
+    .travel-infos {
+        display: flex;
+        flex-direction: row;
+    }
 
     .travel-details {
         display: flex;
@@ -73,7 +117,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1rem 0 0 8rem;
+    margin: 1rem;
 
     p {
         color: $black;
@@ -82,7 +126,7 @@
 
 .container-seat-credit {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 75% 25%;
     margin: 1rem 1rem 0 1rem;
 
     .infos-seat-credit {

@@ -11,46 +11,78 @@
     <h2 id="date-details-covoit">Vendredi 14 février</h2>
 
     <div class="container-carpool-details">
-        <div class="driver-infos">
-            <div class="small-frame">
+        <div>
+            <div class="middle-frame" id="car-infos">
                 <h5>Informations du véhicule</h5>
-                <p>Marque : Renault</p>
-                <p>Modèle : Captur</p>
-                <p>Couleur : gris foncé</p>
-                <p>Energie : thermique</p>
+                <ul>
+                    <li>Marque : Renault</li>
+                    <li>Modèle : Captur</li>
+                    <li>Couleur : gris foncé</li>
+                    <li>Energie : thermique</li>
+                </ul>
             </div>
-            <div class="small-frame">
+            <div class="middle-frame">
                 <h5>Préférences du conducteur</h5>
-                <p>Non fumeur</p>
-                <p>Animaux en cage seulement</p>
-                <p>Aime discuter de tout et de rien</p>
+                <ul>
+                    <li>Non fumeur</li>
+                    <li>Animaux en cage seulement</li>
+                    <li>Aime discuter de tout et de rien</li>
+                </ul>
             </div>
-            <div class="div-profil">
-                <div>
-                    <img src="/uploads/carpools/smiley-man.jpg" class="profil-icon" alt="profil user">
+            <div class="profil-container">
+                <img src="/uploads/carpools/smiley-man.jpg" alt="profil user">
+                <h4>Pseudo</h4>
+            </div>
+            <div class="comment-container">
+                <h4>Avis (3)</h4>
+
+                <div class="carousel">
+                    <div class="carousel-slide">
+                        <div class="slide">
+                            <h5>Trajet parfait avec un conducteur très sympa !</h5>
+                            <p>5 étoiles</p>
+                            <p>Super expérience de covoiturage ! Paul est arrivé à l’heure et la voiture était impeccable. Il a proposé plusieurs pauses pendant le trajet, et la conversation était fluide et agréable. Je recommande vivement de voyager avec lui !</p>
+                        </div>
+                        <div class="slide">
+                            <h5>Très bon trajet, petit retard au départ</h5>
+                            <p>4 étoiles</p>
+                            <p>Le trajet s'est bien déroulé, et le conducteur était très agréable. Petit bémol : 10 minutes de retard au départ, mais il a pris la peine de prévenir à l'avance, ce que j'ai apprécié. Voiture confortable et bonne ambiance à bord !</p>
+                        </div>
+                        <div class="slide">
+                            <h5>Correct, mais peut s'améliorer</h5>
+                            <p>3 étoiles</p>
+                            <p>Conducteur sympa, mais la musique était un peu forte pendant tout le trajet malgré mes suggestions. Aussi, pas de pause sur une longue distance, ce qui était un peu inconfortable. Mais la conduite était sécurisante et ponctuelle.</p>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <p>Pseudo</p>
-            </div>
-            <div>
-                <p>Avis (3)</p>
-                <div class="carousel-slide">Carousel</div>
+
             </div>
         </div>
         <div class="long-frame">
-            <div class="small-frame travel-infos">
-                <div class="travel-details">
-                    <p>16:00</p>
-                    <p>2h</p>
-                    <p>18:00</p>
-                </div>
-                <div class="travel-line">
-                    <div class="circle"></div>
-                    <hr class="line">
-                    <div class="circle"></div>
-                </div>
-                <div class="travel-details">
-                    <p>Paris</p>
-                    <p>Lille</p>
+            <div class="small-frame container-details-travel">
+                <div class="travel-infos">
+                    <div class="travel-details">
+                        <p>16:00</p>
+                        <p>2h</p>
+                        <p>18:00</p>
+                    </div>
+                    <div class="travel-line">
+                        <div class="circle"></div>
+                        <hr class="line">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="travel-details">
+                        <p>Paris</p>
+                        <p>Lille</p>
+                    </div>
                 </div>
                 <div class="tag-voyage">
                     <p>Non écolo</p>
