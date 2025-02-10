@@ -632,15 +632,24 @@ textarea:focus {
   align-items: center;
 }
 .profil-container img {
-  border: 1px solid #ffffff;
+  border: 1px solid #081F34;
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  text-align: end;
+  object-fit: cover;
+  justify-self: end;
+  margin-right: 1rem;
+}
+.profil-container h4 {
+  align-items: left;
 }
 
 .comment-container {
   text-align: center;
+  margin-inline: 3rem;
+}
+.comment-container h4 {
+  margin: 2rem 0 1rem 0;
 }
 
 .long-frame {
