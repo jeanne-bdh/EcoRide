@@ -7,6 +7,7 @@
     include_once __DIR__ . "/../templates/hero-section.php";
     heroSection("Détails du covoiturage");
     ?>
+    </div>
 
     <h2 id="date-details-covoit">Vendredi 14 février</h2>
 
@@ -54,14 +55,8 @@
                             <p>Conducteur sympa, mais la musique était un peu forte pendant tout le trajet malgré mes suggestions. Aussi, pas de pause sur une longue distance, ce qui était un peu inconfortable. Mais la conduite était sécurisante et ponctuelle.</p>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                    <button class="carousel-control-prev" id="prev">&#10096</button>
+                    <button class="carousel-control-next" id="next">&#10097</button>
                 </div>
 
             </div>
@@ -106,7 +101,7 @@
                     <p>20</p>
                 </div>
             </div>
-            <a href="#"><button class="btn-blue btn-details-carpool">Participer</button></a>
+            <a href="#"><button class="btn-blue btn-participate">Participer</button></a>
         </div>
     </div>
 

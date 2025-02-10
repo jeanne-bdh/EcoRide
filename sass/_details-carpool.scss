@@ -7,9 +7,6 @@
     grid-template-columns: 50% 50%;
 }
 
-
-//PARTIE GAUCHE
-
 .middle-frame {
     border: 1px solid $white;
     border-radius: 15px;
@@ -56,18 +53,10 @@
     text-align: center;
     margin-inline: 3rem;
 
-    h4{
+    h4 {
         margin: 2rem 0 1rem 0;
     }
 }
-
-
-
-
-
-
-
-//PARTIE DROITE
 
 .long-frame {
     margin: 3rem;
@@ -162,23 +151,44 @@
     }
 }
 
-.btn-blue {
-    background-color: $secondary;
-    color: $white;
-    font-size: 1.1rem;
-    padding: 8px 20px;
-    border-radius: 5px;
-    border: 2px solid $secondary;
-    cursor: pointer;
-
-    &:hover {
-        border-color: $white;
-        background-color: $black;
-    }
-}
-
-.btn-details-carpool {
+.btn-participate {
     display: block;
     margin: auto;
     margin-bottom: 2rem;
+}
+
+// CAROUSEL
+
+.carousel {
+    position: relative;
+    height: 50vh;
+    width: 50vw;
+
+    button {
+        position: absolute;
+        background-color: none;
+        border: none;
+        outline: none;
+        font-size: 2.6 rem;
+        z-index: 2;
+        cursor: pointer;
+        color: $white;
+        transform: translateY(-50%);
+        top: 50%;
+    }
+
+    #prev {
+        left: 5px;
+    }
+
+    #next {
+        right: 5px
+    }
+
+.slide {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
 }
