@@ -1,25 +1,56 @@
-.container-main-home {
-    background-color: $black;
-}
-
 .img-main-section {
     display: flex;
     justify-content: flex-end;
-    margin-right: 120px;
     margin-bottom: 50px;
+
+    img {
+        width: 40%;
+    }
 }
 
-.grid-home-prez {
+.home-prez {
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
-    margin-inline: 15%;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 20px;
 
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    img {
+        border-radius: 100px;
+        width: 50vw;
+    }
+}
+
+.item {
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+
+    @media (min-width: 768px) {
+        h5 {
+            font-size: 0.5rem;
+        }
+
+        p {
+            font-size: 0.6rem;
+        }
+    }
+}
+
+
+
+.text-content {
+    text-align: center;
+}
+
+/*
     .container-img-electric {
         text-align: center;
 
         .img-electric {
-            border-radius: 25%;
             margin-bottom: 10%;
         }
     }
@@ -29,7 +60,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        text-align: center;
         margin-inline: 10%;
 
         h5 {
@@ -42,7 +72,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        text-align: center;
         margin-inline: 10%;
 
         p {
@@ -53,15 +82,9 @@
     .container-img-friends {
         text-align: center;
 
-        .img-friends {
-            border-radius: 25%;
-        }
-    }
-
-}
+    } */
 
 .text-ecoweb {
-    text-align: center;
     padding: 50px 0 70px 0;
 
     h5 {

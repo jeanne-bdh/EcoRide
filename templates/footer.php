@@ -3,8 +3,8 @@
         <!-- SECTION ICONS -->
         <section class="section-wave-bottom">
             <div class="section-icons-eco">
-                <div class="container-leaf">
-                    <svg width="65" height="65" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                <div class="icons-eco-items">
+                    <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                         fill="currentColor">
                         <path
                             d="M20.998 3V5C20.998 14.6274 15.6255 19 8.99805 19L5.24077 18.9999C5.0786 19.912 4.99805 20.907 4.99805 22H2.99805C2.99805 20.6373 3.11376 19.3997 3.34381 18.2682C3.1133 16.9741 2.99805 15.2176 2.99805 13C2.99805 7.47715 7.4752 3 12.998 3C14.998 3 16.998 4 20.998 3ZM12.998 5C8.57977 5 4.99805 8.58172 4.99805 13C4.99805 13.3624 5.00125 13.7111 5.00759 14.0459C6.26198 12.0684 8.09902 10.5048 10.5019 9.13176L11.4942 10.8682C8.6393 12.4996 6.74554 14.3535 5.77329 16.9998L8.99805 17C15.0132 17 18.8692 13.0269 18.9949 5.38766C17.6229 5.52113 16.3481 5.436 14.7754 5.20009C13.6243 5.02742 13.3988 5 12.998 5Z">
@@ -12,15 +12,15 @@
                     </svg>
                     <p>Engagement écologique</p>
                 </div>
-                <div class="container-currency">
-                    <svg width="65" height="65" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                <div class="icons-eco-items">
+                    <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                         <path
                             d="M0 5a5 5 0 0 0 4.027 4.905 6.5 6.5 0 0 1 .544-2.073C3.695 7.536 3.132 6.864 3 5.91h-.5v-.426h.466V5.05q-.001-.07.004-.135H2.5v-.427h.511C3.236 3.24 4.213 2.5 5.681 2.5c.316 0 .59.031.819.085v.733a3.5 3.5 0 0 0-.815-.082c-.919 0-1.538.466-1.734 1.252h1.917v.427h-1.98q-.004.07-.003.147v.422h1.983v.427H3.93c.118.602.468 1.03 1.005 1.229a6.5 6.5 0 0 1 4.97-3.113A5.002 5.002 0 0 0 0 5m16 5.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0m-7.75 1.322c.069.835.746 1.485 1.964 1.562V14h.54v-.62c1.259-.086 1.996-.74 1.996-1.69 0-.865-.563-1.31-1.57-1.54l-.426-.1V8.374c.54.06.884.347.966.745h.948c-.07-.804-.779-1.433-1.914-1.502V7h-.54v.629c-1.076.103-1.808.732-1.808 1.622 0 .787.544 1.288 1.45 1.493l.358.085v1.78c-.554-.08-.92-.376-1.003-.787zm1.96-1.895c-.532-.12-.82-.364-.82-.732 0-.41.311-.719.824-.809v1.54h-.005zm.622 1.044c.645.145.943.38.943.796 0 .474-.37.8-1.02.86v-1.674z" />
                     </svg>
                     <p>Solution économique</p>
                 </div>
-                <div class="container-people">
-                    <svg width="65" height="65" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                <div class="icons-eco-items">
+                    <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                         <path
                             d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4" />
                     </svg>
@@ -34,19 +34,19 @@
 
         <!-- SECTION MENTIONS LEGALES -->
         <section class="section-legal-infos">
-            <div class="logo-slogan-bottom">
+            <div class="container-legal-infos-inner logo-slogan-bottom">
                 <div>
                     <img src="/assets/images/navbar/logo_ecoride.png" alt="Logo EcoRide">
                 </div>
                 <p>Roulez ensemble,<br>roulez vert !</p>
             </div>
-            <div class="coordonnees">
+            <div class="container-legal-infos-inner coordonnees">
                 <h4>Coordonnées</h4>
                 <p>12 rue Ernest-Dumont <br>75010 PARIS</p>
                 <p>+33 1 07 45 22 91</p>
                 <p>contact@ecoride.com</p>
             </div>
-            <div class="social-network">
+            <div class="container-legal-infos-inner social-network">
                 <h4>Nous rejoindre</h4>
                 <div>
                     <a href="#">
@@ -72,7 +72,7 @@
                     </a>
                 </div>
             </div>
-            <div class="legal-infos">
+            <div class="container-legal-infos-inner">
                 <h4>Informations légales</h4>
                 <div class="legal-link">
                     <a href="/legalInfos">Mentions légales</a>
