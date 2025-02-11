@@ -651,27 +651,64 @@ textarea:focus {
   border-color: #0EE6B1;
 }
 
-#date-details-covoit {
+#title-date {
   text-align: center;
+  margin: 2rem 0;
 }
 
-.container-carpool-details {
-  display: grid;
-  grid-template-columns: 50% 50%;
+.carpool-details-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.middle-frame {
+.travel-container {
+  margin: 2rem;
   border: 1px solid #ffffff;
   border-radius: 15px;
+}
+
+.small-frame {
+  border: 1px solid #ffffff;
+  border-radius: 5px;
   margin: 2rem;
 }
-.middle-frame h5 {
+
+.seat-credit-container {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  margin: 1rem 1rem 0 1rem;
+}
+.seat-credit-container .seat-credit-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.seat-credit-container .icons-details-carpool {
+  fill: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  padding: 0.1rem;
+  width: 20px;
+  height: 20px;
+}
+.seat-credit-container p {
+  text-align: right;
+}
+
+.md-frame {
+  border: 1px solid #ffffff;
+  border-radius: 15px;
+}
+.md-frame h5 {
   padding: 1rem 0 0.5rem 1rem;
 }
-.middle-frame ul {
+.md-frame ul {
   padding: 0 0 1rem 2rem;
 }
-.middle-frame li {
+.md-frame li {
   color: #ffffff;
 }
 
@@ -697,24 +734,12 @@ textarea:focus {
   align-items: left;
 }
 
-.comment-container {
+.comments-container {
   text-align: center;
   margin-inline: 3rem;
 }
-.comment-container h4 {
+.comments-container h4 {
   margin: 2rem 0 1rem 0;
-}
-
-.long-frame {
-  margin: 3rem;
-  border: 1px solid #ffffff;
-  border-radius: 15px;
-}
-
-.small-frame {
-  border: 1px solid #ffffff;
-  border-radius: 5px;
-  margin: 2rem;
 }
 
 .container-details-travel {
@@ -765,30 +790,6 @@ textarea:focus {
   color: #081F34;
 }
 
-.container-seat-credit {
-  display: grid;
-  grid-template-columns: 75% 25%;
-  margin: 1rem 1rem 0 1rem;
-}
-.container-seat-credit .infos-seat-credit {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-.container-seat-credit .icons-details-carpool {
-  fill: #ffffff;
-  border: 1px solid #ffffff;
-  border-radius: 50%;
-  margin-right: 0.5rem;
-  padding: 0.1rem;
-  width: 20px;
-  height: 20px;
-}
-.container-seat-credit p {
-  text-align: right;
-}
-
 .btn-participate {
   display: block;
   margin: auto;
@@ -799,6 +800,12 @@ textarea:focus {
   position: relative;
   height: 50vh;
   width: 50vw;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+.carousel h5,
+.carousel p {
+  color: #081F34;
 }
 .carousel button {
   position: absolute;
@@ -808,7 +815,7 @@ textarea:focus {
   font-size: 2.6 rem;
   z-index: 2;
   cursor: pointer;
-  color: #ffffff;
+  color: #081F34;
   transform: translateY(-50%);
   top: 50%;
 }
@@ -822,4 +829,9 @@ textarea:focus {
   position: absolute;
   height: 100%;
   width: 100%;
+  opacity: 0;
+  transition: 0.4s ease-out;
+}
+.carousel .slide.active {
+  opacity: 1;
 }/*# sourceMappingURL=main.css.map */

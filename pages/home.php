@@ -30,11 +30,11 @@
 
     <!-- MAIN SECTION -->
     <div class="img-main-section">
-        <img class="illust-home" src="/assets/images/accueil/illustration-accueil.svg" alt="">
+        <img class="illust-home" src="/assets/images/home/illustration-accueil.svg" alt="">
     </div>
     <div class="grid-home-prez">
         <div class="container-img-electric">
-            <img class="img-electric" src="/assets/images/accueil/img-accueil-electric-car.jpeg"
+            <img class="img-electric" src="/assets/images/home/img-accueil-electric-car.jpeg"
                 alt="accueil voiture électrique">
         </div>
         <div class="text-environ">
@@ -54,7 +54,7 @@
             <p>Rejoignez la communauté EcoRide dès aujourd’hui et ensemble, roulons pour la planète ! 🚗 🌍</p>
         </div>
         <div class="container-img-friends">
-            <img class="img-friends" src="/assets/images/accueil/img-accueil-friends.jpg" alt="accueil friends">
+            <img class="img-friends" src="/assets/images/home/img-accueil-friends.jpg" alt="accueil friends">
         </div>
     </div>
     <div class="text-ecoweb">

@@ -1,16 +1,72 @@
-#date-details-covoit {
+#title-date {
     text-align: center;
+    margin: 2rem 0;
 }
 
-.container-carpool-details {
-    display: grid;
-    grid-template-columns: 50% 50%;
+.carpool-details-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.middle-frame {
+// Travel container
+
+
+.travel-container {
+    margin: 2rem;
     border: 1px solid $white;
     border-radius: 15px;
+}
+
+.small-frame {
+    border: 1px solid $white;
+    border-radius: 5px;
     margin: 2rem;
+}
+
+
+
+.seat-credit-container {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    margin: 1rem 1rem 0 1rem;
+
+    .seat-credit-items {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .icons-details-carpool {
+        fill: $white;
+        border: 1px solid $white;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+        padding: 0.1rem;
+        width: 20px;
+        height: 20px;
+    }
+
+    p {
+        text-align: right;
+    }
+}
+
+
+
+
+// Driver container
+
+
+
+// Comments-container
+
+
+
+.md-frame {
+    border: 1px solid $white;
+    border-radius: 15px;
 
     h5 {
         padding: 1rem 0 0.5rem 1rem;
@@ -49,7 +105,7 @@
     }
 }
 
-.comment-container {
+.comments-container {
     text-align: center;
     margin-inline: 3rem;
 
@@ -58,17 +114,6 @@
     }
 }
 
-.long-frame {
-    margin: 3rem;
-    border: 1px solid $white;
-    border-radius: 15px;
-}
-
-.small-frame {
-    border: 1px solid $white;
-    border-radius: 5px;
-    margin: 2rem;
-}
 
 .container-details-travel {
     display: flex;
@@ -124,32 +169,6 @@
     }
 }
 
-.container-seat-credit {
-    display: grid;
-    grid-template-columns: 75% 25%;
-    margin: 1rem 1rem 0 1rem;
-
-    .infos-seat-credit {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-bottom: 1rem;
-    }
-
-    .icons-details-carpool {
-        fill: $white;
-        border: 1px solid $white;
-        border-radius: 50%;
-        margin-right: 0.5rem;
-        padding: 0.1rem;
-        width: 20px;
-        height: 20px;
-    }
-
-    p {
-        text-align: right;
-    }
-}
 
 .btn-participate {
     display: block;
@@ -163,6 +182,13 @@
     position: relative;
     height: 50vh;
     width: 50vw;
+    background-color: $white;
+    border-radius: 10px;
+
+    h5,
+    p {
+        color: $black;
+    }
 
     button {
         position: absolute;
@@ -172,7 +198,7 @@
         font-size: 2.6 rem;
         z-index: 2;
         cursor: pointer;
-        color: $white;
+        color: $black;
         transform: translateY(-50%);
         top: 50%;
     }
@@ -185,10 +211,15 @@
         right: 5px
     }
 
-.slide {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
+    .slide {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: 0.4s ease-out;
+    }
 
+    .slide.active {
+        opacity: 1;
+    }
 }
