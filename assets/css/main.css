@@ -44,6 +44,11 @@ h5 {
   color: #ffffff;
   font-size: 1.1rem;
 }
+@media (min-width: 768px) {
+  h5 {
+    font-size: 1.2rem;
+  }
+}
 
 p {
   color: #ffffff;
@@ -316,7 +321,7 @@ footer {
   position: absolute;
   z-index: 1;
   top: 12%;
-  right: 10%;
+  right: 5%;
 }
 
 .return-link-container {
@@ -362,99 +367,102 @@ footer {
   top: 70%;
 }
 
-.img-main-section {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 50px;
+.main-section {
+  margin: 2rem;
 }
-.img-main-section img {
-  width: 40%;
+
+.img-main-section {
+  text-align: center;
+}
+.img-main-section .illust-home {
+  width: 80%;
 }
 
 .home-prez {
   display: grid;
   grid-template-columns: 1fr;
+  align-items: center;
   gap: 1rem;
-  padding: 20px;
-}
-@media (min-width: 768px) {
-  .home-prez {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-.home-prez img {
-  border-radius: 100px;
-  width: 50vw;
+  margin: 1.5rem 0;
 }
 
-.item {
-  padding: 20px;
+.home-item {
   text-align: center;
-  border-radius: 8px;
 }
-@media (min-width: 768px) {
-  .item h5 {
-    font-size: 0.5rem;
-  }
-  .item p {
-    font-size: 0.6rem;
-  }
+.home-item img {
+  border-radius: 100px;
+  width: 80%;
+  margin: 1rem 0;
 }
 
 .text-content {
   text-align: center;
 }
-
-/*
-    .container-img-electric {
-        text-align: center;
-
-        .img-electric {
-            margin-bottom: 10%;
-        }
-    }
-
-    .text-environ {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-inline: 10%;
-
-        h5 {
-            margin-bottom: 20px;
-        }
-    }
-
-    .text-carpool {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-inline: 10%;
-
-        p {
-            margin-top: 20px;
-        }
-    }
-
-    .container-img-friends {
-        text-align: center;
-
-    } */
-.text-ecoweb {
-  padding: 50px 0 70px 0;
+.text-content h5 {
+  margin-bottom: 1rem;
 }
-.text-ecoweb h5 {
-  margin-bottom: 20px;
+.text-content p {
+  font-size: 0.8rem;
 }
 
+@media (min-width: 768px) {
+  .img-main-section {
+    text-align: end;
+  }
+  .img-main-section .illust-home {
+    width: 40%;
+    margin: 2rem 6rem;
+  }
+  .text-content p {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .home-prez {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 0 1.5rem 3rem 1.5rem;
+    grid-template-areas: "text1 img1" "img2 text2";
+  }
+  .home-prez .home-item:nth-child(1) {
+    grid-area: img1;
+  }
+  .home-prez .home-item:nth-child(2) {
+    grid-area: text1;
+  }
+  .home-prez .home-item:nth-child(3) {
+    grid-area: img2;
+  }
+  .home-prez .home-item:nth-child(4) {
+    grid-area: text2;
+  }
+}
+@media (min-width: 1200px) {
+  .home-prez {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin: 0 6rem 4rem 6rem;
+    grid-template-areas: "text1 img1" "img2 text2";
+  }
+  .home-prez .home-item:nth-child(1) {
+    grid-area: img1;
+  }
+  .home-prez .home-item:nth-child(2) {
+    grid-area: text1;
+  }
+  .home-prez .home-item:nth-child(3) {
+    grid-area: img2;
+  }
+  .home-prez .home-item:nth-child(4) {
+    grid-area: text2;
+  }
+}
 .form-home {
   background-color: #ffffff;
   border: 1px solid rgba(8, 31, 52, 0.5);
   border-radius: 10px;
   width: 300px;
-  margin-top: 200px;
+  margin-top: 30px;
 }
 .form-home form {
   text-align: center;
@@ -523,6 +531,11 @@ footer {
 }
 #container-form-home {
   height: 400px;
+}
+@media (min-width: 768px) {
+  #container-form-home {
+    height: 400px;
+  }
 }
 
 textarea {

@@ -5,7 +5,7 @@
     border: 1px solid rgba($color: $black, $alpha: 0.5);
     border-radius: 10px;
     width: 300px;
-    margin-top: 200px;
+    margin-top: 30px;
 
     form {
         text-align: center;
@@ -87,6 +87,10 @@
 
 #container-form-home {
     height: 400px;
+
+    @media (min-width:768px) {
+        height: 400px;
+    }
 }
 
 
