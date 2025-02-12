@@ -461,36 +461,34 @@ footer {
   background-color: #ffffff;
   border: 1px solid rgba(8, 31, 52, 0.5);
   border-radius: 10px;
-  width: 300px;
-  margin-top: 30px;
+  width: 90%;
+  margin: auto;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.form-home form {
-  text-align: center;
-  padding-top: 20px;
-}
-.form-home form .inputForm {
+
+.inputForm {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 15px;
 }
-.form-home form .inputForm label {
+.inputForm label {
   color: #081F34;
-  margin-left: 20px;
+  font-size: 0.9rem;
 }
-.form-home form .inputForm input {
+.inputForm input {
   background-color: #d6d6d6;
   border: 1px solid rgba(8, 31, 52, 0.4);
   border-radius: 5px;
-  width: 200px;
-  height: 40px;
-  text-align: start;
-  font-size: 1rem;
-  padding-left: 10px;
-  margin: 10px 0 0 20px;
+  width: 15rem;
+  height: 2rem;
+  padding-inline: 1rem;
 }
-.form-home form .inputForm input:focus {
-  outline: none;
+
+.inputBtn {
+  display: flex;
+  justify-content: center;
 }
 
 @media (min-width: 768px) {
@@ -536,6 +534,10 @@ footer {
   #container-form-home {
     height: 400px;
   }
+}
+
+#inputDateHome {
+  color: #757575;
 }
 
 textarea {

@@ -19,9 +19,11 @@
             </div>
             <div class="inputForm">
                 <label for="inputDateHome">Date de départ :</label>
-                <input type="date" id="inputDateHome" name="dateDepartHome" placeholder="Date" required>
+                <input type="date" id="inputDateHome" name="dateDepartHome" required>
             </div>
-            <button type="submit" class="btn-blue btn-search">Rechercher</button>
+            <div class="inputBtn">
+                <button type="submit" class="btn-blue btn-search">Rechercher</button>
+            </div>
         </form>
     </div>
 
