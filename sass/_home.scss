@@ -1,5 +1,5 @@
 .main-section {
-    margin: 2rem;
+    margin: 0 2rem 2rem 2rem;
 }
 
 .img-main-section {
@@ -7,6 +7,7 @@
 
     .illust-home {
         width: 80%;
+        margin-top: 1.5rem;
     }
 }
 
@@ -47,7 +48,7 @@
 
         .illust-home {
             width: 40%;
-            margin: 2rem 6rem;
+            margin: 0 2.5rem 4rem 0;
         }
     }
 
@@ -59,6 +60,10 @@
 }
 
 @media (min-width: 768px) and (max-width: 1199px) {
+    .illust-home {
+        margin-right: 5rem;
+    }
+
     .home-prez {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;

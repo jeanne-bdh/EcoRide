@@ -51,7 +51,7 @@ li {
 .btn-blue {
     background-color: $secondary;
     color: $white;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     padding: 8px 20px;
     border-radius: 5px;
     border: 2px solid $secondary;
@@ -60,6 +60,10 @@ li {
     &:hover {
         border-color: $white;
         background-color: $black;
+    }
+
+    @media (min-width : 768px) {
+        font-size: 1.1rem;
     }
 }
 

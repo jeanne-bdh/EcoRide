@@ -4,7 +4,7 @@
     background-color: $white;
     border: 1px solid rgba($color: $black, $alpha: 0.5);
     border-radius: 10px;
-    width: 90%;
+    width: 300px;
     margin: auto;
     margin-top: 1rem;
     display: flex;
@@ -15,6 +15,7 @@
 .inputForm {
     display: flex;
     flex-direction: column;
+    margin: 1rem;
 
     label {
         color: $black;
@@ -36,60 +37,49 @@
     justify-content: center;
 }
 
-
-@media (min-width:768px) {
-    .form-home {
-        background-color: $white;
-        border: 1px solid rgba($color: $black, $alpha: 0.5);
-        border-radius: 10px;
-        width: 300px;
-
-        form {
-            text-align: center;
-            padding-top: 20px;
-
-            .inputForm {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 15px;
-
-
-                label {
-                    color: $black;
-                    margin-left: 20px;
-                }
-
-                input {
-                    background-color: $tertiary;
-                    border: 1px solid rgba($color: $black, $alpha: 0.4);
-                    border-radius: 5px;
-                    width: 325px;
-                    height: 40px;
-                    text-align: start;
-                    font-size: 1rem;
-                    padding-left: 10px;
-                    margin: 10px 0 0 20px;
-
-                    &:focus {
-                        outline: none;
-                    }
-                }
-            }
-        }
-    }
+#inputDateHome {
+    color: $dark;
 }
 
 #container-form-home {
-    height: 400px;
+    height: 300px;
 
-    @media (min-width:768px) {
+    @media (min-width:1200px) {
         height: 400px;
     }
 }
 
-#inputDateHome {
-    color: $dark;
+@media (min-width:768px) {
+    .inputForm {
+        label {
+            font-size: 1rem;
+        }
+
+        input {
+            height: 2.2rem;
+        }
+    }
+}
+
+@media (min-width:1200px) {
+    .form-home {
+        width: 400px;
+    }
+
+    .inputForm {
+        margin: 2rem;
+
+        label {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        input {
+            width: 20rem;
+            height: 2.5rem;
+            font-size: 1rem;
+        }
+    }
 }
 
 //A REVOIR
