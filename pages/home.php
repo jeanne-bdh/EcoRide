@@ -7,7 +7,7 @@
     ?>
 
     <!-- FORMULAIRE -->
-    <div class="form-home" id="container-form-home">
+    <div class="container-form" id="container-form-home">
         <form>
             <div class="inputForm">
                 <label for="inputDepartCity">Départ :</label>

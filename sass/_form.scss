@@ -1,6 +1,6 @@
-// FORM HOME
+// FORM IN COMMON
 
-.form-home {
+.container-form {
     background-color: $white;
     border: 1px solid rgba($color: $black, $alpha: 0.5);
     border-radius: 10px;
@@ -37,18 +37,6 @@
     justify-content: center;
 }
 
-#inputDateHome {
-    color: $dark;
-}
-
-#container-form-home {
-    height: 300px;
-
-    @media (min-width:1200px) {
-        height: 400px;
-    }
-}
-
 @media (min-width:768px) {
     .inputForm {
         label {
@@ -59,10 +47,14 @@
             height: 2.2rem;
         }
     }
+
+    form {
+        margin-bottom: 1rem;
+    }
 }
 
 @media (min-width:1200px) {
-    .form-home {
+    .container-form {
         width: 400px;
     }
 
@@ -82,42 +74,49 @@
     }
 }
 
-//A REVOIR
 
-// FORM CONTACT
+// SPECIFICITIES : FORM HOME
+
+#inputDateHome {
+    color: $dark;
+}
+
+#container-form-home {
+    height: 300px;
+
+    @media (min-width:1200px) {
+        height: 400px;
+    }
+}
+
+
+// SPECIFICITIES : FORM CONTACT
 
 textarea {
     background-color: $tertiary;
     border: 1px solid rgba($color: $black, $alpha: 0.4);
     border-radius: 5px;
-    width: 325px;
-    height: 150px;
-    text-align: start;
+    width: 15rem;
+    height: 10rem;
     padding: 5px 0 0 5px;
-    margin: 10px 0 0 20px;
+}
 
-    &:focus {
-        outline: none;
+#container-form-contact {
+    height: 410px;
+}
+
+@media (min-width:1200px) {
+    #container-form-contact {
+        height: 510px;
+    }
+
+    textarea {
+        width: 20rem;
     }
 }
 
 
-.invalid-feedback {
-    color: red;
-    font-size: 0.8rem;
-    margin-inline: 20px;
-    padding-top: 5px;
-    text-align: left;
-}
-
-.valid-feedback {
-    color: green;
-    font-size: 0.8rem;
-    margin-inline: 20px;
-    padding-top: 5px;
-    text-align: left;
-}
-
+// SPECIFICITIES : FORM LOGIN & FORM REGISTER
 
 .link-account {
     text-align: center;
@@ -129,21 +128,28 @@ textarea {
         font-size: 0.9rem;
     }
 
-    a:hover {
-        color: $primary;
+    a {
+        text-decoration: underline;
+
+        &:hover {
+            color: $primary;
+            text-decoration: underline;
+        }
     }
 }
 
-
-
-#container-form-contact {
-    height: 500px;
-}
-
 #container-form-login {
-    height: 450px;
+    height: 350px;
+
+    @media (min-width:1200px) {
+        height: 450px;
+    }
 }
 
 #container-form-register {
-    height: 700px;
+    height: 500px;
+
+    @media (min-width:1200px) {
+        height: 700px;
+    }
 }

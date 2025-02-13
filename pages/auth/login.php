@@ -43,12 +43,14 @@ if (isset($_POST['loginUser'])) {
                 <label for="inputPwdLogin">Mot de passe :</label>
                 <input type="password" name="password" id="inputPwdLogin" required>
             </div>
-            <button type="submit" class="btn-search" name="loginUser" id="btn-valid-login">Se connecter</button>
+            <div class="inputBtn">
+                <button type="submit" class="btn-blue btn-search" name="loginUser" id="btn-valid-login">Se connecter</button>
+            </div>
+            <div class="link-account">
+                <p>Vous n’avez pas de compte ?</p>
+                <a href="/pages/auth/register.php">Inscrivez-vous ici !</a>
+            </div>
         </form>
-        <div class="link-account">
-            <p>Vous n’avez pas de compte ?</p>
-            <a href="/pages/auth/register.php">Inscrivez-vous ici !</a>
-        </div>
     </div>
     </div>
 
