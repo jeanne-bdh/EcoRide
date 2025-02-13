@@ -6,7 +6,7 @@ function verifyUserLoginPassword(PDO $pdo, string $email, string $password): boo
     $stmt = $pdo->prepare($query);
     $stmt->bindValue(':email', $email, PDO::PARAM_STR);
     $stmt->execute();
-    $user = $query->fetch(PDO::FETCH_ASSOC);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user && password_verify($password, $user['password'])) {
         return $user;

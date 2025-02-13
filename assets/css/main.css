@@ -32,7 +32,12 @@ h2 {
 
 h3 {
   color: #081F34;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+}
+@media (min-width: 768px) {
+  h3 {
+    font-size: 1.5rem;
+  }
 }
 
 h4 {
@@ -611,22 +616,23 @@ textarea {
 .hero-section {
   position: relative;
 }
-.hero-section .wave-top {
+
+.wave-top {
   position: relative;
   z-index: 1;
 }
-.hero-section .menu-session {
+
+.menu-session {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
   position: absolute;
   z-index: 2;
-  top: 80%;
-  width: 100%;
 }
-.hero-section .menu-session .card-session {
-  width: 18rem;
-  height: 10rem;
+
+.card-session {
+  width: 15rem;
+  height: 8rem;
   border-radius: 1rem;
   border: 2px solid rgba(255, 255, 255, 0.7);
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
@@ -635,22 +641,41 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 1rem;
 }
-.hero-section .menu-session .card-session:hover {
+.card-session:hover {
   cursor: pointer;
-  width: 18.7rem;
-  height: 10.4rem;
+  width: 15.7rem;
+  height: 8.4rem;
   background-color: #a3a3a3;
 }
-.hero-section .menu-session .card-session:hover h3 {
-  font-size: 1.6rem;
+.card-session:hover h3 {
+  font-size: 1.3rem;
 }
-.hero-section .menu-session .card-session h3 {
+.card-session h3 {
   position: absolute;
   z-index: 3;
   text-align: center;
 }
 
+@media (min-width: 768px) {
+  .menu-session {
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+  }
+  .card-session {
+    width: 18rem;
+    height: 10rem;
+  }
+  .card-session:hover {
+    width: 18.7rem;
+    height: 10.4rem;
+  }
+  .card-session:hover h3 {
+    font-size: 1.6rem;
+  }
+}
 .hero-section {
   position: relative;
 }

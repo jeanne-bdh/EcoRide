@@ -9,6 +9,7 @@ $errorLogin = [];
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $user = verifyUserLoginPassword($pdo, $_POST['pseudoEmail'], $_POST['password']);
     if ($user) {
+        session_regenerate_id(true);
         $_SESSION['users'] = $user;
         header('location: /pages/users/userSession.php');
     } else {
