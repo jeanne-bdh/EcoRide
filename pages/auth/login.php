@@ -4,16 +4,15 @@ require_once __DIR__ . "/../../templates/header.php";
 require_once __DIR__ . "/../../libs/pdo.php";
 require_once __DIR__ . "/../../libs/user.php";
 
-$errors = [];
+$errorLogin = [];
 
-if (isset($_POST['loginUser'])) {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $user = verifyUserLoginPassword($pdo, $_POST['pseudoEmail'], $_POST['password']);
-
     if ($user) {
         $_SESSION['users'] = $user;
         header('location: /pages/users/userSession.php');
     } else {
-        $errors[] = "Identifiants incorrects";
+        $errorLogin[] = "Identifiants incorrects";
     }
 }
 
@@ -26,7 +25,7 @@ if (isset($_POST['loginUser'])) {
     include_once __DIR__ . "/../../templates/hero-section.php";
     heroSection("Espace de connexion");
 
-    foreach ($errors as $error) { ?>
+    foreach ($errorLogin as $error) { ?>
         <div class="alert">
             <?= $error; ?>
         </div>
@@ -46,6 +45,11 @@ if (isset($_POST['loginUser'])) {
             <div class="inputBtn">
                 <button type="submit" class="btn-blue btn-search" name="loginUser" id="btn-valid-login">Se connecter</button>
             </div>
+            <?php if ($errorLogin): ?>
+                <div class="alert">
+                    <?= $errorLogin ?>
+                </div>
+            <?php endif; ?>
             <div class="link-account">
                 <p>Vous n’avez pas de compte ?</p>
                 <a href="/pages/auth/register.php">Inscrivez-vous ici !</a>
