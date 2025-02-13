@@ -1,4 +1,16 @@
-<?php require_once __DIR__ . "/../templates/header.php"; ?>
+<?php
+
+require_once __DIR__ . "/../templates/header.php";
+require_once __DIR__ . "/../libs/pdo.php";
+require_once __DIR__ . "/../libs/carpool.php";
+
+
+if(isset($_GET["id_covoit"])){
+    $carpoolId = (int)$_GET["id_covoit"];
+    $detailsCarpool = getCarpoolById($carpoolId);
+}
+
+?>
 
 <section class="container-black">
 
@@ -9,7 +21,7 @@
     ?>
     </div>
 
-    <h2 id="title-date">Vendredi 14 février</h2>
+    <h2 id="title-date"><?=$detailsCarpool['date_depart'];?></h2>
 
     <div class="carpool-details-container">
         <div class="travel-container">
