@@ -34,7 +34,19 @@ function getFutureCarpoolByUser(PDO $pdo, int $userId): array
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function getCarpoolBySearch(PDO $pdo, int $carpoolId): array
+function getCarpoolBySearch(PDO $pdo): array
+{
+    $stmt = $pdo->prepare(
+        'SELECT *
+        FROM covoiturage
+        JOIN type_voyage ON type_voyage.id_type_voy = covoiturage.id_type_voy
+        ORDER BY date_depart ASC'
+    );
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function getCarpoolById(PDO $pdo): array
 {
     $stmt = $pdo->prepare(
         'SELECT *
@@ -43,14 +55,6 @@ function getCarpoolBySearch(PDO $pdo, int $carpoolId): array
         WHERE id_covoit = :id_covoit
         ORDER BY date_depart ASC'
     );
-    $stmt->bindValue(':id_covoit', $carpoolId, PDO::PARAM_INT);
     $stmt->execute();
-
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-
-function getCarpoolById(int $carpoolId): array
-{
-    $carpoolsSearch = getCarpoolBySearch();
-    return $carpoolsSearch[$carpoolId];
+    return $stmt->fetch(PDO::FETCH_ASSOC);
 }
