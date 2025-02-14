@@ -28,7 +28,7 @@
         <div class="tag-status" data-status="<?= $carpool['status_covoit']; ?>">
             <p><?= $carpool['status_covoit']; ?></p>
         </div>
-        <div class="tag-voyage">
+        <div class="green-tag">
             <p><?= $carpool['type_voyage']; ?></p>
         </div>
         <div class="details-link">

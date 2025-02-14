@@ -13,7 +13,11 @@ h1 {
 
 h2 {
     color: $white;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
+
+    @media (min-width : 768px) {
+        font-size: 1.8rem;
+    }
 }
 
 h3 {
@@ -78,5 +82,29 @@ li {
         color: $black;
         border-color: rgba($color: $black, $alpha: 0.4);
         background-color: $primary;
+    }
+}
+
+.green-tag {
+    background-color: $primary;
+    border-radius: 2rem;
+    width: 6rem;
+    height: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+
+    p {
+        color: $black;
+    }
+
+    @media (min-width : 1200px) {
+        width: 9rem;
+        height: 2.4rem;
+
+        p{
+            font-size: 1.3rem;
+        }
     }
 }

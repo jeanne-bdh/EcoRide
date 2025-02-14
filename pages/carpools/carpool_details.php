@@ -42,7 +42,7 @@ if(isset($_GET["id_covoit"])){
                         <p>Lille</p>
                     </div>
                 </div>
-                <div class="tag-voyage">
+                <div class="green-tag">
                     <p>Non écolo</p>
                 </div>
             </div>

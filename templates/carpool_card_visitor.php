@@ -36,7 +36,7 @@
                 </svg>
                 <p class="p-rating">??</p>
             </div>
-            <div class="tag-voyage">
+            <div class="green-tag">
                 <p><?= $carpoolSearch['type_voyage']; ?></p>
             </div>
         </div>

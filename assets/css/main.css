@@ -27,7 +27,12 @@ h1 {
 
 h2 {
   color: #ffffff;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
+}
+@media (min-width: 768px) {
+  h2 {
+    font-size: 1.8rem;
+  }
 }
 
 h3 {
@@ -94,6 +99,29 @@ li {
   color: #081F34;
   border-color: rgba(8, 31, 52, 0.4);
   background-color: #0EE6B1;
+}
+
+.green-tag {
+  background-color: #0EE6B1;
+  border-radius: 2rem;
+  width: 6rem;
+  height: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+.green-tag p {
+  color: #081F34;
+}
+@media (min-width: 1200px) {
+  .green-tag {
+    width: 9rem;
+    height: 2.4rem;
+  }
+  .green-tag p {
+    font-size: 1.3rem;
+  }
 }
 
 nav {
@@ -676,6 +704,24 @@ textarea {
     font-size: 1.6rem;
   }
 }
+.text-access-carpool {
+  text-align: center;
+  margin-top: 1rem;
+}
+.text-access-carpool .green-tag {
+  margin: auto;
+}
+
+.text-alter-carpool {
+  text-align: center;
+  margin: 0.5rem;
+}
+@media (min-width: 1200px) {
+  .text-alter-carpool {
+    font-size: 1.3rem;
+  }
+}
+
 .hero-section {
   position: relative;
 }
@@ -755,15 +801,6 @@ textarea {
   align-items: center;
   justify-content: space-between;
   margin: 1rem;
-}
-.hero-section .carpool-card .carpool-card-bottom .tag-voyage {
-  background-color: #0EE6B1;
-  border-radius: 2rem;
-  width: 6rem;
-  height: 1.8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .hero-section .carpool-card .details-link {
   display: flex;
@@ -952,20 +989,6 @@ textarea {
 }
 .container-details-travel .travel-line .line {
   width: 5rem;
-}
-
-.tag-voyage {
-  background-color: #0EE6B1;
-  border-radius: 2rem;
-  width: 6rem;
-  height: 1.8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem;
-}
-.tag-voyage p {
-  color: #081F34;
 }
 
 .btn-participate {

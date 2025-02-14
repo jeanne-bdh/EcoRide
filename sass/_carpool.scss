@@ -1,3 +1,24 @@
+// CARPOOL ACCESS & NO CARPOOL
+
+.text-access-carpool {
+    text-align: center;
+    margin-top: 1rem;
+
+    .green-tag {
+        margin: auto;
+    }
+}
+
+.text-alter-carpool {
+    text-align: center;
+    margin: 0.5rem;
+
+    @media (min-width:1200px) {
+        font-size: 1.3rem;
+    }
+}
+
+
 // CARD SEARCH + EN COMMUN
 
 .hero-section {
@@ -94,16 +115,6 @@
             align-items: center;
             justify-content: space-between;
             margin: 1rem;
-
-            .tag-voyage {
-                background-color: $primary;
-                border-radius: 2rem;
-                width: 6rem;
-                height: 1.8rem;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
         }
 
         .details-link {
