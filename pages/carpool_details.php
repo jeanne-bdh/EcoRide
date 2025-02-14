@@ -7,7 +7,7 @@ require_once __DIR__ . "/../libs/carpool.php";
 
 if(isset($_GET["id_covoit"])){
     $carpoolId = (int)$_GET["id_covoit"];
-    $detailsCarpool = getCarpoolById($carpoolId);
+    $detailsCarpool = getCarpoolById($pdo, $carpoolId);
 }
 
 ?>

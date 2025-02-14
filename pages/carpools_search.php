@@ -13,7 +13,7 @@ require_once __DIR__ . "/../libs/carpool.php";
     include_once __DIR__ . "/../templates/hero_section.php";
     heroSection("Accès aux covoiturages");
 
-    $carpoolsSearch = getCarpoolBySearch();
+    $carpoolsSearch = getCarpoolBySearch($pdo);
 
     foreach ($carpoolsSearch as $key => $carpoolSearch) {
         require __DIR__ . '/../templates/carpool_card_visitor.php';
