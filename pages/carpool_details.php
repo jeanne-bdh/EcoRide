@@ -16,7 +16,7 @@ if(isset($_GET["id_covoit"])){
 
     <!-- HERO SECTION -->
     <?php
-    include_once __DIR__ . "/../templates/hero-section.php";
+    include_once __DIR__ . "/../templates/hero_section.php";
     heroSection("Détails du covoiturage");
     ?>
     </div>

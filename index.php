@@ -4,7 +4,7 @@
 
     <!-- HERO SECTION -->
     <?php
-    include_once __DIR__ . "/templates/hero-section.php";
+    include_once __DIR__ . "/templates/hero_section.php";
     heroSection("La mobilité partagée au <br> service de la planète");
     ?>
 

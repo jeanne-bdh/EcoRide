@@ -8,15 +8,15 @@ require_once __DIR__ . "/../../templates/header.php";
 
     <!-- HERO SECTION -->
     <?php
-    include_once __DIR__ . "/../../templates/hero-section.php";
+    include_once __DIR__ . "/../../templates/hero_section.php";
     heroSection("Historique des covoiturages");
     ?>
 
     <div class="menu-session">
-        <a href="/pages/users/pastCarpool.php" class="card-session">
+        <a href="/pages/users/2.2.1_past_carpool.php" class="card-session">
             <h3>Covoiturages passés</h3>
         </a>
-        <a href="/pages/users/futureCarpool.php" class="card-session">
+        <a href="/pages/users/2.2.2_future_carpool.php" class="card-session">
             <h3>Covoiturages à venir</h3>
         </a>
     </div>

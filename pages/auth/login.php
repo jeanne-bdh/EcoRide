@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($user) {
         session_regenerate_id(true);
         $_SESSION['users'] = $user;
-        header('location: /pages/users/userSession.php');
+        header('location: /pages/users/1.user_session.php');
     } else {
         $errorLogin[] = "Identifiants incorrects";
     }
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <!-- HERO SECTION -->
     <?php
-    include_once __DIR__ . "/../../templates/hero-section.php";
+    include_once __DIR__ . "/../../templates/hero_section.php";
     heroSection("Espace de connexion");
 
     foreach ($errorLogin as $error) { ?>
@@ -46,11 +46,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <div class="inputBtn">
                 <button type="submit" class="btn-blue btn-search" name="loginUser" id="btn-valid-login">Se connecter</button>
             </div>
-            <?php if ($errorLogin): ?>
+            <?php if ($errorLogin) { ?>
                 <div class="alert">
                     <?= $errorLogin ?>
                 </div>
-            <?php endif; ?>
+            <?php } ?>
             <div class="link-account">
                 <p>Vous n’avez pas de compte ?</p>
                 <a href="/pages/auth/register.php">Inscrivez-vous ici !</a>

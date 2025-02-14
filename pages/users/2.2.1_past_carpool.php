@@ -10,7 +10,7 @@ require_once __DIR__ . "/../../libs/carpool.php";
 
     <!-- HERO SECTION -->
     <?php
-    include_once __DIR__ . "/../../templates/hero-section.php";
+    include_once __DIR__ . "/../../templates/hero_section.php";
     heroSection("Covoiturages passés");
 
     if (isset($_SESSION['users'])) {

@@ -75,10 +75,10 @@
             <div class="container-legal-infos-inner">
                 <h4>Informations légales</h4>
                 <div class="legal-link">
-                    <a href="/legalInfos">Mentions légales</a>
-                    <a href="/privacyPolicy">Politique de confidentialité</a>
-                    <a href="/cookieManagement">Gestion des cookies</a>
-                    <a href="/cgu">CGU</a>
+                    <a href="/pages/mentions-legales/legal_infos.php">Mentions légales</a>
+                    <a href="/pages/mentions-legales/privacy_policy.php">Politique de confidentialité</a>
+                    <a href="/pages/mentions-legales/cookie-management.php">Gestion des cookies</a>
+                    <a href="/pages/mentions-legales/cgu.php">CGU</a>
                 </div>
             </div>
         </section>
