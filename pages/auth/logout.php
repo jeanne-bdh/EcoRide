@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../lib/session.php';
+require_once __DIR__ . '/../../libs/session.php';
 
 // Prévient les attaques de fixation de session
 session_regenerate_id(true);

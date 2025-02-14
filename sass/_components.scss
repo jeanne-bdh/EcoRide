@@ -1,6 +1,14 @@
 h1 {
     color: $black;
-    font-size: 2rem;
+    font-size: 1rem;
+
+    @media (min-width : 768px) {
+        font-size: 2rem;
+    }
+
+    @media (min-width : 1200px) {
+        font-size: 2.5rem;
+    }
 }
 
 h2 {
@@ -10,7 +18,11 @@ h2 {
 
 h3 {
     color: $black;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+
+    @media (min-width : 768px) {
+        font-size: 1.5rem;
+    }
 }
 
 h4 {
@@ -21,6 +33,10 @@ h4 {
 h5 {
     color: $white;
     font-size: 1.1rem;
+
+    @media (min-width : 768px) {
+        font-size: 1.2rem;
+    }
 }
 
 p {
@@ -29,31 +45,38 @@ p {
 
 a {
     color: $white;
+    text-decoration: none;
 }
 
 li {
     list-style: none;
 }
 
-.btn-search {
+.btn-blue {
     background-color: $secondary;
     color: $white;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     padding: 8px 20px;
-    margin-top: 5px;
     border-radius: 5px;
-    border: 1px solid $secondary;
+    border: 2px solid $secondary;
     cursor: pointer;
+
+    &:hover {
+        border-color: $white;
+        background-color: $black;
+    }
+
+    @media (min-width : 768px) {
+        font-size: 1.1rem;
+    }
+}
+
+.btn-search {
+    border: 1px solid $secondary;
 
     &:hover {
         color: $black;
         border-color: rgba($color: $black, $alpha: 0.4);
         background-color: $primary;
     }
-}
-
-.alert {
-    background-color: red;
-    color: $black;
-
 }

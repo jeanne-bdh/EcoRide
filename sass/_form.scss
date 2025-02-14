@@ -1,77 +1,122 @@
+// FORM IN COMMON
+
 .container-form {
     background-color: $white;
     border: 1px solid rgba($color: $black, $alpha: 0.5);
     border-radius: 10px;
-    width: 400px;
+    width: 300px;
+    margin: auto;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputForm {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+
+    label {
+        color: $black;
+        font-size: 0.9rem;
+    }
+
+    input {
+        background-color: $tertiary;
+        border: 1px solid rgba($color: $black, $alpha: 0.4);
+        border-radius: 5px;
+        width: 15rem;
+        height: 2rem;
+        padding-inline: 1rem;
+    }
+}
+
+.inputBtn {
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width:768px) {
+    .inputForm {
+        label {
+            font-size: 1rem;
+        }
+
+        input {
+            height: 2.2rem;
+        }
+    }
 
     form {
-        text-align: center;
-        padding-top: 20px;
+        margin-bottom: 1rem;
+    }
+}
 
-        .inputForm {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 15px;
+@media (min-width:1200px) {
+    .container-form {
+        width: 400px;
+    }
 
+    .inputForm {
+        margin: 2rem;
 
-            label {
-                color: $black;
-                margin-left: 20px;
-            }
+        label {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
 
-            input {
-                background-color: $tertiary;
-                border: 1px solid rgba($color: $black, $alpha: 0.4);
-                border-radius: 5px;
-                width: 325px;
-                height: 40px;
-                text-align: start;
-                font-size: 1rem;
-                padding-left: 10px;
-                margin: 10px 0 0 20px;
-
-                &:focus {
-                    outline: none;
-                }
-            }
+        input {
+            width: 20rem;
+            height: 2.5rem;
+            font-size: 1rem;
         }
     }
 }
 
 
-textarea {
-    background-color: $tertiary;
-    border: 1px solid rgba($color: $black, $alpha: 0.4);
-    border-radius: 5px;
-    width: 325px;
-    height: 150px;
-    text-align: start;
-    padding: 5px 0 0 5px;
-    margin: 10px 0 0 20px;
+// SPECIFICITIES : FORM HOME
 
-    &:focus {
-        outline: none;
+#inputDateHome {
+    color: $dark;
+}
+
+#container-form-home {
+    height: 300px;
+
+    @media (min-width:1200px) {
+        height: 400px;
     }
 }
 
 
-.invalid-feedback {
-    color: red;
-    font-size: 0.8rem;
-    margin-inline: 20px;
-    padding-top: 5px;
-    text-align: left;
+// SPECIFICITIES : FORM CONTACT
+
+textarea {
+    background-color: $tertiary;
+    border: 1px solid rgba($color: $black, $alpha: 0.4);
+    border-radius: 5px;
+    width: 15rem;
+    height: 10rem;
+    padding: 5px 0 0 5px;
 }
 
-.valid-feedback {
-    color: green;
-    font-size: 0.8rem;
-    margin-inline: 20px;
-    padding-top: 5px;
-    text-align: left;
+#container-form-contact {
+    height: 410px;
 }
 
+@media (min-width:1200px) {
+    #container-form-contact {
+        height: 510px;
+    }
+
+    textarea {
+        width: 20rem;
+    }
+}
+
+
+// SPECIFICITIES : FORM LOGIN & FORM REGISTER
 
 .link-account {
     text-align: center;
@@ -83,24 +128,28 @@ textarea {
         font-size: 0.9rem;
     }
 
-    a:hover {
-        color: $primary;
+    a {
+        text-decoration: underline;
+
+        &:hover {
+            color: $primary;
+            text-decoration: underline;
+        }
     }
 }
 
-
-#container-form-home {
-    height: 400px;
-}
-
-#container-form-contact {
-    height: 500px;
-}
-
 #container-form-login {
-    height: 450px;
+    height: 350px;
+
+    @media (min-width:1200px) {
+        height: 450px;
+    }
 }
 
 #container-form-register {
-    height: 700px;
+    height: 500px;
+
+    @media (min-width:1200px) {
+        height: 700px;
+    }
 }
