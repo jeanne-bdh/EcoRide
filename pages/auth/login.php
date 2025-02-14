@@ -4,16 +4,16 @@ require_once __DIR__ . "/../../templates/header.php";
 require_once __DIR__ . "/../../libs/pdo.php";
 require_once __DIR__ . "/../../libs/user.php";
 
-$errorLogin = [];
+$errorsLogin = [];
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $user = verifyUserLoginPassword($pdo, $_POST['pseudoEmail'], $_POST['password']);
     if ($user) {
         session_regenerate_id(true);
         $_SESSION['users'] = $user;
-        header('location: /pages/users/1.user_session.php');
+        header('location: /pages/users/1_user_session.php');
     } else {
-        $errorLogin[] = "Identifiants incorrects";
+        $errorsLogin[] = "Identifiants incorrects";
     }
 }
 
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     include_once __DIR__ . "/../../templates/hero_section.php";
     heroSection("Espace de connexion");
 
-    foreach ($errorLogin as $error) { ?>
+    foreach ($errorsLogin as $error) { ?>
         <div class="alert">
             <?= $error; ?>
         </div>
@@ -46,9 +46,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <div class="inputBtn">
                 <button type="submit" class="btn-blue btn-search" name="loginUser" id="btn-valid-login">Se connecter</button>
             </div>
-            <?php if ($errorLogin) { ?>
+            <?php if ($errorsLogin) { ?>
                 <div class="alert">
-                    <?= $errorLogin ?>
+                    <?= $errorsLogin ?>
                 </div>
             <?php } ?>
             <div class="link-account">

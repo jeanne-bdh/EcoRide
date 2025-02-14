@@ -13,7 +13,7 @@ require_once __DIR__ . "/../../libs/carpool.php";
     include_once __DIR__ . "/../../templates/hero_section.php";
     heroSection("Covoiturages à venir");
 
-    if (isset($_SESSION['users'])) {
+    if (isUserConnected()) {
         $carpools = getFutureCarpoolByUser($pdo, $_SESSION['users']['id_users']);
 
         if ($carpools) {
