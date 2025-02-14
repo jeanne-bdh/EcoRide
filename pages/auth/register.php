@@ -9,7 +9,7 @@ $errorsRegister = [];
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $verif = verifyUser($_POST);
     if ($verif === true) {
-        $resultAdd = addUser($pdo, $_POST["username"], $_POST["email"], $_POST["password"]);
+        $resultAdd = addUser($pdo, $_POST["pseudo"], $_POST["email"], $_POST["password"]);
         header("Location: login.php");
     } else {
         $errorsRegister = $verif;

@@ -27,7 +27,7 @@ function verifyUniqueEmailRegister(PDO $pdo, string $email)
     }
 }
 
-function addUser(PDO $pdo, string $pseudo, string $email, string $password): bool|array
+function addUser(PDO $pdo, string $pseudo, string $email, string $password): bool
 {
     $insertQuery = "INSERT INTO users (pseudo, email, password) VALUES (:pseudo, :email, :password)";
 
@@ -38,7 +38,7 @@ function addUser(PDO $pdo, string $pseudo, string $email, string $password): boo
     $stmt->bindValue(':email', $email);
     $stmt->bindValue(':password', $hashedPassword);
 
-    $stmt->execute();
+    return $stmt->execute();
 }
 
 function verifyUser($user): bool|array
