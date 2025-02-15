@@ -11,7 +11,7 @@
 
 .text-alter-carpool {
     text-align: center;
-    margin: 0.5rem;
+    margin: 1rem 0;
 
     @media (min-width:1200px) {
         font-size: 1.3rem;
@@ -23,115 +23,115 @@
 
 .hero-section {
     position: relative;
+}
 
-    .wave-top {
-        position: relative;
-        z-index: 1;
+.wave-top {
+    position: relative;
+    z-index: 1;
+}
+
+.carpool-card {
+    border-radius: 1rem;
+    background-color: $white;
+    width: 60%;
+    height: 15rem;
+    top: 70%;
+    left: 20%;
+    margin-inline: auto;
+    margin-bottom: 3rem;
+
+    p {
+        color: $black;
+    }
+}
+
+.carpool-card-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 1rem 0 1rem;
+}
+
+.tag-date {
+    background-color: $secondary;
+    border-radius: 2rem;
+    width: 8rem;
+    height: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        color: $white;
+    }
+}
+
+.p-credit {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.p-place {
+    font-size: 1.1rem;
+    text-align: end;
+}
+
+.travel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 0;
+
+
+    .div-depart {
+        margin-right: 2rem;
     }
 
-    .carpool-card {
-        border-radius: 1rem;
-        background-color: $white;
-        width: 60%;
-        height: 15rem;
-        top: 70%;
-        left: 20%;
-        margin-inline: auto;
-        margin-bottom: 3rem;
+    .div-arrivee {
+        margin-left: 2rem;
+    }
 
-        p {
-            color: $black;
-        }
+    .travel-circle {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background-color: $black;
+    }
 
-        .carpool-card-top {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            padding: 1rem 1rem 0 1rem;
+    .travel-line {
+        width: 10rem;
+    }
 
-            .tag-date {
-                background-color: $secondary;
-                border-radius: 2rem;
-                width: 8rem;
-                height: 1.8rem;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+    .duree {
+        margin-inline: 1rem;
+    }
+}
 
-                p {
-                    color: $white;
-                }
-            }
+hr {
+    width: 100%;
+}
 
-            .p-credit {
-                font-size: 1.3rem;
-                margin-bottom: 0.5rem;
-            }
+.carpool-card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem;
+}
 
-            .p-place {
-                font-size: 1.1rem;
-                text-align: end;
-            }
-        }
+.details-link {
+    display: flex;
+    flex-direction: row;
 
-        .travel {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            margin: 1.5rem 0;
+    p {
+        color: $secondary;
+        font-size: 1.2rem;
+        margin-left: 0.5rem;
+    }
 
-
-            .div-depart {
-                margin-right: 2rem;
-            }
-
-            .div-arrivee {
-                margin-left: 2rem;
-            }
-
-            .travel-circle {
-                width: 0.5rem;
-                height: 0.5rem;
-                border-radius: 50%;
-                background-color: $black;
-            }
-
-            .travel-line {
-                width: 10rem;
-            }
-
-            .duree {
-                margin-inline: 1rem;
-            }
-        }
-
-        hr {
-            width: 100%;
-        }
-
-        .carpool-card-bottom {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 1rem;
-        }
-
-        .details-link {
-            display: flex;
-            flex-direction: row;
-
-            p {
-                color: $secondary;
-                font-size: 1.2rem;
-                margin-left: 0.5rem;
-            }
-
-            a :hover {
-                text-decoration: underline;
-                color: $secondary;
-            }
-        }
+    a :hover {
+        text-decoration: underline;
+        color: $secondary;
     }
 }
 

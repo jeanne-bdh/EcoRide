@@ -114,15 +114,6 @@ li {
 .green-tag p {
   color: #081F34;
 }
-@media (min-width: 1200px) {
-  .green-tag {
-    width: 9rem;
-    height: 2.4rem;
-  }
-  .green-tag p {
-    font-size: 1.3rem;
-  }
-}
 
 nav {
   background-color: #081F34;
@@ -714,7 +705,7 @@ textarea {
 
 .text-alter-carpool {
   text-align: center;
-  margin: 0.5rem;
+  margin: 1rem 0;
 }
 @media (min-width: 1200px) {
   .text-alter-carpool {
@@ -725,11 +716,13 @@ textarea {
 .hero-section {
   position: relative;
 }
-.hero-section .wave-top {
+
+.wave-top {
   position: relative;
   z-index: 1;
 }
-.hero-section .carpool-card {
+
+.carpool-card {
   border-radius: 1rem;
   background-color: #ffffff;
   width: 60%;
@@ -739,16 +732,18 @@ textarea {
   margin-inline: auto;
   margin-bottom: 3rem;
 }
-.hero-section .carpool-card p {
+.carpool-card p {
   color: #081F34;
 }
-.hero-section .carpool-card .carpool-card-top {
+
+.carpool-card-top {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 1rem 1rem 0 1rem;
 }
-.hero-section .carpool-card .carpool-card-top .tag-date {
+
+.tag-date {
   background-color: #528DB9;
   border-radius: 2rem;
   width: 8rem;
@@ -757,61 +752,67 @@ textarea {
   justify-content: center;
   align-items: center;
 }
-.hero-section .carpool-card .carpool-card-top .tag-date p {
+.tag-date p {
   color: #ffffff;
 }
-.hero-section .carpool-card .carpool-card-top .p-credit {
+
+.p-credit {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
 }
-.hero-section .carpool-card .carpool-card-top .p-place {
+
+.p-place {
   font-size: 1.1rem;
   text-align: end;
 }
-.hero-section .carpool-card .travel {
+
+.travel {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   margin: 1.5rem 0;
 }
-.hero-section .carpool-card .travel .div-depart {
+.travel .div-depart {
   margin-right: 2rem;
 }
-.hero-section .carpool-card .travel .div-arrivee {
+.travel .div-arrivee {
   margin-left: 2rem;
 }
-.hero-section .carpool-card .travel .travel-circle {
+.travel .travel-circle {
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
   background-color: #081F34;
 }
-.hero-section .carpool-card .travel .travel-line {
+.travel .travel-line {
   width: 10rem;
 }
-.hero-section .carpool-card .travel .duree {
+.travel .duree {
   margin-inline: 1rem;
 }
-.hero-section .carpool-card hr {
+
+hr {
   width: 100%;
 }
-.hero-section .carpool-card .carpool-card-bottom {
+
+.carpool-card-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 1rem;
 }
-.hero-section .carpool-card .details-link {
+
+.details-link {
   display: flex;
   flex-direction: row;
 }
-.hero-section .carpool-card .details-link p {
+.details-link p {
   color: #528DB9;
   font-size: 1.2rem;
   margin-left: 0.5rem;
 }
-.hero-section .carpool-card .details-link a :hover {
+.details-link a :hover {
   text-decoration: underline;
   color: #528DB9;
 }
