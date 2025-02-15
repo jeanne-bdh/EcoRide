@@ -92,6 +92,9 @@
     </footer>
 
     <script type="module" src="Router/Router.js"></script>
+    <script src="/js/return.js"></script>
+    <script src="/js/carousel.js"></script>
+    <script src="/js/login.js"></script>
 </body>
 
 </html>

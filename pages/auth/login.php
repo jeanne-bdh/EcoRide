@@ -37,19 +37,27 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <div class="inputForm">
                 <label for="inputPseudoEmailLogin">Pseudo ou Email :</label>
                 <input type="text" name="pseudoEmail" id="inputPseudoEmailLogin" required>
+                <div class="valid-feedback">
+                </div>
+                <div class="invalid-feedback">
+                    Veuillez entrer votre pseudo ou une adresse e-mail valide
+                </div>
             </div>
             <div class="inputForm">
                 <label for="inputPwdLogin">Mot de passe :</label>
                 <input type="password" name="password" id="inputPwdLogin" required>
+                <div class="valid-feedback">
+                    Le mot de passe est valide.
+                </div>
+                <div class="invalid-feedback">
+                    Le mot de passe doit contenir au moins 8 caractères comprenant une lettre majuscule, une
+                    minuscule, un chiffre et un caractère
+                    spécial.
+                </div>
             </div>
             <div class="inputBtn">
                 <button type="submit" class="btn-blue btn-search" name="loginUser" id="btn-valid-login">Se connecter</button>
             </div>
-            <?php if ($errorsLogin) { ?>
-                <div class="alert">
-                    <?= $errorsLogin ?>
-                </div>
-            <?php } ?>
             <div class="link-account">
                 <p>Vous n’avez pas de compte ?</p>
                 <a href="/pages/auth/register.php">Inscrivez-vous ici !</a>

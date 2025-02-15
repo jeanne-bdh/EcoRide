@@ -518,9 +518,25 @@ footer {
   padding-inline: 1rem;
 }
 
+.invalid-feedback {
+  color: red;
+  font-size: 0.7rem;
+}
+
+.valid-feedback {
+  color: green;
+  font-size: 0.7rem;
+}
+
 .inputBtn {
   display: flex;
   justify-content: center;
+}
+
+.alert {
+  background-color: rgb(244, 153, 153);
+  color: red;
+  border: #757575;
 }
 
 @media (min-width: 768px) {
@@ -532,6 +548,9 @@ footer {
   }
   form {
     margin-bottom: 1rem;
+  }
+  .valid-feedback, .invalid-feedback {
+    font-size: 0.8rem;
   }
 }
 @media (min-width: 1200px) {
@@ -549,6 +568,9 @@ footer {
     width: 20rem;
     height: 2.5rem;
     font-size: 1rem;
+  }
+  .valid-feedback, .invalid-feedback {
+    font-size: 0.9rem;
   }
 }
 #inputDateHome {
@@ -1000,7 +1022,7 @@ hr {
 
 .carousel {
   position: relative;
-  height: 50vh;
+  height: 25vh;
   width: 50vw;
   background-color: #ffffff;
   border-radius: 10px;
@@ -1011,29 +1033,38 @@ hr {
 }
 .carousel button {
   position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
   background-color: none;
   border: none;
-  outline: none;
-  font-size: 2.6 rem;
-  z-index: 2;
   cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+}
+.carousel button svg {
+  background-color: #ffffff;
   color: #081F34;
-  transform: translateY(-50%);
-  top: 50%;
+  width: 2rem;
+  height: 2rem;
 }
-.carousel #prev {
-  left: 5px;
+
+#prev {
+  left: 0.5rem;
 }
-.carousel #next {
-  right: 5px;
+
+#next {
+  right: 0.5rem;
 }
-.carousel .slide {
+
+.slide {
   position: absolute;
   height: 100%;
   width: 100%;
   opacity: 0;
   transition: 0.4s ease-out;
 }
-.carousel .slide.active {
+
+.slide.active {
   opacity: 1;
 }/*# sourceMappingURL=main.css.map */

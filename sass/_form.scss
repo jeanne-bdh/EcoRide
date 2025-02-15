@@ -32,9 +32,25 @@
     }
 }
 
+.invalid-feedback {
+    color: red;
+    font-size: 0.7rem;
+}
+
+.valid-feedback {
+    color: green;
+    font-size: 0.7rem;
+}
+
 .inputBtn {
     display: flex;
     justify-content: center;
+}
+
+.alert {
+    background-color: rgb(244, 153, 153);
+    color: red;
+    border: $dark;
 }
 
 @media (min-width:768px) {
@@ -50,6 +66,10 @@
 
     form {
         margin-bottom: 1rem;
+    }
+
+    .valid-feedback, .invalid-feedback {
+        font-size: 0.8rem;
     }
 }
 
@@ -71,6 +91,10 @@
             height: 2.5rem;
             font-size: 1rem;
         }
+    }
+
+    .valid-feedback,.invalid-feedback {
+        font-size: 0.9rem;
     }
 }
 
