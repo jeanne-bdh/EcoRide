@@ -549,7 +549,8 @@ footer {
   form {
     margin-bottom: 1rem;
   }
-  .valid-feedback, .invalid-feedback {
+  .valid-feedback,
+  .invalid-feedback {
     font-size: 0.8rem;
   }
 }
@@ -569,7 +570,8 @@ footer {
     height: 2.5rem;
     font-size: 1rem;
   }
-  .valid-feedback, .invalid-feedback {
+  .valid-feedback,
+  .invalid-feedback {
     font-size: 0.9rem;
   }
 }
