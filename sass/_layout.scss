@@ -1,6 +1,6 @@
 .container-black {
     background-color: $black;
-    min-height: 700px;
+    min-height: calc(100vh -100px - 655px);
     padding-bottom: 2rem;
 }
 

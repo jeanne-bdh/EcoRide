@@ -4,6 +4,7 @@
 
 .wave-top {
     position: relative;
+    z-index: 1;
 
     h1 {
         position: absolute;
@@ -62,7 +63,7 @@
     .container-form {
         position: absolute;
         z-index: 3;
-        top: 50%;
-        left: 8%;
+        top: 10%;
+        left: 50%;
     }
 }
