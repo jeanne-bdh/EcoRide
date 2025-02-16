@@ -1,8 +1,3 @@
-let form = document.querySelector("form");
-form.addEventListener("submit", (event) => {
-    event.preventDefault()
-
-
     const inputPseudoEmailLog = document.getElementById("inputPseudoEmailLogin");
     const inputPwdLog = document.getElementById("inputPwdLogin");
     const btnValidLog = document.getElementById("btn-valid-login");
@@ -12,7 +7,7 @@ form.addEventListener("submit", (event) => {
     
     // Fonction valide le formulaire
     function validateFormLog() {
-        const idLogOk = validateIdLog(inputIdLog);
+        const idLogOk = validateIdLog(inputPseudoEmailLog);
         const pwdLogOk = validatePwdLog(inputPwdLog);
     
         // Pour que le bouton soit cliquable
@@ -34,8 +29,8 @@ form.addEventListener("submit", (event) => {
             return true;
         }
         else {
-            input.classList.remove("is-valid");
-            input.classList.add("is-invalid");
+            input.classList.remove("valid-feedback");
+            input.classList.add("invalid-feedback");
             return false;
         }
     }
@@ -45,15 +40,13 @@ form.addEventListener("submit", (event) => {
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$/;
         const passwordUser = input.value;
         if (passwordUser.match(passwordRegex)) {
-            input.classList.add("is-valid");
-            input.classList.remove("is-invalid");
+            input.classList.add("valid-feedback");
+            input.classList.remove("invalid-feedback");
             return true;
         }
         else {
-            input.classList.remove("is-valid");
-            input.classList.add("is-invalid");
+            input.classList.remove("valid-feedback");
+            input.classList.add("invalid-feedback");
             return false;
         }
     }
-
-});

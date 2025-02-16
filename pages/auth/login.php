@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <!-- FORMULAIRE -->
     <div class="container-form" id="container-form-login">
-        <form action="" method="POST">
+        <form class="form-login" action="" method="POST">
             <div class="inputForm">
                 <label for="inputPseudoEmailLogin">Pseudo ou Email :</label>
                 <input type="text" name="pseudoEmail" id="inputPseudoEmailLogin" required>
