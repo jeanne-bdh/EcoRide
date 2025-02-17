@@ -1,0 +1,14 @@
+.main-legal-infos {
+    margin: 1rem 2rem 0 2rem;
+
+    h5 {
+        margin: 2rem 0 1rem 0;
+    }
+}
+
+@media (min-width : 768px) {
+
+    .main-legal-infos {
+        margin: 1rem 5rem 0 5rem;
+    }
+}

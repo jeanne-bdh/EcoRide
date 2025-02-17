@@ -110,8 +110,16 @@
 #container-form-home {
     height: 300px;
 
+    @media (min-width : 768px) {
+        position: absolute;
+        z-index: 2;
+        top: 10%;
+        left: 10%;
+    }
+
     @media (min-width:1200px) {
         height: 400px;
+        left: 15%;
     }
 }
 
@@ -129,18 +137,23 @@ textarea {
 
 #container-form-contact {
     height: 410px;
-}
 
-@media (min-width:1200px) {
-    #container-form-contact {
+    @media (min-width : 768px) {
+        position: absolute;
+        z-index: 2;
+        top: 12%;
+        left: 20%;
+    }
+
+    @media (min-width:1200px) {
         height: 510px;
-    }
+        top: 15%;
 
-    textarea {
-        width: 20rem;
+        textarea {
+            width: 20rem;
+        }
     }
 }
-
 
 // SPECIFICITIES : FORM LOGIN & FORM REGISTER
 
@@ -167,16 +180,32 @@ textarea {
 #container-form-login {
     height: 350px;
 
+    @media (min-width:768px) {
+        position: absolute;
+        z-index: 2;
+        top: 12%;
+        left: 20%;
+    }
+
     @media (min-width:1200px) {
         height: 450px;
+        top : 15%
     }
 }
 
 #container-form-register {
     height: 500px;
 
+    @media (min-width:768px) {
+        position: absolute;
+        z-index: 2;
+        top: 12%;
+        left: 20%;
+    }
+
     @media (min-width:1200px) {
-        height: 700px;
+        height: 650px;
+        top : 15%
     }
 }
 

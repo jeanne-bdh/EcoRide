@@ -383,14 +383,6 @@ footer {
   }
 }
 
-@media (min-width: 768px) {
-  .container-form {
-    position: absolute;
-    z-index: 2;
-    top: 10%;
-    left: 10%;
-  }
-}
 .main-section {
   margin: 0 2rem 2rem 2rem;
 }
@@ -579,9 +571,18 @@ footer {
 #container-form-home {
   height: 300px;
 }
+@media (min-width: 768px) {
+  #container-form-home {
+    position: absolute;
+    z-index: 2;
+    top: 10%;
+    left: 10%;
+  }
+}
 @media (min-width: 1200px) {
   #container-form-home {
     height: 400px;
+    left: 15%;
   }
 }
 
@@ -597,15 +598,24 @@ textarea {
 #container-form-contact {
   height: 410px;
 }
-
+@media (min-width: 768px) {
+  #container-form-contact {
+    position: absolute;
+    z-index: 2;
+    top: 12%;
+    left: 20%;
+  }
+}
 @media (min-width: 1200px) {
   #container-form-contact {
     height: 510px;
+    top: 15%;
   }
-  textarea {
+  #container-form-contact textarea {
     width: 20rem;
   }
 }
+
 .link-account {
   text-align: center;
   margin-top: 20px;
@@ -626,18 +636,36 @@ textarea {
 #container-form-login {
   height: 350px;
 }
+@media (min-width: 768px) {
+  #container-form-login {
+    position: absolute;
+    z-index: 2;
+    top: 12%;
+    left: 20%;
+  }
+}
 @media (min-width: 1200px) {
   #container-form-login {
     height: 450px;
+    top: 15%;
   }
 }
 
 #container-form-register {
   height: 500px;
 }
+@media (min-width: 768px) {
+  #container-form-register {
+    position: absolute;
+    z-index: 2;
+    top: 12%;
+    left: 20%;
+  }
+}
 @media (min-width: 1200px) {
   #container-form-register {
-    height: 700px;
+    height: 650px;
+    top: 15%;
   }
 }
 
@@ -1061,4 +1089,17 @@ hr {
 
 .slide.active {
   opacity: 1;
+}
+
+.main-legal-infos {
+  margin: 1rem 2rem 0 2rem;
+}
+.main-legal-infos h5 {
+  margin: 2rem 0 1rem 0;
+}
+
+@media (min-width: 768px) {
+  .main-legal-infos {
+    margin: 1rem 5rem 0 5rem;
+  }
 }/*# sourceMappingURL=main.css.map */
