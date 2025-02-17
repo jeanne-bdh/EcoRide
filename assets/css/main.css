@@ -1088,4 +1088,18 @@ hr {
   .main-legal-infos {
     margin: 1rem 5rem 0 5rem;
   }
+}
+.main-404 {
+  padding: 2rem;
+}
+.main-404 a {
+  display: block;
+  text-decoration: underline;
+  padding-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .main-404 {
+    padding: 2rem 0 0 10rem;
+  }
 }/*# sourceMappingURL=main.css.map */
