@@ -1,8 +1,13 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const burgerButton = document.querySelector(".menu-burger");
-    const navList = document.querySelector(".nav-list");
+const menuBurger = document.querySelector(".menu-burger");
+const navList = document.querySelector(".nav-list");
 
-    burgerButton.addEventListener("click", () => {
-        navList.classList.toggle("active");
+menuBurger.addEventListener("click", () => {
+    navList.classList.toggle("active");
+});
+
+const links = document.querySelectorAll("a");
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        navList.classList.remove("active");
     });
 });

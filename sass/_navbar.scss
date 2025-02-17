@@ -4,9 +4,75 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 2rem 0.5rem 0.1rem;
+}
 
-    @media (min-width: 992px) {
+.menu-burger {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    svg {
+        width: 30px;
+        height: 30px;
+        color: white;
+    }
+}
+
+ul.nav-list {
+    display: none;
+    flex-direction: column;
+    align-items: end;
+    background-color: $black;
+    position: absolute;
+    top: 106px;
+    right: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 3;
+
+    &.active {
+        display: flex;
+    }
+
+    li {
+        margin: 0.6rem 0;
+        list-style: none;
+
+        a {
+            text-decoration: none;
+            font-size: 1.2rem;
+
+            &:hover {
+                color: $primary;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    nav {
         padding: 1rem 0 1rem 1rem;
+    }
+
+    ul.nav-list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0;
+        position: initial;
+        width: initial;
+
+        li {
+            margin: 0 1.8rem;
+        }
+    }
+
+    .menu-burger {
+        display: none;
+        background: none;
+        border: none;
     }
 }
 
@@ -31,68 +97,6 @@ nav {
         &:hover {
             color: $primary;
             font-size: 2.1rem;
-        }
-    }
-}
-
-// MENU DE NAVIGATION
-
-ul.nav-list {
-    display: flex;
-    align-items: center;
-
-    li {
-        margin: 0 30px;
-        list-style: none;
-
-        a {
-            text-decoration: none;
-            font-size: 1.2rem;
-
-            &:hover {
-                color: $primary;
-                text-decoration: underline;
-            }
-        }
-    }
-}
-
-.menu-burger {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-
-
-// Menu burger en mobile à partir de 992 px
-
-@media (max-width: 992px) {
-    .menu-burger {
-        display: block;
-
-        svg {
-            width: 30px;
-            height: 30px;
-            color: white;
-        }
-    }
-
-    // A revoir  + Mobile first
-    ul.nav-list {
-        display: none;
-        flex-direction: column;
-        background-color: $black;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        padding: 20px;
-        z-index: 1;
-
-        li {
-            margin: 10px 0;
         }
     }
 }
