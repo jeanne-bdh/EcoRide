@@ -1,25 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-@import 'custom';
-@import 'reset';
-@import 'typography';
-@import 'components';
-@import 'buttons';
-@import 'tag';
-@import 'header';
-@import 'footer';
-@import 'hero';
-@import 'home';
-@import 'form';
-@import 'layout';
-@import 'session';
-@import 'carpool';
-@import 'carpool-details';
+
+@import 'base/custom';
+@import 'base/reset';
+@import 'base/typography';
+
+@import 'components/buttons';
+@import 'components/card-session';
+@import 'components/components';
+@import 'components/form';
+@import 'components/return';
+@import 'components/tag';
+
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/hero';
+@import 'layout/layout';
+
+@import 'pages/404';
+@import 'pages/carpool-details';
+@import 'pages/carpool';
+@import 'pages/contact-form';
+@import 'pages/home-form';
+@import 'pages/home';
+@import 'pages/legal-infos';
+@import 'pages/login-form';
+@import 'pages/register-form';
+@import 'pages/session';
+
 @import 'filters';
-@import 'legal-infos';
-@import '404';
-@import 'return';
-@import 'card-session';
-@import 'contact-form';
-@import 'home-form';
-@import 'login-form';
-@import 'register-form';

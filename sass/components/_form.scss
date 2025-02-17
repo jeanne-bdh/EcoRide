@@ -21,7 +21,7 @@
     }
 
     input {
-        background-color: $tertiary;
+        background-color: $lightGrey;
         border: 1px solid rgba($color: $black, $alpha: 0.4);
         border-radius: 5px;
         width: 15rem;
@@ -48,7 +48,7 @@
 .alert {
     background-color: rgb(244, 153, 153);
     color: red;
-    border: $dark;
+    border: $darkGrey;
 }
 
 @media (min-width:768px) {

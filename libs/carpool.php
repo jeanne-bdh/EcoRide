@@ -37,9 +37,10 @@ function getFutureCarpoolByUser(PDO $pdo, int $userId): array
 function getCarpoolBySearch(PDO $pdo): array
 {
     $stmt = $pdo->prepare(
-        'SELECT *
+        'SELECT covoiturage.*, type_voyage.type_voyage, users.photo
         FROM covoiturage
         JOIN type_voyage ON type_voyage.id_type_voy = covoiturage.id_type_voy
+        JOIN users ON users.id_users = covoiturage.id_users
         ORDER BY date_depart ASC'
     );
     $stmt->execute();
