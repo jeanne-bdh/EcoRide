@@ -334,23 +334,20 @@ footer {
   padding: 2rem;
 }
 
-.hero-section {
-  position: relative;
-}
-
 .wave-top {
   position: relative;
+  z-index: 1;
 }
 .wave-top h1 {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   top: 12%;
   right: 5%;
 }
 
 .return-link-container {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   top: 15%;
   left: 5%;
   display: flex;
@@ -389,9 +386,9 @@ footer {
 @media (min-width: 768px) {
   .container-form {
     position: absolute;
-    z-index: 3;
-    top: 50%;
-    left: 8%;
+    z-index: 2;
+    top: 10%;
+    left: 10%;
   }
 }
 .main-section {
@@ -644,16 +641,11 @@ textarea {
   }
 }
 
-.container-black {
+main {
   background-color: #081F34;
   min-height: 100vh;
   padding-bottom: 2rem;
-}
-
-@media (min-width: 1200px) {
-  #container-black-register {
-    height: 1000px;
-  }
+  position: relative;
 }
 
 .hero-section {

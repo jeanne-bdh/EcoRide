@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 ?>
 
-<section class="container-black" id="container-black-register">
+<main class="container-black" id="container-black-register">
 
     <!-- HERO SECTION -->
     <?php
@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
     </div>
 
-</section>
+                </main>
 
 <?php
 require_once __DIR__ . "/../../templates/footer.php";

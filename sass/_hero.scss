@@ -1,14 +1,10 @@
-.hero-section {
-    position: relative;
-}
-
 .wave-top {
     position: relative;
     z-index: 1;
 
     h1 {
         position: absolute;
-        z-index: 1;
+        z-index: 2;
         top: 12%;
         right: 5%;
     }
@@ -16,7 +12,7 @@
 
 .return-link-container {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     top: 15%;
     left: 5%;
     display: flex;
@@ -62,8 +58,8 @@
 @media (min-width : 768px) {
     .container-form {
         position: absolute;
-        z-index: 3;
+        z-index: 2;
         top: 10%;
-        left: 50%;
+        left: 10%;
     }
 }

@@ -7,7 +7,6 @@
     include_once __DIR__ . "/../templates/hero_section.php";
     heroSection("Formulaire de contact");
     ?>
-    </div>
 
     <!-- FORMULAIRE -->
     <section class="container-form" id="container-form-contact">
