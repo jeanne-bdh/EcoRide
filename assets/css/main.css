@@ -71,6 +71,7 @@ a {
 
 li {
   list-style: none;
+  color: #ffffff;
 }
 
 .btn-blue {
@@ -968,9 +969,6 @@ hr {
 .md-frame ul {
   padding: 0 0 1rem 2rem;
 }
-.md-frame li {
-  color: #ffffff;
-}
 
 #car-infos {
   margin-top: 5rem;
@@ -1095,6 +1093,9 @@ hr {
   margin: 1rem 2rem 0 2rem;
 }
 .main-legal-infos h5 {
+  margin: 2rem 0 1rem 0;
+}
+.main-legal-infos h4 {
   margin: 2rem 0 1rem 0;
 }
 
