@@ -4,7 +4,7 @@ require_once __DIR__ . "/../../templates/header.php";
 
 ?>
 
-<section class="container-black">
+<main>
 
     <!-- HERO SECTION -->
     <?php
@@ -12,6 +12,6 @@ require_once __DIR__ . "/../../templates/header.php";
     heroSection("Saisir un voyage");
     ?>
 
-</section>
+</main>
 
 <?php require_once __DIR__ . "/../../templates/footer.php" ?>

@@ -4,7 +4,7 @@ require_once __DIR__ . "/../../templates/header.php";
 
 ?>
 
-<section class="container-black">
+<main>
 
     <!-- HERO SECTION -->
     <?php
@@ -12,7 +12,7 @@ require_once __DIR__ . "/../../templates/header.php";
     heroSection("Espace Administrateur");
     ?>
 
-    <div class="menu-session">
+    <section class="menu-session">
         <a href="/pages/admin/2.1_account_suspension.php" class="card-session">
             <h3>Suspension de comptes</h3>
         </a>
@@ -25,8 +25,8 @@ require_once __DIR__ . "/../../templates/header.php";
         <a href="/pages/admin/2.4_graph_credit.php" class="card-session">
             <h3>Graphique : Total crédit</h3>
         </a>
-    </div>
+    </section>
 
-</section>
+</main>
 
 <?php require_once __DIR__ . "/../../templates/footer.php" ?>

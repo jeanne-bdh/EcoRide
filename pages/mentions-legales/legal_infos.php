@@ -4,17 +4,16 @@ require_once __DIR__ . "/../../templates/header.php";
 
 ?>
 
-<section class="container-black">
+<main>
 
     <!-- HERO SECTION -->
     <?php
     include_once __DIR__ . "/../../templates/hero_section.php";
     heroSection("Mentions légales");
     ?>
-    </div>
 
     <!-- MAIN -->
-    <div class="main-legal-infos">
+    <section class="main-legal-infos">
         <p>
             Merci de lire avec attention les différentes modalités d’utilisation du présent site avant d’y parcourir ses
             pages. En vous connectant sur ce site, vous acceptez, sans réserves, les présentes modalités.
@@ -205,8 +204,8 @@ require_once __DIR__ . "/../../templates/header.php";
             Les bases de données sont protégées par les dispositions de la loi du 1er juillet 1998 transposant la
             directive 96/9 du 11 mars 1996 relative à la protection juridique des bases de données.
         </p>
-    </div>
-
 </section>
+
+</main>
 
 <?php require_once __DIR__ . "/../../templates/footer.php" ?>

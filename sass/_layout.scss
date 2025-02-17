@@ -1,11 +1,6 @@
-.container-black {
+main {
     background-color: $black;
-    min-height: calc(100vh -100px - 655px);
+    min-height: 100vh;
     padding-bottom: 2rem;
-}
-
-#container-black-register {
-    @media (min-width : 1200px) {
-        height: 1000px;
-    }
+    position: relative;
 }

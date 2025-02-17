@@ -6,7 +6,7 @@ require_once __DIR__ . "/../../libs/carpool.php";
 
 ?>
 
-<section class="container-black">
+<main>
 
     <!-- HERO SECTION -->
     <?php
@@ -32,6 +32,6 @@ require_once __DIR__ . "/../../libs/carpool.php";
         <?php } ?>
     <?php } ?>
 
-</section>
+</main>
 
 <?php require_once __DIR__ . "/../../templates/footer.php" ?>

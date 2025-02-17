@@ -12,14 +12,13 @@ if (isset($_GET["id_covoit"])) {
 
 ?>
 
-<section class="container-black">
+<main>
 
     <!-- HERO SECTION -->
     <?php
     include_once __DIR__ . "/../../templates/hero_section.php";
     heroSection("Détails du covoiturage");
     ?>
-    </div>
 
     <h2 id="title-date">DATE</h2>
 
@@ -126,6 +125,6 @@ if (isset($_GET["id_covoit"])) {
     </div>
 
 
-</section>
+</main>
 
 <?php require_once __DIR__ . "/../../templates/footer.php" ?>

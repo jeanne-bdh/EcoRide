@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 ?>
 
-<section class="container-black" id="container-black-register">
+<main>
 
     <!-- HERO SECTION -->
     <?php
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     ?>
 
     <!-- FORMULAIRE -->
-    <div class="container-form" id="container-form-register">
+    <section class="container-form" id="container-form-register">
         <form action="" method="POST">
             <div class="inputForm">
                 <label for="inputPseudoRegister">Pseudo :</label>
@@ -68,10 +68,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <a href="/pages/auth/login.php">Connectez-vous ici !</a>
             </div>
         </form>
-    </div>
-    </div>
+    </section>
 
-</section>
+</main>
 
 <?php
 require_once __DIR__ . "/../../templates/footer.php";

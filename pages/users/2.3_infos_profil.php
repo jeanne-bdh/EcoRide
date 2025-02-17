@@ -4,7 +4,7 @@ require_once __DIR__ . "/../../templates/header.php";
 
 ?>
 
-<section class="container-black">
+<main>
 
     <!-- HERO SECTION -->
     <?php
@@ -12,9 +12,7 @@ require_once __DIR__ . "/../../templates/header.php";
     heroSection("Modifications du profil");
     ?>
 
-    </div>
-
-    <div class="container-form" id="container-form-profil">
+    <section class="container-form" id="container-form-profil">
         <form action="">
             <div>
                 <div class="inputForm">
@@ -64,8 +62,8 @@ require_once __DIR__ . "/../../templates/header.php";
                 <button type="submit" class="btn-blue">Enregistrer</button>
             </div>
         </form>
-    </div>
+    </section>
 
-</section>
+</main>
 
 <?php require_once __DIR__ . "/../../templates/footer.php" ?>

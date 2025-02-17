@@ -1,6 +1,6 @@
 <?php require_once __DIR__ . "/templates/header.php" ?>
 
-<section class="container-black">
+<main class="container-black">
 
     <!-- HERO SECTION -->
     <?php
@@ -9,7 +9,7 @@
     ?>
 
     <!-- FORMULAIRE -->
-    <div class="container-form" id="container-form-home">
+    <section class="container-form" id="container-form-home">
         <form>
             <div class="inputForm">
                 <label for="inputDepartCity">Départ :</label>
@@ -27,11 +27,10 @@
                 <button type="submit" class="btn-blue btn-search">Rechercher</button>
             </div>
         </form>
-    </div>
-    </div>
+    </section>
 
     <!-- MAIN SECTION -->
-    <div class="main-section">
+    <section class="main-section">
         <div class="img-main-section">
             <img class="illust-home" src="/assets/images/home/illustration-accueil.svg" alt="Illustration de covoiturage pour page d'accueil">
         </div>
@@ -62,7 +61,8 @@
             <p>EcoRide se distingue notamment par une application web éco-conçue, pensée pour refléter les valeurs de
                 l’écologie.</p>
         </div>
-    </div>
-</section>
+    </section>
+
+</main>
 
 <?php require_once __DIR__ . "/templates/footer.php" ?>
