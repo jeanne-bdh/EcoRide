@@ -1,0 +1,99 @@
+.container-form {
+    background-color: $white;
+    border: 1px solid rgba($color: $black, $alpha: 0.5);
+    border-radius: 10px;
+    width: 300px;
+    margin: auto;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputForm {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+
+    label {
+        color: $black;
+        font-size: 0.9rem;
+    }
+
+    input {
+        background-color: $tertiary;
+        border: 1px solid rgba($color: $black, $alpha: 0.4);
+        border-radius: 5px;
+        width: 15rem;
+        height: 2rem;
+        padding-inline: 1rem;
+    }
+}
+
+.invalid-feedback {
+    color: red;
+    font-size: 0.7rem;
+}
+
+.valid-feedback {
+    color: green;
+    font-size: 0.7rem;
+}
+
+.inputBtn {
+    display: flex;
+    justify-content: center;
+}
+
+.alert {
+    background-color: rgb(244, 153, 153);
+    color: red;
+    border: $dark;
+}
+
+@media (min-width:768px) {
+    .inputForm {
+        label {
+            font-size: 1rem;
+        }
+
+        input {
+            height: 2.2rem;
+        }
+    }
+
+    form {
+        margin-bottom: 1rem;
+    }
+
+    .valid-feedback,
+    .invalid-feedback {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width:1200px) {
+    .container-form {
+        width: 400px;
+    }
+
+    .inputForm {
+        margin: 2rem;
+
+        label {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        input {
+            width: 20rem;
+            height: 2.5rem;
+            font-size: 1rem;
+        }
+    }
+
+    .valid-feedback,
+    .invalid-feedback {
+        font-size: 0.9rem;
+    }
+}
