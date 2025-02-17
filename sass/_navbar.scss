@@ -3,80 +3,74 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0.5rem 2rem 0.5rem 0.1rem;
 
-    .container-logo {
-        display: flex;
-        align-items: center;
+    @media (min-width: 992px) {
+        padding: 1rem 0 1rem 1rem;
+    }
+}
 
-        .logo-ecoride {
-            margin: 5px 20px;
-        }
+// LOGO
 
-        .name-ecoride {
-            font-size: 2rem;
-            text-align: left;
+.container-logo {
+    display: flex;
+    align-items: center;
+}
 
-            a {
-                text-decoration: none;
-                
-                &:hover {
-                    color: $primary;
-                    font-size: 2.1rem;
-                }
-            }
+.logo-ecoride {
+    margin: 5px 20px;
+}
+
+.name-ecoride {
+    font-size: 2rem;
+    text-align: left;
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            color: $primary;
+            font-size: 2.1rem;
         }
     }
+}
 
-    ul {
-        display: flex;
-        align-items: center;
+// MENU DE NAVIGATION
 
-        li {
-            margin: 0 30px;
-            list-style: none;
+ul.nav-list {
+    display: flex;
+    align-items: center;
 
-            a {
-                text-decoration: none;
-                font-size: 1.2rem;
+    li {
+        margin: 0 30px;
+        list-style: none;
 
-                &:hover {
-                    color: $primary;
-                    text-decoration: underline;
-                }
-            }
-        }
-
-        .btn-login {
-            background-color: $secondary;
-            color: $white;
-            font-size: 1.1rem;
-            padding: 8px 20px;
-            border-radius: 5px;
-            border: 2px solid $secondary;
-            cursor: pointer;
+        a {
+            text-decoration: none;
+            font-size: 1.2rem;
 
             &:hover {
-                border-color: $white;
-                background-color: $black;
+                color: $primary;
+                text-decoration: underline;
             }
         }
     }
 }
 
-//
+.menu-burger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
 
-nav {
-    background-color: $black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
 
+
+// Menu burger en mobile à partir de 992 px
+
+@media (max-width: 992px) {
     .menu-burger {
-        display: none;
-        background: none;
-        border: none;
-        cursor: pointer;
+        display: block;
 
         svg {
             width: 30px;
@@ -85,39 +79,20 @@ nav {
         }
     }
 
+    // A revoir  + Mobile first
     ul.nav-list {
-        display: flex;
-        list-style: none;
+        display: none;
+        flex-direction: column;
+        background-color: $black;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 20px;
+        z-index: 1;
 
         li {
-            margin: 0 30px;
-        }
-    }
-
-    // Mobile Styles
-    @media (max-width: 992px) {
-        .menu-burger {
-            display: block;
-        }
-
-        ul.nav-list {
-            display: none;
-            flex-direction: column;
-            background-color: $black;
-            position: absolute;
-            top: 60px;
-            right: 0;
-            width: 100%;
-            padding: 20px;
-            z-index: 1;
-
-            li {
-                margin: 10px 0;
-            }
-        }
-
-        ul.nav-list.active {
-            display: flex;
+            margin: 10px 0;
         }
     }
 }

@@ -120,85 +120,69 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.5rem 2rem 0.5rem 0.1rem;
 }
-nav .container-logo {
+@media (min-width: 992px) {
+  nav {
+    padding: 1rem 0 1rem 1rem;
+  }
+}
+
+.container-logo {
   display: flex;
   align-items: center;
 }
-nav .container-logo .logo-ecoride {
+
+.logo-ecoride {
   margin: 5px 20px;
 }
-nav .container-logo .name-ecoride {
+
+.name-ecoride {
   font-size: 2rem;
   text-align: left;
 }
-nav .container-logo .name-ecoride a {
+.name-ecoride a {
   text-decoration: none;
 }
-nav .container-logo .name-ecoride a:hover {
+.name-ecoride a:hover {
   color: #0EE6B1;
   font-size: 2.1rem;
 }
-nav ul {
+
+ul.nav-list {
   display: flex;
   align-items: center;
 }
-nav ul li {
+ul.nav-list li {
   margin: 0 30px;
   list-style: none;
 }
-nav ul li a {
+ul.nav-list li a {
   text-decoration: none;
   font-size: 1.2rem;
 }
-nav ul li a:hover {
+ul.nav-list li a:hover {
   color: #0EE6B1;
   text-decoration: underline;
 }
-nav ul .btn-login {
-  background-color: #528DB9;
-  color: #ffffff;
-  font-size: 1.1rem;
-  padding: 8px 20px;
-  border-radius: 5px;
-  border: 2px solid #528DB9;
-  cursor: pointer;
-}
-nav ul .btn-login:hover {
-  border-color: #ffffff;
-  background-color: #081F34;
-}
 
-nav {
-  background-color: #081F34;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-}
-nav .menu-burger {
+.menu-burger {
   display: none;
   background: none;
   border: none;
   cursor: pointer;
 }
-nav .menu-burger svg {
-  width: 30px;
-  height: 30px;
-  color: white;
-}
-nav ul.nav-list {
-  display: flex;
-  list-style: none;
-}
-nav ul.nav-list li {
-  margin: 0 30px;
-}
+
 @media (max-width: 992px) {
-  nav .menu-burger {
+  .menu-burger {
     display: block;
   }
-  nav ul.nav-list {
+  .menu-burger svg {
+    width: 30px;
+    height: 30px;
+    color: white;
+  }
+  ul.nav-list {
     display: none;
     flex-direction: column;
     background-color: #081F34;
@@ -209,14 +193,10 @@ nav ul.nav-list li {
     padding: 20px;
     z-index: 1;
   }
-  nav ul.nav-list li {
+  ul.nav-list li {
     margin: 10px 0;
   }
-  nav ul.nav-list.active {
-    display: flex;
-  }
 }
-
 footer {
   background-color: #081F34;
 }
