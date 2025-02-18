@@ -7,9 +7,21 @@
     border: 2px solid $secondary;
     cursor: pointer;
 
+    &:disabled {
+        background-color: $lightGrey;
+        border-color: $darkGrey;
+        color: $darkGrey;
+    }
+
     &:hover {
         border-color: $white;
         background-color: $black;
+
+        &:disabled {
+            background-color: $lightGrey;
+            border-color: $darkGrey;
+            color: $darkGrey;
+        }
     }
 
     @media (min-width : 768px) {

@@ -16,9 +16,14 @@
         color: $black;
     }
 
-    a:hover {
-        text-decoration: underline;
-        color: $black;
+    button {
+        background: none;
+        border: none;
+
+        :hover {
+            text-decoration: underline;
+            color: $black;
+        }
     }
 
     @media (min-width : 768px) and (max-width: 1199px) {

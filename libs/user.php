@@ -29,7 +29,7 @@ function verifyUniqueEmailRegister(PDO $pdo, string $email)
 
 function addUser(PDO $pdo, string $pseudo, string $email, string $password): bool
 {
-    $insertQuery = "INSERT INTO users (pseudo, email, password) VALUES (:pseudo, :email, :password)";
+    $insertQuery = "INSERT INTO users (pseudo, email, password, status_session) VALUES (:pseudo, :email, :password, 'Actif')";
 
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
