@@ -1,7 +1,7 @@
 .green-tag {
     background-color: $primary;
     border-radius: 2rem;
-    width: 6rem;
+    width: 5rem;
     height: 1.8rem;
     display: flex;
     justify-content: center;
@@ -16,7 +16,7 @@
 .blue-tag {
     background-color: $secondary;
     border-radius: 2rem;
-    width: 8rem;
+    width: 7rem;
     height: 1.8rem;
     display: flex;
     justify-content: center;
@@ -28,8 +28,20 @@
     }
 }
 
+@media (min-width: 768px) {
+    .green-tag {
+        width: 6rem;
+    }
+
+    .blue-tag {
+        width: 8rem;
+    }
+}
+
 @media (min-width: 1200px) {
-    .green-tag, .blue-tag {
+
+    .green-tag,
+    .blue-tag {
         p {
             font-size: 1rem;
         }

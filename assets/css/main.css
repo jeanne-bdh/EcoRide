@@ -273,7 +273,7 @@ li {
 .green-tag {
   background-color: #0EE6B1;
   border-radius: 2rem;
-  width: 6rem;
+  width: 5rem;
   height: 1.8rem;
   display: flex;
   justify-content: center;
@@ -287,7 +287,7 @@ li {
 .blue-tag {
   background-color: #528DB9;
   border-radius: 2rem;
-  width: 8rem;
+  width: 7rem;
   height: 1.8rem;
   display: flex;
   justify-content: center;
@@ -297,8 +297,17 @@ li {
   color: #ffffff !important;
 }
 
+@media (min-width: 768px) {
+  .green-tag {
+    width: 6rem;
+  }
+  .blue-tag {
+    width: 8rem;
+  }
+}
 @media (min-width: 1200px) {
-  .green-tag p, .blue-tag p {
+  .green-tag p,
+  .blue-tag p {
     font-size: 1rem;
   }
 }
@@ -306,19 +315,13 @@ li {
   border-radius: 1rem;
   background-color: #ffffff;
   width: 80%;
-  height: 19rem;
+  height: 16.5rem;
   margin: 1.5rem auto;
 }
 .carpool-card p {
   color: #081F34;
 }
 
-@media (min-width: 768px) {
-  .carpool-card {
-    width: 60%;
-    height: 15rem;
-  }
-}
 .carpool-card-top {
   display: flex;
   flex-direction: row;
@@ -339,15 +342,15 @@ li {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 1.5rem 1rem;
+  margin: 2.5rem 1rem;
 }
 
 .container-depart {
-  margin-right: 2rem;
+  margin-right: 1rem;
 }
 
 .container-arrivee {
-  margin-left: 2rem;
+  margin-left: 1rem;
 }
 
 .travel-circle {
@@ -375,27 +378,15 @@ hr {
   justify-content: space-between;
   padding: 1rem;
 }
-.carpool-card-bottom .green-tag {
-  margin: 1.5rem auto;
-}
-@media (min-width: 768px) {
-  .carpool-card-bottom {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin: 1rem;
-  }
-}
 
 .card-driver {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 33.33% 33.33% 33.33%;
   align-items: center;
 }
-@media (min-width: 768px) {
-  .card-driver {
-    grid-template-columns: 33.33% 33.33% 33.33%;
-  }
+.card-driver .green-tag {
+  margin: auto;
+  width: 5rem;
 }
 
 .container-profil {
@@ -405,20 +396,23 @@ hr {
 }
 
 .profil-icon {
-  width: 25%;
-  margin-right: 1rem;
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5rem;
 }
 
 .star {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin: auto;
 }
-.star .svg {
-  margin-right: 0.5rem;
+.star svg {
+  width: 22px;
+  height: 22px;
+  margin-right: 0.3rem;
 }
 .star .p-notes {
-  font-size: 1.6rem;
   color: #757575;
 }
 
@@ -426,17 +420,12 @@ hr {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: auto;
+  justify-content: right;
+  margin-top: 1rem;
 }
 .details-link svg {
   width: 16px;
   height: 16px;
-}
-@media (min-width: 768px) {
-  .details-link svg {
-    width: 24px;
-    height: 24px;
-  }
 }
 .details-link p {
   color: #528DB9;
@@ -447,6 +436,52 @@ hr {
   color: #528DB9;
 }
 
+@media (min-width: 768px) {
+  .carpool-card {
+    width: 70%;
+    height: 16rem;
+  }
+  .container-depart {
+    margin-right: 2rem;
+  }
+  .container-arrivee {
+    margin-left: 2rem;
+  }
+  .carpool-card-bottom {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card-driver .green-tag {
+    width: 6rem;
+  }
+  .profil-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .star {
+    margin: 0 1.5rem;
+  }
+  .star svg {
+    width: 24px;
+    height: 24px;
+  }
+  .details-link {
+    margin-top: 0;
+  }
+  .details-link svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+@media (min-width: 1200px) {
+  .carpool-card {
+    height: 18rem;
+  }
+  .container-profil p {
+    margin-right: 8rem;
+  }
+}
 footer {
   background-color: #081F34;
 }

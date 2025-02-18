@@ -2,18 +2,11 @@
     border-radius: 1rem;
     background-color: $white;
     width: 80%;
-    height: 19rem;
+    height: 16.5rem;
     margin: 1.5rem auto;
 
     p {
         color: $black;
-    }
-}
-
-@media (min-width: 768px) {
-    .carpool-card {
-        width: 60%;
-        height: 15rem;
     }
 }
 
@@ -37,15 +30,15 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 1.5rem 1rem;
+    margin: 2.5rem 1rem;
 }
 
 .container-depart {
-    margin-right: 2rem;
+    margin-right: 1rem;
 }
 
 .container-arrivee {
-    margin-left: 2rem;
+    margin-left: 1rem;
 }
 
 .travel-circle {
@@ -67,32 +60,21 @@ hr {
     width: 100%;
 }
 
-
 .carpool-card-bottom {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 1rem;
-
-    .green-tag {
-        margin: 1.5rem auto;
-    }
-
-    @media (min-width: 768px) {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        margin: 1rem;
-    }
 }
 
 .card-driver {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 33.33% 33.33% 33.33%;
     align-items: center;
 
-    @media (min-width: 768px) {
-        grid-template-columns: 33.33% 33.33% 33.33%;
+    .green-tag {
+        margin: auto;
+        width: 5rem;
     }
 }
 
@@ -103,21 +85,24 @@ hr {
 }
 
 .profil-icon {
-    width: 25%;
-    margin-right: 1rem;
+    width: 32px;
+    height: 32px;
+    margin-right: 0.5rem;
 }
 
 .star {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin: auto;
 
-    .svg {
-        margin-right: 0.5rem;
+    svg {
+        width: 22px;
+        height: 22px;
+        margin-right: 0.3rem;
     }
 
     .p-notes {
-        font-size: 1.6rem;
         color: $darkGrey;
     }
 }
@@ -126,16 +111,12 @@ hr {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: auto;
+    justify-content: right;
+    margin-top: 1rem;
 
     svg {
         width: 16px;
         height: 16px;
-
-        @media (min-width: 768px) {
-            width: 24px;
-            height: 24px;
-        }
     }
 
     p {
@@ -146,5 +127,67 @@ hr {
     a :hover {
         text-decoration: underline;
         color: $secondary;
+    }
+}
+
+@media (min-width: 768px) {
+    .carpool-card {
+        width: 70%;
+        height: 16rem;
+    }
+
+    .container-depart {
+        margin-right: 2rem;
+    }
+
+    .container-arrivee {
+        margin-left: 2rem;
+    }
+
+    .carpool-card-bottom {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .card-driver {
+        .green-tag {
+            width: 6rem;
+        }
+    }
+
+    .profil-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .star {
+        margin: 0 1.5rem;
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    .details-link {
+        margin-top: 0;
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .carpool-card {
+        height: 18rem;
+    }
+
+    .container-profil {
+        p {
+            margin-right: 8rem;
+        }
     }
 }
