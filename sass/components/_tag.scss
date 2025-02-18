@@ -12,3 +12,26 @@
         color: $black;
     }
 }
+
+.blue-tag {
+    background-color: $secondary;
+    border-radius: 2rem;
+    width: 8rem;
+    height: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        color: $white !important;
+
+    }
+}
+
+@media (min-width: 1200px) {
+    .green-tag, .blue-tag {
+        p {
+            font-size: 1rem;
+        }
+    }
+}
