@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__ . "/../../templates/header.php";
-require_once __DIR__ . "/../../libs/pdo.php";
+require_once dirname(__DIR__,2) . "/templates/header.php";
+require_once dirname(__DIR__,2) . "/libs/pdo.php";
 
 ?>
 
@@ -9,7 +9,7 @@ require_once __DIR__ . "/../../libs/pdo.php";
 
     <!-- HERO SECTION -->
     <?php
-    include_once __DIR__ . "/../../templates/hero_section.php";
+    include_once dirname(__DIR__,2) . "/templates/hero_section.php";
     heroSection("Espace utilisateur");
     ?>
 
@@ -27,4 +27,4 @@ require_once __DIR__ . "/../../libs/pdo.php";
 
 </main>
 
-<?php require_once __DIR__ . "/../../templates/footer.php" ?>
+<?php require_once dirname(__DIR__,2) . "/templates/footer.php" ?>

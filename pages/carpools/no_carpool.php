@@ -1,9 +1,9 @@
 <?php
 
-require_once __DIR__ . "/../../templates/header.php";
-require_once __DIR__ . "/../../libs/pdo.php";
-require_once __DIR__ . "/../../libs/carpool.php";
-require_once __DIR__ . "/../../libs/format_time.php";
+require_once dirname(__DIR__,2) . "/templates/header.php";
+require_once dirname(__DIR__,2) . "/libs/pdo.php";
+require_once dirname(__DIR__,2) . "/libs/carpool.php";
+require_once dirname(__DIR__,2) . "/libs/format_time.php";
 
 ?>
 
@@ -11,7 +11,7 @@ require_once __DIR__ . "/../../libs/format_time.php";
 
     <!-- HERO SECTION -->
     <?php
-    include_once __DIR__ . "/../../templates/hero_section.php";
+    include_once dirname(__DIR__,2) . "/templates/hero_section.php";
     heroSection("La mobilité partagée au <br> service de la planète");
     ?>
 
@@ -57,4 +57,4 @@ require_once __DIR__ . "/../../libs/format_time.php";
 
 </main>
 
-<?php require_once __DIR__ . "/../../templates/footer.php" ?>
+<?php require_once dirname(__DIR__,2) . "/templates/footer.php" ?>

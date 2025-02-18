@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . "/../../templates/header.php";
+require_once dirname(__DIR__,2) . "/templates/header.php";
 
 ?>
 
@@ -8,7 +8,7 @@ require_once __DIR__ . "/../../templates/header.php";
 
     <!-- HERO SECTION -->
     <?php
-    include_once __DIR__ . "/../../templates/hero_section.php";
+    include_once dirname(__DIR__,2) . "/templates/hero_section.php";
     heroSection("Mentions légales");
     ?>
 
@@ -207,4 +207,4 @@ require_once __DIR__ . "/../../templates/header.php";
 
 </main>
 
-<?php require_once __DIR__ . "/../../templates/footer.php" ?>
+<?php require_once dirname(__DIR__,2) . "/templates/footer.php" ?>

@@ -32,14 +32,13 @@
 
 .valid-feedback, .invalid-feedback {
     display: none;
-    color: red; /* Couleur pour les messages d'erreur */
+    color: red;
     font-size: 0.9em;
 }
 
 .valid-feedback {
-    color: green; /* Couleur pour les messages de succès */
+    color: green;
 }
-
 
 .inputBtn {
     display: flex;

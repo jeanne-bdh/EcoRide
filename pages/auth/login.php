@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . "/../../templates/header.php";
-require_once __DIR__ . "/../../libs/pdo.php";
-require_once __DIR__ . "/../../libs/user.php";
+require_once dirname(__DIR__,2) . "/templates/header.php";
+require_once dirname(__DIR__,2) . "/libs/pdo.php";
+require_once dirname(__DIR__,2) . "/libs/user.php";
 
 $errorsLogin = [];
 
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <!-- HERO SECTION -->
     <?php
-    include_once __DIR__ . "/../../templates/hero_section.php";
+    include_once dirname(__DIR__,2) . "/templates/hero_section.php";
     heroSection("Espace de connexion");
 
     foreach ($errorsLogin as $error) { ?>
@@ -68,4 +68,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </main>
 
 <?php
-require_once __DIR__ . "/../../templates/footer.php";
+require_once dirname(__DIR__,2) . "/templates/footer.php";
