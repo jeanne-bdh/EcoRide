@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $user = verifyUserLoginPassword($pdo, $_POST['pseudoEmail'], $_POST['password']);
     if ($user) {
         $_SESSION['users'] = $user;
-        header('location: /pages/users/1_user_session.php');
+        header('location: /pages/users/user_session.php');
     } else {
         $errorsLogin[] = "Identifiants incorrects";
     }

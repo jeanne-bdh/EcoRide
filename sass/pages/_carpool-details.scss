@@ -1,174 +1,49 @@
-#title-date {
-    text-align: center;
-    margin: 2rem 0;
+#carpool-details {
+    height: 13.5rem;
 }
 
-.carpool-details-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+.carpool-card-details-items {
+    height: 8rem;
 
-// Travel container
-
-
-.travel-container {
-    margin: 2rem;
-    border: 1px solid $white;
-    border-radius: 15px;
-}
-
-.small-frame {
-    border: 1px solid $white;
-    border-radius: 5px;
-    margin: 2rem;
-}
-
-
-
-.seat-credit-container {
-    display: grid;
-    grid-template-columns: 75% 25%;
-    margin: 1rem 1rem 0 1rem;
-
-    .seat-credit-items {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-bottom: 1rem;
-    }
-
-    .icons-details-carpool {
-        fill: $white;
-        border: 1px solid $white;
-        border-radius: 50%;
-        margin-right: 0.5rem;
-        padding: 0.1rem;
-        width: 20px;
-        height: 20px;
-    }
-
-    p {
-        text-align: right;
-    }
-}
-
-
-
-
-// Driver container
-
-
-
-// Comments-container
-
-
-
-.md-frame {
-    border: 1px solid $white;
-    border-radius: 15px;
-
-    h5 {
+    h6 {
         padding: 1rem 0 0.5rem 1rem;
     }
 
     ul {
         padding: 0 0 1rem 2rem;
     }
-}
 
-#car-infos {
-    margin-top: 5rem;
-}
-
-.profil-container {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    align-items: center;
-
-    img {
-        border: 1px solid $black;
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        justify-self: end;
-        margin-right: 1rem;
-    }
-
-    h4 {
-        align-items: left;
-    }
-}
-
-.comments-container {
-    text-align: center;
-    margin-inline: 3rem;
-
-    h4 {
-        margin: 2rem 0 1rem 0;
-    }
-}
-
-
-.container-details-travel {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 10rem;
-
-    .travel-infos {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .travel-details {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        margin: 1rem 0 1rem 1rem;
-    }
-
-    .travel-line {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        transform: rotate(90deg);
-
-        .circle {
-            width: 0.5rem;
-            height: 0.5rem;
-            border-radius: 50%;
-            background-color: $white;
-        }
-
-        .line {
-            width: 5rem;
-        }
+    li {
+        color: $black;
+        font-size: 0.8rem;
     }
 }
 
 .btn-participate {
     display: block;
     margin: auto;
-    margin-bottom: 2rem;
 }
 
-// CAROUSEL
+.comments-container {
+    text-align: center;
+    margin-bottom: 2rem;
 
-.carousel {
-    position: relative;
-    height: 25vh;
-    width: 50vw;
-    background-color: $white;
-    border-radius: 10px;
+    h5 {
+        margin: 1rem 0;
+    }
 
-    h5,
     p {
         color: $black;
     }
+}
+
+.carousel {
+    position: relative;
+    height: 16rem;
+    width: 80%;
+    background-color: $white;
+    border-radius: 10px;
+    margin: auto;
 
     button {
         position: absolute;
@@ -180,7 +55,7 @@
         cursor: pointer;
         width: 2rem;
         height: 2rem;
-    
+
         svg {
             background-color: $white;
             color: $black;
@@ -191,7 +66,7 @@
 }
 
 #prev {
-    left : 0.5rem;
+    left: 0.5rem;
 }
 
 #next {
@@ -200,12 +75,56 @@
 
 .slide {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 100%;
     width: 100%;
     opacity: 0;
     transition: 0.4s ease-out;
+    padding: 0 3rem;
+
+    .notes {
+        margin: 0.5rem 0;
+    }
 }
 
 .slide.active {
     opacity: 1;
+}
+
+@media (min-width : 768px) {
+    #carpool-details {
+        height: 15.5rem;
+    }
+
+    .carpool-card-details-items {
+        height: 9rem;
+
+        h6 {
+            padding-left: 2rem;
+        }
+
+        ul {
+            padding-left: 3.5rem;
+        }
+
+        li {
+            font-size: 1rem;
+        }
+    }
+}
+
+@media (min-width : 1200px) {
+    #carpool-details {
+        height: 17.5rem;
+    }
+
+    .carpool-card-details-items {
+        height: 11rem;
+
+        li {
+            font-size: 1.3rem;
+        }
+    }
 }

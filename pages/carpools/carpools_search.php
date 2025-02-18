@@ -26,14 +26,14 @@ require_once __DIR__ . "/../../libs/format_time.php";
         <label for="floatingSelect">Works with selects</label>
     </div>
 
-    <div class="container-carpool-visitor">
+    <section class="container-carpools-visitors">
         <?php
         $carpoolsSearch = getCarpoolBySearch($pdo);
 
         foreach ($carpoolsSearch as $key => $carpoolSearch) {
             require __DIR__ . '/../../templates/carpool_card_visitor.php';
         } ?>
-    </div>
+    </section>
 
 </main>
 

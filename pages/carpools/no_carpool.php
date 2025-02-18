@@ -1,4 +1,11 @@
-<?php require_once __DIR__ . "/../../templates/header.php" ?>
+<?php
+
+require_once __DIR__ . "/../../templates/header.php";
+require_once __DIR__ . "/../../libs/pdo.php";
+require_once __DIR__ . "/../../libs/carpool.php";
+require_once __DIR__ . "/../../libs/format_time.php";
+
+?>
 
 <main>
 
@@ -42,6 +49,10 @@
             </div>
         </div>
         <p class="text-alter-carpool">Souhaitez-vous modifier votre recherche pour cette date ?</p>
+
+        <?php $carpoolsSearch = getCarpoolBySearch($pdo);
+        require __DIR__ . '/../../templates/carpool_card_visitor.php'; ?>
+
     </section>
 
 </main>

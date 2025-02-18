@@ -13,10 +13,10 @@ require_once __DIR__ . "/../../templates/header.php";
     ?>
 
     <section class="menu-session">
-        <a href="/pages/employees/2.1_comments.php" class="card-session">
+        <a href="/pages/employees/comments.php" class="card-session">
             <h3>Valider les avis</h3>
         </a>
-        <a href="/pages/employees/2.2_bad_carpool.php" class="card-session">
+        <a href="/pages/employees/bad_carpool.php" class="card-session">
             <h3>Covoiturages <br> mal passés</h3>
         </a>
     </section>
