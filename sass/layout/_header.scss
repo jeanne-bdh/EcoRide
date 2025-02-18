@@ -51,6 +51,11 @@ ul.nav-list {
     }
 }
 
+.hello-user {
+    margin-right: 1rem;
+    color: $primary;
+}
+
 @media (min-width: 992px) {
     nav {
         padding: 1rem 0 1rem 1rem;

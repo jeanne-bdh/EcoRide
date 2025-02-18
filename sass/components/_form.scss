@@ -30,15 +30,16 @@
     }
 }
 
-.invalid-feedback {
-    color: red;
-    font-size: 0.7rem;
+.valid-feedback, .invalid-feedback {
+    display: none;
+    color: red; /* Couleur pour les messages d'erreur */
+    font-size: 0.9em;
 }
 
 .valid-feedback {
-    color: green;
-    font-size: 0.7rem;
+    color: green; /* Couleur pour les messages de succès */
 }
+
 
 .inputBtn {
     display: flex;

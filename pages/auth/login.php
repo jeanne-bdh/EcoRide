@@ -7,7 +7,7 @@ require_once __DIR__ . "/../../libs/user.php";
 $errorsLogin = [];
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $user = verifyUserLoginPassword($pdo, $_POST['pseudoEmail'], $_POST['password']);
+    $user = verifyUserLoginPassword($pdo, $_POST['email'], $_POST['password']);
     if ($user) {
         $_SESSION['users'] = $user;
         header('location: /pages/users/user_session.php');
@@ -35,24 +35,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <section class="container-form" id="container-form-login">
         <form class="form-login" action="" method="POST">
             <div class="inputForm">
-                <label for="inputPseudoEmailLogin">Pseudo ou Email :</label>
-                <input type="text" name="pseudoEmail" id="inputPseudoEmailLogin" required>
+                <label for="inputEmailLogin">Email :</label>
+                <input type="email" name="email" id="inputEmailLogin" required>
                 <div class="valid-feedback">
+                    L'email est valide
                 </div>
                 <div class="invalid-feedback">
-                    Veuillez entrer votre pseudo ou une adresse e-mail valide
+                    Veuillez entrer une adresse e-mail valide
                 </div>
             </div>
             <div class="inputForm">
                 <label for="inputPwdLogin">Mot de passe :</label>
                 <input type="password" name="password" id="inputPwdLogin" required>
                 <div class="valid-feedback">
-                    Le mot de passe est valide.
+                    Le mot de passe est valide
                 </div>
                 <div class="invalid-feedback">
-                    Le mot de passe doit contenir au moins 8 caractères comprenant une lettre majuscule, une
-                    minuscule, un chiffre et un caractère
-                    spécial.
+                    Veuillez saisir un mot de passe contenant au moins 8 caractères, une majuscule, une
+                    minuscule, un chiffre et un caractère spécial
                 </div>
             </div>
             <div class="inputBtn">

@@ -45,14 +45,6 @@ function verifyUser($user): bool|array
 {
     $errors = [];
 
-    if (isset($user["pseudo"])) {
-        if ($user["pseudo"] === "") {
-            $errors["pseudo"] = "Le champ pseudo est requis";
-        }
-    } else {
-        $errors["pseudo"] = "Le champ pseudo n'a pas été envoyé";
-    }
-
     if (isset($user["email"])) {
         if ($user["email"] === "") {
             $errors["email"] = "Le champ email est requis";

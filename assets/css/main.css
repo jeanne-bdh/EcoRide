@@ -199,14 +199,14 @@ li {
   padding-inline: 1rem;
 }
 
-.invalid-feedback {
-  color: red;
-  font-size: 0.7rem;
+.valid-feedback, .invalid-feedback {
+  display: none;
+  color: red; /* Couleur pour les messages d'erreur */
+  font-size: 0.9em;
 }
 
 .valid-feedback {
-  color: green;
-  font-size: 0.7rem;
+  color: green; /* Couleur pour les messages de succès */
 }
 
 .inputBtn {
@@ -663,6 +663,11 @@ ul.nav-list li a {
 ul.nav-list li a:hover {
   color: #0EE6B1;
   text-decoration: underline;
+}
+
+.hello-user {
+  margin-right: 1rem;
+  color: #0EE6B1;
 }
 
 @media (min-width: 992px) {

@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . "/../../templates/header.php";
-require_once __DIR__ . "/../../libs/pdo.php";
-require_once __DIR__ . "/../../libs/carpool.php";
+require_once dirname(__DIR__, 3) . "/templates/header.php";
+require_once dirname(__DIR__, 3) . "/libs/pdo.php";
+require_once dirname(__DIR__, 3) . "/libs/carpool.php";
 
 ?>
 
@@ -10,7 +10,7 @@ require_once __DIR__ . "/../../libs/carpool.php";
 
     <!-- HERO SECTION -->
     <?php
-    include_once __DIR__ . "/../../templates/hero_section.php";
+    include_once dirname(__DIR__, 3) . "/templates/hero_section.php";
     heroSection("Covoiturages passés");
 
     if (isUserConnected()) {
@@ -21,7 +21,7 @@ require_once __DIR__ . "/../../libs/carpool.php";
             foreach ($carpools as $carpool) {
                 $pastCarpool = true;
 
-                require __DIR__ . "/../../templates/carpool_card_user.php";
+                require dirname(__DIR__, 3) . "/templates/carpool_card_user.php";
             }
 
             if (!$pastCarpool) { ?>
@@ -34,4 +34,4 @@ require_once __DIR__ . "/../../libs/carpool.php";
 
 </main>
 
-<?php require_once __DIR__ . "/../../templates/footer.php" ?>
+<?php require_once dirname(__DIR__, 3) . "/templates/footer.php" ?>
