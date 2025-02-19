@@ -18,6 +18,7 @@ function heroSection($title)
             </button>
         </div>
         <h1><?php echo $title; ?></h1>
+        <h6>20 Crédit(s)</h6>
     </section>
 
 <?php } ?>

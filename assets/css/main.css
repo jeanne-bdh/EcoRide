@@ -736,6 +736,12 @@ ul.nav-list li a:hover {
   top: 12%;
   right: 5%;
 }
+.wave-top h6 {
+  position: absolute;
+  z-index: 2;
+  top: 37%;
+  right: 5%;
+}
 
 main {
   background-color: #081F34;
