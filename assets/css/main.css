@@ -1150,6 +1150,11 @@ textarea {
   border-color: #0EE6B1;
 }
 
+.p-no-carpool {
+  text-align: center;
+  margin-top: 2rem;
+}
+
 .form-filters {
   background-color: #ffffff;
 }/*# sourceMappingURL=main.css.map */
