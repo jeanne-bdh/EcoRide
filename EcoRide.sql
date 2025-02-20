@@ -9,8 +9,8 @@ CREATE TABLE `users` (
   `lastname` varchar(50),
   `firstname` varchar(50),
   `credit` int,
-  `id_role` int NOT NULL,
-  `id_profil` int NOT NULL,
+  `id_role` int,
+  `id_profil` int,
   `id_status_session` int NOT NULL
 );
 
@@ -122,9 +122,6 @@ VALUES ('Actif'), ('Suspendu');
 INSERT INTO travel_type (label_travel_type)
 VALUES ('Ecolo'), ('Non écolo');
 
-INSERT INTO users (pseudo, email, password, id_role, id_profil, id_status_session) 
-VALUES ('TestRegister', 'test.register@ecoride.com', 'P@pa2029', 2, 1, 1);
-
 INSERT INTO car (model, brand, nb_plate, energy, color, first_regist, seats_nb, id_users, id_travel_type)
 VALUES ('Model 3', 'Tesla', 'AB-123-CD', 'Electrique', 'Rouge', '2021-05-12', 4, 2, 1),
 ('Golf 8', 'Volkswagen', 'CD-456-EF', 'Essence', 'Bleu', '2019-08-22', 4, 5, 2),
@@ -151,3 +148,15 @@ VALUES
 (3.5, 'Bien dans l’ensemble, mais la voiture était un peu sale.', 3, 5),
 (4.8, 'Très bon voyage, je recommande ce conducteur.', 1, 8),
 (1.5, 'Mauvaise expérience, conduite brusque et inconfort.', 2, 10);
+
+INSERT INTO ecoride.users (pseudo,email,password,photo,telephone,address,lastname,firstname,credit,id_role,id_profil,id_status_session) VALUES
+	 ('TestRegister','test.register@ecoride.com','P@pa2029',NULL,'0612134556',NULL,'TestRegisterNom','TestRegisterPrenom',20,2,1,1),
+	 ('Test2','deux.test@ecoride.com','$2y$12$oXtiV45ghqEJAhmcpP1C3eI7WDW/QiGCSOhO0gTb1uGFE1a/4.qXC',NULL,NULL,NULL,'DeuxiemeTest','DeuxPrenomTest',NULL,2,2,1),
+	 ('JaneSmith','janesmith@example.com','$2y$12$OhwPR1pJZDbvLc8vRYUycOf3lGWiQgtPSdPR3EFXX/FyWimzZON7C',NULL,NULL,NULL,NULL,NULL,NULL,3,NULL,1),
+	 ('LuckyLuke','luke.l@example.com','$2y$12$cJwizaSvvDVAuIrVImqqf.jtxCpMtZTgajYs9BihZsg687kCC5zZ2',NULL,NULL,NULL,NULL,NULL,NULL,3,NULL,1),
+	 ('bobby','bob.leponge@example.com','$2y$12$Cu0sND1OAdR.YhgyJnhQlegRnqSRaRgHP1GTGiGZyeC5AncjeufKK',NULL,NULL,NULL,NULL,NULL,NULL,2,3,1),
+	 ('TestPHP','test.php@exemple.com','$2y$12$IhVnwjBNpas8DL1G2DZk8u7YWDoUCCLwOq25yOTiyE99L0nAJ/AL.',NULL,NULL,NULL,NULL,NULL,NULL,2,1,1),
+	 ('TestPHP2','test2.php@exemple.com','$2y$12$tgUgiR7EWcNpUKmbIDLwqOWmeM1NLHc4Y4x.5CG0Yux.n4x34CGlS',NULL,NULL,NULL,NULL,NULL,NULL,2,2,1),
+	 ('ShadowWolf99','shadow.wolf99@example.com','$2y$12$tEEOlGlHfzN9JV31CHy.4u..2ucHAat6/7aya8DociNL9oif.s2Dq',NULL,NULL,NULL,NULL,NULL,NULL,2,3,1),
+	 ('Jose','admin@ecoride.com','$2y$12$VzQmuzzd3q93IisxzIznq.e1NX8/jn3zIDmj/www9M1PPeoIaVTQu',NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,1),
+	 ('SkyWalker42','skywalker42@example.com','$2y$12$mHZSq4DvbEEaL9KfKXOYv.w5Lvq1GwZK2.6.bwJ7yugQ054VXKNVO',NULL,NULL,NULL,NULL,NULL,NULL,2,1,1);
