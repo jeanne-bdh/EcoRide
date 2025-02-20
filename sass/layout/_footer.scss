@@ -1,0 +1,146 @@
+footer {
+    background-color: $black;
+}
+
+/* SECTION ICONS */
+
+.section-wave-bottom {
+    color: $black;
+    position: relative;
+}
+
+.section-icons-eco {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    top: 10%;
+
+    p {
+        margin-top: 5px;
+        color: $black;
+    }
+}
+
+.icons-eco-items {
+    p {
+        font-size: 0.4rem;
+    }
+}
+
+.bg-wave-bottom {
+    position: relative;
+
+    img {
+        width: 100%;
+    }
+}
+
+@media (min-width : 576px) and (max-width : 991px) {
+    .section-icons-eco {
+        top: 15%;
+    }
+
+    .icons-eco-items {
+        svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        p {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+@media (min-width : 992px) {
+    .section-icons-eco {
+        top: 20%;
+    }
+
+    .icons-eco-items {
+        svg {
+            width: 65px;
+            height: 65px;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+    }
+}
+
+/* SECTION MENTIONS LEGALES */
+
+.section-legal-infos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.container-legal-infos-inner {
+    margin: 1rem;
+}
+
+.logo-slogan-bottom {
+    p {
+        color: $primary;
+        font-size: 1.5rem;
+        margin-top: 1rem;
+    }
+}
+
+.coordonnees {
+    p {
+        margin: 1rem 0 0.5rem 0;
+    }
+}
+
+.social-network {
+    text-align: center;
+
+    a {
+        text-decoration: none;
+
+        svg {
+            margin: 20px 5px;
+        }
+    }
+}
+
+.legal-link {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+
+    a {
+        margin-bottom: 0.5rem;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+@media (min-width : 576px) {
+    .container-legal-infos-inner {
+        margin: 2rem;
+    }
+}
+
+/* SECTION COPYRIGHT */
+
+.copyright {
+    hr {
+        width: 75%;
+        margin: auto;
+    }
+
+    p {
+        text-align: center;
+        padding: 2rem;
+    }
+}

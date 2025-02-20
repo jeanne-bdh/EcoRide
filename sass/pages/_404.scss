@@ -1,0 +1,15 @@
+.main-404 {
+    padding : 2rem;
+
+    a {
+        display: block;
+        text-decoration: underline;
+        padding-top: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .main-404 {
+        padding: 2rem 0 0 10rem;
+    }
+}

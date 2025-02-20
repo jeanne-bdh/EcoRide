@@ -1,0 +1,55 @@
+// CARPOOL ACCESS & NO CARPOOL
+
+.text-access-carpool {
+    margin-top: 1rem;
+
+    .green-tag {
+        margin: auto;
+    }
+}
+
+.text-alter-carpool {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+
+// SPECIFIQUE CARD USER SESSION
+
+.carpool-card-bottom {
+    padding-top: 0.5rem;
+
+    .tag-status {
+        border: 2px solid $primary;
+        border-radius: 2rem;
+        width: 6rem;
+        height: 1.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            color: $darkGrey;
+        }
+    }
+}
+
+// Fonction : border-color en fonction du status du covoit
+$status: (
+    "Annulé" : #FF4D4D,
+    "Confirmé" : $primary
+);
+
+.tag-status {
+    @each $key, $color in $status {
+        &[data-status="#{$key}"] {
+            border-color: $color;
+        }
+    }
+}
+
+// Return if "Aucun covoit"
+.p-no-carpool {
+    text-align: center;
+    margin-top: 2rem;
+}

@@ -1,0 +1,107 @@
+nav {
+    background-color: $black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem 0.5rem 0.1rem;
+}
+
+.menu-burger {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    svg {
+        width: 30px;
+        height: 30px;
+        color: white;
+    }
+}
+
+ul.nav-list {
+    display: none;
+    flex-direction: column;
+    align-items: end;
+    background-color: $black;
+    position: absolute;
+    top: 106px;
+    right: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 3;
+
+    &.active {
+        display: flex;
+    }
+
+    li {
+        margin: 0.6rem 0;
+        list-style: none;
+
+        a {
+            text-decoration: none;
+            font-size: 1.2rem;
+
+            &:hover {
+                color: $primary;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.hello-user {
+    margin-right: 1rem;
+    color: $primary;
+}
+
+@media (min-width: 992px) {
+    nav {
+        padding: 1rem 0 1rem 1rem;
+    }
+
+    ul.nav-list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0;
+        position: initial;
+        width: initial;
+
+        li {
+            margin: 0 1rem;
+        }
+    }
+
+    .menu-burger {
+        display: none;
+        background: none;
+        border: none;
+    }
+}
+
+// LOGO
+
+.container-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-ecoride {
+    margin: 5px 20px;
+}
+
+.name-ecoride {
+    font-size: 2rem;
+    text-align: left;
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            color: $primary;
+            font-size: 2.1rem;
+        }
+    }
+}

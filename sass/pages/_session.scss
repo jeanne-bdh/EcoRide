@@ -1,0 +1,21 @@
+.wave-top {
+    position: relative;
+    z-index: 1;
+}
+
+.menu-session {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+    z-index: 2;
+}
+
+@media (min-width: 768px) {
+
+    .menu-session {
+        display: flex;
+        flex-wrap: nowrap;
+        position: relative;
+    }
+}

@@ -1,0 +1,19 @@
+.wave-top {
+    position: relative;
+    z-index: 1;
+
+    h1 {
+        position: absolute;
+        z-index: 2;
+        top: 12%;
+        right: 5%;
+    }
+
+    h6 {
+        position: absolute;
+        z-index: 2;
+        top: 37%;
+        right: 5%;
+    }
+}
+

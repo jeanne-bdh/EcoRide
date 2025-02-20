@@ -1,0 +1,23 @@
+#inputDateHome {
+    color: $darkGrey;
+}
+
+#container-form-home {
+    height: 300px;
+}
+
+@media (min-width : 768px) {
+    #container-form-home {
+        position: absolute;
+        z-index: 2;
+        top: 10%;
+        left: 10%;
+    }
+}
+
+@media (min-width:1200px) {
+    #container-form-home {
+        height: 400px;
+        left: 15%;
+    }
+}

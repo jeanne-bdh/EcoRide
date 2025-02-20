@@ -1,0 +1,47 @@
+.card-session {
+    width: 15rem;
+    height: 8rem;
+    border-radius: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    background-color: $tertiary;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+
+    &:hover {
+        cursor: pointer;
+        width: 15.7rem;
+        height: 8.4rem;
+        background-color: darken($tertiary, 10%);
+
+        h3 {
+            font-size: 1.3rem;
+        }
+    }
+
+    h3 {
+        position: absolute;
+        z-index: 3;
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .card-session {
+        width: 18rem;
+        height: 10rem;
+
+        &:hover {
+            width: 18.7rem;
+            height: 10.4rem;
+
+            h3 {
+                font-size: 1.6rem;
+            }
+        }
+    }
+}

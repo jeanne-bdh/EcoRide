@@ -1,0 +1,40 @@
+.link-account {
+    text-align: center;
+    margin-top: 20px;
+
+    p,
+    a {
+        color: $black;
+        font-size: 0.9rem;
+    }
+
+    a {
+        text-decoration: underline;
+
+        &:hover {
+            color: $primary;
+            text-decoration: underline;
+        }
+    }
+}
+
+#container-form-login {
+    height: 350px;
+}
+
+
+@media (min-width:768px) {
+    #container-form-login {
+        position: absolute;
+        z-index: 2;
+        top: 12%;
+        left: 20%;
+    }
+}
+
+@media (min-width:1200px) {
+    #container-form-login {
+        height: 450px;
+        top: 15%
+    }
+}

@@ -1,0 +1,49 @@
+.green-tag {
+    background-color: $primary;
+    border-radius: 2rem;
+    width: 5rem;
+    height: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+
+    p {
+        color: $black;
+    }
+}
+
+.blue-tag {
+    background-color: $secondary;
+    border-radius: 2rem;
+    width: 7rem;
+    height: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        color: $white !important;
+
+    }
+}
+
+@media (min-width: 768px) {
+    .green-tag {
+        width: 6rem;
+    }
+
+    .blue-tag {
+        width: 8rem;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .green-tag,
+    .blue-tag {
+        p {
+            font-size: 1rem;
+        }
+    }
+}
