@@ -94,7 +94,6 @@
 <script src="/js/navbar.js"></script>
 <script src="/js/register.js"></script>
 <script src="/js/login.js"></script>
-<script src="/js/return.js"></script>
 <script src="/js/carousel.js"></script>
 </body>
 

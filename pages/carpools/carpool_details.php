@@ -5,8 +5,8 @@ require_once dirname(__DIR__,2) . "/libs/pdo.php";
 require_once dirname(__DIR__,2) . "/libs/carpool.php";
 require_once dirname(__DIR__,2) . "/libs/format_time.php";
 
-if (isset($_GET["id_covoit"])) {
-    $carpoolId = (int)$_GET["id_covoit"];
+if (isset($_GET["id_carpool"])) {
+    $carpoolId = (int)$_GET["id_carpool"];
     $detailsCarpool = getCarpoolById($pdo, $carpoolId);
 }
 

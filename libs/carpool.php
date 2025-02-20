@@ -3,13 +3,15 @@
 function getPastCarpoolByUser(PDO $pdo, int $userId): array
 {
     $stmt = $pdo->prepare(
-        'SELECT *
-        FROM covoiturage
-        JOIN type_voyage ON type_voyage.id_type_voy = covoiturage.id_type_voy
-        WHERE id_users = :id_users
-        AND date_depart < NOW()
-        OR status_covoit = "Annulé"
-        ORDER BY date_depart DESC'
+        'SELECT carpool.*, travel_type.label_travel_type, status_carpool.label_status_carpool
+        FROM carpool
+        JOIN car ON carpool.id_users = car.id_users
+        JOIN travel_type ON car.id_travel_type = travel_type.id_travel_type
+        JOIN status_carpool ON carpool.id_status_carpool = status_carpool.id_status_carpool
+        WHERE carpool.date_depart < CURDATE()
+        AND carpool.id_users = :id_users
+        AND carpool.id_status_carpool = 2
+        ORDER BY carpool.date_depart DESC'
     );
     $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
     $stmt->execute();
@@ -21,11 +23,11 @@ function getFutureCarpoolByUser(PDO $pdo, int $userId): array
 {
     $stmt = $pdo->prepare(
         'SELECT *
-        FROM covoiturage
-        JOIN type_voyage ON type_voyage.id_type_voy = covoiturage.id_type_voy
+        FROM carpool
+        JOIN label_travel_type ON travel_type.id_travel_type = carpool.id_travel_type
         WHERE id_users = :id_users
         AND date_depart > NOW()
-        AND status_covoit = "Confirmé"
+        AND label_status_carpool = "Confirmé"
         ORDER BY date_depart ASC'
     );
     $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
@@ -37,11 +39,13 @@ function getFutureCarpoolByUser(PDO $pdo, int $userId): array
 function getCarpoolBySearch(PDO $pdo): array
 {
     $stmt = $pdo->prepare(
-        'SELECT covoiturage.*, type_voyage.type_voyage, users.photo
-        FROM covoiturage
-        JOIN type_voyage ON type_voyage.id_type_voy = covoiturage.id_type_voy
-        JOIN users ON users.id_users = covoiturage.id_users
-        ORDER BY date_depart ASC'
+        'SELECT carpool.*, travel_type.label_travel_type, users.pseudo, COALESCE(AVG(review.notes), 0) AS average_note
+        FROM carpool
+        JOIN users ON carpool.id_users = users.id_users
+        JOIN car ON car.id_users = users.id_users
+        JOIN travel_type ON car.id_travel_type = travel_type.id_travel_type
+        LEFT JOIN review ON carpool.id_carpool = review.id_carpool
+        GROUP BY carpool.id_carpool, travel_type.label_travel_type, users.pseudo'
     );
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -50,11 +54,13 @@ function getCarpoolBySearch(PDO $pdo): array
 function getCarpoolById(PDO $pdo): array
 {
     $stmt = $pdo->prepare(
-        'SELECT *
-        FROM covoiturage
-        JOIN type_voyage ON type_voyage.id_type_voy = covoiturage.id_type_voy
-        WHERE id_covoit = :id_covoit
-        ORDER BY date_depart ASC'
+        'SELECT carpool.*, travel_type.label_travel_type, users.pseudo, COALESCE(AVG(review.notes), 0) AS average_note
+        FROM carpool
+        JOIN users ON carpool.id_users = users.id_users
+        JOIN car ON car.id_users = users.id_users
+        JOIN travel_type ON car.id_travel_type = travel_type.id_travel_type
+        LEFT JOIN review ON carpool.id_carpool = review.id_carpool
+        GROUP BY carpool.id_carpool, travel_type.label_travel_type, users.pseudo'
     );
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);

@@ -4,32 +4,32 @@
             <p><?= $carpool['date_depart']; ?></p>
         </div>
         <div>
-            <p class="p-credit"><?= $carpool['prix_pers']; ?> crédit(s)</p>
-            <p class="p-place"><?= $carpool['place_restante']; ?> place(s)</p>
+            <p class="p-credit"><?= $carpool['price']; ?> crédit(s)</p>
+            <p class="p-place"><?= $carpool['remaining_seat']; ?> place(s)</p>
         </div>
     </div>
     <div class="travel">
         <div class="div-depart">
-            <p><?= $carpool['heure_depart']; ?></p>
-            <p><?= $carpool['lieu_depart']; ?></p>
+            <p><?= $carpool['time_depart']; ?></p>
+            <p><?= $carpool['localisation_depart']; ?></p>
         </div>
         <div class="travel-circle"></div>
         <hr class="travel-line">
-        <p class="duree"><?= $carpool['duree']; ?></p>
+        <p class="duree"><?= $carpool['duration']; ?></p>
         <hr class="travel-line">
         <div class="travel-circle"></div>
         <div class="div-arrivee">
-            <p><?= $carpool['heure_arrivee']; ?></p>
-            <p><?= $carpool['lieu_arrivee']; ?></p>
+            <p><?= $carpool['time_arrival']; ?></p>
+            <p><?= $carpool['localisation_arrival']; ?></p>
         </div>
     </div>
     <hr>
     <div class="carpool-card-bottom">
-        <div class="tag-status" data-status="<?= $carpool['status_covoit']; ?>">
-            <p><?= $carpool['status_covoit']; ?></p>
+        <div class="tag-status" data-status="<?= $carpool['label_status_carpool']; ?>">
+            <p><?= $carpool['label_status_carpool']; ?></p>
         </div>
         <div class="green-tag">
-            <p><?= $carpool['type_voyage']; ?></p>
+            <p><?= $carpool['label_travel_type']; ?></p>
         </div>
         <div class="details-link">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#528DB9" class="chevron-double-right" viewBox="0 0 16 16">

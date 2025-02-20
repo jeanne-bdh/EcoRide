@@ -25,10 +25,10 @@ require_once dirname(__DIR__, 3) . "/libs/carpool.php";
             }
 
             if (!$pastCarpool) { ?>
-                <p>❌ Aucun covoiturage passés</p>
+                <p class="p-no-carpool">❌ Aucun covoiturage passés</p>
             <?php } ?>
         <?php } else { ?>
-            <p>❌ Aucun covoiturage passés</p>
+            <p class="p-no-carpool">❌ Aucun covoiturage passés</p>
         <?php } ?>
     <?php } ?>
 

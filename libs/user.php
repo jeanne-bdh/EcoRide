@@ -29,7 +29,15 @@ function verifyUniqueEmailRegister(PDO $pdo, string $email)
 
 function addUser(PDO $pdo, string $pseudo, string $email, string $password): bool
 {
-    $insertQuery = "INSERT INTO users (pseudo, email, password, status_session) VALUES (:pseudo, :email, :password, 'Actif')";
+    $query = "SELECT id_status_session FROM status_session WHERE label_status_session = 'Actif'";
+    $stmt = $pdo->query($query);
+    $statusId = $stmt->fetchColumn();
+    
+    if (!$statusId) {
+        return false;
+    }
+
+    $insertQuery = "INSERT INTO users (pseudo, email, password, id_status_session) VALUES (:pseudo, :email, :password, :statusId)";
 
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
@@ -37,6 +45,7 @@ function addUser(PDO $pdo, string $pseudo, string $email, string $password): boo
     $stmt->bindValue(':pseudo', $pseudo);
     $stmt->bindValue(':email', $email);
     $stmt->bindValue(':password', $hashedPassword);
+    $stmt->bindValue(':statusId', $statusId, PDO::PARAM_INT);
 
     return $stmt->execute();
 }

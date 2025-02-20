@@ -50,8 +50,7 @@ require_once dirname(__DIR__,2) . "/libs/format_time.php";
         </div>
         <p class="text-alter-carpool">Souhaitez-vous modifier votre recherche pour cette date ?</p>
 
-        <?php $carpoolsSearch = getCarpoolBySearch($pdo);
-        require __DIR__ . '/../../templates/carpool_card_visitor.php'; ?>
+        <?php require __DIR__ . '/../../templates/carpool_card_visitor.php'; ?>
 
     </section>
 
