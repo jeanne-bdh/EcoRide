@@ -18,7 +18,9 @@ function heroSection($title)
             </button>
         </div>
         <h1><?php echo $title; ?></h1>
-        <h6>20 Crédit(s)</h6>
+        <?php if (basename($_SERVER['PHP_SELF']) == 'user_session.php'): ?>
+            <h6>20 Crédit(s)</h6>
+        <?php endif; ?>
     </section>
 
 <?php } ?>
