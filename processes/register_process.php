@@ -7,6 +7,11 @@ $errorsRegister = [];
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
+    $uniquePseudo = verifyUniquePseudoRegister($pdo, $_POST["pseudo"]);
+    if ($uniquePseudo !== true) {
+        $errorsRegister["pseudo"] = $uniquePseudo;
+    }
+
     $uniqueEmail = verifyUniqueEmailRegister($pdo, $_POST["email"]);
     if ($uniqueEmail !== true) {
         $errorsRegister["email"] = $uniqueEmail;

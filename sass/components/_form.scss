@@ -13,7 +13,7 @@
 .inputForm {
     display: flex;
     flex-direction: column;
-    margin: 1rem;
+    margin: 0.5rem;
 
     label {
         color: $black;
@@ -46,36 +46,6 @@
     justify-content: center;
 }
 
-.alert {
-    position: absolute;
-    z-index: 4;
-    top: -1%;
-    left: 34%;
-    transform: translateX(-50%);
-    width: 300px;
-    height: 75px;
-    text-align: center;
-    padding: 0.75rem 1.25rem;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    color: #721c24;
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
-}
-
-.success {
-    width: 320px;
-    height: 70px;
-    text-align: center;
-    padding: 0.75rem 1.25rem;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    color: $white;
-    background-color: $secondary;
-    border-color: $black;
-}
-
-
 @media (min-width:768px) {
     .inputForm {
         label {
@@ -103,7 +73,7 @@
     }
 
     .inputForm {
-        margin: 2rem;
+        margin: 1rem;
 
         label {
             font-size: 1.1rem;

@@ -1,0 +1,17 @@
+.alert-container {
+    width: 282px;
+    height: 68px;
+    text-align: center;
+    padding: 0.75rem 1.25rem;
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid transparent;
+    border-color: #f5c6cb;
+    border-radius: 0.25rem;
+}
+
+@media (min-width:1200px) {
+    .alert-container {
+        width: 366px;
+    }
+}

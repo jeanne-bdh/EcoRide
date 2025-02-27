@@ -1,20 +1,7 @@
 <?php
 
 require_once dirname(__DIR__, 2) . "/templates/header.php";
-require_once dirname(__DIR__, 2) . "/libs/pdo.php";
-require_once dirname(__DIR__, 2) . "/libs/user.php";
-
-$errorsLogin = [];
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $user = verifyUserLoginPassword($pdo, $_POST['email'], $_POST['password']);
-    if ($user) {
-        $_SESSION['users'] = $user;
-        header('location: /pages/users/user_session.php');
-    } else {
-        $errorsLogin[] = "Identifiants incorrects";
-    }
-}
+require_once dirname(__DIR__, 2) . "/processes/login_process.php";
 
 ?>
 
@@ -32,14 +19,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <form class="form-login" action="" method="POST">
 
             <?php foreach ($errorsLogin as $error) { ?>
-                <div class="alert">
+                <div class="alert-container inputForm">
                     <?= $error; ?>
                 </div>
             <?php } ?>
 
             <?php if (isset($_SESSION['register_success'])) { ?>
                 <div class="success inputForm">
-                    <?= $_SESSION['register_success'] ;?>
+                    <p><?= $_SESSION['register_success'] ;?></p>
                 </div>
                 <?php unset($_SESSION['register_success']);
             } ?>

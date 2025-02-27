@@ -29,6 +29,20 @@ function verifyUniqueEmailRegister(PDO $pdo, string $email)
     return true;
 }
 
+function verifyUniquePseudoRegister(PDO $pdo, string $pseudo)
+{
+    $query = "SELECT pseudo FROM users WHERE pseudo = :pseudo";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
+    $stmt->execute();
+
+    if ($stmt->rowCount() > 0) {
+        return "Ce pseudo est déjà utilisé";
+    }
+
+    return true;
+}
+
 function addUser(PDO $pdo, string $pseudo, string $email, string $password): bool
 {
     $query = "SELECT id_status_session FROM status_session WHERE label_status_session = 'Actif'";
@@ -39,7 +53,7 @@ function addUser(PDO $pdo, string $pseudo, string $email, string $password): boo
         return false;
     }
 
-    $insertQuery = "INSERT INTO users (pseudo, email, password, id_status_session) VALUES (:pseudo, :email, :password, :statusId)";
+    $insertQuery = "INSERT INTO users (pseudo, email, password, id_status_session, credit) VALUES (:pseudo, :email, :password, :statusId, 20)";
 
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
@@ -126,5 +140,21 @@ function verifyPasswordRegister($user): bool|array
         return $errorsRegister;
     } else {
         return true;
+    }
+}
+
+function getUserCredit(PDO $pdo, $userId)
+{
+    $query = "SELECT credit FROM users WHERE id_users = :userId";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindValue(':userId', $userId, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($user) {
+        return $user['credit'];
+    } else {
+        return 0;
     }
 }

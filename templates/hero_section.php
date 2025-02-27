@@ -1,7 +1,18 @@
 <?php
 
-function heroSection($title)
-{ ?>
+require_once __DIR__ . "/../libs/pdo.php";
+
+function heroSection($title, $pdo)
+{
+
+    if (isset($_SESSION['id_users'])) {
+        $userId = $_SESSION['id_users'];
+        $credit = getUserCredit($pdo, $userId);
+    } else {
+        $credit = 0;
+    }
+
+?>
     <section class="wave-top">
         <svg viewBox="0 0 1442 355" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -19,7 +30,7 @@ function heroSection($title)
         </div>
         <h1><?php echo $title; ?></h1>
         <?php if (basename($_SERVER['PHP_SELF']) == 'user_session.php'): ?>
-            <h6>20 Crédit(s)</h6>
+            <h6><?php echo $credit; ?> Crédit(s)</h6>
         <?php endif; ?>
     </section>
 

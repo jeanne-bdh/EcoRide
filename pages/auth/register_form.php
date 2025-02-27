@@ -15,6 +15,17 @@ require_once dirname(__DIR__, 2) . "/processes/register_process.php";
     <!-- FORMULAIRE -->
     <section class="container-form" id="container-form-register">
         <form action="" method="POST">
+
+            <?php if (!empty($errorsRegister)) { ?>
+                <div class="alert-container inputForm">
+                    <?php foreach ($errorsRegister as $error) { ?>
+                        <div class="alert">
+                            <?= $error ?>
+                        </div>
+                    <?php } ?>
+                </div>
+            <?php } ?>
+
             <div class="inputForm">
                 <label for="inputPseudoRegister">Pseudo :</label>
                 <input type="text" name="pseudo" id="inputPseudoRegister" required>
