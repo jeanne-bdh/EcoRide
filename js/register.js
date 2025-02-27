@@ -5,7 +5,7 @@ const validPwdRegisterInput = document.getElementById("inputValidPwdReg");
 const btnRegister = document.getElementById("btn-valid-register");
 
 btnRegister.disabled = true;
-pseudoRegisterInput.addEventListener("change", validateFormRegister);
+pseudoRegisterInput.addEventListener("keyup", validateFormRegister);
 emailRegisterInput.addEventListener("keyup", validateFormRegister);
 pwdRegisterInput.addEventListener("keyup", validateFormRegister);
 validPwdRegisterInput.addEventListener("keyup", validateFormRegister);

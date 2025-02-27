@@ -23,8 +23,10 @@ function verifyUniqueEmailRegister(PDO $pdo, string $email)
     $stmt->execute();
 
     if ($stmt->rowCount() > 0) {
-        die("Cette adresse email est déjà utilisée");
+        return "Cette adresse email est déjà utilisée";
     }
+
+    return true;
 }
 
 function addUser(PDO $pdo, string $pseudo, string $email, string $password): bool
@@ -52,30 +54,30 @@ function addUser(PDO $pdo, string $pseudo, string $email, string $password): boo
 
 function verifyUser($user): bool|array
 {
-    $errors = [];
+    $errorsRegister = [];
 
     if (isset($user["email"])) {
         if ($user["email"] === "") {
-            $errors["email"] = "Le champ email est requis";
+            $errorsRegister["email"] = "Le champ email est requis";
         } else {
             if (!filter_var($user["email"], FILTER_VALIDATE_EMAIL)) {
-                $errors["email"] = "L'email n'est pas valide";
+                $errorsRegister["email"] = "L'email n'est pas valide";
             }
         }
     } else {
-        $errors["email"] = "Le champ email n'a pas été envoyé";
+        $errorsRegister["email"] = "Le champ email n'a pas été envoyé";
     }
 
     if (isset($user["password"])) {
         if (strlen($user["password"])  < 8) {
-            $errors["password"] = "Le mot de passe doit avoir au moins 8 caractères";
+            $errorsRegister["password"] = "Le mot de passe doit avoir au moins 8 caractères";
         }
     } else {
-        $errors["password"] = "Le champ password n'a pas été envoyé";
+        $errorsRegister["password"] = "Le champ password n'a pas été envoyé";
     }
 
-    if (count($errors)) {
-        return $errors;
+    if (count($errorsRegister)) {
+        return $errorsRegister;
     } else {
         return true;
     }

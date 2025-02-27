@@ -30,7 +30,8 @@
     }
 }
 
-.valid-feedback, .invalid-feedback {
+.valid-feedback,
+.invalid-feedback {
     display: none;
     color: red;
     font-size: 0.9em;
@@ -46,9 +47,20 @@
 }
 
 .alert {
-    background-color: rgb(244, 153, 153);
-    color: red;
-    border: $darkGrey;
+    position: absolute;
+    z-index: 4;
+    top: -1%;
+    left: 34%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 75px;
+    text-align: center;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
 }
 
 @media (min-width:768px) {

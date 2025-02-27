@@ -7,12 +7,21 @@ require_once dirname(__DIR__, 2) . "/libs/user.php";
 $errorsRegister = [];
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $verif = verifyUser($_POST);
-    if ($verif === true) {
-        $resultAdd = addUser($pdo, $_POST["pseudo"], $_POST["email"], $_POST["password"]);
-        header("Location: login.php");
-    } else {
-        $errorsRegister = $verif;
+
+    $uniqueEmail = verifyUniqueEmailRegister($pdo, $_POST["email"]);
+    if ($uniqueEmail !== true) {
+        $errorsRegister["email"] = $uniqueEmail;
+    }
+
+    if (empty($errorsRegister)) {
+        $verif = verifyUser($_POST);
+        if ($verif === true) {
+            $resultAdd = addUser($pdo, $_POST["pseudo"], $_POST["email"], $_POST["password"]);
+            header("Location: login.php");
+            exit();
+        } else {
+            $errorsRegister = $verif;
+        }
     }
 }
 
@@ -38,9 +47,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="invalid-feedback">
                     Veuillez entrer un pseudo ayant au moins 2 caractères
                 </div>
-                <?php if (isset($errors["pseudo"])) { ?>
+                <?php if (isset($errorsRegister["pseudo"])) { ?>
                     <div class="alert">
-                        <?= $errors["pseudo"] ?>
+                        <?= $errorsRegister["pseudo"] ?>
                     </div>
                 <?php } ?>
             </div>
@@ -53,9 +62,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="invalid-feedback">
                     Veuillez entrer une adresse e-mail valide
                 </div>
-                <?php if (isset($errors["email"])) { ?>
+                <?php if (isset($errorsRegister["email"])) { ?>
                     <div class="alert">
-                        <?= $errors["email"] ?>
+                        <?= $errorsRegister["email"] ?>
                     </div>
                 <?php } ?>
             </div>
@@ -69,9 +78,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     Veuillez saisir un mot de passe contenant au moins 8 caractères, une majuscule, une
                     minuscule, un chiffre et un caractère spécial
                 </div>
-                <?php if (isset($errors["password"])) { ?>
+                <?php if (isset($errorsRegister["password"])) { ?>
                     <div class="alert">
-                        <?= $errors["password"] ?>
+                        <?= $errorsRegister["password"] ?>
                     </div>
                 <?php } ?>
             </div>
