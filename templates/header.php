@@ -53,7 +53,7 @@ require_once __DIR__ . "/../libs/session.php";
                         <a class="hello-user" href="/pages/users/user_session.php">Bonjour <?= $_SESSION['users']['pseudo'] ;?> </a>
                         <a href="/pages/auth/logout.php"><button class="btn-blue" type="button">Déconnexion</button></a>
                     <?php } else { ?>
-                        <a href="/pages/auth/login.php"><button class="btn-blue" type="button">Connexion</button></a>
+                        <a href="/pages/auth/login_form.php"><button class="btn-blue" type="button">Connexion</button></a>
                     <?php } ?>
                 </li>
             </ul>

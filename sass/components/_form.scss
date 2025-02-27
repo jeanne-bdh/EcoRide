@@ -63,6 +63,19 @@
     border-color: #f5c6cb;
 }
 
+.success {
+    width: 320px;
+    height: 70px;
+    text-align: center;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    color: $white;
+    background-color: $secondary;
+    border-color: $black;
+}
+
+
 @media (min-width:768px) {
     .inputForm {
         label {

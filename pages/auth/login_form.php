@@ -28,14 +28,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <!-- FORMULAIRE -->
 
-    <?php foreach ($errorsLogin as $error) { ?>
-        <div class="alert">
-            <?= $error; ?>
-        </div>
-    <?php } ?>
-
     <section class="container-form" id="container-form-login">
         <form class="form-login" action="" method="POST">
+
+            <?php foreach ($errorsLogin as $error) { ?>
+                <div class="alert">
+                    <?= $error; ?>
+                </div>
+            <?php } ?>
+
+            <?php if (isset($_SESSION['register_success'])) { ?>
+                <div class="success inputForm">
+                    <?= $_SESSION['register_success'] ;?>
+                </div>
+                <?php unset($_SESSION['register_success']);
+            } ?>
+
             <div class="inputForm">
                 <label for="inputEmailLogin">Email :</label>
                 <input type="email" name="email" id="inputEmailLogin" required>
@@ -62,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
             <div class="link-account">
                 <p>Vous n’avez pas de compte ?</p>
-                <a href="/pages/auth/register.php">Inscrivez-vous ici !</a>
+                <a href="/pages/auth/register_form.php">Inscrivez-vous ici !</a>
             </div>
         </form>
     </section>

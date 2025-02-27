@@ -1,30 +1,7 @@
 <?php
 
 require_once dirname(__DIR__, 2) . "/templates/header.php";
-require_once dirname(__DIR__, 2) . "/libs/pdo.php";
-require_once dirname(__DIR__, 2) . "/libs/user.php";
-
-$errorsRegister = [];
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-
-    $uniqueEmail = verifyUniqueEmailRegister($pdo, $_POST["email"]);
-    if ($uniqueEmail !== true) {
-        $errorsRegister["email"] = $uniqueEmail;
-    }
-
-    if (empty($errorsRegister)) {
-        $verif = verifyUser($_POST);
-        if ($verif === true) {
-            $resultAdd = addUser($pdo, $_POST["pseudo"], $_POST["email"], $_POST["password"]);
-            header("Location: login.php");
-            exit();
-        } else {
-            $errorsRegister = $verif;
-        }
-    }
-}
-
+require_once dirname(__DIR__, 2) . "/processes/register_process.php";
 ?>
 
 <main>
@@ -99,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
             <div class="link-account">
                 <p>Vous avez déjà un compte ?</p>
-                <a href="/pages/auth/login.php">Connectez-vous ici !</a>
+                <a href="/pages/auth/login_form.php">Connectez-vous ici !</a>
             </div>
         </form>
     </section>

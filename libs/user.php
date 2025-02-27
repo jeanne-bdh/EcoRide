@@ -34,7 +34,7 @@ function addUser(PDO $pdo, string $pseudo, string $email, string $password): boo
     $query = "SELECT id_status_session FROM status_session WHERE label_status_session = 'Actif'";
     $stmt = $pdo->query($query);
     $statusId = $stmt->fetchColumn();
-    
+
     if (!$statusId) {
         return false;
     }
@@ -52,7 +52,30 @@ function addUser(PDO $pdo, string $pseudo, string $email, string $password): boo
     return $stmt->execute();
 }
 
-function verifyUser($user): bool|array
+function verifyPseudoRegister($user): bool|array
+{
+    $errorsRegister = [];
+
+    if (isset($user["pseudo"])) {
+        if ($user["pseudo"] === "") {
+            $errorsRegister["pseudo"] = "Le champ email est requis";
+        } else {
+            if (strlen(trim($user["pseudo"]))  < 1) {
+                $errorsRegister["pseudo"] = "Le pseudo doit avoir au moins 2 caractères";
+            }
+        }
+    } else {
+        $errorsRegister["email"] = "Le champ email n'a pas été envoyé";
+    }
+
+    if (count($errorsRegister)) {
+        return $errorsRegister;
+    } else {
+        return true;
+    }
+}
+
+function verifyEmailRegister($user): bool|array
 {
     $errorsRegister = [];
 
@@ -68,9 +91,32 @@ function verifyUser($user): bool|array
         $errorsRegister["email"] = "Le champ email n'a pas été envoyé";
     }
 
+    if (count($errorsRegister)) {
+        return $errorsRegister;
+    } else {
+        return true;
+    }
+}
+
+function verifyPasswordRegister($user): bool|array
+{
+    $errorsRegister = [];
+
     if (isset($user["password"])) {
-        if (strlen($user["password"])  < 8) {
+        if (strlen(trim($user["password"])) < 8) {
             $errorsRegister["password"] = "Le mot de passe doit avoir au moins 8 caractères";
+        }
+        if (!preg_match('/[A-Z]/', $user["password"])) {
+            $errorsRegister["password"] = "Le mot de passe doit contenir au moins une majuscule";
+        }
+        if (!preg_match('/[a-z]/', $user["password"])) {
+            $errorsRegister["password"] = "Le mot de passe doit contenir au moins une minuscule";
+        }
+        if (!preg_match('/\d/', $user["password"])) {
+            $errorsRegister["password"] = "Le mot de passe doit contenir au moins un chiffre";
+        }
+        if (!preg_match('/[\W_]/', $user["password"])) {
+            $errorsRegister["password"] = "Le mot de passe doit contenir au moins un caractère spécial";
         }
     } else {
         $errorsRegister["password"] = "Le champ password n'a pas été envoyé";
