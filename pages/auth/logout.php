@@ -8,4 +8,4 @@ session_destroy();
 
 unset($_SESSION);
 
-header('location:login.php');
+header('location:login_form.php');
