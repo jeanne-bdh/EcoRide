@@ -15,8 +15,23 @@ require_once dirname(__DIR__, 2) . "/libs/user.php";
     if (isUserConnected()) {
         $userId = $_SESSION['users'];
         $credit = getUserCredit($pdo, $userId);
+
+        $query = $pdo->prepare(
+            "SELECT u.id_role, p.id_profil
+            FROM users u
+            LEFT JOIN profil p ON u.id_profil = p.id_profil
+            WHERE u.id_users = ?"
+        );
+
+        $query->execute([$userId]);
+        $userData = $query->fetch(PDO::FETCH_ASSOC);
+
+        $userRole = $userData['id_role'] ?? null;
+        $userProfil = $userData['id_profil'] ?? null;
     } else {
         $credit = 0;
+        $userRole = null;
+        $userProfil = null;
     }
 
     ?>
@@ -43,9 +58,11 @@ require_once dirname(__DIR__, 2) . "/libs/user.php";
     <!-- MENU SESSION -->
 
     <section class="menu-session">
-        <a href="/pages/users/new-carpool/new_carpool.php" class="card-session">
-            <h3>Saisir un voyage</h3>
-        </a>
+        <?php if ($userRole == 2 && ($userProfil == 2 || $userProfil == 3)): ?>
+            <a href="/pages/users/new-carpool/new_carpool.php" class="card-session">
+                <h3>Saisir un voyage</h3>
+            </a>
+        <?php endif; ?>
         <a href="/pages/users/hist-carpool/hist_carpool.php" class="card-session">
             <h3>Historique <br> des covoiturages</h3>
         </a>

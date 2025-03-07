@@ -121,7 +121,7 @@ if (isset($_GET["id_carpool"])) {
         </div>
 
         <a href="#">
-            <button class="btn-blue btn-participate">Participer</button>
+            <button type="submit" class="btn-blue btn-participate">Participer</button>
         </a>
     </section>
 

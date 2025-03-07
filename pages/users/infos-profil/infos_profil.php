@@ -1,6 +1,14 @@
 <?php
 
 require_once dirname(__DIR__, 3) . "/templates/header.php";
+require_once dirname(__DIR__, 3) . "/libs/pdo.php";
+require_once dirname(__DIR__, 3) . "/libs/profil.php";
+
+if (isset($_POST['saveProfilForm'])) {
+    saveProfilForm($pdo, $_POST['lastname'], $_POST['firstname'], $_POST['address'], $_POST['telephone'], (int)$_SESSION['users']['id_users']);
+} else {
+    //erreur
+}
 
 ?>
 
@@ -18,14 +26,14 @@ require_once dirname(__DIR__, 3) . "/templates/header.php";
             <option selected disabled>Êtes-vous passager ou chauffeur ?</option>
             <option value="1">Passager</option>
             <option value="2">Chauffeur</option>
-            <option value="3">Passager et chauffeur</option>
+            <option value="3">Passager chauffeur</option>
         </select>
 
         <section class="container-form" id="container-form-profil">
 
             <form action="">
-                <div>
-                    <div>
+                <div class="container-form-inner">
+                    <div class="profil-infos-container">
                         <div class="inputForm">
                             <label for="">Nom</label>
                             <input type="text">
@@ -43,7 +51,7 @@ require_once dirname(__DIR__, 3) . "/templates/header.php";
                             <input type="text">
                         </div>
                     </div>
-                    <div>
+                    <div class="car-infos-container">
                         <div class="inputForm">
                             <label for="">Marque</label>
                             <input type="text">

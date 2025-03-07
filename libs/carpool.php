@@ -22,9 +22,10 @@ function getPastCarpoolByUser(PDO $pdo, int $userId): array
 function getFutureCarpoolByUser(PDO $pdo, int $userId): array
 {
     $stmt = $pdo->prepare(
-        'SELECT *
+        'SELECT carpool.*, travel_type.label_travel_type, status_carpool.label_status_carpool
         FROM carpool
-        JOIN label_travel_type ON travel_type.id_travel_type = carpool.id_travel_type
+        JOIN travel_type ON travel_type.id_travel_type = carpool.id_travel_type
+        JOIN status_carpool ON status_carpool.id_status_carpool = carpool.id_status_carpool
         WHERE id_users = :id_users
         AND date_depart > NOW()
         AND label_status_carpool = "Confirmé"

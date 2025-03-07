@@ -4,13 +4,15 @@
     margin: 0.5rem;
 }
 
-.form-select {
-    border-radius: 5px;
-}
-
 #container-form-profil {
     form {
         margin-top: 0.5rem;
+
+        .container-form-inner:first-child {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
     }
 }
 
@@ -19,64 +21,31 @@
 }
 
 @media (min-width: 768px) {
-
     #container-form-profil {
         width: 600px;
 
         form {
-            margin-top: 0.5rem;
-            
+            .container-form-inner:first-child {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     }
 }
 
 @media (min-width: 992px) {
-
     #container-form-profil {
         width: 850px;
 
         form {
-            margin-top: 0.5rem;
-            
+            .container-form-inner:first-child {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
     }
 }
 
 @media (min-width: 1200px) {
-
     #container-form-profil {
-        width: 1100px;
-
-        form {
-            margin-top: 0.5rem;
-            
-        }
-    }
-}
-
-
-.container-form form > div:first-child {
-    display: grid;
-    gap: 1rem; /* Espacement entre les éléments */
-}
-
-/* Mode mobile : 1 colonne */
-@media (max-width: 767px) {
-    .container-form form > div:first-child {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Mode tablette : 2 colonnes */
-@media (min-width: 768px) {
-    .container-form form > div:first-child {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Mode desktop : 3 colonnes */
-@media (min-width: 992px) {
-    .container-form form > div:first-child {
-        grid-template-columns: repeat(3, 1fr);
+        width: 1150px;
     }
 }
