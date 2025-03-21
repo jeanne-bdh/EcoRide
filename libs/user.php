@@ -32,7 +32,7 @@ function addUser(PDO $pdo, string $pseudo, string $email, string $password): boo
     return $stmt->execute();
 }
 
-function getUserCredit(PDO $pdo, $userId): int
+function getUserCredit(PDO $pdo, $userId): ?int
 {
     $query = "SELECT credit FROM users WHERE id_users = :userId";
     $stmt = $pdo->prepare($query);

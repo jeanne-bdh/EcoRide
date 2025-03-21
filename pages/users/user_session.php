@@ -13,13 +13,13 @@ require_once dirname(__DIR__, 2) . "/libs/user.php";
     <?php
 
     if (isUserConnected()) {
-        $userId = $_SESSION['users'];
+        $userId = $_SESSION['users']['id_users'];
         $credit = getUserCredit($pdo, $userId);
 
         $query = $pdo->prepare(
             "SELECT u.id_role, p.id_profil
             FROM users u
-            LEFT JOIN profil p ON u.id_profil = p.id_profil
+            LEFT JOIN profiles p ON u.id_profil = p.id_profil
             WHERE u.id_users = ?"
         );
 
