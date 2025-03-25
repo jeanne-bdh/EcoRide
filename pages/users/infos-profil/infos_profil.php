@@ -35,19 +35,19 @@ if (isset($_POST['saveProfilForm'])) {
                 <div class="container-form-inner">
                     <div class="profil-infos-container">
                         <div class="inputForm">
-                            <label for="">Nom</label>
+                            <label for="lastname">Nom</label>
                             <input type="text">
                         </div>
                         <div class="inputForm">
-                            <label for="">Prénom</label>
+                            <label for="firstname">Prénom</label>
                             <input type="text">
                         </div>
                         <div class="inputForm">
-                            <label for="">Adresse</label>
+                            <label for="address">Adresse</label>
                             <input type="text">
                         </div>
                         <div class="inputForm">
-                            <label for="">Téléphone</label>
+                            <label for="telephone">Téléphone</label>
                             <input type="text">
                         </div>
                         <div class="photo-upload">
@@ -67,28 +67,28 @@ if (isset($_POST['saveProfilForm'])) {
                     </div>
                     <div class="car-infos-container">
                         <div class="inputForm">
-                            <label for="">Marque</label>
+                            <label for="brand">Marque</label>
                             <input type="text">
                         </div>
                         <div class="inputForm">
-                            <label for="">Modèle</label>
+                            <label for="model">Modèle</label>
                             <input type="text">
                         </div>
                         <div class="inputForm">
-                            <label for="">Immatriculation</label>
+                            <label for="plate">Immatriculation</label>
                             <input type="text">
                         </div>
                         <div class="inputForm">
-                            <label for="">Date de la 1ère immatriculation</label>
+                            <label for="dateRegister">Date de la 1ère immatriculation</label>
                             <input type="date">
                         </div>
                         <div class="inputForm">
-                            <label for="">Nombre de places</label>
+                            <label for="seat">Nombre de places</label>
                             <input type="text">
                         </div>
                     </div>
                     <div class="inputForm">
-                        <label for="">Préférences</label>
+                        <label for="preferences">Préférences</label>
                         <textarea type="text" name="" id=""></textarea>
                     </div>
                 </div>
