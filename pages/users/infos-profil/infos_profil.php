@@ -31,27 +31,27 @@ if (isset($_POST['saveProfilForm'])) {
 
         <section class="container-form" id="container-form-profil">
 
-            <form action="">
+            <form action="" id="form-profil">
                 <div class="container-form-inner">
                     <div class="profil-infos-container">
                         <div class="inputForm">
                             <label for="lastname">Nom</label>
-                            <input type="text">
+                            <input type="text" id="lastname" name="lastname" autocomplete="family-name">
                         </div>
                         <div class="inputForm">
                             <label for="firstname">Prénom</label>
-                            <input type="text">
+                            <input type="text" id="firstname" name="firstname" autocomplete="given-name">
                         </div>
                         <div class="inputForm">
                             <label for="address">Adresse</label>
-                            <input type="text">
+                            <input type="text" id="address" name="address" autocomplete="address-line1">
                         </div>
                         <div class="inputForm">
                             <label for="telephone">Téléphone</label>
-                            <input type="text">
+                            <input type="text" id="telephone" name="telephone" autocomplete="tel">
                         </div>
                         <div class="photo-upload">
-                            <input type="file" class="inputForm">
+                            <input type="file" class="inputForm" id="photo" name="photo">
                             <div id="preview-container">
                                 <img id="photo-preview" src="/uploads/carpools/smiley-woman.jpg" alt="Choisir une photo">
                             </div>
@@ -68,28 +68,28 @@ if (isset($_POST['saveProfilForm'])) {
                     <div class="car-infos-container">
                         <div class="inputForm">
                             <label for="brand">Marque</label>
-                            <input type="text">
+                            <input type="text" id="brand" name="brand">
                         </div>
                         <div class="inputForm">
                             <label for="model">Modèle</label>
-                            <input type="text">
+                            <input type="text" id="model" name="model">
                         </div>
                         <div class="inputForm">
                             <label for="plate">Immatriculation</label>
-                            <input type="text">
+                            <input type="text" id="plate" name="plate" autocomplete="off">
                         </div>
                         <div class="inputForm">
                             <label for="dateRegister">Date de la 1ère immatriculation</label>
-                            <input type="date">
+                            <input type="date" id="dateRegister" name="dateRegister">
                         </div>
                         <div class="inputForm">
                             <label for="seat">Nombre de places</label>
-                            <input type="text">
+                            <input type="text" id="seat" name="seat">
                         </div>
                     </div>
-                    <div class="inputForm">
+                    <div class="inputForm" id="preferences-container">
                         <label for="preferences">Préférences</label>
-                        <textarea type="text" name="" id=""></textarea>
+                        <textarea type="text" name="preferences" id="preferences"></textarea>
                     </div>
                 </div>
                 <div class="inputBtn">
