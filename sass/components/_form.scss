@@ -17,14 +17,14 @@
 
     label {
         color: $black;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     input {
         background-color: $lightGrey;
         border: 1px solid rgba($color: $black, $alpha: 0.4);
         border-radius: 5px;
-        width: 15rem;
+        width: 16rem;
         height: 2rem;
         padding-inline: 1rem;
     }
@@ -34,7 +34,7 @@
 .invalid-feedback {
     display: none;
     color: red;
-    font-size: 0.9em;
+    font-size: 0.7em;
 }
 
 .valid-feedback {
@@ -49,7 +49,7 @@
 @media (min-width:768px) {
     .inputForm {
         label {
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
         input {
@@ -63,7 +63,7 @@
 
     .valid-feedback,
     .invalid-feedback {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 }
 

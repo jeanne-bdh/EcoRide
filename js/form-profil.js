@@ -1,61 +1,56 @@
 export default class FormProfil {
 
-    constructor(id) {
-        this.id = id;
-        this.form = document.getElementById(this.id);
-        this.formdata = new FormData(this.form);
-        this.answers = new Array();
+    constructor(formId) {
+        this.form = document.getElementById(formId);
+        this.selectElement = this.form.querySelector('.form-select');
+        this.carContainer = this.form.querySelector(".car-infos-container");
+        this.containerInner = this.form.querySelector(".container-form-inner");
+        this.preferencesContainer = this.form.querySelector("#preferences-container");
+        this.init();
     }
 
-    getDiv(id) {
-        return document.getElementById(id).parentNode;
+    init() {
+        this.hideFields();
+        this.selectElement.addEventListener('change', () => this.toggleFields());
+        this.form.addEventListener('submit', (e) => this.handleSubmit(e));
     }
 
-    getElement() {
-        return document.querySelector('.form-select');
+    hideFields() {
+        this.carContainer.classList.remove("show");
+        this.preferencesContainer.classList.remove("show");
+        this.containerInner.classList.remove("show");
     }
 
-    getCarInfos() {
-        return document.querySelector(".car-infos-container");
+    showFields() {
+        this.carContainer.classList.add("show");
+        this.preferencesContainer.classList.add("show");
+        this.containerInner.classList.add("show");
     }
 
-    getPreferencesInfos() {
-        return document.getElementById("preferences-container");
-    }
-
-    maskChamp() {
-        this.getCarInfos().style.display = "none";
-        this.getPreferencesInfos().style.display = "none";
-    }
-
-    showChamp() {
-        this.getCarInfos().style.display = "block";
-        this.getPreferencesInfos().style.display = "block";
-    }
-
-    isSelected(id, value, action, otherAction) {
-        this.formdata = new FormData(this.form);
-        if (this.formdata.get(id) == value) {
-            action();
-        }
-        else {
-            otherAction();
+    toggleFields() {
+        const value = this.selectElement.value;
+        if (value === '2' || value === '3') {
+            this.showFields();
+        } else {
+            this.hideFields();
         }
     }
 
-    getAnswers() {
-        this.formdata = new FormData(this.form);
-        this.formdata.forEach((value, key) => {
-            this.answers.push([key, value]);
-        })
-        return this.answers;
+    getFormData() {
+        return new FormData(this.form);
     }
-
+    
     showAnswers() {
-        let chaine = "Récapitulatif de vos réponses :\n\n";
-        for (let ligne of this.getAnswers()) {
-            chaine += `${ligne[0]} : ${ligne[1]}\n`;
+        const formData = this.getFormData();
+        let result = "Récapitulatif de vos réponses :\n\n";
+        for (let [key, value] of formData.entries()) {
+            result += `${key} : ${value}\n`;
         }
-        alert(chaine);
+        alert(result);
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        this.showAnswers();
     }
 }
