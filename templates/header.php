@@ -9,7 +9,7 @@ require_once __DIR__ . "/../libs/session.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="icon" type="image/x-icon" href="/assets/images/navbar/favicon.png">
+    <link rel="shortcut icon" href="/assets/images/navbar/favicon.png" type="image/x-icon">
 
     <title>EcoRide</title>
 </head>

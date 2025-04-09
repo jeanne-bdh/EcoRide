@@ -4,10 +4,16 @@ require_once dirname(__DIR__, 3) . "/templates/header.php";
 require_once dirname(__DIR__, 3) . "/libs/pdo.php";
 require_once dirname(__DIR__, 3) . "/libs/profil.php";
 
+$errorForm = [];
+$messageForm = [];
+
 if (isset($_POST['saveProfilForm'])) {
-    saveProfilForm($pdo, $_POST['lastname'], $_POST['firstname'], $_POST['address'], $_POST['telephone'], (int)$_SESSION['users']['id_users']);
-} else {
-    //erreur
+    $res = saveProfilForm($pdo, $_POST['lastname'], $_POST['firstname'], $_POST['address'], $_POST['telephone'], (int)$_SESSION['users']['id_users']);
+    if ($res) {
+        $messageForm[] = "Votre profil a été mis à jour avec succès";
+    } else {
+        $errorForm[] = "Erreur lors de l'enregistrement du profil";
+    }
 }
 
 ?>
@@ -22,9 +28,9 @@ if (isset($_POST['saveProfilForm'])) {
 
     <section class="container-form" id="container-form-profil">
 
-        <form action="" id="form-profil">
+        <form method="POST" id="form-profil">
 
-            <select class="form-select" aria-label="Sélectionner des filtres" required>
+            <select class="form-select" name="profilType" aria-label="Sélectionner des filtres" required>
                 <option selected disabled>Êtes-vous passager ou chauffeur ?</option>
                 <option value="1">Passager</option>
                 <option value="2">Chauffeur</option>
@@ -62,8 +68,8 @@ if (isset($_POST['saveProfilForm'])) {
                         </svg>
                         <a class="password-change" href="/pages/users/infos-profil/edit_password.php">Changer votre mot de passe</a>
                     </div>
-
                 </div>
+
                 <div class="car-infos-container">
                     <div class="inputForm">
                         <label for="brand">Marque</label>
@@ -92,7 +98,7 @@ if (isset($_POST['saveProfilForm'])) {
                 </div>
             </div>
             <div class="inputBtn">
-                <button type="submit" class="btn-blue" id="btn-profil">Enregistrer</button>
+                <button type="submit" name="saveProfilForm" class="btn-blue" id="btn-profil">Enregistrer</button>
             </div>
         </form>
 

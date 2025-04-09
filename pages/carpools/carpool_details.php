@@ -24,7 +24,7 @@ if (isset($_GET["id_carpool"])) {
         <div class="carpool-card" id="carpool-details">
             <div class="carpool-card-top" id="seat-credit-items">
                 <div class="blue-tag">
-                    <p>2025-02-15</p>
+                    <p><?=$detailsCarpool['date_depart'];?></p>
                 </div>
                 <div>
                     <p class="p-credit">15 crédit(s)</p>

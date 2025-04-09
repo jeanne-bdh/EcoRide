@@ -1,28 +1,23 @@
 <?php
 
-function saveProfilForm(PDO $pdo, string $lastname, string $firstname, string $address, string $telephone, int $id = null): int|bool
+function saveSelectProfil(PDO $pdo, int $usersId, int $profilType): bool
 {
-    if ($id) {
-        //UPDATE
-    } else {
-        $query = $pdo->prepare(
-            "INSERT INTO users (lastname, firstname, address, telephone) VALUES (:lastname, :firstname, :address, :telephone)"
-        );
-    }
-    $stmt = $pdo->prepare($query);
+    $query = $pdo->prepare("UPDATE users SET id_profil = :id_profil WHERE id_users = :id_users");
+    $query->bindValue(':id_profil', $profilType, PDO::PARAM_INT);
+    $query->bindValue(':id_users', $usersId, PDO::PARAM_INT);
+
+    return $query->execute();
+}
+
+
+function saveProfilForm(PDO $pdo, string $lastname, string $firstname, string $address, string $telephone, int $usersId): int|bool
+{
+    $stmt = $pdo->prepare("UPDATE users SET lastname = :lastname, firstname = :firstname, address = :address, telephone = :telephone WHERE id_users = :id_users");
+    $stmt->bindValue(':id_users', $usersId, PDO::PARAM_INT);
     $stmt->bindValue(':lastname', $lastname, PDO::PARAM_STR);
     $stmt->bindValue(':firstname', $firstname, PDO::PARAM_STR);
     $stmt->bindValue(':address', $address, PDO::PARAM_STR);
     $stmt->bindValue(':telephone', $telephone, PDO::PARAM_STR);
 
-    $res = $stmt->execute();
-    if ($res) {
-        if ($id) {
-            return $id;
-        } else {
-            return $pdo->lastInsertId();
-        }
-    } else {
-        return false;
-    }
+    return $stmt->execute();
 }

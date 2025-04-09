@@ -3,14 +3,14 @@
 function getPastCarpoolByUser(PDO $pdo, int $userId): array
 {
     $stmt = $pdo->prepare(
-        'SELECT carpools.*, travel_types.label_travel_type, status_carpool.label_status_carpool
+        'SELECT carpools.*, status_carpool.label_status_carpool, travel_types.label_travel_type
         FROM carpools
-        JOIN car ON carpool.id_users = car.id_users
-        JOIN travel_types ON car.id_travel_type = travel_types.id_travel_type
-        JOIN status_carpool ON carpool.id_status_carpool = status_carpool.id_status_carpool
+        LEFT JOIN status_carpool ON carpools.id_status_carpool = status_carpool.id_status_carpool
+        LEFT JOIN users ON users.id_users = carpools.id_users
+        LEFT JOIN cars ON cars.id_users = users.id_users
+        LEFT JOIN travel_types ON travel_types.id_travel_type = cars.id_travel_type
         WHERE carpools.date_depart < CURDATE()
         AND carpools.id_users = :id_users
-        AND carpools.id_status_carpool = 2
         ORDER BY carpools.date_depart DESC'
     );
     $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
@@ -59,7 +59,7 @@ function getCarpoolById(PDO $pdo): array
         FROM carpools
         JOIN users ON carpools.id_users = users.id_users
         JOIN cars ON cars.id_users = users.id_users
-        JOIN travel_types ON car.id_travel_type = travel_types.id_travel_type
+        JOIN travel_types ON cars.id_travel_type = travel_types.id_travel_type
         LEFT JOIN reviews ON carpools.id_carpool = reviews.id_carpool
         GROUP BY carpools.id_carpool, travel_types.label_travel_type, users.pseudo'
     );

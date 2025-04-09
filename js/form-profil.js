@@ -39,7 +39,8 @@ export default class FormProfil {
     getFormData() {
         return new FormData(this.form);
     }
-    
+
+    /*
     showAnswers() {
         const formData = this.getFormData();
         let result = "Récapitulatif de vos réponses :\n\n";
@@ -48,9 +49,9 @@ export default class FormProfil {
         }
         alert(result);
     }
-
+    
     handleSubmit(event) {
-        event.preventDefault();
-        this.showAnswers();
-    }
+            event.preventDefault();
+            this.showAnswers();
+        }*/
 }

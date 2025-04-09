@@ -69,16 +69,15 @@
 
 .car-infos-container,
 #preferences-container {
-    display: grid;
-    grid-auto-rows: min-content;
-    max-height: 0;
+    display: none;
     opacity: 0;
     transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
 }
 
 .car-infos-container.show,
 #preferences-container.show {
-    max-height: 500px;
+    display: grid;
+    grid-auto-rows: min-content;
     opacity: 1;
 }
 
