@@ -3,18 +3,7 @@
 require_once dirname(__DIR__, 3) . "/templates/header.php";
 require_once dirname(__DIR__, 3) . "/libs/pdo.php";
 require_once dirname(__DIR__, 3) . "/libs/profil.php";
-
-$errorForm = [];
-$messageForm = [];
-
-if (isset($_POST['saveProfilForm'])) {
-    $res = saveProfilForm($pdo, $_POST['lastname'], $_POST['firstname'], $_POST['address'], $_POST['telephone'], (int)$_SESSION['users']['id_users']);
-    if ($res) {
-        $messageForm[] = "Votre profil a été mis à jour avec succès";
-    } else {
-        $errorForm[] = "Erreur lors de l'enregistrement du profil";
-    }
-}
+require_once dirname(__DIR__, 3) . "/processes/profil_process.php";
 
 ?>
 
@@ -32,28 +21,28 @@ if (isset($_POST['saveProfilForm'])) {
 
             <select class="form-select" name="profilType" aria-label="Sélectionner des filtres" required>
                 <option selected disabled>Êtes-vous passager ou chauffeur ?</option>
-                <option value="1">Passager</option>
-                <option value="2">Chauffeur</option>
-                <option value="3">Passager chauffeur</option>
+                <option value="1" <?= $profilType == 1 ? 'selected' : '' ?>>Passager</option>
+                <option value="2" <?= $profilType == 2 ? 'selected' : '' ?>>Chauffeur</option>
+                <option value="3" <?= $profilType == 3 ? 'selected' : '' ?>>Passager chauffeur</option>
             </select>
 
             <div class="container-form-inner">
                 <div class="profil-infos-container">
                     <div class="inputForm">
                         <label for="lastname">Nom</label>
-                        <input type="text" id="lastname" name="lastname" autocomplete="family-name">
+                        <input type="text" id="lastname" name="lastname" value="<?= htmlspecialchars($lastname) ?>" autocomplete="family-name">
                     </div>
                     <div class="inputForm">
                         <label for="firstname">Prénom</label>
-                        <input type="text" id="firstname" name="firstname" autocomplete="given-name">
+                        <input type="text" id="firstname" name="firstname" value="<?= htmlspecialchars($firstname) ?>" autocomplete="given-name">
                     </div>
                     <div class="inputForm">
                         <label for="address">Adresse</label>
-                        <input type="text" id="address" name="address" autocomplete="address-line1">
+                        <input type="text" id="address" name="address" value="<?= htmlspecialchars($address) ?>" autocomplete="address-line1">
                     </div>
                     <div class="inputForm">
                         <label for="telephone">Téléphone</label>
-                        <input type="text" id="telephone" name="telephone" autocomplete="tel">
+                        <input type="text" id="telephone" name="telephone" value="<?= htmlspecialchars($telephone) ?>" autocomplete="tel">
                     </div>
                     <div class="photo-upload">
                         <input type="file" class="inputForm" id="photo" name="photo">
@@ -69,37 +58,63 @@ if (isset($_POST['saveProfilForm'])) {
                         <a class="password-change" href="/pages/users/infos-profil/edit_password.php">Changer votre mot de passe</a>
                     </div>
                 </div>
-
                 <div class="car-infos-container">
                     <div class="inputForm">
                         <label for="brand">Marque</label>
-                        <input type="text" id="brand" name="brand">
+                        <input type="text" id="brand" name="brand" value="<?= htmlspecialchars($carBrand) ?>">
                     </div>
                     <div class="inputForm">
                         <label for="model">Modèle</label>
-                        <input type="text" id="model" name="model">
+                        <input type="text" id="model" name="model" value="<?= htmlspecialchars($carModel) ?>">
                     </div>
                     <div class="inputForm">
+                        <label for="color">Couleur</label>
+                        <input type="text" id="color" name="color" value="<?= htmlspecialchars($carColor) ?>">
+                    </div>
+                    <div class="inputForm">
+                        <label for="energy">Energie</label>
+                        <select class="select-energy" name="energy" aria-label="Energie" required>
+                            <option selected disabled>Sélectionnez le type d'énergie de votre véhicule</option>
+                            <option value="1" <?= $carEnergy == 1 ? 'selected' : '' ?>>Electrique</option>
+                            <option value="2" <?= $carEnergy == 2 ? 'selected' : '' ?>>Hybride</option>
+                            <option value="3" <?= $carEnergy == 3 ? 'selected' : '' ?>>Diesel</option>
+                            <option value="3" <?= $carEnergy == 4 ? 'selected' : '' ?>>Essence</option>
+                            <option value="3" <?= $carEnergy == 5 ? 'selected' : '' ?>>GPL</option>
+                        </select>
+                    </div>
+                    <div class="inputForm">
+                        <label for="seat">Place(s) libre(s)</label>
+                        <input type="number" id="seat" name="seat" value="<?= htmlspecialchars($carSeats) ?>">
+                    </div>
+                </div>
+                <div class="car-infos-container2">
+                    <div class="inputForm">
                         <label for="plate">Immatriculation</label>
-                        <input type="text" id="plate" name="plate" autocomplete="off">
+                        <input type="text" id="plate" name="plate" value="<?= htmlspecialchars($carPlate) ?>" autocomplete="off">
                     </div>
                     <div class="inputForm">
                         <label for="dateRegister">Date de la 1ère immatriculation</label>
-                        <input type="date" id="dateRegister" name="dateRegister">
+                        <input type="date" id="dateRegister" name="dateRegister" value="<?= htmlspecialchars($carFirstRegist) ?>">
                     </div>
                     <div class="inputForm">
-                        <label for="seat">Nombre de places</label>
-                        <input type="text" id="seat" name="seat">
+                        <label for="preferences">Préférences</label>
+                        <textarea type="text" name="preferences" id="preferences" value="<?= htmlspecialchars($carPreferences) ?>"></textarea>
                     </div>
-                </div>
-                <div class="inputForm" id="preferences-container">
-                    <label for="preferences">Préférences</label>
-                    <textarea type="text" name="preferences" id="preferences"></textarea>
                 </div>
             </div>
             <div class="inputBtn">
                 <button type="submit" name="saveProfilForm" class="btn-blue" id="btn-profil">Enregistrer</button>
             </div>
+            <?php foreach ($messagesForm as $message) { ?>
+                <div class="success">
+                    <?= $message; ?>
+                </div>
+            <?php } ?>
+            <?php foreach ($errorsForm as $error) { ?>
+                <div class="alert-container">
+                    <?= $error; ?>
+                </div>
+            <?php } ?>
         </form>
 
     </section>

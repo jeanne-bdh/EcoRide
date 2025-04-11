@@ -34,9 +34,9 @@ function addUser(PDO $pdo, string $pseudo, string $email, string $password): boo
 
 function getUserCredit(PDO $pdo, $userId): ?int
 {
-    $query = "SELECT credit FROM users WHERE id_users = :userId";
+    $query = "SELECT credit FROM users WHERE id_users = :id_users";
     $stmt = $pdo->prepare($query);
-    $stmt->bindValue(':userId', $userId, PDO::PARAM_INT);
+    $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
     $stmt->execute();
 
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -48,3 +48,12 @@ function getUserCredit(PDO $pdo, $userId): ?int
     }
 }
 
+function getUser (PDO $pdo, $userId): array
+{
+    $query = "SELECT * FROM users WHERE id_users = :id_users";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}

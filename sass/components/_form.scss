@@ -35,6 +35,7 @@
     display: none;
     color: red;
     font-size: 0.7em;
+    width: 16rem;
 }
 
 .valid-feedback {
@@ -90,5 +91,6 @@
     .valid-feedback,
     .invalid-feedback {
         font-size: 0.9rem;
+        width: 20rem;
     }
 }

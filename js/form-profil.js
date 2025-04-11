@@ -5,7 +5,7 @@ export default class FormProfil {
         this.selectElement = this.form.querySelector('.form-select');
         this.carContainer = this.form.querySelector(".car-infos-container");
         this.containerInner = this.form.querySelector(".container-form-inner");
-        this.preferencesContainer = this.form.querySelector("#preferences-container");
+        this.carContainer2 = this.form.querySelector(".car-infos-container2");
         this.init();
     }
 
@@ -17,13 +17,13 @@ export default class FormProfil {
 
     hideFields() {
         this.carContainer.classList.remove("show");
-        this.preferencesContainer.classList.remove("show");
+        this.carContainer2.classList.remove("show");
         this.containerInner.classList.remove("show");
     }
 
     showFields() {
         this.carContainer.classList.add("show");
-        this.preferencesContainer.classList.add("show");
+        this.carContainer2.classList.add("show");
         this.containerInner.classList.add("show");
     }
 
@@ -39,19 +39,4 @@ export default class FormProfil {
     getFormData() {
         return new FormData(this.form);
     }
-
-    /*
-    showAnswers() {
-        const formData = this.getFormData();
-        let result = "Récapitulatif de vos réponses :\n\n";
-        for (let [key, value] of formData.entries()) {
-            result += `${key} : ${value}\n`;
-        }
-        alert(result);
-    }
-    
-    handleSubmit(event) {
-            event.preventDefault();
-            this.showAnswers();
-        }*/
 }
