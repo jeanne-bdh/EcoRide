@@ -48,7 +48,7 @@ function getUserCredit(PDO $pdo, $userId): ?int
     }
 }
 
-function getUser (PDO $pdo, $userId): array
+function getUser (PDO $pdo, $userId): bool|array
 {
     $query = "SELECT * FROM users WHERE id_users = :id_users";
     $stmt = $pdo->prepare($query);

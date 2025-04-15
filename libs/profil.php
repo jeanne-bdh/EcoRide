@@ -30,29 +30,14 @@ function saveProfilForm(PDO $pdo, string $lastname, string $firstname, string $a
     return $stmt->execute();
 }
 
-function saveCar(PDO $pdo, string $carModel, string $carBrand, string $carPlate, string $carColor, string $carFirstRegist, int $carSeats, string $carPreferences, int $usersId): bool
+function saveCar(PDO $pdo, string $carModel, string $carBrand, string $carPlate, string $carColor, string $energy, string $carFirstRegist, int $carSeats, string $carPreferences, int $usersId): bool
 {
-    $stmt = $pdo->prepare("INSERT INTO cars (model, brand, nb_plate, color, first_regist, seats_nb, preferences, id_users) VALUE (:model, :brand, :nb_plate, :energy, :color, :first_regist, :seats_nb, :preferences, :id_users)");
+    $stmt = $pdo->prepare("INSERT INTO cars (model, brand, nb_plate, color, id_energy, first_regist, seats_nb, preferences, id_users) VALUE (:model, :brand, :nb_plate, :color, :id_energy, :first_regist, :seats_nb, :preferences, :id_users)");
     $stmt->bindValue(':model', $carModel, PDO::PARAM_STR);
     $stmt->bindValue(':brand', $carBrand, PDO::PARAM_STR);
     $stmt->bindValue(':nb_plate', $carPlate, PDO::PARAM_STR);
     $stmt->bindValue(':color', $carColor, PDO::PARAM_STR);
-    $stmt->bindValue(':first_regist', $carFirstRegist, PDO::PARAM_STR);
-    $stmt->bindValue(':seats_nb', $carSeats, PDO::PARAM_INT);
-    $stmt->bindValue(':preferences', $carPreferences, PDO::PARAM_STR);
-    $stmt->bindValue(':id_users', $usersId, PDO::PARAM_INT);
-
-    return $stmt->execute();
-}
-
-function updateCar(PDO $pdo, string $carModel, string $carBrand, string $carPlate, string $carEnergy, string $carColor, string $carFirstRegist, int $carSeats, string $carPreferences, int $usersId): bool
-{
-    $stmt = $pdo->prepare("UPDATE cars SET model = :model, brand = :brand, nb_plate = :nb_plate, energy = :energy, color = :color, first_regist = :first_regist, seats_nb = :seats_nb, preferences = :preferences WHERE id_users = :id_users");
-    $stmt->bindValue(':model', $carModel, PDO::PARAM_STR);
-    $stmt->bindValue(':brand', $carBrand, PDO::PARAM_STR);
-    $stmt->bindValue(':nb_plate', $carPlate, PDO::PARAM_STR);
-    $stmt->bindValue(':energy', $carEnergy, PDO::PARAM_STR);
-    $stmt->bindValue(':color', $carColor, PDO::PARAM_STR);
+    $stmt->bindValue(':id_energy', $energy, PDO::PARAM_INT);
     $stmt->bindValue(':first_regist', $carFirstRegist, PDO::PARAM_STR);
     $stmt->bindValue(':seats_nb', $carSeats, PDO::PARAM_INT);
     $stmt->bindValue(':preferences', $carPreferences, PDO::PARAM_STR);

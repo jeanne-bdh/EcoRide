@@ -96,6 +96,7 @@
 <script src="/js/cookie.js"></script>
 <script src="/js/register.js"></script>
 <script src="/js/carousel.js"></script>
+<script src="/js/messages.js"></script>
 <script src="/js/events.js" type="module"></script>
 </body>
 
