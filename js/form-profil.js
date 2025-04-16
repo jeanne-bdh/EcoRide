@@ -10,7 +10,7 @@ export default class FormProfil {
     }
 
     init() {
-        this.hideFields();
+        this.toggleFields();
         this.selectElement.addEventListener('change', () => this.toggleFields());
         this.form.addEventListener('submit', (e) => this.handleSubmit(e));
     }

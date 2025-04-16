@@ -9,11 +9,11 @@ function saveSelectProfil(PDO $pdo, int $usersId, int $profilType): bool
     return $query->execute();
 }
 
-function saveSelectEnergy(PDO $pdo, int $usersId, int $energy): bool
+function saveSelectEnergy(PDO $pdo, int $carId, int $energy): bool
 {
-    $query = $pdo->prepare("UPDATE cars SET id_energy = :id_energy WHERE id_users = :id_users");
+    $query = $pdo->prepare("UPDATE cars SET id_energy = :id_energy WHERE id_car = :id_car");
     $query->bindValue(':id_energy', $energy, PDO::PARAM_INT);
-    $query->bindValue(':id_users', $usersId, PDO::PARAM_INT);
+    $query->bindValue(':id_car', $carId, PDO::PARAM_INT);
 
     return $query->execute();
 }

@@ -2,7 +2,6 @@
 
 require_once __DIR__ . "/../libs/pdo.php";
 require_once __DIR__ . "/../libs/profil.php";
-//require_once __DIR__ . "/../libs/session.php";
 require_once __DIR__ . "/../libs/user.php";
 
 $errorsForm = [];
@@ -27,6 +26,7 @@ $carPreferences = $_POST['preferences'] ?? $userInfos['preferences'] ?? '';
 
 if (isset($_POST['saveProfilForm'])) {
     $res = saveProfilForm($pdo, $_POST['lastname'], $_POST['firstname'], $_POST['address'], $_POST['telephone'], (int)$_SESSION['users']['id_users']);
+    $carSaved = saveCar($pdo, $_POST['model'], $_POST['brand'], $_POST['plate'], $_POST['color'], $_POST['energy'], $_POST['dateRegister'], (int)$_POST['seat'], $_POST['preferences'], (int)$_SESSION['users']['id_users']);
 
     $profilSaved = false;
     if (isset($_POST['profilType'])) {
@@ -38,19 +38,9 @@ if (isset($_POST['saveProfilForm'])) {
         $energySaved = saveSelectEnergy($pdo, (int)$_SESSION['users']['id_users'], (int)$_POST['energy']);
     }
 
-    if ($res && $profilSaved && $energySaved) {
+    if ($res && $profilSaved && $energySaved && $carSaved) {
         $messagesForm[] = "Votre profil a été mis à jour avec succès";
     } else {
         $errorsForm[] = "Erreur lors de l'enregistrement du profil";
-    }
-}
-
-if (isset($_POST['saveProfilForm'])) {
-    $carSaved = saveCar($pdo, $_POST['model'], $_POST['brand'], $_POST['plate'], $_POST['color'], $_POST['energy'], $_POST['dateRegister'], (int)$_POST['seat'], $_POST['preferences'], (int)$_SESSION['users']['id_users']);
-
-    if ($carSaved) {
-        $messagesForm[] = "Votre voiture a été mis à jour avec succès";
-    } else {
-        $errorsForm[] = "Erreur lors de l'enregistrement de la voiture";
     }
 }

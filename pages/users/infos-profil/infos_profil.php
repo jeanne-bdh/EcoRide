@@ -98,7 +98,7 @@ require_once dirname(__DIR__, 3) . "/processes/profil_process.php";
                     </div>
                     <div class="inputForm">
                         <label for="preferences">Préférences</label>
-                        <textarea type="text" name="preferences" id="preferences" value="<?= htmlspecialchars($carPreferences) ?>"></textarea>
+                        <textarea type="text" name="preferences" id="preferences"><?= htmlspecialchars($carPreferences) ?></textarea>
                     </div>
                 </div>
             </div>
