@@ -8,7 +8,8 @@ $errorsForm = [];
 $messagesForm = [];
 
 $userId = (int)$_SESSION['users']['id_users'];
-$userInfos = getUser($pdo, $userId);
+$userInfos = getUserByCar($pdo, $userId);
+$carId = $userInfos['id_car'] ?? 0;
 
 $profilType = $_POST['profilType'] ?? $userInfos['id_profil'] ?? '';
 $lastname = $_POST['lastname'] ?? $userInfos['lastname'] ?? '';
@@ -26,7 +27,7 @@ $carPreferences = $_POST['preferences'] ?? $userInfos['preferences'] ?? '';
 
 if (isset($_POST['saveProfilForm'])) {
     $res = saveProfilForm($pdo, $_POST['lastname'], $_POST['firstname'], $_POST['address'], $_POST['telephone'], (int)$_SESSION['users']['id_users']);
-    $carSaved = saveCar($pdo, $_POST['model'], $_POST['brand'], $_POST['plate'], $_POST['color'], $_POST['energy'], $_POST['dateRegister'], (int)$_POST['seat'], $_POST['preferences'], (int)$_SESSION['users']['id_users']);
+    $carSaved = saveCar($pdo, $_POST['model'], $_POST['brand'], $_POST['plate'], $_POST['color'], $_POST['energy'], $_POST['dateRegister'], (int)$_POST['seat'], $_POST['preferences'], (int)$_SESSION['users']['id_users'], (int)$carId);
 
     $profilSaved = false;
     if (isset($_POST['profilType'])) {

@@ -30,9 +30,15 @@ function saveProfilForm(PDO $pdo, string $lastname, string $firstname, string $a
     return $stmt->execute();
 }
 
-function saveCar(PDO $pdo, string $carModel, string $carBrand, string $carPlate, string $carColor, string $energy, string $carFirstRegist, int $carSeats, string $carPreferences, int $usersId): bool
+function saveCar(PDO $pdo, string $carModel, string $carBrand, string $carPlate, string $carColor, string $energy, string $carFirstRegist, int $carSeats, string $carPreferences, int $usersId, int $carId = 0): bool | int
 {
-    $stmt = $pdo->prepare("INSERT INTO cars (model, brand, nb_plate, color, id_energy, first_regist, seats_nb, preferences, id_users) VALUE (:model, :brand, :nb_plate, :color, :id_energy, :first_regist, :seats_nb, :preferences, :id_users)");
+    if($carId) {
+        $stmt = $pdo->prepare("UPDATE cars SET model = :model, brand = :brand, nb_plate = :nb_plate, color = :color, id_energy = :id_energy, first_regist = :first_regist, seats_nb = :seats_nb, preferences = :preferences, id_users = :id_users WHERE id_car = :id_car");
+        $stmt->bindValue(':id_car', $carId, PDO::PARAM_INT);
+    } else {
+        $stmt = $pdo->prepare("INSERT INTO cars (model, brand, nb_plate, color, id_energy, first_regist, seats_nb, preferences, id_users) VALUE (:model, :brand, :nb_plate, :color, :id_energy, :first_regist, :seats_nb, :preferences, :id_users)");
+    }
+
     $stmt->bindValue(':model', $carModel, PDO::PARAM_STR);
     $stmt->bindValue(':brand', $carBrand, PDO::PARAM_STR);
     $stmt->bindValue(':nb_plate', $carPlate, PDO::PARAM_STR);
@@ -43,5 +49,15 @@ function saveCar(PDO $pdo, string $carModel, string $carBrand, string $carPlate,
     $stmt->bindValue(':preferences', $carPreferences, PDO::PARAM_STR);
     $stmt->bindValue(':id_users', $usersId, PDO::PARAM_INT);
 
-    return $stmt->execute();
+    $res = $stmt->execute();
+
+    if ($res) {
+        if ($carId) {
+            return $carId;
+        } else {
+            return $pdo->lastInsertId();
+        }
+    } else {
+        return false;
+    }
 }

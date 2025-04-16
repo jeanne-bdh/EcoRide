@@ -48,9 +48,12 @@ function getUserCredit(PDO $pdo, $userId): ?int
     }
 }
 
-function getUser (PDO $pdo, $userId): bool|array
+function getUserByCar (PDO $pdo, $userId): bool|array
 {
-    $query = "SELECT * FROM users WHERE id_users = :id_users";
+    $query = "SELECT *
+            FROM users
+            JOIN cars ON cars.id_users = users.id_users
+            WHERE users.id_users = :id_users";
     $stmt = $pdo->prepare($query);
     $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
     $stmt->execute();
