@@ -1,6 +1,8 @@
 <?php
 
 require_once dirname(__DIR__, 3) . "/templates/header.php";
+require_once dirname(__DIR__, 3) . "/libs/pdo.php";
+require_once dirname(__DIR__, 3) . "/libs/carpool.php";
 
 ?>
 
@@ -9,17 +11,26 @@ require_once dirname(__DIR__, 3) . "/templates/header.php";
     <!-- HERO SECTION -->
     <?php
     include_once dirname(__DIR__, 3) . "/templates/hero_section.php";
-    heroSection("Historique des covoiturages");
-    ?>
+    heroSection("Covoiturages passés");
 
-    <section class="menu-session">
-        <a href="/pages/users/hist-carpool/past_carpool.php" class="card-session">
-            <h3>Covoiturages passés</h3>
-        </a>
-        <a href="/pages/users/hist-carpool/future_carpool.php" class="card-session">
-            <h3>Covoiturages à venir</h3>
-        </a>
-    </section>
+    if (isUserConnected()) {
+        $carpools = getPastCarpoolByUser($pdo, $_SESSION['users']['id_users']);
+
+        if ($carpools) {
+            $pastCarpool = false;
+            foreach ($carpools as $carpool) {
+                $pastCarpool = true;
+
+                require dirname(__DIR__, 3) . "/templates/carpool_card_user.php";
+            }
+
+            if (!$pastCarpool) { ?>
+                <p class="p-no-carpool">❌ Aucun covoiturage passés</p>
+            <?php } ?>
+        <?php } else { ?>
+            <p class="p-no-carpool">❌ Aucun covoiturage passés</p>
+        <?php } ?>
+    <?php } ?>
 
 </main>
 

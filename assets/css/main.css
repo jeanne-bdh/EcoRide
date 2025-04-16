@@ -121,7 +121,7 @@ h3 {
 }
 @media (min-width: 768px) {
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -1353,6 +1353,14 @@ textarea {
   object-fit: cover;
 }
 
-.form-filters {
-  background-color: #ffffff;
+.info-credit {
+  color: #528DB9;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+#form-travel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }/*# sourceMappingURL=main.css.map */

@@ -63,6 +63,9 @@ require_once dirname(__DIR__, 2) . "/libs/user.php";
                 <h3>Saisir un voyage</h3>
             </a>
         <?php endif; ?>
+        <a href="/pages/users/future-carpool/future_carpool.php" class="card-session">
+            <h3>Covoiturages à venir</h3>
+        </a>
         <a href="/pages/users/hist-carpool/hist_carpool.php" class="card-session">
             <h3>Historique <br> des covoiturages</h3>
         </a>

@@ -52,7 +52,7 @@ require_once dirname(__DIR__, 3) . "/templates/header.php";
                     <div class="inputForm">
                         <label for="price">Prix</label>
                         <input type="number" id="price" name="price">
-                        <p>Veuillez prendre en compte que 2 crédits seront retirés pour la plateforme</p>
+                        <p class="info-credit">Veuillez prendre en compte que 2 crédits seront retirés pour la plateforme</p>
                     </div>
                 </div>
             </div>
