@@ -1,8 +1,6 @@
 <?php
 
 require_once dirname(__DIR__, 3) . "/templates/header.php";
-require_once dirname(__DIR__, 3) . "/libs/pdo.php";
-require_once dirname(__DIR__, 3) . "/libs/profil.php";
 require_once dirname(__DIR__, 3) . "/processes/profil_process.php";
 
 ?>

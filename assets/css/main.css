@@ -534,9 +534,11 @@ hr {
   padding: 0.75rem 1.25rem;
   border: 1px solid transparent;
   border-radius: 0.25rem;
-  color: #ffffff;
-  background-color: #528DB9;
+  background-color: #0EE6B1;
   border-color: #081F34;
+}
+.success p {
+  color: #081F34;
 }
 
 @media (min-width: 1200px) {

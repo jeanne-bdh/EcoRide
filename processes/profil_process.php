@@ -3,6 +3,7 @@
 require_once __DIR__ . "/../libs/pdo.php";
 require_once __DIR__ . "/../libs/profil.php";
 require_once __DIR__ . "/../libs/user.php";
+require_once __DIR__ . "/../libs/travel_type.php";
 
 $errorsForm = [];
 $messagesForm = [];
@@ -36,7 +37,10 @@ if (isset($_POST['saveProfilForm'])) {
 
     $energySaved = false;
     if (isset($_POST['energy'])) {
+        $energyId = (int)$_POST['energy'];
         $energySaved = saveSelectEnergy($pdo, (int)$_SESSION['users']['id_users'], (int)$_POST['energy']);
+
+        travelType($pdo, $energyId);
     }
 
     if ($res && $profilSaved && $energySaved && $carSaved) {
