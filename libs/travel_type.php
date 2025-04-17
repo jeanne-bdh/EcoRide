@@ -1,6 +1,6 @@
 <?php
 
-function travelType (PDO $pdo,int $energyId): bool
+function getTravelType (PDO $pdo,int $energyId): bool
 {
 
     $travelTypeId = ($energyId === 1) ? 1 : 2;

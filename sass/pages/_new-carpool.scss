@@ -2,10 +2,41 @@
     color: $secondary;
     font-style: italic;
     font-size: 0.8rem;
+    margin-top: 0.3rem;
+    width: 16rem;
 }
 
 #form-travel {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media (min-width: 768px) {
+    #container-form-travel {
+        width: 600px;
+        display: flex;
+        justify-content: center;
+
+        form {
+
+            .container-form-inner {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    #container-form-travel {
+        width: 750px;
+    }
+}
+
+@media (min-width:1200px) {
+    .info-credit {
+        width: 20rem;
+    }
 }

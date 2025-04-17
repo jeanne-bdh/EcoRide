@@ -59,7 +59,7 @@ require_once dirname(__DIR__, 2) . "/libs/user.php";
 
     <section class="menu-session">
         <?php if ($userRole == 2 && ($userProfil == 2 || $userProfil == 3)): ?>
-            <a href="/pages/users/new-carpool/new_carpool.php" class="card-session">
+            <a href="/pages/users/new-carpool/new_carpool_form.php" class="card-session">
                 <h3>Saisir un voyage</h3>
             </a>
         <?php endif; ?>

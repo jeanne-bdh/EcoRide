@@ -40,7 +40,7 @@ if (isset($_POST['saveProfilForm'])) {
         $energyId = (int)$_POST['energy'];
         $energySaved = saveSelectEnergy($pdo, (int)$_SESSION['users']['id_users'], (int)$_POST['energy']);
 
-        travelType($pdo, $energyId);
+        getTravelType($pdo, $energyId);
     }
 
     if ($res && $profilSaved && $energySaved && $carSaved) {

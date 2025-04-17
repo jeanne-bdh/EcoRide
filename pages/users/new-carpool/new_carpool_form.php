@@ -1,7 +1,7 @@
 <?php
 
 require_once dirname(__DIR__, 3) . "/templates/header.php";
-
+require_once dirname(__DIR__, 3) . "/processes/new_carpool_process.php";
 ?>
 
 <main>
@@ -14,7 +14,7 @@ require_once dirname(__DIR__, 3) . "/templates/header.php";
 
     <section class="container-form" id="container-form-travel">
 
-        <form method="get" id="form-travel">
+        <form method="POST" id="form-travel">
 
             <select class="form-select" aria-label="Sélectionner des filtres" required>
                 <option selected disabled>Sélectionner un véhicule</option>
@@ -38,6 +38,13 @@ require_once dirname(__DIR__, 3) . "/templates/header.php";
                         <input type="date" id="date" name="date">
                     </div>
                     <div class="inputForm">
+                        <label for="price">Prix</label>
+                        <input type="number" id="price" name="price">
+                        <p class="info-credit">À noter : 2 crédits sont déduits pour la plateforme</p>
+                    </div>
+                </div>
+                <div class="travel-infos-container">
+                    <div class="inputForm">
                         <label for="timeDepart">Heure de départ</label>
                         <input type="time" id="timeDepart" name="timeDepart">
                     </div>
@@ -47,18 +54,23 @@ require_once dirname(__DIR__, 3) . "/templates/header.php";
                     </div>
                     <div class="inputForm">
                         <label for="duration">Durée</label>
-                        <input type="number" id="duration" name="duration">
-                    </div>
-                    <div class="inputForm">
-                        <label for="price">Prix</label>
-                        <input type="number" id="price" name="price">
-                        <p class="info-credit">Veuillez prendre en compte que 2 crédits seront retirés pour la plateforme</p>
+                        <input type="number" id="duration" name="duration" readonly>
                     </div>
                 </div>
             </div>
             <div class="inputBtn">
-                <button type="submit" class="btn-blue" id="btn-profil">Soumettre</button>
+                <button type="submit" name="saveNewCarpool" class="btn-blue" id="btn-form">Soumettre</button>
             </div>
+            <?php foreach ($messagesForm as $message) { ?>
+                <div class="success">
+                    <?= $message; ?>
+                </div>
+            <?php } ?>
+            <?php foreach ($errorsForm as $error) { ?>
+                <div class="alert-container">
+                    <?= $error; ?>
+                </div>
+            <?php } ?>
         </form>
 
     </section>
