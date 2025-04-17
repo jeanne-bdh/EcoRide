@@ -21,7 +21,7 @@ require_once dirname(__DIR__, 3) . "/libs/carpool.php";
             foreach ($carpools as $carpool) {
                 $pastCarpool = true;
 
-                require dirname(__DIR__, 3) . "/templates/carpool-card.php";
+                require dirname(__DIR__, 3) . "/templates/carpool_card_user.php";
             }
 
             if (!$pastCarpool) { ?>
