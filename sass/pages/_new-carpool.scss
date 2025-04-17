@@ -12,6 +12,15 @@
     align-items: center;
 }
 
+.link-future-carpool {
+    color: $black;
+    text-decoration: underline;
+
+    &:hover {
+        color : $primary;
+    }
+}
+
 @media (min-width: 768px) {
     #container-form-travel {
         width: 600px;

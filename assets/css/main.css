@@ -1367,6 +1367,14 @@ textarea {
   align-items: center;
 }
 
+.link-future-carpool {
+  color: #081F34;
+  text-decoration: underline;
+}
+.link-future-carpool:hover {
+  color: #0EE6B1;
+}
+
 @media (min-width: 768px) {
   #container-form-travel {
     width: 600px;

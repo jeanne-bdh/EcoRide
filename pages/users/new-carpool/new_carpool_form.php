@@ -39,8 +39,8 @@ require_once dirname(__DIR__, 3) . "/processes/new_carpool_process.php";
                     </div>
                     <div class="inputForm">
                         <label for="price">Prix</label>
-                        <input type="number" id="price" name="price">
-                        <p class="info-credit">À noter : 2 crédits sont déduits pour la plateforme</p>
+                        <input type="number" id="price" name="price" min="0">
+                        <p class="info-credit">À noter : 2 crédits seront déduits pour la plateforme</p>
                     </div>
                 </div>
                 <div class="travel-infos-container">
@@ -61,6 +61,7 @@ require_once dirname(__DIR__, 3) . "/processes/new_carpool_process.php";
             <div class="inputBtn">
                 <button type="submit" name="saveNewCarpool" class="btn-blue" id="btn-form">Soumettre</button>
             </div>
+            <a class="link-future-carpool" href="/pages/users/future-carpool/future_carpool.php">> Accéder aux covoiturages à venir</a>
             <?php foreach ($messagesForm as $message) { ?>
                 <div class="success">
                     <?= $message; ?>

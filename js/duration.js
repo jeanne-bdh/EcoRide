@@ -22,6 +22,10 @@ document.addEventListener("DOMContentLoaded", function () {
             const formatDuration = `${hours}h${minutes.toString().padStart(2, '0')}`;
 
             durationInput.value = formatDuration;
+
+            if (duration < 0) {
+                durationInput.value = "";
+            }
         }
     }
 

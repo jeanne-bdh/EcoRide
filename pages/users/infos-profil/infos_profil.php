@@ -82,7 +82,7 @@ require_once dirname(__DIR__, 3) . "/processes/profil_process.php";
                     </div>
                     <div class="inputForm">
                         <label for="seat">Place(s) libre(s)</label>
-                        <input type="number" id="seat" name="seat" value="<?= htmlspecialchars($carSeats) ?>">
+                        <input type="number" id="seat" name="seat" value="<?= htmlspecialchars($carSeats) ?>" min="0">
                     </div>
                 </div>
                 <div class="car-infos-container2">

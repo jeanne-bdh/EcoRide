@@ -17,3 +17,25 @@ function saveNewCarpool(PDO $pdo, string $localDepart, string $localArrival, str
     return $stmt->execute();
 
 }
+
+function validatePrice()
+{
+    $errorsPrice = [];
+
+    if (isset($_POST['price']) && $_POST['price'] < 0) {
+        $errorsPrice[] = "Le prix ne peut pas être négatif";
+    }
+
+    return $errorsPrice;
+}
+
+function validateDuration($duration)
+{
+    $errorsDuration = [];
+
+    if($duration <= 0) {
+        $errorsDuration [] = "L'heure d'arrivée ne peut être antérieure ou égale à l'heure de départ";
+    }
+
+    return $errorsDuration;
+}
