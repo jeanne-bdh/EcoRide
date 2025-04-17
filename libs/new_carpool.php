@@ -39,3 +39,15 @@ function validateDuration($duration)
 
     return $errorsDuration;
 }
+
+function getCarByUser (PDO $pdo, $userId): bool|array
+{
+    $query = "SELECT id_car, brand
+            FROM cars
+            WHERE id_users = :id_users";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}

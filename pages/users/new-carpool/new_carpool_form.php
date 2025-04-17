@@ -16,11 +16,12 @@ require_once dirname(__DIR__, 3) . "/processes/new_carpool_process.php";
 
         <form method="POST" id="form-travel">
 
-            <select class="form-select" aria-label="Sélectionner des filtres" required>
+            <select class="form-select" name="car-select" aria-label="Sélectionner des filtres" required>
                 <option selected disabled>Sélectionner un véhicule</option>
-                <option value="1">Véhicule 1</option>
-                <option value="2">Véhicule 2</option>
-                <option value="3">Ajouter un autre véhicule</option>
+                <?php foreach ($userCars as $car): ?>
+                    <option value="<?= $car['id_car'] ?>"><?= htmlspecialchars($car['brand']) ?></option>
+                <?php endforeach; ?>
+                <option value="2">Ajouter un autre véhicule</option>
             </select>
 
             <div class="container-form-inner">

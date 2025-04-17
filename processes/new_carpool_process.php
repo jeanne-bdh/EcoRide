@@ -1,11 +1,14 @@
 <?php
 
 require_once __DIR__ . "/../libs/pdo.php";
+require_once __DIR__ . "/../libs/user.php";
 require_once __DIR__ . "/../libs/new_carpool.php";
 
 $errorsForm = [];
 $messagesForm = [];
 
+$userId = (int)$_SESSION['users']['id_users'];
+$userCars = getCarByUser($pdo, $userId);
 
 if (isset($_POST['saveNewCarpool'])) {
     $errorsForm = array_merge($errorsForm, validatePrice($_POST['price']), validateDuration($_POST['duration']));
