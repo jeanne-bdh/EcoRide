@@ -11,13 +11,17 @@ document.addEventListener("DOMContentLoaded", function () {
             const [h1, m1] = timeDepart.split(":").map(Number);
             const [h2, m2] = timeArrival.split(":").map(Number);
 
-            const departHeures = h1 + m1;
-            const arrivalHeures = h2 + m2;
+            const departMinutes = h1 * 60 + m1;
+            const arrivalMinutes = h2 * 60 + m2;
 
-            let duration = arrivalHeures - departHeures;
+            let duration = arrivalMinutes - departMinutes;
 
-            // On insère la durée (en heures décimales ou en minutes, à toi de choisir)
-            durationInput.value = Math.round(duration); // minutes
+            const hours = Math.floor(duration / 60);
+            const minutes = duration % 60;
+
+            const formatDuration = `${hours}h${minutes.toString().padStart(2, '0')}`;
+
+            durationInput.value = formatDuration;
         }
     }
 

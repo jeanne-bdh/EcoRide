@@ -54,7 +54,7 @@ require_once dirname(__DIR__, 3) . "/processes/new_carpool_process.php";
                     </div>
                     <div class="inputForm">
                         <label for="duration">Durée</label>
-                        <input type="number" id="duration" name="duration" readonly>
+                        <input type="text" id="duration" name="duration" readonly>
                     </div>
                 </div>
             </div>
