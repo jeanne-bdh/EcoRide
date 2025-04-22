@@ -2,7 +2,7 @@
 
 function saveNewCarpool(PDO $pdo, string $localDepart, string $localArrival, string $dateCarpool, string $duration, string $timeDepart, string $timeArrival, int $price, int $usersId): bool | int
 {
-        $stmt = $pdo->prepare("INSERT INTO carpools (localisation_depart, localisation_arrival, date_depart, duration, time_depart, time_arrival, price, id_users, id_status_carpool) VALUE (:localisation_depart, :localisation_arrival, :date_depart, :duration, :time_depart, :time_arrival, :price, :id_users, :id_status_carpool)");
+    $stmt = $pdo->prepare("INSERT INTO carpools (localisation_depart, localisation_arrival, date_depart, duration, time_depart, time_arrival, price, id_users, id_status_carpool) VALUE (:localisation_depart, :localisation_arrival, :date_depart, :duration, :time_depart, :time_arrival, :price, :id_users, :id_status_carpool)");
 
     $stmt->bindValue(':localisation_depart', $localDepart, PDO::PARAM_STR);
     $stmt->bindValue(':localisation_arrival', $localArrival, PDO::PARAM_STR);
@@ -15,7 +15,6 @@ function saveNewCarpool(PDO $pdo, string $localDepart, string $localArrival, str
     $stmt->bindValue(':id_status_carpool', 1, PDO::PARAM_INT);
 
     return $stmt->execute();
-
 }
 
 function validatePrice()
@@ -29,20 +28,25 @@ function validatePrice()
     return $errorsPrice;
 }
 
-function validateDuration($duration)
+function validateDuration()
 {
     $errorsDuration = [];
 
-    if($duration <= 0) {
-        $errorsDuration [] = "L'heure d'arrivée ne peut être antérieure ou égale à l'heure de départ";
+    if (!empty($_POST['time_depart']) && !empty($_POST['time_arrival'])) {
+        $timeDepart = strtotime($_POST['time_depart']);
+        $timeArrival = strtotime($_POST['time_arrival']);
+
+        if ($timeArrival <= $timeDepart) {
+            $errorsDuration[] = "L'heure d'arrivée ne peut être antérieure ou égale à l'heure de départ";
+        }
     }
 
     return $errorsDuration;
 }
 
-function getCarByUser (PDO $pdo, $userId): bool|array
+function getCarByUser(PDO $pdo, $userId): bool|array
 {
-    $query = "SELECT id_car, brand
+    $query = "SELECT id_car, brand, model
             FROM cars
             WHERE id_users = :id_users";
     $stmt = $pdo->prepare($query);

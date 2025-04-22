@@ -2,6 +2,8 @@
 
 require_once dirname(__DIR__, 3) . "/templates/header.php";
 require_once dirname(__DIR__, 3) . "/processes/new_carpool_process.php";
+require_once dirname(__DIR__, 3) . "/processes/remaining_seat_process.php";
+
 ?>
 
 <main>
@@ -13,13 +15,12 @@ require_once dirname(__DIR__, 3) . "/processes/new_carpool_process.php";
     ?>
 
     <section class="container-form" id="container-form-travel">
-
         <form method="POST" id="form-travel">
 
             <select class="form-select" name="car-select" aria-label="Sélectionner des filtres" required>
                 <option selected disabled>Sélectionner un véhicule</option>
                 <?php foreach ($userCars as $car): ?>
-                    <option value="<?= $car['id_car'] ?>"><?= htmlspecialchars($car['brand']) ?></option>
+                    <option value="<?= $car['id_car'] ?>"><?= htmlspecialchars($car['brand'] . " " . $car['model']) ?></option>
                 <?php endforeach; ?>
                 <option value="2">Ajouter un autre véhicule</option>
             </select>
@@ -28,15 +29,24 @@ require_once dirname(__DIR__, 3) . "/processes/new_carpool_process.php";
                 <div class="travel-infos-container">
                     <div class="inputForm">
                         <label for="localDepart">Ville de départ</label>
-                        <input type="text" id="localDepart" name="localDepart">
+                        <input type="text" id="localDepart" name="localDepart" required>
+                    </div>
+                    <div class="invalid-feedback">
+                        La ville de départ est requise
                     </div>
                     <div class="inputForm">
                         <label for="localArrival">Ville d'arrivée</label>
-                        <input type="text" id="localArrival" name="localArrival">
+                        <input type="text" id="localArrival" name="localArrival" required>
+                    </div>
+                    <div class="invalid-feedback">
+                        La ville d'arrivée est requise
                     </div>
                     <div class="inputForm">
                         <label for="date">Date</label>
-                        <input type="date" id="date" name="date">
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="invalid-feedback">
+                        La date de départ est requise
                     </div>
                     <div class="inputForm">
                         <label for="price">Prix</label>
@@ -60,7 +70,7 @@ require_once dirname(__DIR__, 3) . "/processes/new_carpool_process.php";
                 </div>
             </div>
             <div class="inputBtn">
-                <button type="submit" name="saveNewCarpool" class="btn-blue" id="btn-form">Soumettre</button>
+                <button type="submit" name="saveNewCarpool" class="btn-blue btn-form" id="btn-valid-new-carpool">Soumettre</button>
             </div>
             <a class="link-future-carpool" href="/pages/users/future-carpool/future_carpool.php">> Accéder aux covoiturages à venir</a>
             <?php foreach ($messagesForm as $message) { ?>

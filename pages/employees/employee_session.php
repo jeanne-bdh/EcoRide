@@ -17,7 +17,7 @@ require_once dirname(__DIR__,2) . "/templates/header.php";
             <h3>Valider les avis</h3>
         </a>
         <a href="/pages/employees/bad_carpool.php" class="card-session">
-            <h3>Covoiturages <br> mal passés</h3>
+            <h3>Incidents covoiturages</h3>
         </a>
     </section>
 

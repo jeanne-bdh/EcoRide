@@ -11,16 +11,16 @@
         </div>
     </div>
     <div class="travel">
-        <div class="div-depart">
+        <div class="container-depart">
             <p><?= formatTime($carpool['time_depart']); ?></p>
             <p><?= $carpool['localisation_depart']; ?></p>
         </div>
         <div class="travel-circle"></div>
         <hr class="travel-line">
-        <p class="duree"><?= formatTime($carpool['duration']); ?></p>
+        <p class="duree"><?= ($carpool['duration']); ?></p>
         <hr class="travel-line">
         <div class="travel-circle"></div>
-        <div class="div-arrivee">
+        <div class="container-arrivee">
             <p><?= formatTime($carpool['time_arrival']); ?></p>
             <p><?= $carpool['localisation_arrival']; ?></p>
         </div>

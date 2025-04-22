@@ -101,7 +101,7 @@ require_once dirname(__DIR__, 3) . "/processes/profil_process.php";
                 </div>
             </div>
             <div class="inputBtn">
-                <button type="submit" name="saveProfilForm" class="btn-blue" id="btn-form">Enregistrer</button>
+                <button type="submit" name="saveProfilForm" class="btn-blue btn-form" id="btn-form">Enregistrer</button>
             </div>
             <?php foreach ($messagesForm as $message) { ?>
                 <div class="success">
