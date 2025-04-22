@@ -50,18 +50,27 @@ require_once dirname(__DIR__, 3) . "/processes/remaining_seat_process.php";
                     </div>
                     <div class="inputForm">
                         <label for="price">Prix</label>
-                        <input type="number" id="price" name="price" min="0">
+                        <input type="number" id="price" name="price" min="0" required>
                         <p class="info-credit">À noter : 2 crédits seront déduits pour la plateforme</p>
+                    </div>
+                    <div class="invalid-feedback">
+                        Le prix est requis
                     </div>
                 </div>
                 <div class="travel-infos-container">
                     <div class="inputForm">
                         <label for="timeDepart">Heure de départ</label>
-                        <input type="time" id="timeDepart" name="timeDepart">
+                        <input type="time" id="timeDepart" name="timeDepart" required>
+                    </div>
+                    <div class="invalid-feedback">
+                        L'heure de départ est requise
                     </div>
                     <div class="inputForm">
                         <label for="timeArrival">Heure d'arrivée</label>
-                        <input type="time" id="timeArrival" name="timeArrival">
+                        <input type="time" id="timeArrival" name="timeArrival" required>
+                    </div>
+                    <div class="invalid-feedback">
+                        L'heure d'arrivée est requise
                     </div>
                     <div class="inputForm">
                         <label for="duration">Durée</label>

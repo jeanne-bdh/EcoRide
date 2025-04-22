@@ -15,48 +15,42 @@ timeDepartInput.addEventListener("keyup", validateFormNewCarpool);
 timeArrivalInput.addEventListener("keyup", validateFormNewCarpool);
 
 function validateFormNewCarpool() {
-    const pseudoRegOk = validatePseudoReg(localDepartInput);
-    const emailRegOk = validateEmailReg(localArrivalInput);
-    const pwdRegOk = validatePwdReg(pwdRegisterInput);
-    const validPwdRegOk = validateConfirmPwdReg(pwdRegisterInput, validPwdRegisterInput);
+    const citiesNewCarpoolOk = validateCities(localDepartInput, localArrivalInput);
+    const dateNewCarpoolOk = validateDate(dateInput);
+    const priceNewCarpoolOk = validatePrice(priceInput);
+    const timeNewCarpoolOk = validateTime(timeDepartInput, timeArrivalInput);
     
-    if (pseudoRegOk && emailRegOk && pwdRegOk && validPwdRegOk) {
-        btnRegister.disabled = false;
+    if (citiesNewCarpoolOk && dateNewCarpoolOk && priceNewCarpoolOk && timeNewCarpoolOk) {
+        btnNewCarpool.disabled = false;
     }
     else {
-        btnRegister.disabled = true;
+        btnNewCarpool.disabled = true;
     }
 }
 
 function validateCities(input) {
     const citiesRegex = /^[^\d]$/;
-    const emailRegUser = input.value.trim();
-    const validFeedback = input.parentElement.querySelector(".valid-feedback");
+    const citiesValid = input.value.trim();
     const invalidFeedback = input.parentElement.querySelector(".invalid-feedback");
 
-    if (emailRegRegex.test(emailRegUser)) {
-        validFeedback.style.display = "block";
+    if (citiesRegex.test(citiesValid)) {
         invalidFeedback.style.display = "none";
         return true;
     } else {
-        validFeedback.style.display = "none";
         invalidFeedback.style.display = "block";
         return false;
     }
 }
 
-function validateEmailReg(input) {
-    const emailRegRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const emailRegUser = input.value.trim();
-    const validFeedback = input.parentElement.querySelector(".valid-feedback");
+function validateDate(input) {
+    const dateRegex = /[1-9]\d*$/;
+    const dateValid = input.value.trim();
     const invalidFeedback = input.parentElement.querySelector(".invalid-feedback");
 
-    if (emailRegRegex.test(emailRegUser)) {
-        validFeedback.style.display = "block";
+    if (dateRegex.test(dateValid)) {
         invalidFeedback.style.display = "none";
         return true;
     } else {
-        validFeedback.style.display = "none";
         invalidFeedback.style.display = "block";
         return false;
     }
