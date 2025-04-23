@@ -2,7 +2,6 @@
 
 require_once dirname(__DIR__, 3) . "/templates/header.php";
 require_once dirname(__DIR__, 3) . "/processes/new_carpool_process.php";
-require_once dirname(__DIR__, 3) . "/processes/remaining_seat_process.php";
 
 ?>
 

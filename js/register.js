@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function () {
 const pseudoRegisterInput = document.getElementById("inputPseudoRegister");
 const emailRegisterInput = document.getElementById("inputEmailRegister");
 const pwdRegisterInput = document.getElementById("inputPwdRegister");
@@ -89,3 +90,5 @@ function validateConfirmPwdReg(pwdRegisterInput, validPwdRegisterInput) {
         return false;
     }
 }
+
+});

@@ -98,7 +98,6 @@
 <script src="/js/carousel.js"></script>
 <script src="/js/messages.js"></script>
 <script src="/js/duration.js"></script>
-<script src="/js/new-carpool.js"></script>
 <script src="/js/events.js" type="module"></script>
 </body>
 
