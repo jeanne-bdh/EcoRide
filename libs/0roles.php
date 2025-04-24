@@ -16,11 +16,6 @@ class User
     {
         $this->roles[] = $role;
     }
-
-    public function getRoles(): array
-    {
-        return $this->roles;
-    }
 }
 
 $query = "SELECT id_users, pseudo, email, password FROM users WHERE email = :email";
@@ -30,17 +25,17 @@ $stmt->execute();
 $user = $stmt->fetchObject('User');
 
 if ($user && password_verify($password, $user['password'])) {
+    $query = "SELECT * FROM roles WHERE id_role = :id_role";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindValue(':id_role', $user->getId());
+
+    if ($stmt->execute()) {
+        while ($role = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $user->addRole($role['label_role']);
+        }
+    }
+    
     return $user;
 } else {
     return false;
-}
-
-$query = "SELECT * FROM role WHERE id_role = :id_role";
-$stmt = $pdo->prepare($query);
-$stmt->bindValue(':id_role', $user->getId());
-
-if ($stmt->execute()) {
-    while ($role = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        $user->addRole($role['label_role']);
-    }
 }

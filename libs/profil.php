@@ -1,5 +1,14 @@
 <?php
 
+function getProfile(PDO $pdo, int $userId):array
+{
+    $query = $pdo->prepare("SELECT id_role, id_profil FROM users WHERE id_users = :id_users");
+    $query->bindValue(':id_users', $userId, PDO::PARAM_INT);
+    $query->execute();
+
+    return $query->fetch(PDO::FETCH_ASSOC);
+}
+
 function saveSelectProfil(PDO $pdo, int $usersId, int $profilType): bool
 {
     $query = $pdo->prepare("UPDATE users SET id_profil = :id_profil WHERE id_users = :id_users");

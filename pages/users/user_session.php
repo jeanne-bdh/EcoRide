@@ -3,38 +3,14 @@
 require_once dirname(__DIR__, 2) . "/templates/header.php";
 require_once dirname(__DIR__, 2) . "/libs/pdo.php";
 require_once dirname(__DIR__, 2) . "/libs/user.php";
+require_once dirname(__DIR__, 2) . "/libs/profil.php";
+require_once dirname(__DIR__, 2) . "/processes/session_process.php";
 
 ?>
 
 <main>
 
     <!-- HERO SECTION -->
-
-    <?php
-
-    if (isUserConnected()) {
-        $userId = $_SESSION['users']['id_users'];
-        $credit = getUserCredit($pdo, $userId);
-
-        $query = $pdo->prepare(
-            "SELECT u.id_role, p.id_profil
-            FROM users u
-            LEFT JOIN profiles p ON u.id_profil = p.id_profil
-            WHERE u.id_users = ?"
-        );
-
-        $query->execute([$userId]);
-        $userData = $query->fetch(PDO::FETCH_ASSOC);
-
-        $userRole = $userData['id_role'] ?? null;
-        $userProfil = $userData['id_profil'] ?? null;
-    } else {
-        $credit = 0;
-        $userRole = null;
-        $userProfil = null;
-    }
-
-    ?>
 
     <section class="wave-top">
         <svg viewBox="0 0 1442 355" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -58,7 +34,7 @@ require_once dirname(__DIR__, 2) . "/libs/user.php";
     <!-- MENU SESSION -->
 
     <section class="menu-session">
-        <?php if ($userRole == 2 && ($userProfil == 2 || $userProfil == 3)): ?>
+        <?php if ($roleId == 2 && ($profileId == 2 || $profileId == 3)): ?>
             <a href="/pages/users/new-carpool/new_carpool_form.php" class="card-session">
                 <h3>Saisir un voyage</h3>
             </a>

@@ -1,5 +1,5 @@
 <?php
-
+/*
 if (isUserConnected()) {
     $userId = $_SESSION['users'];
     $credit = getUserCredit($pdo, $userId);
@@ -11,4 +11,4 @@ if (isUserConnected()) {
 } else {
     $credit = 0;
     $userRole = null;
-}
+} */
