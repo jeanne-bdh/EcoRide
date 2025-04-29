@@ -47,6 +47,11 @@ if (isset($_POST['savePersonalForm'])) {
 
     // DRIVER
     elseif ($profilType == 2 || $profilType == 3) {
+        $errorsForm = validateSeat($_POST['seat']);
+
+        if (!empty($errorsForm)) {
+            return;
+        }
         $carSaved = saveCar($pdo, $carModel, $carBrand, $carPlate, $carColor, $energyId, $carFirstRegist, $carSeats, $carPreferences, $userId, $carId);
 
         $energySaved = false;

@@ -25,16 +25,6 @@ function getUserAndCar(PDO $pdo, $userId): bool|array
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
-// pas utilisée
-function getEnergy(PDO $pdo, $energyId): bool|array
-{
-    $stmt = $pdo->prepare("SELECT * FROM energies");
-    $stmt->bindValue(':id_energy', $energyId, PDO::PARAM_INT);
-    $stmt->execute();
-
-    return $stmt->fetch(PDO::FETCH_ASSOC);
-}
-
 function saveSelectProfil(PDO $pdo, int $usersId, int $profilType): bool
 {
     $query = $pdo->prepare("UPDATE users SET id_profil = :id_profil WHERE id_users = :id_users");
@@ -95,4 +85,15 @@ function saveCar(PDO $pdo, string $carModel, string $carBrand, string $carPlate,
     } else {
         return false;
     }
+}
+
+function validateSeat()
+{
+    $errorsSeat = [];
+
+    if (isset($_POST['seat']) && $_POST['seat'] < 0) {
+        $errorsSeat[] = "Le nombre de sièges ne peut pas être négatif";
+    }
+
+    return $errorsSeat;
 }
