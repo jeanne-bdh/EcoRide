@@ -2,50 +2,65 @@
 
 require_once __DIR__ . "/../libs/pdo.php";
 require_once __DIR__ . "/../libs/profil.php";
-require_once __DIR__ . "/../libs/user.php";
 require_once __DIR__ . "/../libs/travel_type.php";
 
+$errorsPersonalInfos = [];
 $errorsForm = [];
 $messagesForm = [];
 
 $userId = (int)$_SESSION['users']['id_users'];
-$userInfos = getUserByCar($pdo, $userId);
-$carId = $userInfos['id_car'] ?? 0;
+$userInfos = getUser($pdo, $userId);
+$driverInfos = getUserAndCar($pdo, $userId);
+$carId = $driverInfos['id_car'] ?? 0;
 
 $profilType = $_POST['profilType'] ?? $userInfos['id_profil'] ?? '';
 $lastname = $_POST['lastname'] ?? $userInfos['lastname'] ?? '';
 $firstname = $_POST['firstname'] ?? $userInfos['firstname'] ?? '';
 $address = $_POST['address'] ?? $userInfos['address'] ?? '';
 $telephone = $_POST['telephone'] ?? $userInfos['telephone'] ?? '';
-$energy = $_POST['energy'] ?? $userInfos['id_energy'] ?? '';
-$carModel = $_POST['model'] ?? $userInfos['model'] ?? '';
-$carBrand = $_POST['brand'] ?? $userInfos['brand'] ?? '';
-$carPlate = $_POST['plate'] ?? $userInfos['nb_plate'] ?? '';
-$carColor = $_POST['color'] ?? $userInfos['color'] ?? '';
-$carFirstRegist = $_POST['dateRegister'] ?? $userInfos['first_regist'] ?? '';
-$carSeats = $_POST['seat'] ?? $userInfos['seats_nb'] ?? '';
-$carPreferences = $_POST['preferences'] ?? $userInfos['preferences'] ?? '';
+
+$energyId = $_POST['energy'] ?? $driverInfos['id_energy'] ?? '';
+$carModel = $_POST['model'] ?? $driverInfos['model'] ?? '';
+$carBrand = $_POST['brand'] ?? $driverInfos['brand'] ?? '';
+$carPlate = $_POST['plate'] ?? $driverInfos['nb_plate'] ?? '';
+$carColor = $_POST['color'] ?? $driverInfos['color'] ?? '';
+$carFirstRegist = $_POST['dateRegister'] ?? $driverInfos['first_regist'] ?? '';
+$carSeats = $_POST['seat'] ?? $driverInfos['seats_nb'] ?? '';
+$carPreferences = $_POST['preferences'] ?? $driverInfos['preferences'] ?? '';
 
 if (isset($_POST['saveProfilForm'])) {
-    $res = saveProfilForm($pdo, $_POST['lastname'], $_POST['firstname'], $_POST['address'], $_POST['telephone'], (int)$_SESSION['users']['id_users']);
-    $carSaved = saveCar($pdo, $_POST['model'], $_POST['brand'], $_POST['plate'], $_POST['color'], $_POST['energy'], $_POST['dateRegister'], (int)$_POST['seat'], $_POST['preferences'], (int)$_SESSION['users']['id_users'], (int)$carId);
+    $personalForm = saveProfilForm($pdo, $lastname, $firstname, $address, $telephone, $userId);
 
     $profilSaved = false;
     if (isset($_POST['profilType'])) {
         $profilSaved = saveSelectProfil($pdo, (int)$_SESSION['users']['id_users'], (int)$_POST['profilType']);
     }
 
-    $energySaved = false;
-    if (isset($_POST['energy'])) {
-        $energyId = (int)$_POST['energy'];
-        $energySaved = saveSelectEnergy($pdo, (int)$_SESSION['users']['id_users'], (int)$_POST['energy']);
-
-        getTravelType($pdo, $energyId);
+    // PASSENEGR
+    if ($profilType == 1) {
+        if ($personalForm && $profilSaved) {
+            $messagesForm[] = "Votre profil a été mis à jour avec succès";
+        } else {
+            $errorsForm[] = "Erreur lors de l'enregistrement du profil";
+        }
     }
 
-    if ($res && $profilSaved && $energySaved && $carSaved) {
-        $messagesForm[] = "Votre profil a été mis à jour avec succès";
-    } else {
-        $errorsForm[] = "Erreur lors de l'enregistrement du profil";
+    // DRIVER
+    elseif ($profilType == 2 || $profilType == 3) {
+        $carSaved = saveCar($pdo, $carModel, $carBrand, $carPlate, $carColor, $energyId, $carFirstRegist, $carSeats, $carPreferences, $userId, $carId);
+
+        $energySaved = false;
+        if (isset($_POST['energy'])) {
+            $energyId = (int)$_POST['energy'];
+            $energySaved = saveSelectEnergy($pdo, $userId, $energyId);
+
+            getTravelType($pdo, $energyId);
+        }
+
+        if ($personalForm && $profilSaved && $energySaved && $carSaved) {
+            $messagesForm[] = "Votre profil a été mis à jour avec succès";
+        } else {
+            $errorsForm[] = "Erreur lors de l'enregistrement du profil";
+        }
     }
 }

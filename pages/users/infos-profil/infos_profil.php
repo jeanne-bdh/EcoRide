@@ -71,13 +71,13 @@ require_once dirname(__DIR__, 3) . "/processes/profil_process.php";
                     </div>
                     <div class="inputForm">
                         <label for="energy">Energie</label>
-                        <select class="select-energy" name="energy" id="energy" aria-label="Energie" required>
+                        <select class="select-energy" name="energy" id="energy" aria-label="Energie">
                             <option selected disabled>Sélectionnez le type d'énergie de votre véhicule</option>
-                            <option value="1" <?= $energy == 1 ? 'selected' : '' ?>>Electrique</option>
-                            <option value="2" <?= $energy == 2 ? 'selected' : '' ?>>Hybride</option>
-                            <option value="3" <?= $energy == 3 ? 'selected' : '' ?>>Diesel</option>
-                            <option value="4" <?= $energy == 4 ? 'selected' : '' ?>>Essence</option>
-                            <option value="5" <?= $energy == 5 ? 'selected' : '' ?>>GPL</option>
+                            <option value="1" <?= $energyId == 1 ? 'selected' : '' ?>>Electrique</option>
+                            <option value="2" <?= $energyId == 2 ? 'selected' : '' ?>>Hybride</option>
+                            <option value="3" <?= $energyId == 3 ? 'selected' : '' ?>>Diesel</option>
+                            <option value="4" <?= $energyId == 4 ? 'selected' : '' ?>>Essence</option>
+                            <option value="5" <?= $energyId == 5 ? 'selected' : '' ?>>GPL</option>
                         </select>
                     </div>
                     <div class="inputForm">

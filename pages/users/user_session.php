@@ -4,6 +4,7 @@ require_once dirname(__DIR__, 2) . "/templates/header.php";
 require_once dirname(__DIR__, 2) . "/libs/pdo.php";
 require_once dirname(__DIR__, 2) . "/libs/user.php";
 require_once dirname(__DIR__, 2) . "/libs/profil.php";
+require_once dirname(__DIR__, 2) . "/processes/profil_process.php";
 require_once dirname(__DIR__, 2) . "/processes/session_process.php";
 
 ?>
@@ -32,6 +33,12 @@ require_once dirname(__DIR__, 2) . "/processes/session_process.php";
     </section>
 
     <!-- MENU SESSION -->
+
+    <?php foreach ($errorsPersonalInfos as $error) { ?>
+        <div class="alert-container" id="errorPersonalInfos">
+            <?= $error; ?>
+        </div>
+    <?php } ?>
 
     <section class="menu-session">
         <?php if ($roleId == 2 && ($profileId == 2 || $profileId == 3)): ?>

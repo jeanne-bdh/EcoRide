@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
-    const messages = document.querySelectorAll('.success, .alert-container');
+    const messages = document.querySelectorAll('.success, .alert-container:not(#errorPersonalInfos)');
 
     if (messages.length > 0) {
         const onClick = () => {

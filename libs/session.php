@@ -12,3 +12,12 @@ function isUserConnected():bool
 {
     return isset($_SESSION['users']);
 }
+
+function getProfile(PDO $pdo, int $userId):array
+{
+    $query = $pdo->prepare("SELECT id_role, id_profil FROM users WHERE id_users = :id_users");
+    $query->bindValue(':id_users', $userId, PDO::PARAM_INT);
+    $query->execute();
+
+    return $query->fetch(PDO::FETCH_ASSOC);
+}

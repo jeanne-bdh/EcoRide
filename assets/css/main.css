@@ -1175,6 +1175,10 @@ textarea {
   z-index: 2;
 }
 
+#errorPersonalInfos {
+  margin: auto;
+}
+
 @media (min-width: 768px) {
   .menu-session {
     display: flex;

@@ -12,7 +12,7 @@ $userId = (int)$_SESSION['users']['id_users'];
 $userCars = getCarByUser($pdo, $userId);
 
 if (isset($_POST['saveNewCarpool'])) {
-    $errorsForm = array_merge($errorsForm, validatePrice($_POST['price']), validateDuration($_POST['duration']));
+    $errorsForm = array_merge($errorsForm, validatePrice($_POST['price']), validateDuration($_POST['duration']), validateDate($_POST['date']));
 
     if (empty($errorsForm)) {
         if (isset($_POST['car-select'])) {

@@ -1,12 +1,38 @@
 <?php
 
-function getProfile(PDO $pdo, int $userId):array
+function getUser(PDO $pdo, $userId): bool|array
 {
-    $query = $pdo->prepare("SELECT id_role, id_profil FROM users WHERE id_users = :id_users");
-    $query->bindValue(':id_users', $userId, PDO::PARAM_INT);
-    $query->execute();
+    $query = "SELECT *
+            FROM users
+            WHERE users.id_users = :id_users";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
+    $stmt->execute();
 
-    return $query->fetch(PDO::FETCH_ASSOC);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+function getUserAndCar(PDO $pdo, $userId): bool|array
+{
+    $query = "SELECT *
+            FROM users
+            JOIN cars ON cars.id_users = users.id_users
+            WHERE users.id_users = :id_users";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+// pas utilisée
+function getEnergy(PDO $pdo, $energyId): bool|array
+{
+    $stmt = $pdo->prepare("SELECT * FROM energies");
+    $stmt->bindValue(':id_energy', $energyId, PDO::PARAM_INT);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
 function saveSelectProfil(PDO $pdo, int $usersId, int $profilType): bool
@@ -27,10 +53,10 @@ function saveSelectEnergy(PDO $pdo, int $carId, int $energy): bool
     return $query->execute();
 }
 
-function saveProfilForm(PDO $pdo, string $lastname, string $firstname, string $address, string $telephone, int $usersId): bool
+function saveProfilForm(PDO $pdo, string $lastname, string $firstname, string $address, string $telephone, int $userId): bool
 {
     $stmt = $pdo->prepare("UPDATE users SET lastname = :lastname, firstname = :firstname, address = :address, telephone = :telephone WHERE id_users = :id_users");
-    $stmt->bindValue(':id_users', $usersId, PDO::PARAM_INT);
+    $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
     $stmt->bindValue(':lastname', $lastname, PDO::PARAM_STR);
     $stmt->bindValue(':firstname', $firstname, PDO::PARAM_STR);
     $stmt->bindValue(':address', $address, PDO::PARAM_STR);
@@ -39,7 +65,7 @@ function saveProfilForm(PDO $pdo, string $lastname, string $firstname, string $a
     return $stmt->execute();
 }
 
-function saveCar(PDO $pdo, string $carModel, string $carBrand, string $carPlate, string $carColor, string $energy, string $carFirstRegist, int $carSeats, string $carPreferences, int $usersId, int $carId = 0): bool | int
+function saveCar(PDO $pdo, string $carModel, string $carBrand, string $carPlate, string $carColor, int $energyId, string $carFirstRegist, int $carSeats, string $carPreferences, int $userId, int $carId = 0): bool | int
 {
     if($carId) {
         $stmt = $pdo->prepare("UPDATE cars SET model = :model, brand = :brand, nb_plate = :nb_plate, color = :color, id_energy = :id_energy, first_regist = :first_regist, seats_nb = :seats_nb, preferences = :preferences, id_users = :id_users WHERE id_car = :id_car");
@@ -52,11 +78,11 @@ function saveCar(PDO $pdo, string $carModel, string $carBrand, string $carPlate,
     $stmt->bindValue(':brand', $carBrand, PDO::PARAM_STR);
     $stmt->bindValue(':nb_plate', $carPlate, PDO::PARAM_STR);
     $stmt->bindValue(':color', $carColor, PDO::PARAM_STR);
-    $stmt->bindValue(':id_energy', $energy, PDO::PARAM_INT);
+    $stmt->bindValue(':id_energy', $energyId, PDO::PARAM_INT);
     $stmt->bindValue(':first_regist', $carFirstRegist, PDO::PARAM_STR);
     $stmt->bindValue(':seats_nb', $carSeats, PDO::PARAM_INT);
     $stmt->bindValue(':preferences', $carPreferences, PDO::PARAM_STR);
-    $stmt->bindValue(':id_users', $usersId, PDO::PARAM_INT);
+    $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
 
     $res = $stmt->execute();
 

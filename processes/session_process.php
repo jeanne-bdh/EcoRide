@@ -15,3 +15,30 @@ if (isUserConnected()) {
 } else {
     $credit = 0;
 }
+
+/*
+if (isUserConnected()) {
+
+    $errorsPersonalInfos = [];
+    $userId = $_SESSION['users']['id_users'];
+    $userInfos = getUserAndCar($pdo, $userId);
+    
+    if (isset($_POST['saveProfilForm'])) {
+        if (
+            empty($userInfos['lastname']) ||
+            empty($userInfos['firstname']) ||
+            empty($userInfos['address']) ||
+            empty($userInfos['telephone']) ||
+            empty($userInfos['model']) ||
+            empty($userInfos['brand']) ||
+            empty($userInfos['plate']) ||
+            empty($userInfos['color']) ||
+            empty($userInfos['id_energy']) ||
+            empty($userInfos['first_regist']) ||
+            empty($userInfos['seats_nb'])
+        ) {
+            $errorsPersonalInfos[] = "Veuillez compléter votre profil";
+        }
+    }
+}
+    */

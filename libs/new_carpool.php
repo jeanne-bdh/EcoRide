@@ -19,6 +19,30 @@ function saveNewCarpool(PDO $pdo, string $localDepart, string $localArrival, str
     return $pdo->lastInsertId();
 }
 
+function getCarByUser(PDO $pdo, $userId): bool|array
+{
+    $query = "SELECT id_car, brand, model
+            FROM cars
+            WHERE id_users = :id_users";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function validateDate($date = 0)
+{
+    $errorsDate = [];
+    $today = date("Y-m-d");
+
+    if ($date < $today) {
+        $errorsDate[] = "La date ne peut être antérieure";
+    }
+
+    return $errorsDate;
+}
+
 function validatePrice()
 {
     $errorsPrice = [];
@@ -44,16 +68,4 @@ function validateDuration()
     }
 
     return $errorsDuration;
-}
-
-function getCarByUser(PDO $pdo, $userId): bool|array
-{
-    $query = "SELECT id_car, brand, model
-            FROM cars
-            WHERE id_users = :id_users";
-    $stmt = $pdo->prepare($query);
-    $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
-    $stmt->execute();
-
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
