@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ . "/../libs/pdo.php";
-require_once __DIR__ . "/../libs/profil.php";
+require_once __DIR__ . "/../libs/personal.php";
 require_once __DIR__ . "/../libs/travel_type.php";
 
 $errorsPersonalInfos = [];
@@ -28,8 +28,8 @@ $carFirstRegist = $_POST['dateRegister'] ?? $driverInfos['first_regist'] ?? '';
 $carSeats = $_POST['seat'] ?? $driverInfos['seats_nb'] ?? '';
 $carPreferences = $_POST['preferences'] ?? $driverInfos['preferences'] ?? '';
 
-if (isset($_POST['saveProfilForm'])) {
-    $personalForm = saveProfilForm($pdo, $lastname, $firstname, $address, $telephone, $userId);
+if (isset($_POST['savePersonalForm'])) {
+    $personalForm = savePersonalForm($pdo, $lastname, $firstname, $address, $telephone, $userId);
 
     $profilSaved = false;
     if (isset($_POST['profilType'])) {

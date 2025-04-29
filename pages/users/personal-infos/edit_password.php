@@ -2,7 +2,7 @@
 
 require_once dirname(__DIR__, 3) . "/templates/header.php";
 require_once dirname(__DIR__, 3) . "/libs/pdo.php";
-require_once dirname(__DIR__, 3) . "/libs/profil.php";
+require_once dirname(__DIR__, 3) . "/libs/personal.php";
 
 ?>
 
@@ -58,7 +58,7 @@ require_once dirname(__DIR__, 3) . "/libs/profil.php";
                 <button type="submit" class="btn-blue btn-search" id="btn-valid-register" name="add-user">Changer mon mot de passe</button>
             </div>
             <div class="link-account">
-                <a href="/pages/users/infos-profil/infos_profil.php">Modifier mon profil</a>
+                <a href="/pages/users/personal-infos/personal_infos.php">Modifier mon profil</a>
             </div>
         </form>
     </section>

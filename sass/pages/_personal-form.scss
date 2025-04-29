@@ -1,6 +1,6 @@
-// CONTAINER PROFIL
+// CONTAINER PERSONAL
 
-#container-form-profil {
+#container-personal-form {
     form {
         display: flex;
         flex-direction: column;
@@ -16,7 +16,7 @@
 }
 
 @media (min-width: 768px) {
-    #container-form-profil {
+    #container-personal-form {
         width: 600px;
         display: flex;
         justify-content: center;
@@ -38,7 +38,7 @@
 }
 
 @media (min-width: 992px) {
-    #container-form-profil {
+    #container-personal-form {
         width: 850px;
 
         form {
@@ -51,7 +51,7 @@
 }
 
 @media (min-width: 1200px) {
-    #container-form-profil {
+    #container-personal-form {
         width: 1150px;
     }
 }

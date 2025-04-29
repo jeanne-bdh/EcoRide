@@ -23,7 +23,7 @@ if (isUserConnected()) {
     $userId = $_SESSION['users']['id_users'];
     $userInfos = getUserAndCar($pdo, $userId);
     
-    if (isset($_POST['saveProfilForm'])) {
+    if (isset($_POST['savePersonalForm'])) {
         if (
             empty($userInfos['lastname']) ||
             empty($userInfos['firstname']) ||

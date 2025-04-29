@@ -1,7 +1,7 @@
 <?php
 
 require_once dirname(__DIR__, 3) . "/templates/header.php";
-require_once dirname(__DIR__, 3) . "/processes/profil_process.php";
+require_once dirname(__DIR__, 3) . "/processes/personal_process.php";
 
 ?>
 
@@ -13,9 +13,9 @@ require_once dirname(__DIR__, 3) . "/processes/profil_process.php";
     heroSection("Modifications du profil");
     ?>
 
-    <section class="container-form" id="container-form-profil">
+    <section class="container-form" id="container-personal-form">
 
-        <form method="POST" id="form-profil">
+        <form method="POST" id="personal-form">
 
             <select class="form-select" name="profilType" aria-label="Sélectionner des filtres" required>
                 <option selected disabled>Êtes-vous passager ou chauffeur ?</option>
@@ -25,7 +25,7 @@ require_once dirname(__DIR__, 3) . "/processes/profil_process.php";
             </select>
 
             <div class="container-form-inner">
-                <div class="profil-infos-container">
+                <div class="personal-infos-container">
                     <div class="inputForm">
                         <label for="lastname">Nom</label>
                         <input type="text" id="lastname" name="lastname" value="<?= htmlspecialchars($lastname) ?>" autocomplete="family-name">
@@ -53,7 +53,7 @@ require_once dirname(__DIR__, 3) . "/processes/profil_process.php";
                             <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                             <path d="M336 352c97.2 0 176-78.8 176-176S433.2 0 336 0S160 78.8 160 176c0 18.7 2.9 36.8 8.3 53.7L7 391c-4.5 4.5-7 10.6-7 17l0 80c0 13.3 10.7 24 24 24l80 0c13.3 0 24-10.7 24-24l0-40 40 0c13.3 0 24-10.7 24-24l0-40 40 0c6.4 0 12.5-2.5 17-7l33.3-33.3c16.9 5.4 35 8.3 53.7 8.3zM376 96a40 40 0 1 1 0 80 40 40 0 1 1 0-80z" />
                         </svg>
-                        <a class="password-change" href="/pages/users/infos-profil/edit_password.php">Changer votre mot de passe</a>
+                        <a class="password-change" href="/pages/users/personal-infos/edit_password.php">Changer votre mot de passe</a>
                     </div>
                 </div>
                 <div class="car-infos-container">
@@ -101,7 +101,7 @@ require_once dirname(__DIR__, 3) . "/processes/profil_process.php";
                 </div>
             </div>
             <div class="inputBtn">
-                <button type="submit" name="saveProfilForm" class="btn-blue btn-form" id="btn-form">Enregistrer</button>
+                <button type="submit" name="savePersonalForm" class="btn-blue btn-form" id="btn-form">Enregistrer</button>
             </div>
             <?php foreach ($messagesForm as $message) { ?>
                 <div class="success">

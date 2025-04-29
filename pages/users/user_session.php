@@ -3,8 +3,8 @@
 require_once dirname(__DIR__, 2) . "/templates/header.php";
 require_once dirname(__DIR__, 2) . "/libs/pdo.php";
 require_once dirname(__DIR__, 2) . "/libs/user.php";
-require_once dirname(__DIR__, 2) . "/libs/profil.php";
-require_once dirname(__DIR__, 2) . "/processes/profil_process.php";
+require_once dirname(__DIR__, 2) . "/libs/personal.php";
+require_once dirname(__DIR__, 2) . "/processes/personal_process.php";
 require_once dirname(__DIR__, 2) . "/processes/session_process.php";
 
 ?>
@@ -52,7 +52,7 @@ require_once dirname(__DIR__, 2) . "/processes/session_process.php";
         <a href="/pages/users/hist-carpool/hist_carpool.php" class="card-session">
             <h3>Historique <br> des covoiturages</h3>
         </a>
-        <a href="/pages/users/infos-profil/infos_profil.php" class="card-session">
+        <a href="/pages/users/personal-infos/personal_infos.php" class="card-session">
             <h3>Modifications <br> du profil</h3>
         </a>
     </section>

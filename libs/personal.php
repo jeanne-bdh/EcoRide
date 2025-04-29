@@ -53,7 +53,7 @@ function saveSelectEnergy(PDO $pdo, int $carId, int $energy): bool
     return $query->execute();
 }
 
-function saveProfilForm(PDO $pdo, string $lastname, string $firstname, string $address, string $telephone, int $userId): bool
+function savePersonalForm(PDO $pdo, string $lastname, string $firstname, string $address, string $telephone, int $userId): bool
 {
     $stmt = $pdo->prepare("UPDATE users SET lastname = :lastname, firstname = :firstname, address = :address, telephone = :telephone WHERE id_users = :id_users");
     $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);

@@ -1,5 +1,5 @@
-import FormProfil from "./form-profil.js";
+import PersonalForm from "./personal-form.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-    const formProfil = new FormProfil("form-profil");
+    const personalForm = new PersonalForm("personal-form");
 });

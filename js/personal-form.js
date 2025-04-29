@@ -1,4 +1,4 @@
-export default class FormProfil {
+export default class PersonalForm {
 
     constructor(formId) {
         this.form = document.getElementById(formId);
