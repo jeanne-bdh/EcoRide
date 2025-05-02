@@ -2,6 +2,37 @@
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
+//header('Content-Type: application/json');
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $inputJSON = file_get_contents('php://input');
+    $data = json_decode($inputJSON, true);
+
+    if ($data === null) {
+        echo json_encode(['status' => 'error', 'message' => 'Données invalides reçues.']);
+        exit;
+    }
+
+    // Vérifie que les clés nécessaires existent
+    if (!isset($data['title'], $data['email'], $data['message'])) {
+        echo json_encode(['status' => 'error', 'message' => 'Certains champs sont manquants.']);
+        exit;
+    }
+
+    $client = new MongoDB\Client("mongodb://localhost:27017");
+    $collection = $client->ecoride->contact;
+
+    $result = $collection->insertOne([
+        'title' => $data['title'],
+        'email' => $data['email'],
+        'date_contact' => 'date test',
+        'message' => $data['message']
+    ]);
+
+    echo json_encode(['status' => 'success']);
+}
+
+/*
 header('Content-Type: application/json');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -21,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $collection->insertOne([
             'titre' => $data['titre'],
             'email' => $data['email'],
-            'date_contact' => new MongoDB\BSON\UTCDateTime(),
+            'date_contact' => new MongoDB\BSON\UTCDateTime,
             'message' => $data['message']
         ]);
 
@@ -33,4 +64,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 } else {
     http_response_code(405);
     echo json_encode(['status' => 'error', 'message' => 'Méthode non autorisée']);
-}
+}*/

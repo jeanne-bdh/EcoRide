@@ -1,14 +1,14 @@
 document.getElementById("contactForm").addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    const titre = document.getElementById("inputTitle").value;
+    const title = document.getElementById("inputTitle").value;
     const email = document.getElementById("inputEmailContact").value;
     const message = document.getElementById("inputMsgContact").value;
 
-    const res = await fetch("submit_contact.php", {
+    const res = await fetch("/pages/contact/contact_process.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ titre, email, message })
+        body: JSON.stringify({ title, email, message })
     });
 
     const result = await res.json();
