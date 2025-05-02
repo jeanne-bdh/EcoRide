@@ -10,7 +10,7 @@
 
     <!-- FORMULAIRE -->
     <section class="container-form" id="container-form-contact">
-        <form>
+        <form id="contactForm">
             <div class="inputForm">
                 <label for="inputTitle">Titre</label>
                 <input type="text" id="inputTitle">

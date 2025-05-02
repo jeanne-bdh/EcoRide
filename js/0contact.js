@@ -1,34 +1,20 @@
-const { MongoClient } = require("mongodb");
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-// URL de connexion à MongoDB (remplace par ta propre URI)
-const uri = "mongodb://localhost:27017"; // ou mongodb+srv://<user>:<pass>@cluster0.mongodb.net
-const client = new MongoClient(uri);
+    const titre = document.getElementById("inputTitle").value;
+    const email = document.getElementById("inputEmailContact").value;
+    const message = document.getElementById("inputMsgContact").value;
 
-async function enregistrerMessageContact(data) {
-    try {
-        await client.connect();
-        const db = client.db("mon_site_web");
-        const collection = db.collection("messages_contact");
+    const res = await fetch("submit_contact.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ titre, email, message })
+    });
 
-        // Ajout d'un horodatage si non fourni
-        if (!data.date_contact) {
-            data.date_contact = new Date().toISOString();
-        }
-
-        const result = await collection.insertOne(data);
-        console.log("Message enregistré avec l'ID :", result.insertedId);
-    } catch (err) {
-        console.error("Erreur lors de l'enregistrement :", err);
-    } finally {
-        await client.close();
+    const result = await res.json();
+    if (result.status === "success") {
+        alert("Message envoyé avec succès !");
+    } else {
+        alert("Erreur : " + result.message);
     }
-}
-
-// Exemple d'utilisation
-const nouveauMessage = {
-    titre: "Demande d'information",
-    email: "exemple@domaine.com",
-    message: "Bonjour, je voudrais plus d'informations sur vos services."
-};
-
-enregistrerMessageContact(nouveauMessage);
+});
