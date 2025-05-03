@@ -26,12 +26,12 @@ function validateFormRegister() {
 }
 
 function validatePseudoReg(input) {
-    const emailRegRegex = /^[a-zA-Z0-9]{2,}$/;
-    const emailRegUser = input.value.trim();
+    const pseudoRegRegex = /^[a-zA-Z0-9]{2,}$/;
+    const pseudoRegUser = input.value.trim();
     const validFeedback = input.parentElement.querySelector(".valid-feedback");
     const invalidFeedback = input.parentElement.querySelector(".invalid-feedback");
 
-    if (emailRegRegex.test(emailRegUser)) {
+    if (pseudoRegRegex.test(pseudoRegUser)) {
         validFeedback.style.display = "block";
         invalidFeedback.style.display = "none";
         return true;

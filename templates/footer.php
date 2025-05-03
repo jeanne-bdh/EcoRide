@@ -98,7 +98,7 @@
 <script src="/js/carousel.js"></script>
 <script src="/js/messages.js"></script>
 <script src="/js/duration.js"></script>
-<script src="/js/0contact.js"></script>
+<script src="/js/contact.js"></script>
 <script src="/js/events.js" type="module"></script>
 </body>
 
