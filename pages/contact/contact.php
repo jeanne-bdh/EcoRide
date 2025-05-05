@@ -18,12 +18,12 @@ require_once dirname(__DIR__, 2) . "/processes/contact_process.php";
         <form method="POST" id="contactForm">
 
             <?php foreach ($successContact as $message) { ?>
-                <div class="success">
+                <div class="success inputForm">
                     <?= $message; ?>
                 </div>
             <?php } ?>
             <?php foreach ($errorsContact as $error) { ?>
-                <div class="alert-container">
+                <div class="alert-container inputForm">
                     <?= $error; ?>
                 </div>
             <?php } ?>
@@ -31,32 +31,23 @@ require_once dirname(__DIR__, 2) . "/processes/contact_process.php";
             <div class="inputForm">
                 <label for="inputTitle">Titre</label>
                 <input type="text" name="title" id="inputTitle" required>
-            </div>
-            <div class="valid-feedback">
-                Le titre est valide
-            </div>
-            <div class="invalid-feedback">
-                Veuillez entrer un titre ayant au moins 5 caractères
+                <div class="invalid-feedback">
+                    Veuillez entrer un titre ayant au moins 5 caractères
+                </div>
             </div>
             <div class="inputForm">
                 <label for="inputEmailContact">Email</label>
                 <input type="text" name="email" id="inputEmailContact" required>
-            </div>
-            <div class="valid-feedback">
-                L'email est valide
-            </div>
-            <div class="invalid-feedback">
-                Veuillez entrer une adresse e-mail valide
+                <div class="invalid-feedback">
+                    Veuillez entrer une adresse e-mail valide
+                </div>
             </div>
             <div class="inputForm">
                 <label for="inputMsgContact">Message</label>
                 <textarea type="text" name="message" id="inputMsgContact" placeholder="Bonjour..." required></textarea>
-            </div>
-            <div class="valid-feedback">
-                Le message est valide
-            </div>
-            <div class="invalid-feedback">
-                Veuillez entrer un message ayant au moins 20 caractères
+                <div class="invalid-feedback">
+                    Veuillez entrer un message ayant au moins 20 caractères
+                </div>
             </div>
             <div class="inputBtn">
                 <button type="submit" class="btn-blue" id="btn-valid-contact">Soumettre</button>
