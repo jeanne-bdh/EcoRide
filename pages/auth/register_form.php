@@ -17,7 +17,7 @@ require_once dirname(__DIR__, 2) . "/processes/register_process.php";
         <form action="" method="POST">
 
             <?php if (!empty($errorsRegister)) { ?>
-                <div class="alert-container inputForm">
+                <div class="alert-container">
                     <?php foreach ($errorsRegister as $error) { ?>
                         <div class="alert">
                             <?= $error ?>

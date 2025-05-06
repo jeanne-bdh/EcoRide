@@ -96,7 +96,7 @@ require_once dirname(__DIR__, 3) . "/processes/personal_process.php";
                     </div>
                     <div class="inputForm">
                         <label for="preferences">Préférences</label>
-                        <textarea type="text" name="preferences" id="preferences"><?= htmlspecialchars($carPreferences) ?></textarea>
+                        <textarea type="text" name="preferences"><?= htmlspecialchars($carPreferences) ?></textarea>
                     </div>
                 </div>
             </div>

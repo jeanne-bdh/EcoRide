@@ -1,0 +1,14 @@
+textarea {
+    background-color: $lightGrey;
+    border: 1px solid rgba($color: $black, $alpha: 0.4);
+    border-radius: 5px;
+    width: 16rem;
+    height: 10rem;
+    padding: 5px 0 0 5px;
+}
+
+@media (min-width:1200px) {
+    textarea {
+        width: 20rem;
+    }
+}

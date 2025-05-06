@@ -19,13 +19,13 @@ require_once dirname(__DIR__, 2) . "/processes/login_process.php";
         <form class="form-login" action="" method="POST">
 
             <?php foreach ($errorsLogin as $error) { ?>
-                <div class="alert-container inputForm">
+                <div class="alert-container">
                     <?= $error; ?>
                 </div>
             <?php } ?>
 
             <?php if (isset($_SESSION['register_success'])) { ?>
-                <div class="success inputForm">
+                <div class="success">
                     <p><?= $_SESSION['register_success'] ;?></p>
                 </div>
                 <?php unset($_SESSION['register_success']);

@@ -1,8 +1,9 @@
 .success {
-    width: 240px;
-    height: 65px;
+    width: 16rem;
+    height: 4rem;
     text-align: center;
     padding: 0.75rem 1.25rem;
+    margin: 0.5rem;
     border: 1px solid transparent;
     border-radius: 0.25rem;
     background-color: $primary;
@@ -15,8 +16,9 @@
 
 @media (min-width:1200px) {
     .success {
-        width: 320px;
-        height: 70px;
+        width: 20rem;
+        height: 4.3rem;
+        margin: 1rem;
 
         p {
             font-size: 1.1rem;

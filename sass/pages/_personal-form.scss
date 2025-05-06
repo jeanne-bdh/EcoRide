@@ -59,14 +59,6 @@
 
 // CAR INFOS
 
-#preferences {
-    width: 16rem;
-
-    @media (min-width:1200px) {
-        width: 20rem;
-    }
-}
-
 .car-infos-container,
 .car-infos-container2 {
     display: none;

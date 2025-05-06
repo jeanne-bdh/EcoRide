@@ -18,12 +18,12 @@ require_once dirname(__DIR__, 2) . "/processes/contact_process.php";
         <form method="POST" id="contactForm">
 
             <?php foreach ($successContact as $message) { ?>
-                <div class="success inputForm">
+                <div class="success">
                     <?= $message; ?>
                 </div>
             <?php } ?>
             <?php foreach ($errorsContact as $error) { ?>
-                <div class="alert-container inputForm">
+                <div class="alert-container">
                     <?= $error; ?>
                 </div>
             <?php } ?>

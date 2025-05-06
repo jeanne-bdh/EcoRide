@@ -532,10 +532,11 @@ hr {
   }
 }
 .success {
-  width: 240px;
-  height: 65px;
+  width: 16rem;
+  height: 4rem;
   text-align: center;
   padding: 0.75rem 1.25rem;
+  margin: 0.5rem;
   border: 1px solid transparent;
   border-radius: 0.25rem;
   background-color: #0EE6B1;
@@ -547,8 +548,9 @@ hr {
 
 @media (min-width: 1200px) {
   .success {
-    width: 320px;
-    height: 70px;
+    width: 20rem;
+    height: 4.3rem;
+    margin: 1rem;
   }
   .success p {
     font-size: 1.1rem;
@@ -572,6 +574,20 @@ hr {
   }
   .form-select option {
     font-size: 1rem;
+  }
+}
+textarea {
+  background-color: #d6d6d6;
+  border: 1px solid rgba(8, 31, 52, 0.4);
+  border-radius: 5px;
+  width: 16rem;
+  height: 10rem;
+  padding: 5px 0 0 5px;
+}
+
+@media (min-width: 1200px) {
+  textarea {
+    width: 20rem;
   }
 }
 footer {
@@ -940,21 +956,13 @@ main {
     font-size: 1.3rem;
   }
 }
-textarea {
-  background-color: #d6d6d6;
-  border: 1px solid rgba(8, 31, 52, 0.4);
-  border-radius: 5px;
-  width: 15rem;
-  height: 10rem;
-  padding: 5px 0 0 5px;
-}
-
 #container-form-contact {
-  height: 410px;
+  height: 420px;
 }
 
 @media (min-width: 768px) {
   #container-form-contact {
+    height: 450px;
     position: absolute;
     z-index: 2;
     top: 12%;
@@ -963,11 +971,8 @@ textarea {
 }
 @media (min-width: 1200px) {
   #container-form-contact {
-    height: 510px;
+    height: 550px;
     top: 15%;
-  }
-  textarea {
-    width: 20rem;
   }
 }
 #inputDateHome {
@@ -1267,15 +1272,6 @@ textarea {
     width: 1150px;
   }
 }
-#preferences {
-  width: 16rem;
-}
-@media (min-width: 1200px) {
-  #preferences {
-    width: 20rem;
-  }
-}
-
 .car-infos-container,
 .car-infos-container2 {
   display: none;
