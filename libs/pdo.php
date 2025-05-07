@@ -1,6 +1,6 @@
 <?php
 
-$dsn = 'mysql:host=127.0.0.1;port=3306;dbname=ecoride';
+$dsn = 'pgsql:host=127.0.0.1;port=5433;dbname=ecoride';
 $username = 'ecoride_php';
 $password = 'D-m1m2ppuPEs';
 

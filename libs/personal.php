@@ -61,7 +61,7 @@ function saveCar(PDO $pdo, string $carModel, string $carBrand, string $carPlate,
         $stmt = $pdo->prepare("UPDATE cars SET model = :model, brand = :brand, nb_plate = :nb_plate, color = :color, id_energy = :id_energy, first_regist = :first_regist, seats_nb = :seats_nb, preferences = :preferences, id_users = :id_users WHERE id_car = :id_car");
         $stmt->bindValue(':id_car', $carId, PDO::PARAM_INT);
     } else {
-        $stmt = $pdo->prepare("INSERT INTO cars (model, brand, nb_plate, color, id_energy, first_regist, seats_nb, preferences, id_users) VALUE (:model, :brand, :nb_plate, :color, :id_energy, :first_regist, :seats_nb, :preferences, :id_users)");
+        $stmt = $pdo->prepare("INSERT INTO cars (model, brand, nb_plate, color, id_energy, first_regist, seats_nb, preferences, id_users) VALUES (:model, :brand, :nb_plate, :color, :id_energy, :first_regist, :seats_nb, :preferences, :id_users)");
     }
 
     $stmt->bindValue(':model', $carModel, PDO::PARAM_STR);

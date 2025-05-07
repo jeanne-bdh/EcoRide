@@ -12,12 +12,12 @@ $userId = (int)$_SESSION['users']['id_users'];
 $userCars = getCarByUser($pdo, $userId);
 
 if (isset($_POST['saveNewCarpool'])) {
-    $errorsForm = array_merge($errorsForm, validatePrice($_POST['price']), validateDuration($_POST['duration']), validateDate($_POST['date']));
+    $errorsForm = array_merge($errorsForm, validatePrice($_POST['price']), validateDuration(), validateDate($_POST['date']));
 
     if (empty($errorsForm)) {
         if (isset($_POST['car-select'])) {
             $carId = (int) $_POST['car-select'];
-            $carpoolId = saveNewCarpool($pdo, $_POST['localDepart'], $_POST['localArrival'], $_POST['date'], $_POST['duration'], $_POST['timeDepart'], $_POST['timeArrival'], $_POST['price'], $userId, $carId);
+            $carpoolId = saveNewCarpool($pdo, $_POST['localDepart'], $_POST['localArrival'], $_POST['date'], $_POST['timeDepart'], $_POST['timeArrival'], $_POST['price'], $userId, $carId);
 
             if ($carpoolId) {
                 getRemainingSeat($pdo, $carpoolId, $carId);
