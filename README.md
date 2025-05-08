@@ -66,3 +66,9 @@ Base de donnée : MySQL
 # Auteur
 
 BOUCHEND'HOMME Jeanne
+
+# Deploy
+
+Postgres cluster w867508m1xr3pk4y is being attached to ton-app
+The following secret was added to ton-app:
+  DATABASE_URL=postgres://pgdb-w867508m1xr3pk4y:JCtya25xiroNgat5T91Hioog@pgbouncer.w867508m1xr3pk4y.flympg.net/pgdb-w867508m1xr3pk4y

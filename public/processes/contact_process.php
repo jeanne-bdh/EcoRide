@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     
     try {
-        $client = new MongoDB\Client("mongodb://localhost:27017");
+        $client = new MongoDB\Client("mongodb://nosql_ecoride:D-m1m2ppuPEs@mongodb:27017");
         $collection = $client->ecoride->contact;
 
         $result = $collection->insertOne([
