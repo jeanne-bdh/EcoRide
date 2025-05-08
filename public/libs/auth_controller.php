@@ -1,5 +1,4 @@
 <?php
-
 function verifyUserLoginPassword(PDO $pdo, string $email, string $password): bool|array
 {
     $query = "SELECT id_users, pseudo, email, password FROM users WHERE email = :email";

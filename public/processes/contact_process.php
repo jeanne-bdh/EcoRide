@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         http_response_code(400);
         echo json_encode(["Les données sont invalides"]);
     }
-    
+
     try {
         $client = new MongoDB\Client("mongodb://nosql_ecoride:D-m1m2ppuPEs@mongodb:27017");
         $collection = $client->ecoride->contact;

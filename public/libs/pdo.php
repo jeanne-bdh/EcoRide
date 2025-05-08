@@ -1,5 +1,4 @@
 <?php
-
 $url = getenv("DATABASE_URL");
 $parts = parse_url($url);
 
@@ -12,4 +11,3 @@ try {
 } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
-

@@ -1,4 +1,3 @@
-
     <div class="carpool-card">
         <div class="carpool-card-top">
             <div class="blue-tag">
