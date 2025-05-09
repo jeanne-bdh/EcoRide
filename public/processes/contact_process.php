@@ -12,10 +12,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!$data || !isset($data['title'], $data['email'], $data['message'])) {
         http_response_code(400);
         echo json_encode(["Les données sont invalides"]);
+        exit;
     }
 
     try {
-        $client = new MongoDB\Client("mongodb://nosql_ecoride:D-m1m2ppuPEs@mongodb:27017");
+        $client = new MongoDB\Client(getenv('MONGODB_URI'));
         $collection = $client->ecoride->contact;
 
         $result = $collection->insertOne([

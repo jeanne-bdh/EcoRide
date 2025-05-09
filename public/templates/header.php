@@ -1,4 +1,3 @@
-<?php require_once __DIR__ . "/../libs/session.php";?>
 <!DOCTYPE html>
 <html lang="en">
 
