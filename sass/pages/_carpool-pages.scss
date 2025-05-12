@@ -3,7 +3,7 @@
 .text-access-carpool {
     margin-top: 1rem;
 
-    .green-tag {
+    #green-tag {
         margin: auto;
     }
 }
@@ -19,19 +19,16 @@
 .carpool-card-bottom {
     padding-top: 0.5rem;
 
-    .tag-status {
+    #tag-status {
         border: 2px solid $primary;
-        border-radius: 2rem;
-        width: 6rem;
-        height: 1.8rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        p {
-            color: $darkGrey;
-        }
+        color: $darkGrey;
     }
+}
+
+#future-carpool-card-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 // Fonction : border-color en fonction du status du covoit
@@ -40,7 +37,7 @@ $status: (
     "Confirmé" : $primary
 );
 
-.tag-status {
+#tag-status {
     @each $key, $color in $status {
         &[data-status="#{$key}"] {
             border-color: $color;

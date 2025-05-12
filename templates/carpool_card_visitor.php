@@ -36,7 +36,7 @@
                     </svg>
                     <p class="p-notes">4,5</p>
                 </div>
-                <div class="green-tag">
+                <div class="tag" id="green-tag">
                     <p><?= $carpoolSearch['label_travel_type']; ?></p>
                 </div>
             </div>

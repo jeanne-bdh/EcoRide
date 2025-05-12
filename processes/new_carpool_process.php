@@ -3,6 +3,7 @@
 require_once __DIR__ . "/../libs/pdo.php";
 require_once __DIR__ . "/../libs/user.php";
 require_once __DIR__ . "/../libs/new_carpool.php";
+require_once __DIR__ . "/../libs/duration.php";
 require_once __DIR__ . "/../libs/seat.php";
 
 $errorsForm = [];

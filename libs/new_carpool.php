@@ -52,19 +52,3 @@ function validatePrice()
 
     return $errorsPrice;
 }
-
-function validateDuration()
-{
-    $errorsDuration = [];
-
-    if (!empty($_POST['time_depart']) && !empty($_POST['time_arrival'])) {
-        $timeDepart = strtotime($_POST['time_depart']);
-        $timeArrival = strtotime($_POST['time_arrival']);
-
-        if ($timeArrival <= $timeDepart) {
-            $errorsDuration[] = "L'heure d'arrivée ne peut être antérieure ou égale à l'heure de départ";
-        }
-    }
-
-    return $errorsDuration;
-}

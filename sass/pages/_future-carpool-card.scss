@@ -1,14 +1,15 @@
 .carpool-card {
     border-radius: 1rem;
     background-color: $white;
-    width: 80%;
-    height: 16.5rem;
+    width: 85%;
+    height: 16rem;
     margin: 1.5rem auto;
 
     p {
         color: $black;
     }
 }
+
 
 .carpool-card-top {
     display: flex;
@@ -30,14 +31,14 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 2.5rem 1rem;
+    margin: 1.5rem 1rem;
 }
 
 .container-depart {
     margin-right: 1rem;
 }
 
-.container-arrivee {
+.container-arrival {
     margin-left: 1rem;
 }
 
@@ -52,7 +53,7 @@
     width: 10rem;
 }
 
-.duree {
+.duration {
     margin-inline: 1rem;
 }
 
@@ -62,49 +63,10 @@ hr {
 
 .carpool-card-bottom {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: space-between;
+    gap: 1rem;
     padding: 1rem;
-}
-
-.card-driver {
-    display: grid;
-    grid-template-columns: 33.33% 33.33% 33.33%;
-    align-items: center;
-
-    .green-tag {
-        margin: auto;
-        width: 5rem;
-    }
-}
-
-.container-profil {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.profil-icon {
-    width: 32px;
-    height: 32px;
-    margin-right: 0.5rem;
-}
-
-.star {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: auto;
-
-    svg {
-        width: 22px;
-        height: 22px;
-        margin-right: 0.3rem;
-    }
-
-    .p-notes {
-        color: $darkGrey;
-    }
 }
 
 .details-link {
@@ -112,7 +74,6 @@ hr {
     flex-direction: row;
     align-items: center;
     justify-content: right;
-    margin-top: 1rem;
 
     svg {
         width: 16px;
@@ -130,49 +91,46 @@ hr {
     }
 }
 
+// Function : border-color according to carpool status
+$status: (
+    "Annulé" : #FF4D4D,
+    "Confirmé" : $primary
+);
+
+#tag-status {
+    border: 2px solid $primary;
+    color: $darkGrey;
+
+    @each $key, $color in $status {
+        &[data-status="#{$key}"] {
+            border-color: $color;
+        }
+    }
+}
+
 @media (min-width: 768px) {
     .carpool-card {
         width: 70%;
-        height: 16rem;
+    }
+
+    .travel {
+        margin-top: 2.5rem;
     }
 
     .container-depart {
         margin-right: 2rem;
     }
 
-    .container-arrivee {
+    .container-arrival {
         margin-left: 2rem;
     }
 
     .carpool-card-bottom {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .card-driver {
-        .green-tag {
-            width: 6rem;
-        }
-    }
-
-    .profil-icon {
-        width: 40px;
-        height: 40px;
-    }
-
-    .star {
-        margin: 0 1.5rem;
-
-        svg {
-            width: 24px;
-            height: 24px;
-        }
+        padding: 1rem;
+        margin-top: 0.5rem;
     }
 
     .details-link {
-        margin-top: 0;
-
         svg {
             width: 24px;
             height: 24px;
@@ -183,11 +141,5 @@ hr {
 @media (min-width: 1200px) {
     .carpool-card {
         height: 18rem;
-    }
-
-    .container-profil {
-        p {
-            margin-right: 8rem;
-        }
     }
 }

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste de covoiturages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .ride {
+            background: #fff;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .driver-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .driver-info img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        .details {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .details p {
+            margin: 4px 0;
+        }
+
+        .tags {
+            font-size: 0.9em;
+            color: green;
+            margin-bottom: 8px;
+        }
+
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .actions button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .details-btn {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .cancel-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Liste des covoiturages</h2>
+
+    <!-- Exemple de covoiturage -->
+    <div class="ride">
+        <div class="driver-info">
+            <img src="https://via.placeholder.com/60" alt="photo chauffeur">
+            <div>
+                <strong>JeanDupont92</strong><br>
+                Note : ⭐ 4.8 / 5
+            </div>
+        </div>
+
+        <div class="details">
+            <p><strong>Départ :</strong> 12/05/2025 - 08:00</p>
+            <p><strong>Arrivée :</strong> 12/05/2025 - 12:00</p>
+            <p><strong>Places restantes :</strong> 2</p>
+            <p><strong>Prix :</strong> 15€</p>
+            <p class="tags">🌱 Voyage écologique</p>
+        </div>
+
+        <div class="actions">
+            <button class="details-btn">Détail</button>
+            <button class="cancel-btn">Annuler</button>
+        </div>
+    </div>
+
+    <!-- Autre covoiturage -->
+    <div class="ride">
+        <div class="driver-info">
+            <img src="https://via.placeholder.com/60" alt="photo chauffeur">
+            <div>
+                <strong>MarieRider</strong><br>
+                Note : ⭐ 4.5 / 5
+            </div>
+        </div>
+
+        <div class="details">
+            <p><strong>Départ :</strong> 13/05/2025 - 10:00</p>
+            <p><strong>Arrivée :</strong> 13/05/2025 - 14:00</p>
+            <p><strong>Places restantes :</strong> 1</p>
+            <p><strong>Prix :</strong> 18€</p>
+            <p class="tags" style="color:gray;">Non écologique</p>
+        </div>
+
+        <div class="actions">
+            <button class="details-btn">Détail</button>
+            <button class="cancel-btn">Annuler</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

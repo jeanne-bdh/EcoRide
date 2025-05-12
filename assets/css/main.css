@@ -302,20 +302,40 @@ li {
   }
 }
 
-.green-tag {
-  background-color: #0EE6B1;
+.tag {
   border-radius: 2rem;
   width: 5rem;
-  height: 1.8rem;
+  height: 1.6rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
 }
-.green-tag p {
-  color: #081F34;
+.tag p {
+  font-size: 0.8rem;
 }
 
+#green-tag {
+  background-color: #0EE6B1;
+}
+
+@media (min-width: 768px) {
+  .tag {
+    width: 5.5rem;
+    height: 1.7rem;
+  }
+  .tag p {
+    font-size: 0.9rem;
+  }
+}
+@media (min-width: 1200px) {
+  .tag {
+    width: 7rem;
+    height: 1.9rem;
+  }
+  .tag p {
+    font-size: 1.2rem;
+  }
+}
 .blue-tag {
   background-color: #528DB9;
   border-radius: 2rem;
@@ -330,188 +350,13 @@ li {
 }
 
 @media (min-width: 768px) {
-  .green-tag {
-    width: 6rem;
-  }
   .blue-tag {
     width: 8rem;
   }
 }
 @media (min-width: 1200px) {
-  .green-tag p,
-  .blue-tag p {
-    font-size: 1rem;
-  }
-}
-.carpool-card {
-  border-radius: 1rem;
-  background-color: #ffffff;
-  width: 80%;
-  height: 16.5rem;
-  margin: 1.5rem auto;
-}
-.carpool-card p {
-  color: #081F34;
-}
-
-.carpool-card-top {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 1rem 1rem 0 1rem;
-}
-
-.p-credit {
-  margin-bottom: 0.5rem;
-}
-
-.p-place {
-  text-align: end;
-}
-
-.travel {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 2.5rem 1rem;
-}
-
-.container-depart {
-  margin-right: 1rem;
-}
-
-.container-arrivee {
-  margin-left: 1rem;
-}
-
-.travel-circle {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background-color: #081F34;
-}
-
-.travel-line {
-  width: 10rem;
-}
-
-.duree {
-  margin-inline: 1rem;
-}
-
-hr {
-  width: 100%;
-}
-
-.carpool-card-bottom {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1rem;
-}
-
-.card-driver {
-  display: grid;
-  grid-template-columns: 33.33% 33.33% 33.33%;
-  align-items: center;
-}
-.card-driver .green-tag {
-  margin: auto;
-  width: 5rem;
-}
-
-.container-profil {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.profil-icon {
-  width: 32px;
-  height: 32px;
-  margin-right: 0.5rem;
-}
-
-.star {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: auto;
-}
-.star svg {
-  width: 22px;
-  height: 22px;
-  margin-right: 0.3rem;
-}
-.star .p-notes {
-  color: #757575;
-}
-
-.details-link {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: right;
-  margin-top: 1rem;
-}
-.details-link svg {
-  width: 16px;
-  height: 16px;
-}
-.details-link p {
-  color: #528DB9;
-  margin-left: 0.5rem;
-}
-.details-link a :hover {
-  text-decoration: underline;
-  color: #528DB9;
-}
-
-@media (min-width: 768px) {
-  .carpool-card {
-    width: 70%;
-    height: 16rem;
-  }
-  .container-depart {
-    margin-right: 2rem;
-  }
-  .container-arrivee {
-    margin-left: 2rem;
-  }
-  .carpool-card-bottom {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .card-driver .green-tag {
-    width: 6rem;
-  }
-  .profil-icon {
-    width: 40px;
-    height: 40px;
-  }
-  .star {
-    margin: 0 1.5rem;
-  }
-  .star svg {
-    width: 24px;
-    height: 24px;
-  }
-  .details-link {
-    margin-top: 0;
-  }
-  .details-link svg {
-    width: 24px;
-    height: 24px;
-  }
-}
-@media (min-width: 1200px) {
-  .carpool-card {
-    height: 18rem;
-  }
-  .container-profil p {
-    margin-right: 8rem;
+  .blue-tag {
+    width: 8rem;
   }
 }
 .alert-container {
@@ -841,121 +686,6 @@ main {
     padding: 2rem 0 0 10rem;
   }
 }
-#carpool-details {
-  height: 13.5rem;
-}
-
-.carpool-card-details-items {
-  height: 8rem;
-}
-.carpool-card-details-items h6 {
-  padding: 1rem 0 0.5rem 1rem;
-}
-.carpool-card-details-items ul {
-  padding: 0 0 1rem 2rem;
-}
-.carpool-card-details-items li {
-  color: #081F34;
-  font-size: 0.8rem;
-}
-
-.btn-participate {
-  display: block;
-  margin: auto;
-}
-
-.comments-container {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-.comments-container h5 {
-  margin: 1rem 0;
-}
-.comments-container p {
-  color: #081F34;
-}
-
-.carousel {
-  position: relative;
-  height: 16rem;
-  width: 80%;
-  background-color: #ffffff;
-  border-radius: 10px;
-  margin: auto;
-}
-.carousel button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  background-color: none;
-  border: none;
-  cursor: pointer;
-  width: 2rem;
-  height: 2rem;
-}
-.carousel button svg {
-  background-color: #ffffff;
-  color: #081F34;
-  width: 2rem;
-  height: 2rem;
-}
-
-#prev {
-  left: 0.5rem;
-}
-
-#next {
-  right: 0.5rem;
-}
-
-.slide {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: 0.4s ease-out;
-  padding: 0 3rem;
-}
-.slide .notes {
-  margin: 0.5rem 0;
-}
-
-.slide.active {
-  opacity: 1;
-}
-
-@media (min-width: 768px) {
-  #carpool-details {
-    height: 15.5rem;
-  }
-  .carpool-card-details-items {
-    height: 9rem;
-  }
-  .carpool-card-details-items h6 {
-    padding-left: 2rem;
-  }
-  .carpool-card-details-items ul {
-    padding-left: 3.5rem;
-  }
-  .carpool-card-details-items li {
-    font-size: 1rem;
-  }
-}
-@media (min-width: 1200px) {
-  #carpool-details {
-    height: 17.5rem;
-  }
-  .carpool-card-details-items {
-    height: 11rem;
-  }
-  .carpool-card-details-items li {
-    font-size: 1.3rem;
-  }
-}
 #container-form-contact {
   height: 420px;
 }
@@ -973,6 +703,132 @@ main {
   #container-form-contact {
     height: 550px;
     top: 15%;
+  }
+}
+.carpool-card {
+  border-radius: 1rem;
+  background-color: #ffffff;
+  width: 85%;
+  height: 16rem;
+  margin: 1.5rem auto;
+}
+.carpool-card p {
+  color: #081F34;
+}
+
+.carpool-card-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem 1rem 0 1rem;
+}
+
+.p-credit {
+  margin-bottom: 0.5rem;
+}
+
+.p-place {
+  text-align: end;
+}
+
+.travel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 1rem;
+}
+
+.container-depart {
+  margin-right: 1rem;
+}
+
+.container-arrival {
+  margin-left: 1rem;
+}
+
+.travel-circle {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #081F34;
+}
+
+.travel-line {
+  width: 10rem;
+}
+
+.duration {
+  margin-inline: 1rem;
+}
+
+hr {
+  width: 100%;
+}
+
+.carpool-card-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.details-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+}
+.details-link svg {
+  width: 16px;
+  height: 16px;
+}
+.details-link p {
+  color: #528DB9;
+  margin-left: 0.5rem;
+}
+.details-link a :hover {
+  text-decoration: underline;
+  color: #528DB9;
+}
+
+#tag-status {
+  border: 2px solid #0EE6B1;
+  color: #757575;
+}
+#tag-status[data-status=Annulé] {
+  border-color: #FF4D4D;
+}
+#tag-status[data-status=Confirmé] {
+  border-color: #0EE6B1;
+}
+
+@media (min-width: 768px) {
+  .carpool-card {
+    width: 70%;
+  }
+  .travel {
+    margin-top: 2.5rem;
+  }
+  .container-depart {
+    margin-right: 2rem;
+  }
+  .container-arrival {
+    margin-left: 2rem;
+  }
+  .carpool-card-bottom {
+    padding: 1rem;
+    margin-top: 0.5rem;
+  }
+  .details-link svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+@media (min-width: 1200px) {
+  .carpool-card {
+    height: 18rem;
   }
 }
 #inputDateHome {
@@ -1191,46 +1047,6 @@ main {
     position: relative;
   }
 }
-.text-access-carpool {
-  margin-top: 1rem;
-}
-.text-access-carpool .green-tag {
-  margin: auto;
-}
-
-.text-alter-carpool {
-  text-align: center;
-  margin: 1rem 0;
-}
-
-.carpool-card-bottom {
-  padding-top: 0.5rem;
-}
-.carpool-card-bottom .tag-status {
-  border: 2px solid #0EE6B1;
-  border-radius: 2rem;
-  width: 6rem;
-  height: 1.8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.carpool-card-bottom .tag-status p {
-  color: #757575;
-}
-
-.tag-status[data-status=Annulé] {
-  border-color: #FF4D4D;
-}
-.tag-status[data-status=Confirmé] {
-  border-color: #0EE6B1;
-}
-
-.p-no-carpool {
-  text-align: center;
-  margin-top: 2rem;
-}
-
 #container-personal-form form {
   display: flex;
   flex-direction: column;

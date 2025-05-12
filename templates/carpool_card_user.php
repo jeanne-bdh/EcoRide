@@ -1,4 +1,5 @@
 <?php require_once __DIR__ . "/../libs/format_time.php";?>
+<?php require_once __DIR__ . "/../libs/duration.php";?>
 
 <div class="carpool-card">
     <div class="carpool-card-top">
@@ -17,20 +18,20 @@
         </div>
         <div class="travel-circle"></div>
         <hr class="travel-line">
-        <p class="duree"><?= ($carpool['duration']); ?></p>
+        <p class="duration"><?= getDuration($carpool['time_depart'], $carpool['time_arrival']); ?></p>
         <hr class="travel-line">
         <div class="travel-circle"></div>
-        <div class="container-arrivee">
+        <div class="container-arrival">
             <p><?= formatTime($carpool['time_arrival']); ?></p>
             <p><?= $carpool['localisation_arrival']; ?></p>
         </div>
     </div>
     <hr>
     <div class="carpool-card-bottom">
-        <div class="tag-status" data-status="<?= $carpool['label_status_carpool']; ?>">
+        <div class="tag" id="tag-status" data-status="<?= $carpool['label_status_carpool']; ?>">
             <p><?= $carpool['label_status_carpool']; ?></p>
         </div>
-        <div class="green-tag">
+        <div class="tag" id="green-tag">
             <p><?= $carpool['label_travel_type']; ?></p>
         </div>
         <div class="details-link">

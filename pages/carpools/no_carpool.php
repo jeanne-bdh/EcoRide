@@ -44,7 +44,7 @@ require_once dirname(__DIR__,2) . "/libs/format_time.php";
         <div class="text-access-carpool">
             <h2>❌ Aucun covoiturage n'est disponible</h2>
             <p class="text-alter-carpool">🗓️ Cependant, un itinéraire est disponible le </p>
-            <div class="green-tag">
+            <div class="tag" id="green-tag">
                 <p>Ven 20 nov.</p>
             </div>
         </div>

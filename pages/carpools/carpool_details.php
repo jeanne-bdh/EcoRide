@@ -59,7 +59,7 @@ if (isset($_GET["id_carpool"])) {
                         </svg>
                         <p class="p-notes">4,5</p>
                     </div>
-                    <div class="green-tag">
+                    <div class="tag" id="green-tag">
                         <p>Ecolo</p>
                     </div>
                 </div>

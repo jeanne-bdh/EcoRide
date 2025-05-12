@@ -1,17 +1,43 @@
-.green-tag {
-    background-color: $primary;
+.tag {
     border-radius: 2rem;
     width: 5rem;
-    height: 1.8rem;
+    height: 1.6rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1rem;
 
     p {
-        color: $black;
+        font-size: 0.8rem;
     }
 }
+
+#green-tag {
+    background-color: $primary;
+}
+
+@media (min-width: 768px) {
+    .tag {
+        width: 5.5rem;
+        height: 1.7rem;
+
+        p {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .tag {
+        width: 7rem;
+        height: 1.9rem;
+
+        p {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+// BLUE TAG A REVOIR
 
 .blue-tag {
     background-color: $secondary;
@@ -29,21 +55,13 @@
 }
 
 @media (min-width: 768px) {
-    .green-tag {
-        width: 6rem;
-    }
-
     .blue-tag {
         width: 8rem;
     }
 }
 
 @media (min-width: 1200px) {
-
-    .green-tag,
     .blue-tag {
-        p {
-            font-size: 1rem;
-        }
+        width: 8rem;
     }
 }

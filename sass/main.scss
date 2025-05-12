@@ -10,7 +10,7 @@
 @import 'components/form';
 @import 'components/return';
 @import 'components/tag';
-@import 'components/carpool-card';
+//@import 'components/carpool-card';
 @import 'components/alert';
 @import 'components/success';
 @import 'components/select-form';
@@ -22,14 +22,15 @@
 @import 'layout/layout';
 
 @import 'pages/404';
-@import 'pages/carpool-details';
+//@import 'pages/carpool-details';
 @import 'pages/contact-form';
+@import 'pages/future-carpool-card';
 @import 'pages/home-form';
 @import 'pages/home';
 @import 'pages/legal-infos';
 @import 'pages/login-form';
 @import 'pages/register-form';
 @import 'pages/session';
-@import 'pages/carpool-pages';
+//@import 'pages/carpool-pages';
 @import 'pages/personal-form';
 @import 'pages/new-carpool';
