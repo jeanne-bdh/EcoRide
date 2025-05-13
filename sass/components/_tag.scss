@@ -15,6 +15,14 @@
     background-color: $primary;
 }
 
+#blue-tag {
+    background-color: $secondary;
+
+    p {
+        color: $white;
+    }
+}
+
 @media (min-width: 768px) {
     .tag {
         width: 5.5rem;
@@ -34,34 +42,5 @@
         p {
             font-size: 1.2rem;
         }
-    }
-}
-
-// BLUE TAG A REVOIR
-
-.blue-tag {
-    background-color: $secondary;
-    border-radius: 2rem;
-    width: 7rem;
-    height: 1.8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    p {
-        color: $white !important;
-
-    }
-}
-
-@media (min-width: 768px) {
-    .blue-tag {
-        width: 8rem;
-    }
-}
-
-@media (min-width: 1200px) {
-    .blue-tag {
-        width: 8rem;
     }
 }

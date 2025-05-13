@@ -17,18 +17,18 @@ require_once dirname(__DIR__, 3) . "/libs/carpool.php";
         $carpools = getFutureCarpoolByUser($pdo, $_SESSION['users']['id_users']);
 
         if ($carpools) {
-            $pastCarpool = false;
+            $futureCarpool = false;
             foreach ($carpools as $carpool) {
-                $pastCarpool = true;
+                $futureCarpool = true;
 
-                require dirname(__DIR__, 3) . "/templates/carpool_card_user.php";
+                require dirname(__DIR__, 3) . "/templates/carpool_card.php";
             }
 
-            if (!$pastCarpool) { ?>
-                <p class="p-no-carpool">❌ Aucun covoiturage passés</p>
+            if (!$futureCarpool) { ?>
+                <p class="p-no-carpool">❌ Aucun covoiturage à venir</p>
             <?php } ?>
         <?php } else { ?>
-            <p class="p-no-carpool">❌ Aucun covoiturage passés</p>
+            <p class="p-no-carpool">❌ Aucun covoiturage à venir</p>
         <?php } ?>
     <?php } ?>
 

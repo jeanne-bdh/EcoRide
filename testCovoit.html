@@ -4,129 +4,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste de covoiturages</title>
+    <title>Covoiturage Interactif</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background: #f9f9f9;
             padding: 20px;
         }
 
-        .ride {
-            background: #fff;
-            border-radius: 8px;
-            padding: 16px;
+        .ride-card {
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            padding: 20px;
             margin-bottom: 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
         .driver-info {
             display: flex;
             align-items: center;
-            gap: 10px;
         }
 
         .driver-info img {
             width: 60px;
             height: 60px;
             border-radius: 50%;
+            margin-right: 15px;
         }
 
-        .details {
-            flex: 1;
-            padding: 0 20px;
+        .eco-tag {
+            background: #d4edda;
+            color: #155724;
+            padding: 4px 8px;
+            border-radius: 5px;
+            font-size: 12px;
         }
 
-        .details p {
-            margin: 4px 0;
+        .ride-details {
+            margin-top: 10px;
         }
 
-        .tags {
-            font-size: 0.9em;
-            color: green;
-            margin-bottom: 8px;
+        .ride-details span {
+            display: inline-block;
+            margin-right: 15px;
         }
 
-        .actions {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+        .buttons {
+            margin-top: 15px;
         }
 
-        .actions button {
+        button {
             padding: 8px 12px;
+            margin-right: 10px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
 
-        .details-btn {
-            background-color: #007bff;
-            color: white;
+        .detail-box {
+            background: #f0f0f0;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 8px;
         }
 
-        .cancel-btn {
-            background-color: #dc3545;
-            color: white;
+        .comment-box {
+            margin-top: 10px;
+            display: none;
+        }
+
+        .alert {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #ffeeba;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
         }
     </style>
 </head>
 
 <body>
 
-    <h2>Liste des covoiturages</h2>
-
-    <!-- Exemple de covoiturage -->
-    <div class="ride">
+    <div class="ride-card">
         <div class="driver-info">
-            <img src="https://via.placeholder.com/60" alt="photo chauffeur">
+            <img src="https://via.placeholder.com/60" alt="Photo chauffeur">
             <div>
-                <strong>JeanDupont92</strong><br>
-                Note : ⭐ 4.8 / 5
+                <strong>JeanDupont</strong><br>
+                ⭐⭐⭐⭐☆ (4.2)
             </div>
         </div>
 
-        <div class="details">
-            <p><strong>Départ :</strong> 12/05/2025 - 08:00</p>
-            <p><strong>Arrivée :</strong> 12/05/2025 - 12:00</p>
-            <p><strong>Places restantes :</strong> 2</p>
-            <p><strong>Prix :</strong> 15€</p>
-            <p class="tags">🌱 Voyage écologique</p>
+        <div class="ride-details">
+            <span>Places restantes : 2</span>
+            <span>Prix : 15€</span>
+            <span>Départ : 10h00</span>
+            <span>Arrivée : 13h30</span>
+            <span>Date : 2025-05-15</span>
+            <span class="eco-tag">🌱 Écologique</span>
         </div>
 
-        <div class="actions">
-            <button class="details-btn">Détail</button>
-            <button class="cancel-btn">Annuler</button>
+        <div class="buttons">
+            <button onclick="alert('Voir les détails')">Détail</button>
+            <button style="background:#ff4d4d; color:white;" onclick="annulerTrajet()">Annuler</button>
+            <button id="startBtn" style="background:#4CAF50; color:white;" onclick="demarrerTrajet()">Démarrer</button>
         </div>
-    </div>
 
-    <!-- Autre covoiturage -->
-    <div class="ride">
-        <div class="driver-info">
-            <img src="https://via.placeholder.com/60" alt="photo chauffeur">
-            <div>
-                <strong>MarieRider</strong><br>
-                Note : ⭐ 4.5 / 5
+        <div class="detail-box">
+            <p><strong>Durée :</strong> 3h30</p>
+            <p><strong>Départ :</strong> Paris</p>
+            <p><strong>Arrivée :</strong> Lyon</p>
+            <p><strong>Statut :</strong> Confirmé</p>
+        </div>
+
+        <!-- Avis du passager -->
+        <div id="afterRide" style="display:none;">
+            <hr>
+            <h4>Donnez votre avis :</h4>
+            <label for="note">Note : </label>
+            <select id="note" onchange="handleNoteChange()">
+                <option value="5">⭐⭐⭐⭐⭐</option>
+                <option value="4">⭐⭐⭐⭐</option>
+                <option value="3">⭐⭐⭐</option>
+                <option value="2">⭐⭐</option>
+                <option value="1">⭐</option>
+            </select>
+
+            <div class="comment-box" id="commentBox">
+                <label>Commentaire :</label><br>
+                <textarea rows="3" cols="40" placeholder="Décrivez ce qui s’est mal passé..."></textarea>
+            </div>
+
+            <div class="alert" id="alertEmployee" style="display:none;">
+                Un employé vous contactera pour résoudre la situation avant mise à jour du crédit chauffeur.
             </div>
         </div>
-
-        <div class="details">
-            <p><strong>Départ :</strong> 13/05/2025 - 10:00</p>
-            <p><strong>Arrivée :</strong> 13/05/2025 - 14:00</p>
-            <p><strong>Places restantes :</strong> 1</p>
-            <p><strong>Prix :</strong> 18€</p>
-            <p class="tags" style="color:gray;">Non écologique</p>
-        </div>
-
-        <div class="actions">
-            <button class="details-btn">Détail</button>
-            <button class="cancel-btn">Annuler</button>
-        </div>
     </div>
 
+    <script>
+        function demarrerTrajet() {
+            const btn = document.getElementById('startBtn');
+            btn.textContent = 'Arrivée à destination';
+            btn.style.background = '#2196F3';
+            btn.onclick = terminerTrajet;
+        }
+
+        function terminerTrajet() {
+            document.getElementById('startBtn').style.display = 'none';
+            document.getElementById('afterRide').style.display = 'block';
+        }
+
+        function handleNoteChange() {
+            const note = document.getElementById('note').value;
+            const commentBox = document.getElementById('commentBox');
+            const alert = document.getElementById('alertEmployee');
+
+            if (parseInt(note) < 4) {
+                commentBox.style.display = 'block';
+                alert.style.display = 'block';
+            } else {
+                commentBox.style.display = 'none';
+                alert.style.display = 'none';
+            }
+        }
+
+        function annulerTrajet() {
+            if (confirm("Souhaitez-vous vraiment annuler ce covoiturage ?")) {
+                alert("Trajet annulé.");
+            }
+        }
+    </script>
 </body>
 
 </html>

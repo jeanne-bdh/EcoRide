@@ -16,33 +16,10 @@
 
 // SPECIFIQUE CARD USER SESSION
 
-.carpool-card-bottom {
-    padding-top: 0.5rem;
-
-    #tag-status {
-        border: 2px solid $primary;
-        color: $darkGrey;
-    }
-}
-
 #future-carpool-card-bottom {
     display: flex;
     flex-direction: row;
     align-items: center;
-}
-
-// Fonction : border-color en fonction du status du covoit
-$status: (
-    "Annulé" : #FF4D4D,
-    "Confirmé" : $primary
-);
-
-#tag-status {
-    @each $key, $color in $status {
-        &[data-status="#{$key}"] {
-            border-color: $color;
-        }
-    }
 }
 
 // Return if "Aucun covoit"

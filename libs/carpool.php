@@ -3,13 +3,13 @@
 function getPastCarpoolByUser(PDO $pdo, int $userId): array
 {
     $stmt = $pdo->prepare(
-        'SELECT carpools.*, status_carpool.label_status_carpool, travel_types.label_travel_type
+        'SELECT carpools.*, status_carpool.label_status_carpool, travel_types.label_travel_type, users.pseudo
         FROM carpools
-        LEFT JOIN status_carpool ON carpools.id_status_carpool = status_carpool.id_status_carpool
-        LEFT JOIN users ON users.id_users = carpools.id_users
-        LEFT JOIN cars ON cars.id_users = users.id_users
-        LEFT JOIN travel_types ON travel_types.id_travel_type = cars.id_travel_type
-        WHERE carpools.date_depart < CURDATE()
+        JOIN status_carpool ON carpools.id_status_carpool = status_carpool.id_status_carpool
+        JOIN users ON carpools.id_users = users.id_users
+        JOIN cars ON cars.id_users = users.id_users
+        JOIN travel_types ON cars.id_travel_type = travel_types.id_travel_type
+        WHERE carpools.date_depart < CURRENT_DATE
         AND carpools.id_users = :id_users
         ORDER BY carpools.date_depart DESC'
     );
@@ -38,31 +38,18 @@ function getFutureCarpoolByUser(PDO $pdo, int $userId): array
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function getCarpoolBySearch(PDO $pdo): array
-{
-    $stmt = $pdo->prepare(
-        'SELECT carpools.*, travel_types.label_travel_type, users.pseudo, COALESCE(AVG(review.notes), 0) AS average_note
-        FROM carpools
-        JOIN users ON carpools.id_users = users.id_users
-        JOIN cars ON cars.id_users = users.id_users
-        JOIN travel_types ON cars.id_travel_type = travel_types.id_travel_type
-        LEFT JOIN reviews ON carpools.id_carpool = reviews.id_carpool
-        GROUP BY carpools.id_carpool, travel_types.label_travel_type, users.pseudo'
-    );
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-
 function getCarpoolById(PDO $pdo): array
 {
     $stmt = $pdo->prepare(
-        'SELECT carpools.*, travel_types.label_travel_type, users.pseudo, COALESCE(AVG(reviews.notes), 0) AS average_note
+        'SELECT carpools.*, status_carpool.label_status_carpool, travel_types.label_travel_type, users.pseudo
         FROM carpools
+        JOIN status_carpool ON carpools.id_status_carpool = status_carpool.id_status_carpool
         JOIN users ON carpools.id_users = users.id_users
         JOIN cars ON cars.id_users = users.id_users
         JOIN travel_types ON cars.id_travel_type = travel_types.id_travel_type
-        LEFT JOIN reviews ON carpools.id_carpool = reviews.id_carpool
-        GROUP BY carpools.id_carpool, travel_types.label_travel_type, users.pseudo'
+        WHERE carpools.date_depart < CURRENT_DATE
+        AND carpools.id_users = :id_users
+        ORDER BY carpools.date_depart DESC'
     );
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);
