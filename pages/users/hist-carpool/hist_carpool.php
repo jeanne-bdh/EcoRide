@@ -3,7 +3,6 @@
 require_once dirname(__DIR__, 3) . "/templates/header.php";
 require_once dirname(__DIR__, 3) . "/libs/pdo.php";
 require_once dirname(__DIR__, 3) . "/libs/carpool.php";
-require_once dirname(__DIR__, 3) . "/libs/personal.php";
 require_once dirname(__DIR__, 3) . "/libs/review.php";
 
 ?>
@@ -17,12 +16,12 @@ require_once dirname(__DIR__, 3) . "/libs/review.php";
 
     if (isUserConnected()) {
         $carpools = getPastCarpoolByUser($pdo, $_SESSION['users']['id_users']);
-        $averageNotes = getAverageNotes($pdo, $_SESSION['users']['id_users']);
 
         if ($carpools) {
             $pastCarpool = false;
             foreach ($carpools as $carpool) {
                 $pastCarpool = true;
+                $averageNotes = getAverageNotes($pdo, $carpool['id_users']);
 
                 require dirname(__DIR__, 3) . "/templates/carpool_card.php";
             }

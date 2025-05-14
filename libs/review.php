@@ -3,14 +3,16 @@
 function getAverageNotes(PDO $pdo, int $userId): array
 {
 $stmt = $pdo->prepare(
-        'SELECT carpools.id_users, COALESCE(AVG(reviews.notes)) AS average_notes
+        'SELECT COALESCE(AVG(reviews.notes), 0) AS average_notes
         FROM reviews
-        JOIN carpools ON carpools.id_carpool = reviews.id_carpool
-        WHERE carpools.id_users = :id_users
-        GROUP BY carpools.id_users;'
+        WHERE reviews.id_carpool IN (
+            SELECT id_carpool
+            FROM carpools_users
+            WHERE id_users = :id_users
+            AND role_in_carpool = \'chauffeur\')'
     );
     $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
     $stmt->execute();
 
-    return $stmt->fetch(PDO::FETCH_ASSOC);
+    return $stmt->fetch(PDO::FETCH_ASSOC) ?: ['average_notes' => 0];
 }

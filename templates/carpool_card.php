@@ -31,7 +31,7 @@
         <div class="card-driver">
             <div class="container-pseudo">
                 <img src="/uploads/person-circle.svg" class="profil-icon" alt="profil user">
-                <p><?= $carpool['pseudo']; ?></p>
+                <p><?= $carpool['driver_pseudo']; ?></p>
             </div>
             <div class="star">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#757575" viewBox="0 0 16 16">
