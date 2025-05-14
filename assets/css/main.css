@@ -343,6 +343,18 @@ li {
     font-size: 1.2rem;
   }
 }
+.text-access-carpool {
+  margin-top: 1rem;
+}
+.text-access-carpool #green-tag {
+  margin: auto;
+}
+
+.text-alter-carpool {
+  text-align: center;
+  margin: 1rem 0;
+}
+
 .carpool-card {
   border-radius: 1rem;
   background-color: #ffffff;
@@ -1350,4 +1362,8 @@ main {
   .info-credit {
     width: 20rem;
   }
+}
+.p-no-carpool {
+  text-align: center;
+  margin-top: 2rem;
 }/*# sourceMappingURL=main.css.map */

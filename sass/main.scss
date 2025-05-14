@@ -10,7 +10,7 @@
 @import 'components/form';
 @import 'components/return';
 @import 'components/tag';
-//@import 'components/carpool-card-old';
+@import 'components/carpool-card-old'; // A REVOIR
 @import 'components/carpool-card';
 @import 'components/alert';
 @import 'components/success';
@@ -33,3 +33,4 @@
 @import 'pages/session';
 @import 'pages/personal-form';
 @import 'pages/new-carpool';
+@import 'pages/no-carpool';
