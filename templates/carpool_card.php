@@ -53,9 +53,11 @@
                     <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708" />
                 </svg>
                 <a href="/pages/carpools/carpool_details.php?id_carpool=<?= $key ?>;">
-                    <p>Voir détails</p>
+                    Voir détails
                 </a>
             </div>
         </div>
     </div>
+
+    <?php require_once __DIR__ . "/../pages/users/future-carpool/future_carpool_card.php"; ?>
 </div>

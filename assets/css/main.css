@@ -177,6 +177,12 @@ p {
 a {
   color: #ffffff;
   text-decoration: none;
+  font-size: 0.8rem;
+}
+@media (min-width: 768px) {
+  a {
+    font-size: 1rem;
+  }
 }
 
 li {
@@ -359,7 +365,6 @@ li {
   border-radius: 1rem;
   background-color: #ffffff;
   width: 85%;
-  height: 16rem;
   margin: 1.5rem auto;
 }
 .carpool-card p {
@@ -477,11 +482,12 @@ hr {
   width: 16px;
   height: 16px;
 }
-.details-link p {
+.details-link a {
   color: #528DB9;
   margin-left: 0.5rem;
+  font-size: 1rem;
 }
-.details-link a :hover {
+.details-link a:hover {
   text-decoration: underline;
   color: #528DB9;
 }
@@ -514,10 +520,13 @@ hr {
     width: 24px;
     height: 24px;
   }
+  .details-link a {
+    font-size: 1.2rem;
+  }
 }
 @media (min-width: 1200px) {
-  .carpool-card {
-    height: 18rem;
+  .details-link a {
+    font-size: 1.3rem;
   }
 }
 .alert-container {
@@ -1366,4 +1375,20 @@ main {
 .p-no-carpool {
   text-align: center;
   margin-top: 2rem;
+}
+
+.status-carpool {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem 1rem 1rem;
+}
+
+#red-link {
+  color: red;
+  text-decoration: underline;
+}
+#red-link:hover {
+  font-weight: bold;
+  color: red;
 }/*# sourceMappingURL=main.css.map */
