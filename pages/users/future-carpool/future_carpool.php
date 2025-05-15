@@ -23,7 +23,7 @@ require_once dirname(__DIR__, 3) . "/libs/review.php";
                 $futureCarpool = true;
                 $averageNotes = getAverageNotes($pdo, $carpool['id_users']);
 
-                require __DIR__ . "/future_carpool_card.php";
+                require dirname(__DIR__, 3) . "/templates/carpool_card.php";
             }
 
             if (!$futureCarpool) { ?>

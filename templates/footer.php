@@ -100,6 +100,7 @@
 <script src="/js/duration.js"></script>
 <script src="/js/valid-contact.js"></script>
 <script src="/js/contact.js"></script>
+<script src="/js/cancel-carpool.js"></script>
 <script src="/js/events.js" type="module"></script>
 </body>
 

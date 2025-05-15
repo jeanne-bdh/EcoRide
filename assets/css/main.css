@@ -39,10 +39,10 @@ html {
   }
 }
 
-.btn-search {
+.btn-green {
   border: 1px solid #528DB9;
 }
-.btn-search:hover {
+.btn-green:hover {
   color: #081F34;
   border-color: rgba(8, 31, 52, 0.4);
   background-color: #0EE6B1;
@@ -50,6 +50,22 @@ html {
 
 .btn-form {
   margin: 1rem;
+}
+
+.btn-red {
+  background-color: #f8d7da;
+  border: 1px solid transparent;
+  border-color: #f5c6cb;
+  border-radius: 5px;
+  padding: 8px 20px;
+  color: #721c24;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .btn-red {
+    font-size: 1.1rem;
+  }
 }
 
 .card-session {
@@ -605,6 +621,40 @@ textarea {
     width: 20rem;
   }
 }
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+}
+.modal-content p {
+  color: #081F34;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
 footer {
   background-color: #081F34;
 }
@@ -1384,11 +1434,20 @@ main {
   padding: 0 1rem 1rem 1rem;
 }
 
-#red-link {
+.btn-link-red {
+  background: none;
+  border: none;
   color: red;
   text-decoration: underline;
+  font-size: 0.8rem;
 }
-#red-link:hover {
+.btn-link-red:hover {
   font-weight: bold;
   color: red;
+}
+
+@media (min-width: 768px) {
+  .btn-link-red {
+    font-size: 1rem;
+  }
 }/*# sourceMappingURL=main.css.map */

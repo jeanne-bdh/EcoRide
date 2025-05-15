@@ -31,7 +31,7 @@ require_once dirname(__DIR__,2) . "/libs/format_time.php";
                 <input type="date" id="inputDateHome" name="dateDepartHome" required>
             </div>
             <div class="inputBtn">
-                <button type="submit" class="btn-blue btn-search">Rechercher</button>
+                <button type="submit" class="btn-blue btn-blue btn-green">Rechercher</button>
             </div>
         </form>
     </section>

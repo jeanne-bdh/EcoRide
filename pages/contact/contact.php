@@ -50,7 +50,7 @@ require_once dirname(__DIR__, 2) . "/templates/header.php";
                 </div>
             </div>
             <div class="inputBtn">
-                <button type="submit" class="btn-blue" id="btn-valid-contact">Soumettre</button>
+                <button type="submit" class="btn-blue btn-green" id="btn-valid-contact">Soumettre</button>
             </div>
         </form>
     </section>

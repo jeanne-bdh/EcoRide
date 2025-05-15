@@ -29,7 +29,7 @@
     }
 }
 
-.btn-search {
+.btn-green {
     border: 1px solid $secondary;
 
     &:hover {
@@ -41,4 +41,19 @@
 
 .btn-form {
     margin: 1rem;
+}
+
+.btn-red {
+    background-color: #f8d7da;
+    border: 1px solid transparent;
+    border-color: #f5c6cb;
+    border-radius: 5px;
+    padding: 8px 20px;
+    color: #721c24;
+    font-size: 0.9rem;
+    cursor: pointer;
+
+    @media (min-width : 768px) {
+        font-size: 1.1rem;
+    }
 }

@@ -55,7 +55,7 @@ require_once dirname(__DIR__, 3) . "/libs/personal.php";
                 </div>
             </div>
             <div class="inputBtn">
-                <button type="submit" class="btn-blue btn-search" id="btn-valid-register" name="add-user">Changer mon mot de passe</button>
+                <button type="submit" class="btn-blue btn-blue btn-green" id="btn-valid-register" name="add-user">Changer mon mot de passe</button>
             </div>
             <div class="link-account">
                 <a href="/pages/users/personal-infos/personal_infos.php">Modifier mon profil</a>

@@ -84,7 +84,7 @@ require_once dirname(__DIR__, 2) . "/templates/header.php";
                 </div>
             </div>
             <div class="inputBtn">
-                <button type="submit" class="btn-blue btn-search" id="btn-valid-register" name="add-user">S'inscrire</button>
+                <button type="submit" class="btn-blue btn-blue btn-green" id="btn-valid-register" name="add-user">S'inscrire</button>
             </div>
             <div class="link-account">
                 <p>Vous avez déjà un compte ?</p>

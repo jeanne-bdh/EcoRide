@@ -5,12 +5,21 @@
     padding: 0 1rem 1rem 1rem;
 }
 
-#red-link {
+.btn-link-red {
+    background: none;
+    border: none;
     color: red;
     text-decoration: underline;
+    font-size: 0.8rem;
 
     &:hover {
         font-weight: bold;
         color: red;
+    }
+}
+
+@media (min-width : 768px) {
+    .btn-link-red {
+        font-size: 1rem;
     }
 }
