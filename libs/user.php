@@ -18,7 +18,8 @@ function addUser(PDO $pdo, string $pseudo, string $email, string $password): boo
         return false;
     }
 
-    $insertQuery = "INSERT INTO users (pseudo, email, password, id_status_session, id_role, credit) VALUES (:pseudo, :email, :password, :statusId, :roleId, 20)";
+    $insertQuery = "INSERT INTO users (pseudo, email, password, id_status_session, id_role, credit)
+                    VALUES (:pseudo, :email, :password, :statusId, :roleId, 20)";
 
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 

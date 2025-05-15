@@ -13,21 +13,26 @@ $userId = (int)$_SESSION['users']['id_users'];
 $userCars = getCarByUser($pdo, $userId);
 
 if (isset($_POST['saveNewCarpool'])) {
+    if (!isset($_POST['car-select']) || empty($_POST['car-select'])) {
+        $errorsForm[] = "Aucun véhicule sélectionné";
+    }
+
     $errorsForm = array_merge($errorsForm, validatePrice($_POST['price']), validateDuration(), validateDate($_POST['date']));
 
     if (empty($errorsForm)) {
-        if (isset($_POST['car-select'])) {
-            $carId = (int) $_POST['car-select'];
-            $carpoolId = saveNewCarpool($pdo, $_POST['localDepart'], $_POST['localArrival'], $_POST['date'], $_POST['timeDepart'], $_POST['timeArrival'], $_POST['price'], $userId, $carId);
+        $carId = (int) $_POST['car-select'];
+        $carpoolId = saveNewCarpool($pdo, $_POST['localDepart'], $_POST['localArrival'], $_POST['date'], $_POST['timeDepart'], $_POST['timeArrival'], $_POST['price'], $userId, $carId);
 
-            if ($carpoolId) {
-                getRemainingSeat($pdo, $carpoolId, $carId);
+        if ($carpoolId) {
+            getRemainingSeat($pdo, $carpoolId, $carId);
+
+            $insertDriver = insertCarpoolsUsers($pdo, $userId, $carpoolId, 'Chauffeur');
+
+            if ($insertDriver) {
                 $messagesForm[] = "Votre voyage a été enregistré avec succès";
             } else {
                 $errorsForm[] = "Erreur lors de l'enregistrement du voyage";
             }
         }
-    } else {
-        $errorsForm[] = "Aucun véhicule sélectionné";
     }
 }

@@ -78,7 +78,7 @@ require_once dirname(__DIR__, 3) . "/processes/new_carpool_process.php";
                 </div>
             </div>
             <div class="inputBtn">
-                <button type="submit" name="saveNewCarpool" class="btn-blue btn-form" id="btn-valid-new-carpool">Soumettre</button>
+                <button type="submit" name="saveNewCarpool" class="btn-blue btn-green btn-form" id="btn-valid-new-carpool">Soumettre</button>
             </div>
             <a class="link-future-carpool" href="/pages/users/future-carpool/future_carpool.php">> Accéder aux covoiturages à venir</a>
             <?php foreach ($messagesForm as $message) { ?>
