@@ -25,9 +25,8 @@ function cancelCarpool(idCarpool) {
             .catch(error => {
                 alert('Erreur : ' + error.message);
             });
-
-        confirmNo.onclick = () => {
-            modal.classList.add('hidden');
-        };
+    };
+    confirmNo.onclick = () => {
+        modal.classList.add('hidden');
     }
 }
