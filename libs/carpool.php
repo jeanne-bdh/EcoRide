@@ -10,7 +10,7 @@ function getPastCarpoolByUser(PDO $pdo, int $userId): array
         JOIN users ON carpools.id_users = users.id_users
         JOIN cars ON cars.id_users = carpools.id_users
         JOIN travel_types ON cars.id_travel_type = travel_types.id_travel_type
-        WHERE (carpools.date_depart < CURRENT_DATE OR label_status_carpool = \'Annulé\')
+        WHERE (carpools.date_depart < CURRENT_DATE OR label_status_carpool IN (\'Annulé\', \'Terminé\'))
         AND carpools_users.id_users = :id_users
         ORDER BY carpools.date_depart DESC'
     );
@@ -32,7 +32,7 @@ function getFutureCarpoolByUser(PDO $pdo, int $userId): array
         JOIN travel_types ON cars.id_travel_type = travel_types.id_travel_type
         WHERE carpools.date_depart > CURRENT_DATE
         AND carpools_users.id_users = :id_users
-        AND label_status_carpool = \'Confirmé\'
+        AND label_status_carpool IN (\'Confirmé\', \'Démarré\')
         ORDER BY carpools.date_depart ASC'
     );
     $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);

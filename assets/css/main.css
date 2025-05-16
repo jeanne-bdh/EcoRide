@@ -518,14 +518,14 @@ hr {
   color: #528DB9;
 }
 
-#tag-status {
+.tag-status {
   border: 2px solid #0EE6B1;
   color: #757575;
 }
-#tag-status[data-status=Annulé] {
+.tag-status[data-status=Annulé] {
   border-color: #FF4D4D;
 }
-#tag-status[data-status=Confirmé] {
+.tag-status[data-status=Confirmé] {
   border-color: #0EE6B1;
 }
 
@@ -866,12 +866,9 @@ ul.nav-list li a:hover {
   margin: 5px 20px;
 }
 
-.name-ecoride {
-  font-size: 2rem;
-  text-align: left;
-}
 .name-ecoride a {
   text-decoration: none;
+  font-size: 2rem;
 }
 .name-ecoride a:hover {
   color: #0EE6B1;

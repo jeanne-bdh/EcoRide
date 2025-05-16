@@ -44,7 +44,7 @@
             </div>
         </div>
         <div class="card-inner-bottom">
-            <div class="tag" id="tag-status" data-status="<?= $carpool['label_status_carpool']; ?>">
+            <div class="tag tag-status" id="<?= $carpool['id_carpool']; ?>" data-status="<?= $carpool['label_status_carpool']; ?>">
                 <p><?= $carpool['label_status_carpool']; ?></p>
             </div>
             <div class="details-link">
