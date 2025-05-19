@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtres Covoiturage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 0.5rem;
+        }
+
+        button {
+            background-color: #2c7a7b;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #285e61;
+        }
+
+        .custom-select-checkbox {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .select-box {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 0.5rem;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .checkbox-options {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-top: none;
+            width: 100%;
+            z-index: 1;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        .custom-select-checkbox.open .checkbox-options {
+            display: block;
+        }
+
+        .checkbox-options label {
+            display: block;
+            padding: 0.4rem 0.6rem;
+            cursor: pointer;
+        }
+
+        .checkbox-options label:hover {
+            background-color: #f0f0f0;
+        }
+
+        .checkbox-options input {
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Filtres de covoiturage</h2>
+
+    <form>
+        <div class="form-group">
+            <label>
+                <input type="checkbox" name="electrique" />
+                Trajets en voiture électrique uniquement
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label for="prix">Prix maximum (€)</label>
+            <input type="number" id="prix" name="prix_max" min="0" placeholder="ex : 20" />
+        </div>
+
+        <div class="form-group">
+            <label for="duree">Durée maximum (en minutes)</label>
+            <input type="number" id="duree" name="duree_max" min="1" placeholder="ex : 90" />
+        </div>
+
+
+        <div class="form-group">
+            <label>Note minimale du conducteur</label>
+            <div class="custom-select-checkbox" onclick="this.classList.toggle('open')">
+                <div class="select-box">Choisir une ou plusieurs notes</div>
+                <div class="checkbox-options">
+                    <label><input type="checkbox" name="note_min[]" value="5" /> ⭐⭐⭐⭐⭐</label>
+                    <label><input type="checkbox" name="note_min[]" value="4" /> ⭐⭐⭐⭐ et plus</label>
+                    <label><input type="checkbox" name="note_min[]" value="3" /> ⭐⭐⭐ et plus</label>
+                    <label><input type="checkbox" name="note_min[]" value="2" /> ⭐⭐ et plus</label>
+                    <label><input type="checkbox" name="note_min[]" value="1" /> ⭐ et plus</label>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit">Appliquer les filtres</button>
+    </form>
+</body>
+
+</html>

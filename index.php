@@ -1,4 +1,8 @@
-<?php require_once __DIR__ . "/templates/header.php" ?>
+<?php
+require_once __DIR__ . "/templates/header.php";
+require_once __DIR__ . "/processes/search_carpool_process.php";
+
+?>
 
 <main class="container-black">
 
