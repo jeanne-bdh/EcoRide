@@ -13,4 +13,7 @@
     ],
     "liveSassCompile.settings.generateMap": true,
     "liveServer.settings.port": 3002,
+    "intelephense.files.exclude": [
+        "**/.vscode/extensions/**/intelephense*/**/stub/**"
+    ]
 }

@@ -40,3 +40,20 @@ function getFutureCarpoolByUser(PDO $pdo, int $userId): array
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function getCarpoolDetails(PDO $pdo, int $carpoolId): array | bool
+{
+    $stmt = $pdo->prepare(
+        'SELECT carpools.*, cars.*, status_carpool.label_status_carpool, travel_types.label_travel_type, users.pseudo AS driver_pseudo
+        FROM carpools
+        JOIN status_carpool ON carpools.id_status_carpool = status_carpool.id_status_carpool
+        JOIN users ON carpools.id_users = users.id_users
+        JOIN cars ON cars.id_users = carpools.id_users
+        JOIN travel_types ON cars.id_travel_type = travel_types.id_travel_type
+        WHERE carpools.id_carpool = :id_carpool'
+    );
+    $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
