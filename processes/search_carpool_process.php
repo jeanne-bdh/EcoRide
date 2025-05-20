@@ -8,16 +8,18 @@ $errorsForm = [];
 
 if (isset($_GET['searchCarpoolHome'])) {
 
-    $errorsForm =  validateDate($_GET['dateDepartHome']);
+    $errorsForm =  validateDate($_GET['dateDepart']);
 
-    if(empty($errorsForm)) {
-    $res = searchCarpool($pdo, $_GET['departCity'], $_GET['arrivalCity'], $_GET['dateDepartHome']);
+    if (empty($errorsForm)) {
+        $res = searchCarpool($pdo, $_GET['departCity'], $_GET['arrivalCity'], $_GET['dateDepart']);
     }
 
     if ($res) {
-            header("Location: /pages/carpools/carpool_filters.php");
-            exit();
-        } else {
-            $errorsForm[] = "Erreur recherche";
-        }
+        header("Location: /pages/carpools/carpool_filters.php?departCity=" . urlencode($_GET['departCity']) .
+            "&arrivalCity=" . urlencode($_GET['arrivalCity']) .
+            "&dateDepart=" . urlencode($_GET['dateDepart']));
+        exit();
+    } else {
+        $errorsForm[] = "Une erreur est survenue lors de la recherche";
+    }
 }

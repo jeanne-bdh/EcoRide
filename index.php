@@ -25,7 +25,7 @@ require_once __DIR__ . "/processes/search_carpool_process.php";
             </div>
             <div class="inputForm">
                 <label for="inputDateHome">Date de départ :</label>
-                <input type="date" id="inputDateHome" name="dateDepartHome" required>
+                <input type="date" id="inputDateHome" name="dateDepart" required>
             </div>
             <div class="inputBtn">
                 <button type="submit" name="searchCarpoolHome" class="btn-blue btn-green">Rechercher</button>

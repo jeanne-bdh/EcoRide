@@ -1,5 +1,10 @@
-<?php require_once __DIR__ . "/../libs/format_time.php"; ?>
-<?php require_once __DIR__ . "/../libs/duration.php"; ?>
+<?php
+
+require_once __DIR__ . "/../libs/format_time.php";
+require_once __DIR__ . "/../libs/duration.php";
+require_once __DIR__ . "/../libs/review.php";
+
+?>
 
 <div class="carpool-card">
     <div class="carpool-card-top">
