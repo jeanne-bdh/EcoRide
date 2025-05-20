@@ -26,12 +26,12 @@ require_once dirname(__DIR__, 2) . "/libs/carpool.php";
 
         <div class="form-content">
             <label for="price-filter">Prix maximum (€)</label>
-            <input type="number" id="price-filter" name="maxPrice" min="0" placeholder="ex : 20" />
+            <input class="inputNumberType" type="number" id="price-filter" name="maxPrice" min="0" placeholder="ex : 20" />
         </div>
 
         <div class="form-content">
             <label for="duration-filter">Durée maximum (en minutes)</label>
-            <input type="number" id="duration-filter" name="maxDuration" min="1" placeholder="ex : 90" />
+            <input class="inputNumberType" type="number" id="duration-filter" name="maxDuration" min="1" placeholder="ex : 90" />
         </div>
 
         <div class="form-content">

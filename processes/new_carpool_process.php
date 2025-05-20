@@ -13,7 +13,8 @@ $messagesForm = [];
 $userId = (int)$_SESSION['users']['id_users'];
 $userCars = getCarByUser($pdo, $userId);
 
-if (isset($_POST['saveNewCarpool'])) {
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['saveNewCarpool'])) {
+
     if (!isset($_POST['car-select']) || empty($_POST['car-select'])) {
         $errorsForm[] = "Aucun véhicule sélectionné";
     }

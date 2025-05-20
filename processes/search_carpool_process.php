@@ -6,9 +6,9 @@ require_once __DIR__ . "/../libs/carpool.php";
 
 $errorsForm = [];
 
-if (isset($_GET['searchCarpoolHome'])) {
+if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['searchCarpool'])) {
 
-    $errorsForm =  validateDate($_GET['dateDepart']);
+    $errorsForm = validateDate($_GET['dateDepart']);
 
     if (empty($errorsForm)) {
         $res = getSearchCarpoolCard($pdo, $_GET['departCity'], $_GET['arrivalCity'], $_GET['dateDepart']);

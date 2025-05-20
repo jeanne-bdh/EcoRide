@@ -28,7 +28,8 @@ $carFirstRegist = $_POST['dateRegister'] ?? $driverInfos['first_regist'] ?? '';
 $carSeats = $_POST['seat'] ?? $driverInfos['seats_nb'] ?? '';
 $carPreferences = $_POST['preferences'] ?? $driverInfos['preferences'] ?? '';
 
-if (isset($_POST['savePersonalForm'])) {
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['savePersonalForm'])) {
+    
     $personalForm = savePersonalForm($pdo, $lastname, $firstname, $address, $telephone, $userId);
 
     $profilSaved = false;

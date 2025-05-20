@@ -13,7 +13,7 @@
             <input type="date" id="inputDateHome" name="dateDepart" required>
         </div>
         <div class="inputBtn">
-            <button type="submit" name="searchCarpoolHome" class="btn-blue btn-green">Rechercher</button>
+            <button type="submit" name="searchCarpool" class="btn-blue btn-green">Rechercher</button>
         </div>
     </form>
 </section>
