@@ -1,33 +1,22 @@
-<?php require_once dirname(__DIR__,2) . "/templates/header.php" ?>
+<?php
+
+require_once dirname(__DIR__, 2) . "/templates/header.php";
+require_once dirname(__DIR__, 2) . "/processes/search_carpool_process.php";
+
+?>
 
 <main>
 
     <!-- HERO SECTION -->
     <?php
-    include_once dirname(__DIR__,2) . "/templates/hero_section.php";
+    include_once dirname(__DIR__, 2) . "/templates/hero_section.php";
     heroSection("La mobilité partagée au <br> service de la planète");
     ?>
 
     <!-- FORMULAIRE -->
-    <section class="container-form" id="container-form-home">
-        <form>
-            <div class="inputForm">
-                <label for="inputDepartCity">Départ :</label>
-                <input type="text" id="inputDepartCity" placeholder="Ville de départ">
-            </div>
-            <div class="inputForm">
-                <label for="inputArrivalCity">Destination :</label>
-                <input type="text" id="inputArrivalCity" placeholder="Ville d'arrivée">
-            </div>
-            <div class="inputForm">
-                <label for="inputDateHome">Date de départ :</label>
-                <input type="date" id="inputDateHome" name="dateDepartHome" required>
-            </div>
-            <div class="inputBtn">
-                <button type="submit" class="btn-blue btn-blue btn-green">Rechercher</button>
-            </div>
-        </form>
-    </section>
+    <?php
+    require_once dirname(__DIR__, 2) . "/templates/form_home.php";
+    ?>
 
     <!-- MAIN SECTION -->
     <section class="main-section">
@@ -42,4 +31,4 @@
 
 </main>
 
-<?php require_once dirname(__DIR__,2) . "/templates/footer.php" ?>
+<?php require_once dirname(__DIR__, 2) . "/templates/footer.php" ?>
