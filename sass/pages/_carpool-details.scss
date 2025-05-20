@@ -19,11 +19,6 @@
     }
 }
 
-.btn-participate {
-    display: block;
-    margin: auto;
-}
-
 .comments-container {
     text-align: center;
     margin-bottom: 2rem;
@@ -37,63 +32,8 @@
     }
 }
 
-.carousel {
-    position: relative;
-    height: 16rem;
-    width: 80%;
-    background-color: $white;
-    border-radius: 10px;
-    margin: auto;
-
-    button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 2;
-        background-color: none;
-        border: none;
-        cursor: pointer;
-        width: 2rem;
-        height: 2rem;
-
-        svg {
-            background-color: $white;
-            color: $black;
-            width: 2rem;
-            height: 2rem;
-        }
-    }
-}
-
-#prev {
-    left: 0.5rem;
-}
-
-#next {
-    right: 0.5rem;
-}
-
-.slide {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: 0.4s ease-out;
-    padding: 0 3rem;
-
-    .notes {
-        margin: 0.5rem 0;
-    }
-}
-
-.slide.active {
-    opacity: 1;
-}
-
 @media (min-width : 768px) {
+
     #carpool-details {
         height: 15.5rem;
     }

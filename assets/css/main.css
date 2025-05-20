@@ -119,6 +119,64 @@ html {
     font-size: 1.6rem;
   }
 }
+.carousel {
+  position: relative;
+  height: 12rem;
+  width: 85%;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  margin-inline: auto;
+}
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background-color: none;
+  border: none;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+}
+.carousel button svg {
+  background-color: #ffffff;
+  color: #081F34;
+  width: 2rem;
+  height: 2rem;
+}
+
+#prev {
+  left: 0.5rem;
+}
+
+#next {
+  right: 0.5rem;
+}
+
+.slide {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.4s ease-out;
+  padding: 0 3rem;
+}
+.slide .notes {
+  margin: 0.5rem 0;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .carousel {
+    width: 70%;
+  }
+}
 h1 {
   color: #081F34;
   font-size: 1rem;
@@ -931,11 +989,6 @@ main {
   font-size: 0.8rem;
 }
 
-.btn-participate {
-  display: block;
-  margin: auto;
-}
-
 .comments-container {
   text-align: center;
   margin-bottom: 2rem;
@@ -945,59 +998,6 @@ main {
 }
 .comments-container p {
   color: #081F34;
-}
-
-.carousel {
-  position: relative;
-  height: 16rem;
-  width: 80%;
-  background-color: #ffffff;
-  border-radius: 10px;
-  margin: auto;
-}
-.carousel button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  background-color: none;
-  border: none;
-  cursor: pointer;
-  width: 2rem;
-  height: 2rem;
-}
-.carousel button svg {
-  background-color: #ffffff;
-  color: #081F34;
-  width: 2rem;
-  height: 2rem;
-}
-
-#prev {
-  left: 0.5rem;
-}
-
-#next {
-  right: 0.5rem;
-}
-
-.slide {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: 0.4s ease-out;
-  padding: 0 3rem;
-}
-.slide .notes {
-  margin: 0.5rem 0;
-}
-
-.slide.active {
-  opacity: 1;
 }
 
 @media (min-width: 768px) {

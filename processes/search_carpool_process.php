@@ -1,8 +1,8 @@
 <?php
 
 require_once __DIR__ . "/../libs/pdo.php";
-require_once __DIR__ . "/../libs/new_carpool.php";
-require_once __DIR__ . "/../libs/search_carpool.php";
+require_once __DIR__ . "/../libs/validation_date.php";
+require_once __DIR__ . "/../libs/carpool.php";
 
 $errorsForm = [];
 
@@ -11,7 +11,7 @@ if (isset($_GET['searchCarpoolHome'])) {
     $errorsForm =  validateDate($_GET['dateDepart']);
 
     if (empty($errorsForm)) {
-        $res = searchCarpool($pdo, $_GET['departCity'], $_GET['arrivalCity'], $_GET['dateDepart']);
+        $res = getSearchCarpoolCard($pdo, $_GET['departCity'], $_GET['arrivalCity'], $_GET['dateDepart']);
     }
 
     if ($res) {
