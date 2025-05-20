@@ -433,18 +433,6 @@ li {
     font-size: 1.2rem;
   }
 }
-.text-access-carpool {
-  margin-top: 1rem;
-}
-.text-access-carpool #green-tag {
-  margin: auto;
-}
-
-.text-alter-carpool {
-  text-align: center;
-  margin: 1rem 0;
-}
-
 .carpool-card {
   border-radius: 1rem;
   background-color: #ffffff;
@@ -971,6 +959,18 @@ main {
     padding: 2rem 0 0 10rem;
   }
 }
+.text-access-carpool {
+  margin-top: 1rem;
+}
+.text-access-carpool #green-tag {
+  margin: auto;
+}
+
+.text-alter-carpool {
+  text-align: center;
+  margin: 1rem 0;
+}
+
 #carpool-details {
   height: 13.5rem;
 }
@@ -1529,16 +1529,4 @@ select {
 
 .checkbox-options input {
   margin-right: 0.5rem;
-}
-
-.text-access-carpool {
-  margin-top: 1rem;
-}
-.text-access-carpool #green-tag {
-  margin: auto;
-}
-
-.text-alter-carpool {
-  text-align: center;
-  margin: 1rem 0;
 }/*# sourceMappingURL=main.css.map */
