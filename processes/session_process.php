@@ -12,19 +12,18 @@ if (isUserConnected()) {
         $roleId = $profile['id_role'];
         $profileId = $profile['id_profil'] ?? null;
     }
-} else {
-    $credit = 0;
-}
 
-/*
-if (isUserConnected()) {
-
+    // Message incomplete profile
     $errorsPersonalInfos = [];
-    $userId = $_SESSION['users']['id_users'];
     $userInfos = getUserAndCar($pdo, $userId);
-    
+
     if (isset($_POST['savePersonalForm'])) {
-        if (
+        if ($profile === 1) {
+            empty($userInfos['lastname']) ||
+            empty($userInfos['firstname']) ||
+            empty($userInfos['address']) ||
+            empty($userInfos['telephone']);
+        } elseif ($profile === 2 || $profile === 3) {
             empty($userInfos['lastname']) ||
             empty($userInfos['firstname']) ||
             empty($userInfos['address']) ||
@@ -35,10 +34,11 @@ if (isUserConnected()) {
             empty($userInfos['color']) ||
             empty($userInfos['id_energy']) ||
             empty($userInfos['first_regist']) ||
-            empty($userInfos['seats_nb'])
-        ) {
-            $errorsPersonalInfos[] = "Veuillez compléter votre profil";
+            empty($userInfos['seats_nb']);
         }
-    }
+    } else {
+        $errorsPersonalInfos[] = "Veuillez compléter votre profil";
+        }
+} else {
+    $credit = 0;
 }
-    */
