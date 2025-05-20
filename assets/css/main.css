@@ -1529,4 +1529,16 @@ select {
 
 .checkbox-options input {
   margin-right: 0.5rem;
+}
+
+.text-access-carpool {
+  margin-top: 1rem;
+}
+.text-access-carpool #green-tag {
+  margin: auto;
+}
+
+.text-alter-carpool {
+  text-align: center;
+  margin: 1rem 0;
 }/*# sourceMappingURL=main.css.map */
