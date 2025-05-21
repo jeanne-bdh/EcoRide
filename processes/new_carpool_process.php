@@ -32,9 +32,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['saveNewCarpool'])) {
 
             if ($insertDriver) {
                 $messagesForm[] = "Votre voyage a été enregistré avec succès";
+                http_response_code(201);
             } else {
                 $errorsForm[] = "Erreur lors de l'enregistrement du voyage";
+                http_response_code(500);
             }
         }
+    } else {
+        http_response_code(422);
     }
+} else {
+    http_response_code(200);
 }
