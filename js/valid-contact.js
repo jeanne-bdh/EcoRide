@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+function validationContact() {
     const title = document.getElementById("inputTitle");
     const email = document.getElementById("inputEmailContact");
     const message = document.getElementById("inputMsgContact");
@@ -53,4 +53,4 @@ document.addEventListener("DOMContentLoaded", function () {
             return false;
         }
     }
-});
+}

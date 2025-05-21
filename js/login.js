@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+function loginUser() {
     const inputEmailLog = document.getElementById("inputEmailLogin");
     const inputPwdLog = document.getElementById("inputPwdLogin");
     const btnValidLog = document.getElementById("btn-valid-login");
@@ -74,4 +74,4 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-});
+}

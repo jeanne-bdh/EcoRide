@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+function duration() {
     const timeDepartInput = document.getElementById("timeDepart");
     const timeArrivalInput = document.getElementById("timeArrival");
     const durationInput = document.getElementById("duration");
@@ -31,4 +31,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     timeDepartInput.addEventListener("change", calculateDuration);
     timeArrivalInput.addEventListener("change", calculateDuration);
-});
+}

@@ -1,5 +1,5 @@
 import PersonalForm from "./personal-form.js";
 
-document.addEventListener("DOMContentLoaded", () => {
+function personalInfosForm() {
     const personalForm = new PersonalForm("personal-form");
-});
+}
