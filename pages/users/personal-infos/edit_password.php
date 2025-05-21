@@ -29,8 +29,8 @@ require_once dirname(__DIR__, 3) . "/libs/personal.php";
             <?php } ?>
 
             <div class="inputForm">
-                <label for="inputEmailRegister">Mot de passe :</label>
-                <input type="password" name="password" id="inputPwdRegister" required>
+                <label for="inputEmailPwd">Mot de passe :</label>
+                <input type="password" name="password" id="inputEmailPwd" required>
                 <div class="valid-feedback">
                     Le mot de passe est valide
                 </div>
@@ -45,8 +45,8 @@ require_once dirname(__DIR__, 3) . "/libs/personal.php";
                 <?php } ?>
             </div>
             <div class="inputForm">
-                <label for="inputValidPwdReg">Confirmez le mot de passe :</label>
-                <input type="password" name="pwdConfirm" id="inputValidPwdReg" required>
+                <label for="inputValidPwd">Confirmez le mot de passe :</label>
+                <input type="password" name="pwdConfirm" id="inputValidPwd" required>
                 <div class="invalid-feedback">
                     La confirmation du mot de passe est incorrecte
                 </div>
@@ -55,7 +55,7 @@ require_once dirname(__DIR__, 3) . "/libs/personal.php";
                 </div>
             </div>
             <div class="inputBtn">
-                <button type="submit" class="btn-blue btn-blue btn-green" id="btn-valid-register" name="add-user">Changer mon mot de passe</button>
+                <button type="submit" class="btn-blue btn-blue btn-green" id="btn-valid-pwd" name="add-user">Changer mon mot de passe</button>
             </div>
             <div class="link-account">
                 <a href="/pages/users/personal-infos/personal_infos.php">Modifier mon profil</a>

@@ -40,3 +40,7 @@ export default class PersonalForm {
         return new FormData(this.form);
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    window.personalForm = new PersonalForm("personal-form");
+});

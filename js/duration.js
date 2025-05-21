@@ -32,3 +32,7 @@ function duration() {
     timeDepartInput.addEventListener("change", calculateDuration);
     timeArrivalInput.addEventListener("change", calculateDuration);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    duration();
+});

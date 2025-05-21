@@ -92,9 +92,9 @@
 </footer>
 
 <script src="/js/navbar.js"></script>
-<script src="/js/login.js"></script>
 <script src="/js/cookie.js"></script>
 <script src="/js/register.js"></script>
+<script src="/js/login.js"></script>
 <script src="/js/carousel.js"></script>
 <script src="/js/messages.js"></script>
 <script src="/js/duration.js"></script>
@@ -103,7 +103,7 @@
 <script src="/js/cancel-carpool.js"></script>
 <script src="/js/start-carpool.js"></script>
 <script src="/js/end-carpool.js"></script>
-<script src="/js/events.js" type="module"></script>
+<script src="/js/personal-form.js" type="module"></script>
 </body>
 
 </html>

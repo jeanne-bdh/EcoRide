@@ -75,3 +75,7 @@ function loginUser() {
     }
 
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    loginUser();
+});

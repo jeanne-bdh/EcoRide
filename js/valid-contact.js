@@ -54,3 +54,7 @@ function validationContact() {
         }
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    validationContact();
+});

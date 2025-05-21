@@ -91,3 +91,7 @@ function registerUser() {
         }
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    registerUser();
+});
