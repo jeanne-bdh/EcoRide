@@ -45,7 +45,7 @@ require_once dirname(__DIR__, 3) . "/processes/personal_process.php";
                     <div class="photo-upload">
                         <input type="file" class="inputForm" id="photo" name="photo">
                         <div id="preview-container">
-                            <img id="photo-preview" src="/uploads/carpools/smiley-woman.jpg" alt="Choisir une photo">
+                            <img id="photo-preview" src="/uploads/smiley-woman.jpg" alt="Choisir une photo">
                         </div>
                     </div>
                     <div class="inputForm" id="password-input">
@@ -93,6 +93,12 @@ require_once dirname(__DIR__, 3) . "/processes/personal_process.php";
                     <div class="inputForm">
                         <label for="dateRegister">Date de la 1ère immatriculation</label>
                         <input type="date" id="dateRegister" name="dateRegister" value="<?= htmlspecialchars($carFirstRegist) ?>">
+                    </div>
+                    <div class="checkbox-container">
+                        <label for="smoker"><input type="checkbox" name="smoker" <?= ($carSmoker === 'Oui') ? 'checked' : '' ?>>Fumeurs acceptés</label>
+                    </div>
+                    <div class="checkbox-container">
+                        <label for="animal"><input type="checkbox" name="animal" <?= ($carAnimal === 'Oui') ? 'checked' : '' ?>>Animaux acceptés</label>
                     </div>
                     <div class="inputForm">
                         <label for="preferences">Préférences</label>

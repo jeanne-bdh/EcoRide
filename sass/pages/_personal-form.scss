@@ -29,10 +29,6 @@
                 justify-content: center;
                 transition: grid-template-columns 0.3s ease-in-out;
             }
-
-            .container-form-inner.show {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
     }
 }
@@ -44,7 +40,6 @@
         form {
             .container-form-inner.show {
                 grid-template-columns: repeat(3, 1fr);
-
             }
         }
     }

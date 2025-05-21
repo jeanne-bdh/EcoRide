@@ -1,0 +1,26 @@
+.checkbox-container {
+    margin: 0.5rem 0 0.2rem 0.5rem;
+
+    label {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .checkbox-container {
+
+        label {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .checkbox-container {
+        margin-inline: 1rem;
+
+        label {
+            font-size: 1.1rem;
+        }
+    }
+}

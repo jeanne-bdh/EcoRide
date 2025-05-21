@@ -26,6 +26,8 @@ $carPlate = $_POST['plate'] ?? $driverInfos['nb_plate'] ?? '';
 $carColor = $_POST['color'] ?? $driverInfos['color'] ?? '';
 $carFirstRegist = $_POST['dateRegister'] ?? $driverInfos['first_regist'] ?? '';
 $carSeats = $_POST['seat'] ?? $driverInfos['seats_nb'] ?? '';
+$carSmoker = isset($_POST['smoker']) ? 'Oui' : ($driverInfos['smoker'] ?? 'Non');
+$carAnimal = isset($_POST['animal']) ? 'Oui' : ($driverInfos['animal'] ?? 'Non');
 $carPreferences = $_POST['preferences'] ?? $driverInfos['preferences'] ?? '';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['savePersonalForm'])) {
@@ -56,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['savePersonalForm'])) 
             http_response_code(422);
             return;
         }
-        $carSaved = saveCar($pdo, $carModel, $carBrand, $carPlate, $carColor, $energyId, $carFirstRegist, $carSeats, $carPreferences, $userId, $carId);
+        $carSaved = saveCar($pdo, $carModel, $carBrand, $carPlate, $carColor, $energyId, $carFirstRegist, $carSeats, $carSmoker, $carAnimal, $carPreferences, $userId, $carId);
 
         $energySaved = false;
         if (isset($_POST['energy'])) {
