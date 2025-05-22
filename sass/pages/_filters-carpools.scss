@@ -2,7 +2,7 @@
     background-color: #fff;
     padding: 1.5rem;
     border-radius: 8px;
-    max-width: 400px;
+    max-width: 250px;
     margin-inline: auto;
 }
 
@@ -16,58 +16,65 @@
     }
 }
 
-input[type="checkbox"] {
-    margin-right: 0.5rem;
-}
-
-
-.inputNumberType {
+.inputNumberType,
+.select-box {
     width: 100%;
     padding: 0.5rem;
     border: 1px solid $lightGrey;
     border-radius: 4px;
 }
 
-.custom-select-checkbox {
+.select-box {
+    cursor: pointer;
+
+    p {
+        color: $black;
+    }
+}
+
+.select-container {
     position: relative;
     display: inline-block;
     width: 100%;
 }
 
-.select-box {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 0.5rem;
-    background-color: white;
-    cursor: pointer;
+.select-container.open .checkbox-container {
+    display: block;
 }
 
-.checkbox-options {
+.checkbox-container {
     display: none;
     position: absolute;
     background-color: white;
-    border: 1px solid #ccc;
+    border: 1px solid $lightGrey;
     border-top: none;
     width: 100%;
-    z-index: 1;
-    max-height: 150px;
-    overflow-y: auto;
+
+    label {
+        display: block;
+        padding: 0.4rem 0.6rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $lightGrey;
+        }
+    }
 }
 
-.custom-select-checkbox.open .checkbox-options {
-    display: block;
+@media (min-width: 768px) {
+    .form-filters {
+        max-width: 300px;
+    }
 }
 
-.checkbox-options label {
-    display: block;
-    padding: 0.4rem 0.6rem;
-    cursor: pointer;
-}
+@media (min-width: 1200px) {
+    .form-filters {
+        max-width: 400px;
+    }
 
-.checkbox-options label:hover {
-    background-color: #f0f0f0;
-}
-
-.checkbox-options input {
-    margin-right: 0.5rem;
+    .select-box {
+        p {
+            font-size: 1.1rem;
+        }
+    }
 }

@@ -94,10 +94,10 @@ require_once dirname(__DIR__, 3) . "/processes/personal_process.php";
                         <label for="dateRegister">Date de la 1ère immatriculation</label>
                         <input type="date" id="dateRegister" name="dateRegister" value="<?= htmlspecialchars($carFirstRegist) ?>">
                     </div>
-                    <div class="checkbox-container">
+                    <div class="checkbox-block">
                         <label for="smoker"><input type="checkbox" name="smoker" <?= ($carSmoker === 'Oui') ? 'checked' : '' ?>>Fumeurs acceptés</label>
                     </div>
-                    <div class="checkbox-container">
+                    <div class="checkbox-block">
                         <label for="animal"><input type="checkbox" name="animal" <?= ($carAnimal === 'Oui') ? 'checked' : '' ?>>Animaux acceptés</label>
                     </div>
                     <div class="inputForm">

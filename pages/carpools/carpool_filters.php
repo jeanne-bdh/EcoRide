@@ -36,9 +36,9 @@ require_once dirname(__DIR__, 2) . "/libs/carpool.php";
 
         <div class="form-content">
             <label for="note-5">Note minimale du conducteur</label>
-            <div class="custom-select-checkbox" onclick="this.classList.toggle('open')">
-                <div class="select-box">Sélectionner</div>
-                <div class="checkbox-options">
+            <div class="select-container" id="select-container">
+                <div class="select-box"><p>Sélectionner</p></div>
+                <div class="checkbox-container">
                     <label for="note-5"><input type="checkbox" name="note" id="note-5" value="5" /> ⭐⭐⭐⭐⭐</label>
                     <label for="note-4"><input type="checkbox" name="note" id="note-4" value="4" /> ⭐⭐⭐⭐ et plus</label>
                     <label for="note-3"><input type="checkbox" name="note" id="note-3" value="3" /> ⭐⭐⭐ et plus</label>

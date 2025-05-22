@@ -52,7 +52,7 @@ require_once __DIR__ . "/../libs/session.php";
                 </li>
                 <li class="nav-item">
                     <?php if (isUserConnected()) { ?>
-                        <a class="hello-user" href="">Bonjour <?= $_SESSION['users']['pseudo']; ?> </a>
+                        <a class="hello-user" href="<?= getUserSessionLink(); ?>">Bonjour <?= $_SESSION['users']['pseudo']; ?> </a>
                         <a href="/pages/auth/logout.php"><button class="btn-blue" type="button">Déconnexion</button></a>
                     <?php } else { ?>
                         <a href="/pages/auth/login_form.php"><button class="btn-blue" type="button">Connexion</button></a>
