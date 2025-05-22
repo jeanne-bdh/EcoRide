@@ -55,6 +55,7 @@ function getSearchCarpoolCard(PDO $pdo, string $cityDepart, string $cityArrival,
         AND date_depart = :date_depart
         AND carpools.date_depart > CURRENT_DATE
         AND label_status_carpool = \'Confirmé\'
+        AND remaining_seat > 0
         ORDER BY carpools.date_depart ASC'
     );
     $stmt->bindValue(':localisation_depart', $cityDepart, PDO::PARAM_STR);
