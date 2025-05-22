@@ -10,10 +10,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($user) {
         $_SESSION['users'] = $user;
 
-        header('location: /pages/users/user_session.php');
+        if ($user['id_role'] == 1) {
+            header('Location: /pages/admin/admin_session.php');
+        } elseif ($user['id_role'] == 3) {
+            header('Location: /pages/employees/employee_session.php');
+        } else {
+            header('Location: /pages/users/user_session.php');
+        }
         exit();
     } else {
-
         $errorsLogin[] = "Identifiants incorrects";
         http_response_code(401);
     }
