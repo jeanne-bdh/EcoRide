@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for app-ecoride
+# fly.toml app configuration file generated for ecoride-nameless-surf-428 on 2025-05-08T16:01:28+02:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'app-ecoride'
+app = 'ton-app'
 primary_region = 'cdg'
 
 [build]
