@@ -1,0 +1,100 @@
+.container-form {
+    background-color: $white;
+    border: 1px solid rgba($color: $black, $alpha: 0.5);
+    border-radius: 10px;
+    width: 300px;
+    margin: auto;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    font-size: 0.8rem;
+    color: $black;
+}
+
+.inputForm {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+
+    input {
+        background-color: $lightGrey;
+        border: 1px solid rgba($color: $black, $alpha: 0.4);
+        border-radius: 5px;
+        width: 16rem;
+        height: 2rem;
+        padding-inline: 1rem;
+    }
+}
+
+.valid-feedback,
+.invalid-feedback {
+    display: none;
+    color: red;
+    font-size: 0.7em;
+    width: 16rem;
+}
+
+.valid-feedback {
+    color: green;
+}
+
+.inputBtn {
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width:768px) {
+
+    label {
+        font-size: 0.9rem;
+    }
+
+    .inputForm {
+        input {
+            height: 2.2rem;
+        }
+    }
+
+    form {
+        margin-bottom: 1rem;
+    }
+
+    .valid-feedback,
+    .invalid-feedback {
+        font-size: 0.7rem;
+    }
+}
+
+@media (min-width:1200px) {
+    .container-form {
+        width: 400px;
+    }
+
+    label {
+        font-size: 1.1rem;
+    }
+
+    .inputForm {
+        margin: 1rem;
+
+        label {
+            margin-bottom: 0.5rem;
+        }
+
+        input {
+            width: 20rem;
+            height: 2.5rem;
+            font-size: 1rem;
+        }
+    }
+
+    .valid-feedback,
+    .invalid-feedback {
+        font-size: 0.9rem;
+        width: 20rem;
+    }
+}

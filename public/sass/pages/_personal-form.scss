@@ -1,0 +1,142 @@
+// CONTAINER PERSONAL
+
+#container-personal-form {
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .container-form-inner {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    #container-personal-form {
+        width: 600px;
+        display: flex;
+        justify-content: center;
+
+        form {
+
+            .container-form-inner {
+                display: grid;
+                grid-template-columns: 1fr;
+                justify-content: center;
+                transition: grid-template-columns 0.3s ease-in-out;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    #container-personal-form {
+        width: 850px;
+
+        form {
+            .container-form-inner.show {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    #container-personal-form {
+        width: 1150px;
+    }
+}
+
+
+// CAR INFOS
+
+.car-infos-container,
+.car-infos-container2 {
+    display: none;
+    opacity: 0;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.car-infos-container.show,
+.car-infos-container2.show {
+    display: grid;
+    grid-auto-rows: min-content;
+    opacity: 1;
+}
+
+.select-energy {
+    background-color: $lightGrey;
+    border: 1px solid rgba($color: $black, $alpha: 0.4);
+    border-radius: 5px;
+    width: 16rem;
+    height: 2rem;
+    padding-inline: 1rem;
+
+    @media (min-width:768px) {
+        height: 2.2rem;
+    }
+
+    @media (min-width:1200px) {
+        width: 20rem;
+        height: 2.5rem;
+        font-size: 1rem;
+    }
+}
+
+
+// PASSWORD CHANGE
+
+.password-change {
+    color: $secondary;
+    text-decoration: underline;
+    text-align: center;
+    font-size: 0.9rem;
+
+    &:hover {
+        color: $primary;
+    }
+}
+
+#password-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0.5rem;
+
+    svg {
+        width: 1rem;
+        color: $black;
+        margin-right: 0.5rem;
+    }
+}
+
+
+// PROFIL PHOTO
+
+.photo-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#preview-container {
+    width: 100px;
+    height: 100px;
+    border: 2px dashed $lightGrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+#photo-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

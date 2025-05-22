@@ -1,0 +1,70 @@
+#carpool-details {
+    height: 13.5rem;
+}
+
+.carpool-card-details-items {
+    height: 8rem;
+
+    h6 {
+        padding: 1rem 0 0.5rem 1rem;
+    }
+
+    ul {
+        padding: 0 0 1rem 2rem;
+    }
+
+    li {
+        color: $black;
+        font-size: 0.8rem;
+    }
+}
+
+.comments-container {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h5 {
+        margin: 1rem 0;
+    }
+
+    p {
+        color: $black;
+    }
+}
+
+@media (min-width : 768px) {
+
+    #carpool-details {
+        height: 15.5rem;
+    }
+
+    .carpool-card-details-items {
+        height: 9rem;
+
+        h6 {
+            padding-left: 2rem;
+        }
+
+        ul {
+            padding-left: 3.5rem;
+        }
+
+        li {
+            font-size: 1rem;
+        }
+    }
+}
+
+@media (min-width : 1200px) {
+    #carpool-details {
+        height: 17.5rem;
+    }
+
+    .carpool-card-details-items {
+        height: 11rem;
+
+        li {
+            font-size: 1.3rem;
+        }
+    }
+}
