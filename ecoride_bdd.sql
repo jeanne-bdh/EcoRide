@@ -5,7 +5,7 @@
 -- Dumped from database version 17.4
 -- Dumped by pg_dump version 17.0
 
--- Started on 2025-05-22 16:21:15 CEST
+-- Started on 2025-05-22 17:05:30 CEST
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -1344,7 +1344,7 @@ ALTER TABLE ONLY public.carpools_users
     ADD CONSTRAINT fk_id_users FOREIGN KEY (id_users) REFERENCES public.users(id_users);
 
 
--- Completed on 2025-05-22 16:21:15 CEST
+-- Completed on 2025-05-22 17:05:30 CEST
 
 --
 -- PostgreSQL database dump complete
