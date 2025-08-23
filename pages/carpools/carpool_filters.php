@@ -12,7 +12,7 @@ require_once dirname(__DIR__, 2) . "/libs/carpool.php";
     <!-- HERO SECTION -->
     <?php
     include_once dirname(__DIR__, 2) . "/templates/hero_section.php";
-    heroSection("Accès aux covoiturages");
+    heroSection("Covoiturages");
     ?>
 
     <!-- FILTERS -->

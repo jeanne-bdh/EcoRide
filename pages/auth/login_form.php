@@ -48,7 +48,7 @@ require_once dirname(__DIR__, 2) . "/templates/header.php";
                     Le mot de passe est valide
                 </div>
                 <div class="invalid-feedback">
-                    Veuillez saisir un mot de passe contenant au moins 9 caractères, une majuscule, une
+                    Veuillez saisir un mot de passe contenant au moins 8 caractères, une majuscule, une
                     minuscule, un chiffre et un caractère spécial
                 </div>
             </div>

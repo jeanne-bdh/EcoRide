@@ -21,7 +21,6 @@ require_once dirname(__DIR__, 3) . "/processes/new_carpool_process.php";
                 <?php foreach ($userCars as $car): ?>
                     <option value="<?= $car['id_car'] ?>"><?= htmlspecialchars($car['brand'] . " " . $car['model']) ?></option>
                 <?php endforeach; ?>
-                <option value="2">Ajouter un autre véhicule</option>
             </select>
 
             <div class="container-form-inner">
