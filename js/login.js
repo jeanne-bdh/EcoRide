@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+function loginUser() {
     const inputEmailLog = document.getElementById("inputEmailLogin");
     const inputPwdLog = document.getElementById("inputPwdLogin");
     const btnValidLog = document.getElementById("btn-valid-login");
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function validatePwdLog(input) {
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{9,}$/;
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$/;
         const passwordUser = input.value.trim();
         const validFeedback = input.parentElement.querySelector(".valid-feedback");
         const invalidFeedback = input.parentElement.querySelector(".invalid-feedback");
@@ -74,4 +74,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    loginUser();
 });

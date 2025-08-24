@@ -21,3 +21,13 @@ function getProfile(PDO $pdo, int $userId):array
 
     return $query->fetch(PDO::FETCH_ASSOC);
 }
+
+function getUserSessionLink(): string
+{
+    $role = $_SESSION['users']['id_role'];
+    return match ($role) {
+        1 => '/pages/admin/admin_session.php',
+        3 => '/pages/employees/employee_session.php',
+        default => '/pages/users/user_session.php'
+    };
+}

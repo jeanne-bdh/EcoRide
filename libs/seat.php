@@ -1,6 +1,6 @@
 <?php
 
-function getRemainingSeat(PDO $pdo, int $carpoolId, int $carId) : bool
+function getRemainingSeat(PDO $pdo, int $carpoolId, int $carId): bool
 {
     $stmt = $pdo->prepare("SELECT seats_nb FROM cars WHERE id_car = :id_car");
     $stmt->bindValue(':id_car', $carId, PDO::PARAM_INT);

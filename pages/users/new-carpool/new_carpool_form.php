@@ -21,7 +21,6 @@ require_once dirname(__DIR__, 3) . "/processes/new_carpool_process.php";
                 <?php foreach ($userCars as $car): ?>
                     <option value="<?= $car['id_car'] ?>"><?= htmlspecialchars($car['brand'] . " " . $car['model']) ?></option>
                 <?php endforeach; ?>
-                <option value="2">Ajouter un autre véhicule</option>
             </select>
 
             <div class="container-form-inner">
@@ -80,7 +79,7 @@ require_once dirname(__DIR__, 3) . "/processes/new_carpool_process.php";
             <div class="inputBtn">
                 <button type="submit" name="saveNewCarpool" class="btn-blue btn-green btn-form" id="btn-valid-new-carpool">Soumettre</button>
             </div>
-            <a class="link-future-carpool" href="/pages/users/future-carpool/future_carpool.php">> Accéder aux covoiturages à venir</a>
+            <a class="link-future-carpool" href="/pages/users/future-carpool/future_carpool.php?view=future">> Accéder aux covoiturages à venir</a>
             <?php foreach ($messagesForm as $message) { ?>
                 <div class="success">
                     <?= $message; ?>

@@ -58,7 +58,7 @@ require_once dirname(__DIR__, 2) . "/templates/header.php";
                 <?php } ?>
             </div>
             <div class="inputForm">
-                <label for="inputEmailRegister">Mot de passe :</label>
+                <label for="inputPwdRegister">Mot de passe :</label>
                 <input type="password" name="password" id="inputPwdRegister" required>
                 <div class="valid-feedback">
                     Le mot de passe est valide

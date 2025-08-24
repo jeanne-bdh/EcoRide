@@ -26,9 +26,12 @@ $carPlate = $_POST['plate'] ?? $driverInfos['nb_plate'] ?? '';
 $carColor = $_POST['color'] ?? $driverInfos['color'] ?? '';
 $carFirstRegist = $_POST['dateRegister'] ?? $driverInfos['first_regist'] ?? '';
 $carSeats = $_POST['seat'] ?? $driverInfos['seats_nb'] ?? '';
+$carSmoker = isset($_POST['smoker']) ? 'Oui' : ($driverInfos['smoker'] ?? 'Non');
+$carAnimal = isset($_POST['animal']) ? 'Oui' : ($driverInfos['animal'] ?? 'Non');
 $carPreferences = $_POST['preferences'] ?? $driverInfos['preferences'] ?? '';
 
-if (isset($_POST['savePersonalForm'])) {
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['savePersonalForm'])) {
+    
     $personalForm = savePersonalForm($pdo, $lastname, $firstname, $address, $telephone, $userId);
 
     $profilSaved = false;
@@ -40,8 +43,10 @@ if (isset($_POST['savePersonalForm'])) {
     if ($profilType == 1) {
         if ($personalForm && $profilSaved) {
             $messagesForm[] = "Votre profil a été mis à jour avec succès";
+            http_response_code(201);
         } else {
             $errorsForm[] = "Erreur lors de l'enregistrement du profil";
+            http_response_code(500);
         }
     }
 
@@ -50,9 +55,10 @@ if (isset($_POST['savePersonalForm'])) {
         $errorsForm = validateSeat($_POST['seat']);
 
         if (!empty($errorsForm)) {
+            http_response_code(422);
             return;
         }
-        $carSaved = saveCar($pdo, $carModel, $carBrand, $carPlate, $carColor, $energyId, $carFirstRegist, $carSeats, $carPreferences, $userId, $carId);
+        $carSaved = saveCar($pdo, $carModel, $carBrand, $carPlate, $carColor, $energyId, $carFirstRegist, $carSeats, $carSmoker, $carAnimal, $carPreferences, $userId, $carId);
 
         $energySaved = false;
         if (isset($_POST['energy'])) {
@@ -64,8 +70,12 @@ if (isset($_POST['savePersonalForm'])) {
 
         if ($personalForm && $profilSaved && $energySaved && $carSaved) {
             $messagesForm[] = "Votre profil a été mis à jour avec succès";
+            http_response_code(201);
         } else {
             $errorsForm[] = "Erreur lors de l'enregistrement du profil";
+            http_response_code(500);
         }
     }
+} else {
+    http_response_code(200);
 }

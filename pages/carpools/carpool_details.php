@@ -4,11 +4,9 @@ require_once dirname(__DIR__, 2) . "/templates/header.php";
 require_once dirname(__DIR__, 2) . "/libs/pdo.php";
 require_once dirname(__DIR__, 2) . "/libs/carpool.php";
 require_once dirname(__DIR__, 2) . "/libs/format_time.php";
-
-if (isset($_GET["id_carpool"])) {
-    $carpoolId = (int)$_GET["id_carpool"];
-    $detailsCarpool = getCarpoolDetails($pdo, $carpoolId);
-}
+require_once dirname(__DIR__, 2) . "/libs/duration.php";
+require_once dirname(__DIR__, 2) . "/libs/review.php";
+require_once dirname(__DIR__, 2) . "/processes/details_carpool_process.php";
 
 ?>
 
@@ -20,73 +18,22 @@ if (isset($_GET["id_carpool"])) {
     heroSection("Détails du covoiturage");
     ?>
 
-    <section>
-        <div class="carpool-card">
-            <div class="carpool-card-top">
-                <div class="tag" id="blue-tag">
-                    <p><?= $carpool['date_depart']; ?></p>
-                </div>
-                <div>
-                    <p class="p-credit"><?= $carpool['price']; ?> crédit(s)</p>
-                    <p class="p-place"><?= $carpool['remaining_seat']; ?> place(s)</p>
-                </div>
-            </div>
-            <div class="travel">
-                <div class="container-depart">
-                    <p class="time-style"><?= formatTime($carpool['time_depart']); ?></p>
-                    <p><?= $carpool['localisation_depart']; ?></p>
-                </div>
-                <div class="travel-circle"></div>
-                <hr class="travel-line">
-                <p class="duration"><?= getDuration($carpool['time_depart'], $carpool['time_arrival']); ?></p>
-                <hr class="travel-line">
-                <div class="travel-circle"></div>
-                <div class="container-arrival">
-                    <p class="time-style"><?= formatTime($carpool['time_arrival']); ?></p>
-                    <p><?= $carpool['localisation_arrival']; ?></p>
-                </div>
-            </div>
-            <hr>
-            <div class="carpool-card-bottom">
-                <div class="card-driver">
-                    <div class="container-pseudo">
-                        <img src="/uploads/person-circle.svg" class="profil-icon" alt="profil user">
-                        <p><?= $carpool['driver_pseudo']; ?></p>
-                    </div>
-                    <div class="star">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#757575" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                        </svg>
-                        <p class="p-notes"><?= $averageNotes['average_notes']; ?></p>
-                    </div>
-                    <div class="tag" id="green-tag">
-                        <p><?= $carpool['label_travel_type']; ?></p>
-                    </div>
-                </div>
-                <div class="card-inner-bottom">
-                    <div class="tag tag-status" id="<?= $carpool['id_carpool']; ?>" data-status="<?= $carpool['label_status_carpool']; ?>">
-                        <p><?= $carpool['label_status_carpool']; ?></p>
-                    </div>
-                    <div class="details-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#528DB9" class="chevron-double-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708" />
-                            <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708" />
-                        </svg>
-                        <a href="/pages/carpools/carpool_details.php?id_carpool= urlencode<?= $carpool['id_carpool']; ?>">
-                            Voir détails
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <?php foreach ($errorsDetails as $error) { ?>
+        <div class="alert-container">
+            <?= $error; ?>
         </div>
+    <?php } ?>
+
+    <section>
+        <?php require_once dirname(__DIR__, 2) . "/templates/carpool_card.php"; ?>
 
         <div class="carpool-card carpool-card-details-items" id="car-infos">
             <h6>Informations du véhicule</h6>
             <ul>
-                <li>Marque : Renault</li>
-                <li>Modèle : Captur</li>
-                <li>Couleur : gris foncé</li>
-                <li>Energie : thermique</li>
+                <li>Marque : <?= $carpool['brand']; ?></li>
+                <li>Modèle : <?= $carpool['model']; ?></li>
+                <li>Couleur : <?= $carpool['color']; ?></li>
+                <li>Energie : <?= $carpool['label_energy']; ?></li>
             </ul>
         </div>
 
@@ -94,30 +41,24 @@ if (isset($_GET["id_carpool"])) {
             <h6>Préférences du conducteur</h6>
             <ul>
                 <li>Non fumeur</li>
-                <li>Animaux en cage seulement</li>
-                <li>Aime discuter de tout et de rien</li>
+                <li>Animaux acceptés</li>
+                <li><?= $carpool['preferences']; ?></li>
             </ul>
         </div>
 
         <div class="comments-container">
-            <h5>Avis (3)</h5>
+            <h5>Avis (<?= count($reviews); ?>)</h5>
             <div class="carousel">
                 <div class="carousel-slide">
-                    <div class="slide active">
-                        <h6>Trajet parfait avec un conducteur très sympa !</h6>
-                        <p class="notes">5 étoiles</p>
-                        <p>Super expérience de covoiturage ! Paul est arrivé à l’heure et la voiture était impeccable. Il a proposé plusieurs pauses pendant le trajet, et la conversation était fluide et agréable. Je recommande vivement de voyager avec lui !</p>
-                    </div>
-                    <div class="slide">
-                        <h6>Très bon trajet, petit retard au départ</h6>
-                        <p class="notes">4 étoiles</p>
-                        <p>Le trajet s'est bien déroulé, et le conducteur était très agréable. Petit bémol : 10 minutes de retard au départ, mais il a pris la peine de prévenir à l'avance, ce que j'ai apprécié. Voiture confortable et bonne ambiance à bord !</p>
-                    </div>
-                    <div class="slide">
-                        <h6>Correct, mais peut s'améliorer</h6>
-                        <p class="notes">3 étoiles</p>
-                        <p>Conducteur sympa, mais la musique était un peu forte pendant tout le trajet malgré mes suggestions. Aussi, pas de pause sur une longue distance, ce qui était un peu inconfortable. Mais la conduite était sécurisante et ponctuelle.</p>
-                    </div>
+
+                    <?php foreach ($reviews as $index => $review): ?>
+                        <div class="slide <?= $index === 0 ? 'active' : ''; ?>">
+                            <h6><?= $review['title']; ?></h6>
+                            <p class="notes"><?= $review['notes']; ?></p>
+                            <p><?= $review['comment']; ?></p>
+                        </div>
+                    <?php endforeach; ?>
+
                 </div>
                 <button class="btn" id="prev">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -134,9 +75,15 @@ if (isset($_GET["id_carpool"])) {
             </div>
         </div>
 
-        <a href="#">
-            <button type="submit" class="btn-blue btn-participate">Participer</button>
-        </a>
+        <div class="inputBtn">
+            <?php if (isUserConnected()): ?>
+                <a href="/pages/auth/login_form.php" class="btn-blue">Participer</a>
+            <?php else: ?>
+            /*
+            enregister dans covoiturages à venir
+            */
+            <?php endif; ?>
+        </div>
     </section>
 
 </main>

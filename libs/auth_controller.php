@@ -1,7 +1,7 @@
 <?php
 function verifyUserLoginPassword(PDO $pdo, string $email, string $password): bool|array
 {
-    $query = "SELECT id_users, pseudo, email, password FROM users WHERE email = :email";
+    $query = "SELECT * FROM users WHERE email = :email";
     $stmt = $pdo->prepare($query);
     $stmt->bindValue(':email', $email, PDO::PARAM_STR);
     $stmt->execute();

@@ -16,3 +16,18 @@ $stmt = $pdo->prepare(
 
     return $stmt->fetch(PDO::FETCH_ASSOC) ?: ['average_notes' => 0];
 }
+
+function getReviews(PDO $pdo, int $carpoolId): array
+{
+$stmt = $pdo->prepare(
+        'SELECT reviews.*, status_review.*
+        FROM reviews
+        JOIN status_review ON status_review.id_status_review = reviews.id_status_review
+        WHERE reviews.id_carpool = :id_carpool
+        AND label_status_review = \'Validé\''
+    );
+    $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}

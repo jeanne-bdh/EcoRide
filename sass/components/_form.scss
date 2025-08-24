@@ -10,15 +10,15 @@
     align-items: center;
 }
 
+label {
+    font-size: 0.8rem;
+    color: $black;
+}
+
 .inputForm {
     display: flex;
     flex-direction: column;
     margin: 0.5rem;
-
-    label {
-        color: $black;
-        font-size: 0.8rem;
-    }
 
     input {
         background-color: $lightGrey;
@@ -48,11 +48,12 @@
 }
 
 @media (min-width:768px) {
-    .inputForm {
-        label {
-            font-size: 0.9rem;
-        }
 
+    label {
+        font-size: 0.9rem;
+    }
+
+    .inputForm {
         input {
             height: 2.2rem;
         }
@@ -73,11 +74,14 @@
         width: 400px;
     }
 
+    label {
+        font-size: 1.1rem;
+    }
+
     .inputForm {
         margin: 1rem;
 
         label {
-            font-size: 1.1rem;
             margin-bottom: 0.5rem;
         }
 

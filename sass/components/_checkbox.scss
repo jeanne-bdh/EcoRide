@@ -1,0 +1,16 @@
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+
+// PERSONAL FORM
+
+.checkbox-block {
+    margin: 0.5rem 0 0.2rem 0.5rem;
+}
+
+@media (min-width: 1200px) {
+    .checkbox-block {
+        margin-inline: 1rem;
+    }
+}

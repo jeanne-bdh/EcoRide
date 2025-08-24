@@ -2,7 +2,6 @@
 
 Une application web de covoiturage ciblée sur des voyages écologiques
 
-
 # Fonctionnalités
 
 - Consultation des covoiturages
@@ -12,15 +11,14 @@ Une application web de covoiturage ciblée sur des voyages écologiques
 - Consultation de l'historiques des covoiturages passés
 - Participer à un covoiturage pour un passager, avec possibilité de payer sur la plateforme et d'annuler le trajet le cas échéant
 - Poster un avis sur le déroulement du covoiturage
-- Création de comptes pour employés, qui gérent les avis et les litiges
+- Création de comptes pour employés, qui gèrent les avis et les litiges
 - Un compte administrateur a la possibilité de suspendre des comptes utilisateur ou employés et suivre les statistiques de la plateforme
-
 
 # Installation
 
-Serveur Apache/Nginx avec PHP 8.2.4-0
-MySQLMySQL – MariaDB - 9.2.0
-
+PostgreSQL - 17.4
+MongoDB – v6.0.16
+PHP natif - 8.4.2
 
 # Etapes d'installation
 
@@ -30,7 +28,7 @@ git clone https://github.com/jeanne-bdh/EcoRide.git
 
 2. Configurer la base de données
 
-- Importer le fichier ecoride.sql dans MySQL
+- Importer le fichier ecoride_bdd.sql dans PostgreSQL
 - Modifier pdo.php avec vos identifiants de base de données
 
 3. Lancer le serveur
@@ -52,23 +50,16 @@ Ouvrir http://localhost:8000 dans un navigateur
 |__ /pages
 |__ /sass
 |__ index.php
-|__ ecoride.sql
+|__ ecoride_bdd.sql
 |__ README.md
-
 
 # Technologies utilisées
 
-Front-end : HTML, SCSS, Javascript (Vanilla)
+Front-end: HTML, SCSS, Javascript (Vanilla)
 Back-end : PHP natif
-Base de donnée : MySQL
-
+Base de données relationnelle : PostgreSQL
+Base de données non relationnelle : MongoDB
 
 # Auteur
 
 BOUCHEND'HOMME Jeanne
-
-# Deploy
-
-Postgres cluster w867508m1xr3pk4y is being attached to ton-app
-The following secret was added to ton-app:
-  DATABASE_URL=postgres://pgdb-w867508m1xr3pk4y:JCtya25xiroNgat5T91Hioog@pgbouncer.w867508m1xr3pk4y.flympg.net/pgdb-w867508m1xr3pk4y

@@ -4,6 +4,7 @@ require_once __DIR__ . "/../libs/pdo.php";
 require_once __DIR__ . "/../libs/user.php";
 require_once __DIR__ . "/../libs/new_carpool.php";
 require_once __DIR__ . "/../libs/duration.php";
+require_once __DIR__ . "/../libs/validation_date.php";
 require_once __DIR__ . "/../libs/seat.php";
 
 $errorsForm = [];
@@ -12,7 +13,8 @@ $messagesForm = [];
 $userId = (int)$_SESSION['users']['id_users'];
 $userCars = getCarByUser($pdo, $userId);
 
-if (isset($_POST['saveNewCarpool'])) {
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['saveNewCarpool'])) {
+
     if (!isset($_POST['car-select']) || empty($_POST['car-select'])) {
         $errorsForm[] = "Aucun véhicule sélectionné";
     }
@@ -30,9 +32,15 @@ if (isset($_POST['saveNewCarpool'])) {
 
             if ($insertDriver) {
                 $messagesForm[] = "Votre voyage a été enregistré avec succès";
+                http_response_code(201);
             } else {
                 $errorsForm[] = "Erreur lors de l'enregistrement du voyage";
+                http_response_code(500);
             }
         }
+    } else {
+        http_response_code(422);
     }
+} else {
+    http_response_code(200);
 }

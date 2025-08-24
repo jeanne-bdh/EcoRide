@@ -43,6 +43,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             exit();
         } else {
             $errorsRegister[] = "Une erreur est survenue lors de l'inscription";
+            http_response_code(500);
+            exit;
         }
+    } else {
+        http_response_code(422);
+        exit;
     }
+} else {
+    http_response_code(200);
 }

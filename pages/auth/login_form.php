@@ -34,6 +34,7 @@ require_once dirname(__DIR__, 2) . "/templates/header.php";
             <div class="inputForm">
                 <label for="inputEmailLogin">Email :</label>
                 <input type="email" name="email" id="inputEmailLogin" required>
+                <input type="hidden" name="_token" value="<?= $token ?>">
                 <div class="valid-feedback">
                     L'email est valide
                 </div>
@@ -48,7 +49,7 @@ require_once dirname(__DIR__, 2) . "/templates/header.php";
                     Le mot de passe est valide
                 </div>
                 <div class="invalid-feedback">
-                    Veuillez saisir un mot de passe contenant au moins 9 caractères, une majuscule, une
+                    Veuillez saisir un mot de passe contenant au moins 8 caractères, une majuscule, une
                     minuscule, un chiffre et un caractère spécial
                 </div>
             </div>

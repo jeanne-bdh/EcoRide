@@ -6,17 +6,18 @@
 
 @import 'components/buttons';
 @import 'components/card-session';
+@import 'components/carousel';
 @import 'components/components';
 @import 'components/form';
 @import 'components/return';
 @import 'components/tag';
-@import 'components/carpool-card-old'; // A REVOIR
 @import 'components/carpool-card';
 @import 'components/alert';
 @import 'components/success';
 @import 'components/select-form';
 @import 'components/textarea';
 @import 'components/modal';
+@import 'components/checkbox';
 
 @import 'layout/footer';
 @import 'layout/header';
@@ -24,6 +25,7 @@
 @import 'layout/layout';
 
 @import 'pages/404';
+@import 'pages/carpool-access';
 @import 'pages/carpool-details';
 @import 'pages/contact-form';
 @import 'pages/home-form';
