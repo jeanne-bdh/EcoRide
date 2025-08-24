@@ -48,3 +48,26 @@ function getUserCredit(PDO $pdo, $userId): ?int
         return 0;
     }
 }
+
+function userSuspension(PDO $pdo, int $userId): bool
+{
+    $query = "UPDATE users SET id_status_session = 2 WHERE id_users = :id_users";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
+    return $stmt->execute();
+}
+
+function usersItems(PDO $pdo): bool|array
+{
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE id_role = 2");
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function userRestart(PDO $pdo, int $userId): bool
+{
+    $query = "UPDATE users SET id_status_session = 1 WHERE id_users = :id_users";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
+    return $stmt->execute();
+}
