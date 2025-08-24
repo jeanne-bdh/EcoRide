@@ -63,6 +63,11 @@ require_once dirname(__DIR__, 2) . "/processes/details_carpool_process.php";
                 <form method="POST" action="/processes/participate_process.php">
                     <input type="hidden" name="id_carpool" value="<?= $carpool['id_carpool']; ?>">
                     <button type="submit" class="btn-blue">Participer</button>
+                    <?php foreach ($errorsDetails as $error) { ?>
+                        <div class="alert-container">
+                            <?= $error; ?>
+                        </div>
+                    <?php } ?>
                 </form>
             <?php endif; ?>
         </div>

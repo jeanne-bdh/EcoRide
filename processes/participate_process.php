@@ -4,13 +4,15 @@ require_once __DIR__ . "/../libs/pdo.php";
 require_once __DIR__ . "/../libs/session.php";
 require_once __DIR__ . "/../libs/new_carpool.php";
 
+$errorForm = [];
+
 if (!isUserConnected()) {
     header("Location: /pages/auth/login_form.php");
     exit;
 }
 
 if (!isset($_POST['id_carpool'])) {
-    die("Covoiturage inconnu");
+    $errorsForm[] = "Covoiturage inconnu";
 }
 
 $carpoolId = (int)$_POST['id_carpool'];
@@ -24,12 +26,12 @@ $stmtUserCheck->execute([
     ]);
 
 if ($stmtUserCheck->rowCount() > 0) {
-    die("Vous participez déjà à ce covoiturage");
+    $errorsForm[] = "Vous participez déjà à ce covoiturage";
 }
 
 if (insertCarpoolsUsers($pdo, $userId, $carpoolId, $roleInCarpool)) {
     header("Location: /pages/users/future-carpool/future_carpool.php");
     exit;
 } else {
-    die("Impossible de participer au covoiturage");
+    $errorsForm[] = "Impossible de participer au covoiturage";
 }

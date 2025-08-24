@@ -1,5 +1,5 @@
 <section class="container-form" id="container-form-home">
-    <form method="GET" id="search-Form">
+    <form method="GET" id="search-Form" action="/pages/carpools/carpool_search.php">
         <div class="inputForm">
             <label for="inputDepartCity">Départ :</label>
             <input type="text" id="inputDepartCity" name="departCity" placeholder="Ville de départ" required>
@@ -15,5 +15,10 @@
         <div class="inputBtn">
             <button type="submit" name="searchCarpool" class="btn-blue btn-green">Rechercher</button>
         </div>
+        <?php foreach ($errorsForm as $error) { ?>
+            <div class="alert-container">
+                <?= $error; ?>
+            </div>
+        <?php } ?>
     </form>
 </section>

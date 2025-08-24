@@ -10,20 +10,19 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['searchCarpool'])) {
 
     $cityDepart = trim($_GET['departCity']);
     $cityArrival = trim($_GET['arrivalCity']);
+    $dateDepart = $_GET['dateDepart'] ?? '';
     $errorsForm = validateDate($_GET['dateDepart']);
 
-    if (empty($errorsForm)) {
-        $res = getSearchCarpoolCard($pdo, $cityDepart, $cityArrival, $_GET['dateDepart']);
-    }
+    if (empty($errorsForm) && !empty($cityDepart) && !empty($cityArrival)) {
+        $carpoolSearch = getSearchCarpoolCard($pdo, $cityDepart, $cityArrival, $dateDepart);
 
-    if ($res) {
-        header("Location: /pages/carpools/carpool_filters.php?departCity=" . urlencode($cityDepart) .
-            "&arrivalCity=" . urlencode($cityArrival) .
-            "&dateDepart=" . urlencode($_GET['dateDepart']));
-        exit();
+        if (!$carpoolSearch) {
+            $errorsForm[] = "Aucun covoiturage disponible";
+            http_response_code(404);
+        }
     } else {
-        $errorsForm[] = "Une erreur est survenue lors de la recherche";
-        http_response_code(500);
+        $errorsForm[] = "Veuillez renseigner tous les champs";
+        http_response_code(400);
     }
 } else {
     http_response_code(200);
