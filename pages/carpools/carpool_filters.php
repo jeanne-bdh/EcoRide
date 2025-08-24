@@ -15,43 +15,7 @@ require_once dirname(__DIR__, 2) . "/libs/carpool.php";
     heroSection("Covoiturages");
     ?>
 
-    <!-- FILTERS -->
-    <form class="form-filters">
-        <div class="form-content">
-            <label>
-                <input type="checkbox" name="ecolo" />
-                🌱 Trajets écologiques
-            </label>
-        </div>
-
-        <div class="form-content">
-            <label for="price-filter">Prix maximum (€)</label>
-            <input class="inputNumberType" type="number" id="price-filter" name="maxPrice" min="0" placeholder="ex : 20" />
-        </div>
-
-        <div class="form-content">
-            <label for="duration-filter">Durée maximum (en minutes)</label>
-            <input class="inputNumberType" type="number" id="duration-filter" name="maxDuration" min="1" placeholder="ex : 90" />
-        </div>
-
-        <div class="form-content">
-            <label for="note-5">Note minimale du conducteur</label>
-            <div class="select-container" id="select-container">
-                <div class="select-box"><p>Sélectionner</p></div>
-                <div class="checkbox-container">
-                    <label for="note-5"><input type="checkbox" name="note" id="note-5" value="5" /> ⭐⭐⭐⭐⭐</label>
-                    <label for="note-4"><input type="checkbox" name="note" id="note-4" value="4" /> ⭐⭐⭐⭐ et plus</label>
-                    <label for="note-3"><input type="checkbox" name="note" id="note-3" value="3" /> ⭐⭐⭐ et plus</label>
-                    <label for="note-2"><input type="checkbox" name="note" id="note-2" value="2" /> ⭐⭐ et plus</label>
-                    <label for="note-1"><input type="checkbox" name="note" id="note-1" value="1" /> ⭐ et plus</label>
-                </div>
-            </div>
-        </div>
-        <div class="inputBtn">
-            <button class="btn-blue btn-green" type="submit">Appliquer les filtres</button>
-        </div>
-    </form>
-
+    <!-- ALL RESULT -->
     <section class="carpool_card_vistor">
         <?php
         $cityDepart = $_GET["departCity"] ?? '';

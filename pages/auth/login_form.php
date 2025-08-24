@@ -34,6 +34,7 @@ require_once dirname(__DIR__, 2) . "/templates/header.php";
             <div class="inputForm">
                 <label for="inputEmailLogin">Email :</label>
                 <input type="email" name="email" id="inputEmailLogin" required>
+                <input type="hidden" name="_token" value="<?= $token ?>">
                 <div class="valid-feedback">
                     L'email est valide
                 </div>

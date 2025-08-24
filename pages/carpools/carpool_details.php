@@ -76,7 +76,13 @@ require_once dirname(__DIR__, 2) . "/processes/details_carpool_process.php";
         </div>
 
         <div class="inputBtn">
-            <button type="submit" class="btn-blue">Participer</button>
+            <?php if (isUserConnected()): ?>
+                <a href="/pages/auth/login_form.php" class="btn-blue">Participer</a>
+            <?php else: ?>
+            /*
+            enregister dans covoiturages à venir
+            */
+            <?php endif; ?>
         </div>
     </section>
 
