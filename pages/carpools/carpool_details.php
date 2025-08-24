@@ -25,7 +25,10 @@ require_once dirname(__DIR__, 2) . "/processes/details_carpool_process.php";
     <?php } ?>
 
     <section>
-        <?php require_once dirname(__DIR__, 2) . "/templates/carpool_card.php"; ?>
+        <?php
+        $hideDetailsLink = true;
+        require_once dirname(__DIR__, 2) . "/templates/carpool_card.php";
+        ?>
 
         <div class="carpool-card carpool-card-details-items" id="car-infos">
             <h6>Informations du véhicule</h6>

@@ -52,15 +52,17 @@ require_once __DIR__ . "/../libs/review.php";
             <div class="tag tag-status" id="<?= $carpool['id_carpool']; ?>" data-status="<?= $carpool['label_status_carpool']; ?>">
                 <p><?= $carpool['label_status_carpool']; ?></p>
             </div>
-            <div class="details-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#528DB9" class="chevron-double-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708" />
-                    <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708" />
-                </svg>
-                <a href="/pages/carpools/carpool_details.php?id_carpool=<?=$carpool['id_carpool']; ?>">
-                    Voir détails
-                </a>
-            </div>
+            <?php if (empty($hideDetailsLink)): ?>
+                <div class="details-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#528DB9" class="chevron-double-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708" />
+                        <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708" />
+                    </svg>
+                    <a href="/pages/carpools/carpool_details.php?id_carpool=<?= $carpool['id_carpool']; ?>">
+                        Voir détails
+                    </a>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 
