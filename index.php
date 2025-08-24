@@ -10,7 +10,8 @@ require_once __DIR__ . "/processes/search_carpool_process.php";
     <!-- HERO SECTION -->
     <?php
     include_once __DIR__ . "/templates/hero_section.php";
-    heroSection("La mobilité partagée au <br> service de la planète");
+    heroSection("La mobilité partagée au
+    service de la planète");
     ?>
 
     <!-- FORMULAIRE -->

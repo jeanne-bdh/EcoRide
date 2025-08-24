@@ -3,6 +3,8 @@ function duration() {
     const timeArrivalInput = document.getElementById("timeArrival");
     const durationInput = document.getElementById("duration");
 
+    if (!timeDepartInput || !timeArrivalInput || !durationInput) return;
+
     function calculateDuration() {
         const timeDepart = timeDepartInput.value;
         const timeArrival = timeArrivalInput.value;

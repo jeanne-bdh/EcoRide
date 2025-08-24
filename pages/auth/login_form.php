@@ -33,7 +33,7 @@ require_once dirname(__DIR__, 2) . "/templates/header.php";
 
             <div class="inputForm">
                 <label for="inputEmailLogin">Email :</label>
-                <input type="email" name="email" id="inputEmailLogin" required>
+                <input type="email" name="email" id="inputEmailLogin" required autocomplete="email">
                 <input type="hidden" name="_token" value="<?= $token ?>">
                 <div class="valid-feedback">
                     L'email est valide
@@ -44,7 +44,7 @@ require_once dirname(__DIR__, 2) . "/templates/header.php";
             </div>
             <div class="inputForm">
                 <label for="inputPwdLogin">Mot de passe :</label>
-                <input type="password" name="password" id="inputPwdLogin" required>
+                <input type="password" name="password" id="inputPwdLogin" required autocomplete="off">
                 <div class="valid-feedback">
                     Le mot de passe est valide
                 </div>

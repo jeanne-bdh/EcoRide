@@ -30,21 +30,21 @@ require_once dirname(__DIR__, 2) . "/templates/header.php";
 
             <div class="inputForm">
                 <label for="inputTitle">Titre</label>
-                <input type="text" name="title" id="inputTitle" required>
+                <input type="text" name="title" id="inputTitle" required autocomplete="off">
                 <div class="invalid-feedback">
                     Veuillez entrer un titre ayant au moins 5 caractères
                 </div>
             </div>
             <div class="inputForm">
                 <label for="inputEmailContact">Email</label>
-                <input type="text" name="email" id="inputEmailContact" required>
+                <input type="text" name="email" id="inputEmailContact" required autocomplete="email">
                 <div class="invalid-feedback">
                     Veuillez entrer une adresse e-mail valide
                 </div>
             </div>
             <div class="inputForm">
                 <label for="inputMsgContact">Message</label>
-                <textarea type="text" name="message" id="inputMsgContact" placeholder="Bonjour..." required></textarea>
+                <textarea type="text" name="message" id="inputMsgContact" placeholder="Bonjour..." required autocomplete="off"></textarea>
                 <div class="invalid-feedback">
                     Veuillez entrer un message ayant au moins 20 caractères
                 </div>
