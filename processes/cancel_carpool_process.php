@@ -12,10 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_carpool'])) {
         $cancelId = $cancelStatus['id_status_carpool'];
 
         $updateStmt = $pdo->prepare("UPDATE carpools SET id_status_carpool = :id_status_carpool WHERE id_carpool = :id_carpool");
-        $updateStmt->execute([
-            'id_status_carpool' => $cancelId,
-            'id_carpool' => $carpoolId
-        ]);
+        $updateStmt->bindValue(':id_status_carpool', $cancelId, PDO::PARAM_INT);
+        $updateStmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
+        $updateStmt->execute();
     }
 
     http_response_code(200);

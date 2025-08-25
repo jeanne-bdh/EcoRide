@@ -101,6 +101,7 @@
 <script src="/js/cancel-carpool.js"></script>
 <script src="/js/start-carpool.js"></script>
 <script src="/js/end-carpool.js"></script>
+<script src="/js/participate-carpool.js"></script>
 <script src="/js/status-session.js"></script>
 <script src="/js/personal-form.js" type="module"></script>
 </body>

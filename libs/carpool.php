@@ -83,3 +83,17 @@ function getCarpoolDetails(PDO $pdo, int $carpoolId): array | bool
 
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
+
+function getPrice(PDO $pdo, int $carpoolId): ?int
+{
+    $stmt = $pdo->prepare('SELECT price FROM carpools WHERE id_carpool = :id_carpool');
+    $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
+    $stmt->execute();
+    $carpool = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$carpool) {
+        return $carpool;
+    } else {
+        return false;
+    }
+}

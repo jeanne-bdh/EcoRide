@@ -1,5 +1,5 @@
 <section class="container-form" id="container-form-home">
-    <form method="GET" id="search-Form" action="/pages/carpools/carpool_search.php">
+    <form method="GET" id="search-Form">
         <div class="inputForm">
             <label for="inputDepartCity">Départ :</label>
             <input type="text" id="inputDepartCity" name="departCity" placeholder="Ville de départ" required>

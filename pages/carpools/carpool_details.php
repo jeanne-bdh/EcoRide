@@ -7,6 +7,7 @@ require_once dirname(__DIR__, 2) . "/libs/format_time.php";
 require_once dirname(__DIR__, 2) . "/libs/duration.php";
 require_once dirname(__DIR__, 2) . "/libs/review.php";
 require_once dirname(__DIR__, 2) . "/processes/details_carpool_process.php";
+require_once dirname(__DIR__, 2) . "/processes/participate_process.php";
 
 ?>
 
@@ -49,21 +50,14 @@ require_once dirname(__DIR__, 2) . "/processes/details_carpool_process.php";
             </ul>
         </div>
 
-        <?php
-        $hideBtnParticipate = false;
-        if (isset($_GET['from']) && ($_GET['from'] === 'future' || $_GET['from'] === 'past')) {
-            $hideBtnParticipate = true;
-        }
-        ?>
-
         <div class="inputBtn">
             <?php if (!isUserConnected()): ?>
                 <a href="/pages/auth/login_form.php" class="btn-blue" id="btn-participate">Participer</a>
             <?php else: ?>
-                <form method="POST" action="/processes/participate_process.php">
+                <form method="POST">
                     <input type="hidden" name="id_carpool" value="<?= $carpool['id_carpool']; ?>">
                     <button type="submit" class="btn-blue">Participer</button>
-                    <?php foreach ($errorsDetails as $error) { ?>
+                    <?php foreach ($errorsForm as $error) { ?>
                         <div class="alert-container">
                             <?= $error; ?>
                         </div>
@@ -71,6 +65,7 @@ require_once dirname(__DIR__, 2) . "/processes/details_carpool_process.php";
                 </form>
             <?php endif; ?>
         </div>
+
     </section>
 
 </main>

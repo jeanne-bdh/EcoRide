@@ -2,9 +2,8 @@
 
 require_once dirname(__DIR__, 2) . "/templates/header.php";
 require_once dirname(__DIR__, 2) . "/libs/pdo.php";
-require_once dirname(__DIR__, 2) . "/libs/carpool.php";
 require_once dirname(__DIR__, 2) . "/libs/review.php";
-require_once dirname(__DIR__, 2) . "/processes/search_carpool_process.php";
+require_once dirname(__DIR__, 2) . "/libs/carpool.php";
 
 ?>
 
@@ -17,10 +16,17 @@ require_once dirname(__DIR__, 2) . "/processes/search_carpool_process.php";
     ?>
 
     <!-- ALL RESULT -->
-    <section>
+    <section">
         <?php
-        if (!empty($carpoolSearch)) {
+        $cityDepart = $_GET["departCity"] ?? '';
+        $cityArrival = $_GET["arrivalCity"] ?? '';
+        $dateDepart = $_GET["dateDepart"] ?? '';
+
+        if ($cityDepart && $cityArrival && $dateDepart) {
+            $carpoolSearch = getSearchCarpoolCard($pdo, $cityDepart, $cityArrival, $dateDepart);
+
             foreach ($carpoolSearch as $carpool) {
+
                 $averageNotes = getAverageNotes($pdo, $carpool['id_users']);
 
                 require __DIR__ . '/../../templates/carpool_card.php';

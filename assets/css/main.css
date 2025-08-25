@@ -195,7 +195,7 @@ p {
 }
 @media (min-width: 1200px) {
   p {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -520,6 +520,7 @@ hr {
   border: 1px solid transparent;
   border-color: #f5c6cb;
   border-radius: 0.25rem;
+  margin-top: 1rem;
 }
 
 @media (min-width: 1200px) {
@@ -1297,8 +1298,8 @@ main {
 }
 
 #preview-container {
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   border: 2px dashed #d6d6d6;
   display: flex;
   justify-content: center;
