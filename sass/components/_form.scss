@@ -1,3 +1,5 @@
+@use '../base/custom' as *;
+
 .container-form {
     background-color: $white;
     border: 1px solid rgba($color: $black, $alpha: 0.5);

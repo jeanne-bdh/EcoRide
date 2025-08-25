@@ -1,3 +1,5 @@
+@use '../base/custom' as *;
+
 h1 {
     color: $black;
     font-size: 1rem;

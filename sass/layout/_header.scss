@@ -1,3 +1,5 @@
+@use '../base/custom' as *;
+
 nav {
     background-color: $black;
     display: flex;
@@ -63,7 +65,7 @@ ul.nav-list {
 
 @media (min-width: 992px) {
     nav {
-        padding: 1rem 0 1rem 1rem;
+        padding-left: 1rem;
     }
 
     ul.nav-list {

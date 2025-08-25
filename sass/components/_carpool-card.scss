@@ -1,3 +1,5 @@
+@use '../base/custom' as *;
+
 .carpool-card {
     border-radius: 1rem;
     background-color: $white;
