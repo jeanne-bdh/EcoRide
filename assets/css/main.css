@@ -1387,5 +1387,27 @@ main {
     font-size: 1rem;
   }
 }
+table {
+  color: #ffffff;
+  border-collapse: collapse;
+  margin-inline: 1rem;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  text-align: center;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid #ffffff;
+}
+
+@media (min-width: 992px) {
+  table {
+    display: table;
+    margin: auto;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */

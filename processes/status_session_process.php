@@ -2,24 +2,24 @@
 require_once __DIR__ . "/../libs/pdo.php";
 require_once __DIR__ . "/../libs/user.php";
 
-$users = usersItems($pdo);
+$users = getUserForAdmin($pdo);
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['userId'], $_POST['action'])) {
-    $userId = (int)$_POST['userId'];
-    $action = $_POST['action'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_users'])) {
+    $userId = (int)($_POST['id_users']);
 
-    $success = false;
-    if ($action === 'block') {
-        $success = userSuspension($pdo, $userId);
-    } elseif ($action === 'restart') {
-        $success = userRestart($pdo, $userId);
+    $status = getStatusSession($pdo, $userId);
+
+    if ($status === 1) {
+        if (userSuspension($pdo, $userId)) {
+            echo "Suspendu";
+        } else {
+            echo "Erreur";
+        }
+    } elseif ($status === 2) {
+        if (userRestart($pdo, $userId)) {
+            echo "Actif";
+        } else {
+            echo "Erreur";
+        }
     }
-
-    header('Content-Type: application/json');
-    echo json_encode([
-        'success' => $success,
-        'action' => $action,
-        'userId' => $userId
-    ]);
-    exit;
 }

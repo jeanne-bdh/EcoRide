@@ -1,35 +1,29 @@
-function statusSession() {
-    const userId = this.dataset.userId;
-    const action = this.dataset.status === '1' ? 'block' : 'restart';
-    const button = this;
-
+function statusSession(idUser) {
     fetch('/processes/status_session_process.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
-        body: `userId=${userId}&action=${action}`
+        body: 'id_users=' + encodeURIComponent(idUser)
     })
         .then(response => {
-            if (!response.ok) throw new Error('Erreur lors de la requête');
-            return response.json();
+            if (!response.ok) throw new Error('Erreur lors de la modification du statut');
+            return response.text();
         })
         .then(result => {
+            const btnStatus = document.getElementById('btn-status-' + idUser);
+            const labelStatus = document.getElementById('label-status-' + idUser);
 
-            if (result) {
-                if (action === 'block') {
-                    button.dataset.status = '2';
-                    button.textContent = 'Réactiver';
-                    button.classList.remove('btn-red');
-                    button.classList.add('btn-blue');
-                } else {
-                    button.dataset.status = '1';
-                    button.textContent = 'Bloquer';
-                    button.classList.remove('btn-blue');
-                    button.classList.add('btn-red');
-                }
-            } else {
-                alert('Erreur lors de la mise à jour du statut');
+            if (result === "Suspendu") {
+                btnStatus.textContent = "Réactiver";
+                btnStatus.classList.remove("btn-red");
+                btnStatus.classList.add("btn-blue");
+                labelStatus.textContent = "Suspendu";
+            } else if (result === "Actif") {
+                btnStatus.textContent = "Bloquer";
+                btnStatus.classList.remove("btn-blue");
+                btnStatus.classList.add("btn-red");
+                labelStatus.textContent = "Actif";
             }
         })
         .catch(error => {

@@ -32,13 +32,13 @@ require_once dirname(__DIR__, 2) . "/processes/status_session_process.php";
                     <td><?= htmlspecialchars($user['email']); ?></td>
                     <td><?= htmlspecialchars($user['lastname']) ?? ''; ?></td>
                     <td><?= htmlspecialchars($user['firstname']) ?? ''; ?></td>
-                    <td><?= ($user['id_status_session'] ? 'Actif' : 'Suspendu'); ?></td>
+                    <td id="label-status-<?= $user['id_users'] ?>"><?= htmlspecialchars($user['label_status_session']); ?></td>
                     <td>
-                        <button class="<?= $user['id_status_session'] == 1 ? 'btn-red' : 'btn-blue' ?>"
-                            data-user-id="<?= $user['id_users'] ?>"
-                            data-status="<?= $user['id_status_session'] ?>">
-                            <?= $user['id_status_session'] == 1 ? 'Bloquer' : 'Réactiver' ?>
-                        </button>
+                        <?php if ($user['label_status_session'] === 'Actif') : ?>
+                            <button class="btn-red" id="btn-status-<?= $user['id_users'] ?>" type="button" onclick="statusSession(<?= $user['id_users'] ?>)">Bloquer</button>
+                        <?php elseif ($user['label_status_session'] === 'Suspendu') : ?>
+                            <button class="btn-blue" id="btn-status-<?= $user['id_users'] ?>" type="button" onclick="statusSession(<?= $user['id_users'] ?>)">Réactiver</button>
+                        <?php endif; ?>
                     </td>
                 </tr>
             <?php endforeach; ?>

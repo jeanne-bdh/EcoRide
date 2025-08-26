@@ -3,7 +3,7 @@
 function addUser(PDO $pdo, string $pseudo, string $email, string $password): bool|int
 {
     $query = "SELECT id_status_session FROM status_session WHERE label_status_session = 'Actif'";
-    $stmt = $pdo->query($query);
+    $stmt = $pdo->prepare($query);
     $statusId = $stmt->fetchColumn();
 
     if (!$statusId) {
@@ -11,7 +11,7 @@ function addUser(PDO $pdo, string $pseudo, string $email, string $password): boo
     }
 
     $query = "SELECT id_role FROM roles WHERE label_role = 'user'";
-    $stmt = $pdo->query($query);
+    $stmt = $pdo->prepare($query);
     $roleId = $stmt->fetchColumn();
 
     if (!$roleId) {
@@ -49,19 +49,33 @@ function getUserCredit(PDO $pdo, $userId): ?int
     }
 }
 
+function getUserForAdmin(PDO $pdo): bool|array
+{
+    $query = "SELECT users.*, status_session.*
+            FROM users
+            JOIN status_session ON status_session.id_status_session = users.id_status_session
+            WHERE users.id_role = 2
+            ORDER BY id_users ASC";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function getStatusSession(PDO $pdo, int $userId) : int
+{
+    $query = "SELECT id_status_session FROM users WHERE id_users = :id_users";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
+    $stmt->execute();
+    return $stmt->fetchColumn();
+}
+
 function userSuspension(PDO $pdo, int $userId): bool
 {
     $query = "UPDATE users SET id_status_session = 2 WHERE id_users = :id_users";
     $stmt = $pdo->prepare($query);
     $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
     return $stmt->execute();
-}
-
-function usersItems(PDO $pdo): bool|array
-{
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE id_role = 2");
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 function userRestart(PDO $pdo, int $userId): bool
