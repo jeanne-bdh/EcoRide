@@ -23,7 +23,7 @@ function getPastCarpoolByUser(PDO $pdo, int $userId): array
 function getFutureCarpoolByUser(PDO $pdo, int $userId): array
 {
     $stmt = $pdo->prepare(
-        'SELECT carpools.*, status_carpool.label_status_carpool, travel_types.label_travel_type, users.pseudo AS driver_pseudo, carpools_users.id_users AS id_participant
+        'SELECT carpools.*, status_carpool.label_status_carpool, travel_types.label_travel_type, users.pseudo AS driver_pseudo, carpools_users.id_users AS id_participant, carpools_users.role_in_carpool
         FROM carpools
         JOIN carpools_users ON carpools_users.id_carpool = carpools.id_carpool
         JOIN status_carpool ON carpools.id_status_carpool = status_carpool.id_status_carpool

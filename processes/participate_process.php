@@ -13,6 +13,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_carpool'])) {
     $userId = $_SESSION['users']['id_users'];
     $roleInCarpool = "Passager";
 
+    $stmtRole = $pdo->prepare("SELECT id_profil FROM users WHERE id_users = :id_users");
+    $stmtRole->execute(['id_users' => $userId]);
+    $userRole = (int) $stmtRole->fetchColumn();
+
+    if ($userRole === 2) {
+        $errorsForm[] = "Les chauffeurs ne peuvent pas participer à un covoiturage";
+        return;
+    }
+
     $stmtUserCheck = getUserCheck($pdo, $userId, $carpoolId);
 
     if ($stmtUserCheck->rowCount() > 0) {
