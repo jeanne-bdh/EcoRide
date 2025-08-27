@@ -4,6 +4,7 @@ function addUser(PDO $pdo, string $pseudo, string $email, string $password): boo
 {
     $query = "SELECT id_status_session FROM status_session WHERE label_status_session = 'Actif'";
     $stmt = $pdo->prepare($query);
+    $stmt->execute();
     $statusId = $stmt->fetchColumn();
 
     if (!$statusId) {
@@ -12,6 +13,7 @@ function addUser(PDO $pdo, string $pseudo, string $email, string $password): boo
 
     $query = "SELECT id_role FROM roles WHERE label_role = 'user'";
     $stmt = $pdo->prepare($query);
+    $stmt->execute();
     $roleId = $stmt->fetchColumn();
 
     if (!$roleId) {

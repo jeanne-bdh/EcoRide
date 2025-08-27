@@ -6,6 +6,7 @@ require_once __DIR__ . "/../libs/seat.php";
 require_once __DIR__ . "/../libs/price.php";
 require_once __DIR__ . "/../libs/credit.php";
 require_once __DIR__ . "/../libs/user.php";
+require_once __DIR__ . "/../libs/new_carpool.php";
 require_once __DIR__ . "/../libs/participate_carpool.php";
 
 $errorsForm = [];
@@ -15,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_carpool'])) {
     $carpoolId = (int)$_POST['id_carpool'];
     $userId = $_SESSION['users']['id_users'];
     $roleInCarpool = "Passager";
+    $statusInCarpool = "Confirmé";
 
     // Get profile to block driver's participation
     $userRole = getProfile($pdo, $userId);
@@ -35,6 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_carpool'])) {
             'remaining_seat' => getRemainingSeatInCarpool($pdo, $carpoolId)
         ];
 
+        $carpool = getCarpoolDetails($pdo, $carpoolId);
+        
         // Check remaining seat in carpool
         if (!$carpool) {
             $errorsForm[] = "Covoiturage introuvable";
@@ -51,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_carpool'])) {
 
                 $price = $carpool['price'];
                 updateCreditPassenger($pdo, $userId, $price);
-                insertCarpoolsUsers($pdo, $userId, $carpoolId, $roleInCarpool);
+                insertCarpoolsUsers($pdo, $userId, $carpoolId, $roleInCarpool, $statusInCarpool);
                 updateRemainingSeatInCarpool($pdo, $carpoolId);
 
                 header("Location: /pages/users/future-carpool/future_carpool.php?view=future");

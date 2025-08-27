@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['saveNewCarpool'])) {
         if ($carpoolId) {
             getRemainingSeat($pdo, $carpoolId, $carId);
 
-            $insertDriver = insertCarpoolsUsers($pdo, $userId, $carpoolId, 'Chauffeur');
+            $insertDriver = insertCarpoolsUsers($pdo, $userId, $carpoolId, 'Chauffeur', 'Confirmé');
 
             if ($insertDriver) {
                 $messagesForm[] = "Votre voyage a été enregistré avec succès";

@@ -10,18 +10,18 @@ function endCarpool(idEndCarpool) {
             if (!response.ok) throw new Error('Erreur lors de la clôture du covoiturage');
             return response.text();
         })
-        .then(result => {
-            const btnEnd = document.getElementById('btn-end-carpool-' + idEndCarpool);
+        .then(() => {
+            const buttons = document.querySelectorAll(`#btn-end-carpool-${idEndCarpool}`);
+            buttons.forEach(btn => {
+                btn.textContent = "Terminé";
+                btn.disabled = true;
+            });
+
             const tagStatus = document.getElementById(`${idEndCarpool}`);
-
-            if (result === "Arrivés à destination") {
-                btnEnd.textContent = "Terminé";
-                btnEnd.disabled = true;
-
-                if (tagStatus) {
-                    tagStatus.dataset.status = "Terminé";
-                    tagStatus.querySelector("p").textContent = "Terminé";
-                }
+            if (tagStatus) {
+                tagStatus.dataset.status = "Terminé";
+                const p = tagStatus.querySelector("p");
+                if (p) p.textContent = "Terminé";
             }
         })
         .catch(error => {
