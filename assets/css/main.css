@@ -95,7 +95,7 @@ html {
   cursor: pointer;
   width: 15.7rem;
   height: 8.4rem;
-  background-color: #d7be98;
+  background-color: rgb(214.5869565217, 189.7173913043, 152.4130434783);
 }
 .card-session:hover h3 {
   font-size: 1.3rem;
@@ -1542,4 +1542,6 @@ main {
   .select-box p {
     font-size: 1.1rem;
   }
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
