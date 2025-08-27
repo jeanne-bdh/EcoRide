@@ -43,10 +43,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['savePersonalForm'])) 
     if ($profilType == 1) {
         if ($personalForm && $profilSaved) {
             $messagesForm[] = "Votre profil a été mis à jour avec succès";
-            http_response_code(201);
         } else {
             $errorsForm[] = "Erreur lors de l'enregistrement du profil";
-            http_response_code(500);
         }
     }
 
@@ -55,7 +53,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['savePersonalForm'])) 
         $errorsForm = validateSeat($_POST['seat']);
 
         if (!empty($errorsForm)) {
-            http_response_code(422);
             return;
         }
         $carSaved = saveCar($pdo, $carModel, $carBrand, $carPlate, $carColor, $energyId, $carFirstRegist, $carSeats, $carSmoker, $carAnimal, $carPreferences, $userId, $carId);
@@ -70,12 +67,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['savePersonalForm'])) 
 
         if ($personalForm && $profilSaved && $energySaved && $carSaved) {
             $messagesForm[] = "Votre profil a été mis à jour avec succès";
-            http_response_code(201);
         } else {
             $errorsForm[] = "Erreur lors de l'enregistrement du profil";
-            http_response_code(500);
         }
     }
-} else {
-    http_response_code(200);
 }

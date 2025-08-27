@@ -24,8 +24,5 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['searchCarpool'])) {
         exit();
     } else {
         $errorsForm[] = "Aucun covoiturage disponible";
-        http_response_code(500);
     }
-} else {
-    http_response_code(200);
 }

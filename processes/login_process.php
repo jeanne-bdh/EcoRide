@@ -20,10 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     } else {
         $errorsLogin[] = "Identifiants incorrects";
-        http_response_code(401);
     }
-} else {
-    http_response_code(200);
 }
 
 $token = bin2hex((random_bytes(32)));

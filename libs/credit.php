@@ -23,17 +23,11 @@ function creditCheck(PDO $pdo, int $userId): int
     return (int)$user['credit'];
 }
 
-function updateCreditPassager(PDO $pdo, int $userId): int
+function updateCreditPassager(PDO $pdo, int $userId, int $price): int
 {
     $stmt = $pdo->prepare('UPDATE users SET credit = credit - :price WHERE id_users = :id_users');
     $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
+    $stmt->bindValue(':price', $price, PDO::PARAM_INT);
     $stmt->execute();
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-
-    $stmtUpdate = $pdo->prepare("UPDATE users SET credit = credit - :price WHERE id_users = :id_users");
-    $stmtUpdate->execute([
-        'price' => $price,
-        'id_users' => $userId
-    ]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
 }
