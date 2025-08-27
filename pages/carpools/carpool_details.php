@@ -7,7 +7,7 @@ require_once dirname(__DIR__, 2) . "/libs/format_time.php";
 require_once dirname(__DIR__, 2) . "/libs/duration.php";
 require_once dirname(__DIR__, 2) . "/libs/review.php";
 require_once dirname(__DIR__, 2) . "/processes/details_carpool_process.php";
-require_once dirname(__DIR__, 2) . "/processes/participate_process.php";
+require_once dirname(__DIR__, 2) . "/processes/participate_carpool_process.php";
 
 ?>
 
