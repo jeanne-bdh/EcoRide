@@ -5,6 +5,8 @@ function registerUser() {
     const validPwdRegisterInput = document.getElementById("inputValidPwdReg");
     const btnRegister = document.getElementById("btn-valid-register");
 
+    if (!pseudoRegisterInput || !emailRegisterInput || !pwdRegisterInput || !validPwdRegisterInput || !btnRegister) return;
+
     btnRegister.disabled = true;
     pseudoRegisterInput.addEventListener("keyup", validateFormRegister);
     emailRegisterInput.addEventListener("keyup", validateFormRegister);

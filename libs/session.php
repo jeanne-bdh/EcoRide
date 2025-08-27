@@ -24,6 +24,10 @@ function getProfile(PDO $pdo, int $userId):array
 
 function getUserSessionLink(): string
 {
+    if (!isset($_SESSION['users']['id_role'])) {
+        return '/pages/auth/login_form.php';
+    }
+
     $role = $_SESSION['users']['id_role'];
     return match ($role) {
         1 => '/pages/admin/admin_session.php',

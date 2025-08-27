@@ -28,19 +28,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['saveNewCarpool'])) {
         if ($carpoolId) {
             getRemainingSeat($pdo, $carpoolId, $carId);
 
-            $insertDriver = insertCarpoolsUsers($pdo, $userId, $carpoolId, 'Chauffeur');
+            $insertDriver = insertCarpoolsUsers($pdo, $userId, $carpoolId, 'Chauffeur', 'Confirmé');
 
             if ($insertDriver) {
                 $messagesForm[] = "Votre voyage a été enregistré avec succès";
-                http_response_code(201);
             } else {
                 $errorsForm[] = "Erreur lors de l'enregistrement du voyage";
-                http_response_code(500);
             }
         }
-    } else {
-        http_response_code(422);
     }
-} else {
-    http_response_code(200);
 }

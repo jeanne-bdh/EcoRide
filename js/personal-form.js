@@ -2,10 +2,14 @@ export default class PersonalForm {
 
     constructor(formId) {
         this.form = document.getElementById(formId);
+        if (!this.form) return;
+
         this.selectElement = this.form.querySelector('.form-select');
         this.carContainer = this.form.querySelector(".car-infos-container");
         this.containerInner = this.form.querySelector(".container-form-inner");
         this.carContainer2 = this.form.querySelector(".car-infos-container2");
+        if (!this.selectElement || !this.carContainer || !this.containerInner || !this.carContainer2) return;
+
         this.init();
     }
 

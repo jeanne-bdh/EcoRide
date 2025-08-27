@@ -1,3 +1,5 @@
+@use '../base/custom' as *;
+
 .btn-blue {
     background-color: $secondary;
     color: $white;

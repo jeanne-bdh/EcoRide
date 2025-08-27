@@ -63,3 +63,5 @@ Base de données non relationnelle : MongoDB
 # Auteur
 
 BOUCHEND'HOMME Jeanne
+
+sass sass:assets/css --watch

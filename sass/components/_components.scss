@@ -1,3 +1,5 @@
+@use '../base/custom' as *;
+
 h1 {
     color: $black;
     font-size: 1rem;
@@ -66,7 +68,7 @@ p {
     }
 
     @media (min-width : 1200px) {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
 }
 

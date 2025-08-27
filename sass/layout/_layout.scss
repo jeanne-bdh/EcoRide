@@ -1,3 +1,9 @@
+@use '../base/custom' as *;
+
+body {
+    padding-top: 6.625rem;
+}
+
 main {
     background-color: $black;
     min-height: 100vh;

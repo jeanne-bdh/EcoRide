@@ -41,16 +41,17 @@ function validatePrice()
     return $errorsPrice;
 }
 
-function insertCarpoolsUsers(PDO $pdo, int $userId, int $carpoolId, string $roleInCarpool) : bool
+function insertCarpoolsUsers(PDO $pdo, int $userId, int $carpoolId, string $roleInCarpool, string $statusInCarpool) : bool
 {
     $stmt = $pdo->prepare(
-        "INSERT INTO carpools_users (id_users, id_carpool, role_in_carpool)
-        VALUES (:id_users, :id_carpool, :role_in_carpool)"
+        "INSERT INTO carpools_users (id_users, id_carpool, role_in_carpool, status_in_carpool)
+        VALUES (:id_users, :id_carpool, :role_in_carpool, :status_in_carpool)"
     );
 
     $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
     $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
     $stmt->bindValue(':role_in_carpool', $roleInCarpool, PDO::PARAM_STR);
+    $stmt->bindValue(':status_in_carpool', $statusInCarpool, PDO::PARAM_STR);
 
     return $stmt->execute();
 }

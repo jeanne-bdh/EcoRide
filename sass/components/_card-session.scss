@@ -1,3 +1,5 @@
+@use '../base/custom' as *;
+
 .card-session {
     width: 15rem;
     height: 8rem;
@@ -15,7 +17,7 @@
         cursor: pointer;
         width: 15.7rem;
         height: 8.4rem;
-        background-color: darken($tertiary, 10%);
+        background-color: #C0AC8B;
 
         h3 {
             font-size: 1.3rem;

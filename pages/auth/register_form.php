@@ -29,7 +29,7 @@ require_once dirname(__DIR__, 2) . "/templates/header.php";
 
             <div class="inputForm">
                 <label for="inputPseudoRegister">Pseudo :</label>
-                <input type="text" name="pseudo" id="inputPseudoRegister" required>
+                <input type="text" name="pseudo" id="inputPseudoRegister" required autocomplete="off">
                 <div class="valid-feedback">
                     Le pseudo est valide
                 </div>
@@ -44,7 +44,7 @@ require_once dirname(__DIR__, 2) . "/templates/header.php";
             </div>
             <div class="inputForm">
                 <label for="inputEmailRegister">Email :</label>
-                <input type="email" name="email" id="inputEmailRegister" required>
+                <input type="email" name="email" id="inputEmailRegister" required autocomplete="off">
                 <div class="valid-feedback">
                     L'email est valide
                 </div>
@@ -59,7 +59,7 @@ require_once dirname(__DIR__, 2) . "/templates/header.php";
             </div>
             <div class="inputForm">
                 <label for="inputPwdRegister">Mot de passe :</label>
-                <input type="password" name="password" id="inputPwdRegister" required>
+                <input type="password" name="password" id="inputPwdRegister" required autocomplete="off">
                 <div class="valid-feedback">
                     Le mot de passe est valide
                 </div>
@@ -75,7 +75,7 @@ require_once dirname(__DIR__, 2) . "/templates/header.php";
             </div>
             <div class="inputForm">
                 <label for="inputValidPwdReg">Confirmez le mot de passe :</label>
-                <input type="password" name="pwdConfirm" id="inputValidPwdReg" required>
+                <input type="password" name="pwdConfirm" id="inputValidPwdReg" required autocomplete="off">
                 <div class="invalid-feedback">
                     La confirmation du mot de passe est incorrecte
                 </div>

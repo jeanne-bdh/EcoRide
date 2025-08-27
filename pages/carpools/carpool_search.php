@@ -16,7 +16,7 @@ require_once dirname(__DIR__, 2) . "/libs/carpool.php";
     ?>
 
     <!-- ALL RESULT -->
-    <section class="carpool_card_vistor">
+    <section">
         <?php
         $cityDepart = $_GET["departCity"] ?? '';
         $cityArrival = $_GET["arrivalCity"] ?? '';
@@ -31,9 +31,8 @@ require_once dirname(__DIR__, 2) . "/libs/carpool.php";
 
                 require __DIR__ . '/../../templates/carpool_card.php';
             }
-        } else {
-            echo "<p>Veuillez renseigner tous les paramètres de recherche.</p>";
-        } ?>
+        }
+        ?>
     </section>
 
 </main>

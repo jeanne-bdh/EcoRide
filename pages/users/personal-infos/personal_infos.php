@@ -45,7 +45,7 @@ require_once dirname(__DIR__, 3) . "/processes/personal_process.php";
                     <div class="photo-upload">
                         <input type="file" class="inputForm" id="photo" name="photo">
                         <div id="preview-container">
-                            <img id="photo-preview" src="/uploads/smiley-woman.jpg" alt="Choisir une photo">
+                            <img id="photo-preview" src="/uploads/person-circle.svg" alt="Choisir une photo">
                         </div>
                     </div>
                     <div class="inputForm" id="password-input">

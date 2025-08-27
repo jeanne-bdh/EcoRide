@@ -1,9 +1,16 @@
+@use '../base/custom' as *;
+
 nav {
     background-color: $black;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 2rem 0.5rem 0.1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
 }
 
 .menu-burger {
@@ -58,7 +65,7 @@ ul.nav-list {
 
 @media (min-width: 992px) {
     nav {
-        padding: 1rem 0 1rem 1rem;
+        padding-left: 1rem;
     }
 
     ul.nav-list {

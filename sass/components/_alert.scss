@@ -1,3 +1,5 @@
+@use '../base/custom' as *;
+
 .alert-container {
     width: 282px;
     height: 68px;
@@ -8,6 +10,7 @@
     border: 1px solid transparent;
     border-color: #f5c6cb;
     border-radius: 0.25rem;
+    margin-top: 1rem;
 }
 
 @media (min-width:1200px) {
