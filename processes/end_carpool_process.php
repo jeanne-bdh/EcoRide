@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_carpool'])) {
     if ($userCarpool['role_in_carpool'] === 'Passager') {
 
         updateEndStatusPassenger($pdo, $carpoolId, $userId);
+        
         $carpool = getPriceAndDriver($pdo, $carpoolId);
 
         $price = $carpool['price'];
