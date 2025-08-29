@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__ . "/../libs/pdo.php";
-require_once __DIR__ . "/../libs/auth_controller.php";
-require_once __DIR__ . "/../libs/session.php";
+require_once APP_ROOT . "/../libs/pdo.php";
+require_once APP_ROOT . "/../libs/auth_controller.php";
+require_once APP_ROOT . "/../libs/session.php";
 
 $errorsLogin = [];
 

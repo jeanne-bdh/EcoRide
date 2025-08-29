@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__DIR__, 3) . "/templates/header.php";
+require_once dirname(__DIR__, 3) . "/templates/partials/header.php";
 require_once dirname(__DIR__, 3) . "/processes/new_carpool_process.php";
 
 ?>
@@ -96,4 +96,4 @@ require_once dirname(__DIR__, 3) . "/processes/new_carpool_process.php";
 
 </main>
 
-<?php require_once dirname(__DIR__, 3) . "/templates/footer.php" ?>
+<?php require_once dirname(__DIR__, 3) . "/templates/partials/footer.php" ?>

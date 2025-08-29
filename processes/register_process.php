@@ -1,9 +1,9 @@
 <?php
-require_once __DIR__ . "/../libs/pdo.php";
-require_once __DIR__ . "/../libs/user.php";
-require_once __DIR__ . "/../libs/validation_form.php";
-require_once __DIR__ . "/../libs/auth_controller.php";
-require_once __DIR__ . "/../libs/session.php";
+require_once APP_ROOT . "/../libs/pdo.php";
+require_once APP_ROOT . "/../libs/user.php";
+require_once APP_ROOT . "/../libs/validation_form.php";
+require_once APP_ROOT . "/../libs/auth_controller.php";
+require_once APP_ROOT . "/../libs/session.php";
 
 $errorsRegister = [];
 

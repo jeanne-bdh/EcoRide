@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__DIR__, 2) . "/templates/header.php";
+require_once dirname(__DIR__, 2) . "/templates/partials/header.php";
 require_once dirname(__DIR__, 2) . "/libs/pdo.php";
 require_once dirname(__DIR__, 2) . "/libs/review.php";
 require_once dirname(__DIR__, 2) . "/libs/carpool.php";
@@ -29,7 +29,7 @@ require_once dirname(__DIR__, 2) . "/libs/carpool.php";
 
                 $averageNotes = getAverageNotes($pdo, $carpool['id_users']);
 
-                require __DIR__ . '/../../templates/carpool_card.php';
+                require APP_ROOT . '/../../templates/carpool_card.php';
             }
         }
         ?>
@@ -37,4 +37,4 @@ require_once dirname(__DIR__, 2) . "/libs/carpool.php";
 
 </main>
 
-<?php require_once dirname(__DIR__, 2) . "/templates/footer.php" ?>
+<?php require_once dirname(__DIR__, 2) . "/templates/partials/footer.php" ?>

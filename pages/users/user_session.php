@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__DIR__, 2) . "/templates/header.php";
+require_once dirname(__DIR__, 2) . "/templates/partials/header.php";
 require_once dirname(__DIR__, 2) . "/libs/pdo.php";
 require_once dirname(__DIR__, 2) . "/libs/user.php";
 require_once dirname(__DIR__, 2) . "/libs/personal.php";
@@ -50,4 +50,4 @@ require_once dirname(__DIR__, 2) . "/processes/session_process.php";
 
 </main>
 
-<?php require_once dirname(__DIR__, 2) . "/templates/footer.php" ?>
+<?php require_once dirname(__DIR__, 2) . "/templates/partials/footer.php" ?>

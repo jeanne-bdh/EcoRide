@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__ . "/templates/header.php";
-require_once __DIR__ . "/processes/search_carpool_process.php";
+require_once APP_ROOT . "/templates/partials/header.php";
+//require_once APP_ROOT . "/processes/search_carpool_process.php";
 
 ?>
 
@@ -9,14 +9,14 @@ require_once __DIR__ . "/processes/search_carpool_process.php";
 
     <!-- HERO SECTION -->
     <?php
-    include_once __DIR__ . "/templates/hero_section.php";
+    include_once APP_ROOT . "/templates/partials/hero_section.php";
     heroSection("La mobilité partagée au
     service de la planète");
     ?>
 
     <!-- FORMULAIRE -->
     <?php
-    require_once __DIR__ . "/templates/form_home.php";
+    require_once APP_ROOT . "/templates/partials/form_home.php";
     ?>
 
     <!-- MAIN SECTION -->
@@ -55,4 +55,4 @@ require_once __DIR__ . "/processes/search_carpool_process.php";
 
 </main>
 
-<?php require_once __DIR__ . "/templates/footer.php" ?>
+<?php require_once APP_ROOT . "/templates/partials/footer.php" ?>

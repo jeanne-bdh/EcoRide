@@ -1,13 +1,13 @@
 <?php
 
-require_once __DIR__ . "/../libs/pdo.php";
-require_once __DIR__ . "/../libs/session.php";
-require_once __DIR__ . "/../libs/seat.php";
-require_once __DIR__ . "/../libs/price.php";
-require_once __DIR__ . "/../libs/credit.php";
-require_once __DIR__ . "/../libs/user.php";
-require_once __DIR__ . "/../libs/new_carpool.php";
-require_once __DIR__ . "/../libs/participate_carpool.php";
+require_once APP_ROOT . "/../libs/pdo.php";
+require_once APP_ROOT . "/../libs/session.php";
+require_once APP_ROOT . "/../libs/seat.php";
+require_once APP_ROOT . "/../libs/price.php";
+require_once APP_ROOT . "/../libs/credit.php";
+require_once APP_ROOT . "/../libs/user.php";
+require_once APP_ROOT . "/../libs/new_carpool.php";
+require_once APP_ROOT . "/../libs/participate_carpool.php";
 
 $errorsForm = [];
 

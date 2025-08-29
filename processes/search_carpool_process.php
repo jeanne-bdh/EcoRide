@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . "/../libs/pdo.php";
-require_once __DIR__ . "/../libs/validation_date.php";
-require_once __DIR__ . "/../libs/carpool.php";
+require_once APP_ROOT . "/../libs/pdo.php";
+require_once APP_ROOT . "/../libs/validation_date.php";
+require_once APP_ROOT . "/../libs/carpool.php";
 
 $errorsForm = [];
 

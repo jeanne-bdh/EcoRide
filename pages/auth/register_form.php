@@ -1,7 +1,7 @@
 <?php
 
 require_once dirname(__DIR__, 2) . "/processes/register_process.php";
-require_once dirname(__DIR__, 2) . "/templates/header.php";
+require_once dirname(__DIR__, 2) . "/templates/partials/header.php";
 
 ?>
 
@@ -96,4 +96,4 @@ require_once dirname(__DIR__, 2) . "/templates/header.php";
 </main>
 
 <?php
-require_once dirname(__DIR__, 2) . "/templates/footer.php";
+require_once dirname(__DIR__, 2) . "/templates/partials/footer.php";

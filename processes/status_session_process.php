@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . "/../libs/pdo.php";
-require_once __DIR__ . "/../libs/user.php";
+require_once APP_ROOT . "/../libs/pdo.php";
+require_once APP_ROOT . "/../libs/user.php";
 
 $users = getUserForAdmin($pdo);
 

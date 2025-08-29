@@ -1,4 +1,4 @@
-<?php require_once __DIR__ . "/../../templates/header.php"; ?>
+<?php require_once APP_ROOT . "/../../templates/partials/header.php"; ?>
 
 <main class="main-404">
     <h2>404 - Page introuvable</h2>
@@ -7,4 +7,4 @@
 </main>
 
 
-<?php require_once __DIR__ . "/../../templates/footer.php" ?>
+<?php require_once APP_ROOT . "/../../templates/partials/footer.php" ?>

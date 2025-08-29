@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . "/../libs/format_time.php";
-require_once __DIR__ . "/../libs/duration.php";
-require_once __DIR__ . "/../libs/review.php";
+require_once APP_ROOT . "/../libs/format_time.php";
+require_once APP_ROOT . "/../libs/duration.php";
+require_once APP_ROOT . "/../libs/review.php";
 
 ?>
 
@@ -66,8 +66,8 @@ require_once __DIR__ . "/../libs/review.php";
         </div>
     </div>
 
-    <?php require __DIR__ . "/../pages/users/future-carpool/future_carpool_card.php" ?>
+    <?php require APP_ROOT . "/../pages/users/future-carpool/future_carpool_card.php" ?>
 
 </div>
 
-<?php require_once __DIR__ . "/../pages/users/future-carpool/confirm_modal.php"; ?>
+<?php require_once APP_ROOT . "/../pages/users/future-carpool/confirm_modal.php"; ?>

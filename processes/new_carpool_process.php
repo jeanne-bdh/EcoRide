@@ -1,11 +1,11 @@
 <?php
 
-require_once __DIR__ . "/../libs/pdo.php";
-require_once __DIR__ . "/../libs/user.php";
-require_once __DIR__ . "/../libs/new_carpool.php";
-require_once __DIR__ . "/../libs/duration.php";
-require_once __DIR__ . "/../libs/validation_date.php";
-require_once __DIR__ . "/../libs/seat.php";
+require_once APP_ROOT . "/../libs/pdo.php";
+require_once APP_ROOT . "/../libs/user.php";
+require_once APP_ROOT . "/../libs/new_carpool.php";
+require_once APP_ROOT . "/../libs/duration.php";
+require_once APP_ROOT . "/../libs/validation_date.php";
+require_once APP_ROOT . "/../libs/seat.php";
 
 $errorsForm = [];
 $messagesForm = [];

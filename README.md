@@ -65,3 +65,9 @@ Base de données non relationnelle : MongoDB
 BOUCHEND'HOMME Jeanne
 
 sass sass:assets/css --watch
+
+
+Utilisation databse :
+
+use App\Db\Database;
+$pdo = Database::getPDO();

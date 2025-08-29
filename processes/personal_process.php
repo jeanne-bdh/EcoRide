@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . "/../libs/pdo.php";
-require_once __DIR__ . "/../libs/personal.php";
-require_once __DIR__ . "/../libs/travel_type.php";
+require_once APP_ROOT . "/../libs/pdo.php";
+require_once APP_ROOT . "/../libs/personal.php";
+require_once APP_ROOT . "/../libs/travel_type.php";
 
 $errorsPersonalInfos = [];
 $errorsForm = [];
