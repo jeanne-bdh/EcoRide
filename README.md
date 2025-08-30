@@ -65,6 +65,7 @@ Base de données non relationnelle : MongoDB
 BOUCHEND'HOMME Jeanne
 
 sass sass:assets/css --watch
+sass sass:public/assets/css --watch
 
 
 Utilisation databse :

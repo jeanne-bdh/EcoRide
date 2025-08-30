@@ -40,7 +40,7 @@ class Database
         if (is_null($this->pdo)) {
 
             try {
-                $this->pdo = new \PDO("pgsql:dbname={$this->dbName};charset=utf8;host={$this->dbHost}:{$this->dbPort}", $this->dbUser, $this->dbPassword);
+                $this->pdo = new \PDO("pgsql:dbname={$this->dbName};host={$this->dbHost};port={$this->dbPort}", $this->dbUser, $this->dbPassword);
             } catch (PDOException $e) {
                 die('Erreur de connexion à la base : ' . $e->getMessage());
             }
