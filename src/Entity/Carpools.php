@@ -3,7 +3,7 @@ namespace App\Entity;
 
 use DateTime;
 
-class Carpools
+class Carpools extends Entity
 {
     protected ?int $idCarpool = null;
     protected DateTime $dateDepart;

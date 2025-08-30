@@ -1,7 +1,7 @@
 <?php
 namespace App\Entity;
 
-class StatusCarpool
+class StatusCarpool extends Entity
 {
     protected ?int $idStatusCarpool = null;
     protected string $labelStatusCarpool;

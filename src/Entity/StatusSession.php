@@ -1,7 +1,7 @@
 <?php
 namespace App\Entity;
 
-class StatusSession
+class StatusSession extends Entity
 {
     protected ?int $idStatusSession = null;
     protected string $labelStatusSession;

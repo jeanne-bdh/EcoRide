@@ -1,7 +1,7 @@
 <?php
 namespace App\Entity;
 
-class TravelTypes
+class TravelTypes extends Entity
 {
     protected ?int $idTravelType = null;
     protected string $labelTravelType;

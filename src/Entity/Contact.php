@@ -3,7 +3,7 @@ namespace App\Entity;
 
 use DateTimeImmutable;
 
-class Contact
+class Contact extends Entity
 {
     protected ?int $idContact = null;
     protected string $title;

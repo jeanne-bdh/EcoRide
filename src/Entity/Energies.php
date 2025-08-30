@@ -1,7 +1,7 @@
 <?php
 namespace App\Entity;
 
-class Energies
+class Energies extends Entity
 {
     protected ?int $idEnergy = null;
     protected ?string $labelEnergy = null;

@@ -18,7 +18,7 @@ class Database
 
     private function __construct()
     {
-        $config = parse_ini_file(APP_ENV);
+        $config = parse_ini_file(APP_ROOT ."/". APP_ENV);
 
         $this->dbHost = $config["db_host"];
         $this->dbUser = $config["db_user"];
@@ -35,19 +35,17 @@ class Database
         return self::$instance;
     }
 
-    public function getPDO(): PDO
+    public function getPDO(): \PDO
     {
-        if (self::$pdo === null) {
+        if (is_null($this->pdo)) {
 
             try {
-                self::$pdo = new PDO("pgsql:dbname={$this->dbName};charset=utf8;host={$this->dbHost}:{$this->dbPort}", $this->dbUser, $this->dbPassword);
-                self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                self::$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+                $this->pdo = new \PDO("pgsql:dbname={$this->dbName};charset=utf8;host={$this->dbHost}:{$this->dbPort}", $this->dbUser, $this->dbPassword);
             } catch (PDOException $e) {
                 die('Erreur de connexion à la base : ' . $e->getMessage());
             }
         }
 
-        return self::$pdo;
+        return $this->pdo;
     }
 }

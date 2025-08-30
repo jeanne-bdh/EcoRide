@@ -3,7 +3,7 @@ namespace App\Entity;
 
 use DateTimeImmutable;
 
-class Cars
+class Cars extends Entity
 {
     protected ?int $idCar = null;
     protected string $model;

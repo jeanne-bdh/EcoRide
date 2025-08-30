@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-class CarpoolsUsers
+class CarpoolsUsers extends Entity
 {
     protected Carpools $idCarpool;
     protected Users $idUsers;

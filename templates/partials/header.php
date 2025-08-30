@@ -43,20 +43,20 @@ require_once APP_ROOT . "/libs/session.php";
             <!-- Menu de navigation -->
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Accueil</a>
+                    <a class="nav-link" href="/home">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/../pages/carpools/carpools_access.php">Covoiturages</a>
+                    <a class="nav-link" href="/carpools">Covoiturages</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/../pages/contact/contact.php">Contact</a>
+                    <a class="nav-link" href="/contact">Contact</a>
                 </li>
                 <li class="nav-item">
                     <?php if (isUserConnected()) { ?>
                         <a class="hello-user" href="<?= getUserSessionLink(); ?>">Bonjour <?= $_SESSION['users']['pseudo']; ?> </a>
-                        <a href="/pages/auth/logout.php"><button class="btn-blue" type="button">Déconnexion</button></a>
+                        <a href="/logout"><button class="btn-blue" type="button">Déconnexion</button></a>
                     <?php } else { ?>
-                        <a href="/pages/auth/login_form.php"><button class="btn-blue" type="button">Connexion</button></a>
+                        <a href="/login"><button class="btn-blue" type="button">Connexion</button></a>
                     <?php } ?>
                 </li>
             </ul>

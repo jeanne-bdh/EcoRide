@@ -1,7 +1,7 @@
 <?php
 namespace App\Entity;
 
-class Roles
+class Roles extends Entity
 {
     protected ?int $idRole = null;
     protected string $labelRole;

@@ -1,7 +1,7 @@
 <?php
 namespace App\Entity;
 
-class Profiles
+class Profiles extends Entity
 {
     protected ?int $idProfile = null;
     protected string $labelProfile;

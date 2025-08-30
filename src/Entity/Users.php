@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-class Users
+class Users extends Entity
 {
     protected ?int $idUsers = null;
     protected string $pseudo;
