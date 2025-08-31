@@ -1,10 +1,10 @@
 <?php
-
+/*
 require_once APP_ROOT . "/../libs/pdo.php";
 require_once APP_ROOT . "/../libs/validation_date.php";
 require_once APP_ROOT . "/../libs/carpool.php";
 
-$errorsForm = [];
+$errors = [];
 
 if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['searchCarpool'])) {
 
@@ -23,6 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['searchCarpool'])) {
             "&dateDepart=" . urlencode($_GET['dateDepart']));
         exit();
     } else {
-        $errorsForm[] = "Aucun covoiturage disponible";
+        $errors[] = "Aucun covoiturage disponible";
     }
 }
+    */

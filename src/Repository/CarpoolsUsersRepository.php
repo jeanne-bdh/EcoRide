@@ -7,7 +7,7 @@ use App\Entity\CarpoolsUsers;
 use App\Entity\Users;
 use PDO;
 
-class CarpoolsRepository
+class CarpoolsRepository extends Repository
 {
     private PDO $pdo;
 

@@ -13,4 +13,5 @@
     ],
     "liveSassCompile.settings.generateMap": true,
     "liveServer.settings.port": 3002
+    
 }

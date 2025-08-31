@@ -1,9 +1,6 @@
 <?php
 
 require_once APP_ROOT . "/templates/partials/header.php";
-require_once dirname(__DIR__, 2) . "/libs/pdo.php";
-require_once dirname(__DIR__, 2) . "/libs/review.php";
-require_once dirname(__DIR__, 2) . "/libs/carpool.php";
 
 ?>
 
@@ -27,7 +24,7 @@ require_once dirname(__DIR__, 2) . "/libs/carpool.php";
 
             foreach ($carpoolSearch as $carpool) {
 
-                $averageNotes = getAverageNotes($pdo, $carpool['id_users']);
+                //$averageNotes = getAverageNotes($pdo, $carpool['id_users']);
 
                 require APP_ROOT . '/templates/partials/carpool_card.php';
             }

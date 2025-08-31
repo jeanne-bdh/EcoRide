@@ -4,68 +4,58 @@ namespace App\Repository;
 
 use App\Entity\Carpools;
 use App\Entity\Cars;
-use App\Entity\Energies;
 use App\Entity\StatusCarpool;
-use App\Entity\Users;
-use App\Entity\TravelTypes;
-use PDO;
 
-class CarpoolsRepository
+class CarpoolsRepository extends Repository
 {
-    private PDO $pdo;
-
-    public function __construct(PDO $pdo)
+    public function getSearchCarpoolCard(string $cityDepart, string $cityArrival, string $dateDepart)
     {
-        $this->pdo = $pdo;
-    }
-
-    public function findById(int $idCarpool): ?Carpools
-    {
-        $query = "SELECT c.*, s.*, cp.*
-                FROM carpools cp
-                JOIN status_carpool s ON s.id_status_carpool = cp.id_status_carpool
-                JOIN car c ON c.id_car = cp.id_car
-                WHERE cp.id_carpool = :id_carpool";
-
-        $stmt = $this->pdo->prepare($query);
-        $stmt->bindValue(':id_carpool', $idCarpool, PDO::PARAM_INT);
+        $stmt = $this->pdo->prepare(
+            'SELECT carpools.*, status_carpool.label_status_carpool, travel_types.label_travel_type, users.pseudo AS driver_pseudo
+        FROM carpools
+        JOIN status_carpool ON carpools.id_status_carpool = status_carpool.id_status_carpool
+        JOIN users ON carpools.id_users = users.id_users
+        JOIN cars ON cars.id_users = carpools.id_users
+        JOIN travel_types ON cars.id_travel_type = travel_types.id_travel_type
+        WHERE localisation_depart = :localisation_depart
+        AND localisation_arrival = :localisation_arrival
+        AND date_depart = :date_depart
+        AND carpools.date_depart >= CURRENT_DATE
+        AND label_status_carpool = \'Confirmé\'
+        AND remaining_seat > 0
+        ORDER BY carpools.date_depart ASC'
+        );
+        $stmt->bindValue(':localisation_depart', $cityDepart, $this->pdo::PARAM_STR);
+        $stmt->bindValue(':localisation_arrival', $cityArrival, $this->pdo::PARAM_STR);
+        $stmt->bindValue(':date_depart', $dateDepart, $this->pdo::PARAM_STR);
         $stmt->execute();
+        $rows = $stmt->fetchAll($this->pdo::FETCH_ASSOC);
 
-        $carpools = $stmt->fetch(PDO::FETCH_ASSOC);
+        $carpools = [];
 
-        if (!$carpools) {
-            return null;
+        foreach ($rows as $row) {
+            $carpool = new Carpools();
+            $carpool->setIdCarpool((int)$row['id_carpool']);
+            $carpool->setDateDepart(new \DateTime($row['date_depart']));
+            $carpool->setTimeDepart(new \DateTime($row['time_depart']));
+            $carpool->setTimeArrival(new \DateTime($row['time_arrival']));
+            $carpool->setLocalisationDepart($row['localisation_depart']);
+            $carpool->setLocalisationArrival($row['localisation_arrival']);
+            $carpool->setRemainingSeat((int)$row['remaining_seat']);
+            $carpool->setPrice((int)$row['price']);
+
+            // Relations
+            $status = new StatusCarpool();
+            $status->setLabelStatusCarpool($row['label_status_carpool']);
+            $carpool->setStatusCarpool($status);
+
+            $car = new Cars();
+            $car->setLabelTravelType($row['label_travel_type']);
+            $carpool->setCar($car);
+
+            $carpools[] = $carpool;
         }
 
-        $statusCarpool = (new StatusCarpool())
-            ->setIdStatusCarpool($carpools['id_status_carpool'])
-            ->setLabelStatusCarpool($carpools['label_status_carpool']);
-
-        $car = (new Cars())
-            ->setIdCar($carpools['id_car'])
-            ->setModel($carpools['model'])
-            ->setBrand($carpools['brand'])
-            ->setColor($carpools['color'])
-            ->setNbPlate($carpools['nb_plate'])
-            ->setFirstRegist($carpools['first_regist'])
-            ->setSeatsNb($carpools['seats_nb'])
-            ->setSmoker($carpools['smoker'])
-            ->setAnimal($carpools['animal'])
-            ->setPreferences($carpools['preferences'])
-            ->setEnergy((new Energies())->setIdEnergy($carpools['id_energy']))
-            ->setUser((new Users())->setIdUsers($carpools['id_users']))
-            ->setTravelType((new TravelTypes())->setIdTravelType($carpools['id_travel_type']));
-
-        return (new Carpools())
-            ->setIdCarpool($carpools['id_carpool'])
-            ->setDateDepart(new \DateTime($carpools['date_depart']))
-            ->setTimeDepart(new \DateTime($carpools['time_depart']))
-            ->setTimeArrival(new \DateTime($carpools['time_arrival']))
-            ->setLocalisationDepart($carpools['localisation_depart'])
-            ->setLocalisationArrival($carpools['localisation_arrival'])
-            ->setRemainingSeat($carpools['remaining_seat'])
-            ->setPrice($carpools['price'])
-            ->setCar($car)
-            ->setStatusCarpool($statusCarpool);
+        return $carpools;
     }
 }

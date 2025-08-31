@@ -11,7 +11,7 @@ use App\Entity\Users;
 use App\Entity\TravelTypes;
 use PDO;
 
-class CarsRepository
+class CarsRepository extends Repository
 {
     private PDO $pdo;
 

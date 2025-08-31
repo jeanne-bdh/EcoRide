@@ -2,10 +2,45 @@
 
 namespace App\Controller;
 
+use App\Repository\CarpoolsRepository;
+
 class CarpoolController extends Controller
 {
-    public function carpools(): void
+    public function search(): void
     {
-        $this->render("pages/carpools/carpools_access");
+        $this->render("pages/carpools/carpools_search");
+    }
+
+    public function results(): void
+    {
+        $errors = [];
+        $carpoolRepository = new CarpoolsRepository();
+
+        if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['searchCarpool'])) {
+
+            $cityDepart = trim($_GET['departCity']);
+            $cityArrival = trim($_GET['arrivalCity']);
+            $dateDepart = $_GET['dateDepart'];
+
+            if (!empty($cityDepart) && !empty($cityArrival) && !empty($dateDepart)) {
+                $res = $carpoolRepository->getSearchCarpoolCard($cityDepart, $cityArrival, $dateDepart);
+            }
+            var_dump($res);
+            exit;
+
+            if (!empty($res)) {
+                $this->render("pages/carpools/carpools_results", [
+                    "carpools" => $res,
+                    "cityDepart" => $cityDepart,
+                    "cityArrival" => $cityArrival,
+                    "dateDepart" => $dateDepart,
+                ]);
+            } else {
+                $errors[] = "Aucun covoiturage disponible";
+            }
+        }
+        $this->render("pages/carpools/carpools_search", [
+            "errors" => $errors
+        ]);
     }
 }

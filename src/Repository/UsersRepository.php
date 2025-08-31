@@ -8,7 +8,7 @@ use App\Entity\Profiles;
 use App\Entity\StatusSession;
 use PDO;
 
-class UsersRepository
+class UsersRepository extends Repository
 {
     private PDO $pdo;
 

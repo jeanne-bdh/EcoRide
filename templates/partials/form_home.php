@@ -1,5 +1,5 @@
 <section class="container-form" id="container-form-home">
-    <form method="GET" id="search-Form">
+    <form method="GET" action="/carpools/results" id="search-Form">
         <div class="inputForm">
             <label for="inputDepartCity">Départ :</label>
             <input type="text" id="inputDepartCity" name="departCity" placeholder="Ville de départ" required>

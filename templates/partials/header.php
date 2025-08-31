@@ -46,7 +46,7 @@ require_once APP_ROOT . "/libs/session.php";
                     <a class="nav-link" href="/">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/carpools">Covoiturages</a>
+                    <a class="nav-link" href="/carpools/search">Covoiturages</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/contact">Contact</a>
