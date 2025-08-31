@@ -1,7 +1,6 @@
 <?php
 
-//require_once dirname(__DIR__, 2) . "/processes/contact_process.php";
-require_once APP_ROOT . "/../../templates/partials/header.php";
+require_once APP_ROOT . "/templates/partials/header.php";
 
 ?>
 
@@ -9,7 +8,7 @@ require_once APP_ROOT . "/../../templates/partials/header.php";
 
     <!-- HERO SECTION -->
     <?php
-    include_once APP_ROOT . "/../../templates/partials/hero_section.php";
+    include_once APP_ROOT . "/templates/partials/hero_section.php";
     heroSection("Formulaire de contact");
     ?>
 
@@ -57,4 +56,4 @@ require_once APP_ROOT . "/../../templates/partials/header.php";
 
 </main>
 
-<?php require_once APP_ROOT . "/../../templates/partials/footer.php" ?>
+<?php require_once APP_ROOT . "/templates/partials/footer.php" ?>

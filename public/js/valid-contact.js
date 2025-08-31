@@ -4,7 +4,7 @@ function validationContact() {
     const message = document.getElementById("inputMsgContact");
     const btnContact = document.getElementById("btn-valid-contact");
 
-    if (!title || !email || !message || btnContact) return;
+    if (!title || !email || !message || !btnContact) return;
 
     function validateFormContact() {
         const titleOk = validateTitleContact(title);

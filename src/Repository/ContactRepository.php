@@ -2,24 +2,30 @@
 
 namespace App\Repository;
 
-use App\Entity\Contact;
+use MongoDB\Client;
 
-class ContactRepository extends Repository
+class ContactRepository
 {
+    private $collection;
+
+    public function __construct()
+    {
+        $client = new Client(getenv('MONGODB_URI'));
+        $this->collection = $client->ecoride->contact;
+    }
+
     public function findAll(): array
     {
-        $query = $this->pdo->prepare("SELECT * FROM contact");
-        $query->execute();
+        return $this->collection->find()->toArray();
+    }
 
-        $contact = $query->fetchAll($this->pdo::FETCH_ASSOC);
-
-        $contactArray = [];
-        if ($contact) {
-            foreach ($contact as $contactArray) {
-                $contactArray[] = Contact::createAndHydrate($contactArray);
-            }
-        }
-
-        return $contactArray;
+    public function insert(string $title, string $email, string $message): void
+    {
+        $this->collection->insertOne([
+            "title" => $title,
+            "email" => $email,
+            "message" => $message,
+            "date_contact" => new \MongoDB\BSON\UTCDateTime()
+        ]);
     }
 }

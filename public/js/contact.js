@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const email = document.getElementById("inputEmailContact").value;
         const message = document.getElementById("inputMsgContact").value;
 
-        const res = await fetch("/processes/contact_process.php", {
+        const res = await fetch("/contact/show/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ title, email, message })

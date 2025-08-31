@@ -9,43 +9,37 @@ class ContactController extends Controller
 {
     public function contact(): void
     {
-        $contactRepository = new ContactRepository();
-
-        $contact = $contactRepository->findAll();
-
         $this->render("page/contact/contact", [
-            "contact" => $contact,
+            "successContact" => [],
+            "errorsContact" => [],
         ]);
     }
 
     public function show(): void
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $inputJSON = file_get_contents('php://input');
-            $data = json_decode($inputJSON, true);
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            http_response_code(405);
+            echo json_encode(["Erreur : méthode non autorisée"]);
+            exit;
+        }
 
-            if (!$data || !isset($data['title'], $data['email'], $data['message'])) {
-                http_response_code(400);
-                echo json_encode(["Les données sont invalides"]);
-                exit;
-            }
+        $data = json_decode(file_get_contents('php://input'), true);
 
-            try {
-                $client = new MongoDB\Client(getenv('MONGODB_URI'));
-                $collection = $client->ecoride->contact;
+        if (!$data || !isset($data['title'], $data['email'], $data['message'])) {
+            http_response_code(400);
+            echo json_encode(["Erreur : données invalides"]);
+            exit;
+        }
 
-                $result = $collection->insertOne([
-                    'title' => $data['title'],
-                    'email' => $data['email'],
-                    'date_contact' => new MongoDB\BSON\UTCDateTime,
-                    'message' => $data['message']
-                ]);
+        try {
+            $repo = new ContactRepository();
+            $repo->insert($data['title'], $data['email'], $data['message']);
 
-                echo json_encode(["Votre message a bien été envoyé"]);
-            } catch (ExceptionPath $e) {
-                http_response_code(500);
-                echo json_encode(["Une erreur inattendue s’est produite sur le serveur"]);
-            }
+            header('Content-Type: application/json');
+            echo json_encode(["success" => "Votre message a bien été envoyé"]);
+        } catch (ExceptionPath $e) {
+            http_response_code(500);
+            echo json_encode(["Erreur serveur", $e->getMessage()]);
         }
     }
 }
