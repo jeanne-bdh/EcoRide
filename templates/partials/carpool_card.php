@@ -35,7 +35,7 @@ require_once APP_ROOT . "/../libs/review.php";
     <div class="carpool-card-bottom">
         <div class="card-driver">
             <div class="container-pseudo">
-                <img src="/uploads/person-circle.svg" class="profil-icon" alt="profil user">
+                <img src="/assets/images/personal/person-circle.svg" class="profil-icon" alt="profil user">
                 <p><?= $carpool['driver_pseudo']; ?></p>
             </div>
             <div class="star">
@@ -66,8 +66,8 @@ require_once APP_ROOT . "/../libs/review.php";
         </div>
     </div>
 
-    <?php require APP_ROOT . "/../pages/users/future-carpool/future_carpool_card.php" ?>
+    <?php require APP_ROOT . "/page/users/future-carpool/future_carpool_card.php" ?>
 
 </div>
 
-<?php require_once APP_ROOT . "/../pages/users/future-carpool/confirm_modal.php"; ?>
+<?php require_once APP_ROOT . "/page/users/future-carpool/confirm_modal.php"; ?>

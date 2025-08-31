@@ -15,9 +15,9 @@
         <div class="inputBtn">
             <button type="submit" name="searchCarpool" class="btn-blue btn-green">Rechercher</button>
         </div>
-        <?php foreach ($errorsForm as $error) { ?>
+        <?php foreach ($errors as $errorMessage) { ?>
             <div class="alert-container">
-                <?= $error; ?>
+                <?= $errorMessage; ?>
             </div>
         <?php } ?>
     </form>

@@ -9,7 +9,7 @@ class ContactController extends Controller
 {
     public function contact(): void
     {
-        $this->render("page/contact/contact", [
+        $this->render("pages/contact/contact", [
             "successContact" => [],
             "errorsContact" => [],
         ]);

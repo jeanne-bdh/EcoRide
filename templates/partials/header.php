@@ -43,7 +43,7 @@ require_once APP_ROOT . "/libs/session.php";
             <!-- Menu de navigation -->
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a class="nav-link" href="/home">Accueil</a>
+                    <a class="nav-link" href="/">Accueil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/carpools">Covoiturages</a>
