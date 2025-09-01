@@ -13,7 +13,7 @@ use PDO;
 
 class CarsRepository extends Repository
 {
-    private PDO $pdo;
+    protected PDO $pdo;
 
     public function __construct(PDO $pdo)
     {

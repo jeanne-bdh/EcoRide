@@ -15,6 +15,7 @@ class Carpools extends Entity
     protected int $price;
     protected StatusCarpool $statusCarpool;
     protected Cars $car;
+    protected Users $user;
 
     /**
      * Get the value of idCarpool
@@ -192,6 +193,24 @@ class Carpools extends Entity
     public function setCar(Cars $car): self
     {
         $this->car = $car;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of car
+     */
+    public function getUser(): Users
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set the value of car
+     */
+    public function setUser(Users $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

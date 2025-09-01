@@ -13,18 +13,12 @@ require_once APP_ROOT . "/templates/partials/header.php";
     ?>
 
     <!-- ALL RESULT -->
-    <section">
+    <section>
         <?php
-        $cityDepart = $_GET["departCity"] ?? '';
-        $cityArrival = $_GET["arrivalCity"] ?? '';
-        $dateDepart = $_GET["dateDepart"] ?? '';
+        if (!empty($carpools)) {
 
-        if ($cityDepart && $cityArrival && $dateDepart) {
-            $carpoolSearch = getSearchCarpoolCard($pdo, $cityDepart, $cityArrival, $dateDepart);
-
-            foreach ($carpoolSearch as $carpool) {
-
-                //$averageNotes = getAverageNotes($pdo, $carpool['id_users']);
+            /** @var \App\Entity\Carpools $carpool */
+            foreach ($carpools as $carpool) {
 
                 require APP_ROOT . '/templates/partials/carpool_card.php';
             }

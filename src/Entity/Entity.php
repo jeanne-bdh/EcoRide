@@ -6,11 +6,6 @@ use DateTimeImmutable;
 
 class Entity
 {
-    protected static array $dateFields = [
-        'date_depart',
-        'time_depart',
-        'time_arrival'
-    ];
 
     public static function createAndHydrate(array $data): static
     {
@@ -24,10 +19,6 @@ class Entity
     {
         foreach ($data as $key => $value) {
 
-            if (in_array($key, static::$dateFields) && $value !== null) {
-                $value = new DateTimeImmutable($value);
-            }
-
             $methodName = str_replace(array('-', '_'), ' ', $key);
             $methodName = ucwords($methodName);
             $methodName = str_replace(' ', '', $methodName);
@@ -37,24 +28,8 @@ class Entity
                 if ($key === 'first_regist' || $key === 'date_contact') {
                     $value = new DateTimeImmutable($value);
                 }
-                if ($key === 'statusCarpool' && is_array($value)) {
-                    $value = StatusCarpool::createAndHydrate($value);
-                }
-
-                if ($key === 'car' && is_array($value)) {
-                    $value = Cars::createAndHydrate($value);
-                }
                 $this->{$methodName}($value);
             }
         }
     }
-    
-    public static function createMany(array $rows): array
-{
-    $objects = [];
-    foreach ($rows as $row) {
-        $objects[] = static::createAndHydrate($row);
-    }
-    return $objects;
-}
 }

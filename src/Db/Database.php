@@ -37,15 +37,15 @@ class Database
 
     public function getPDO(): \PDO
     {
-        if (is_null($this->pdo)) {
+        if (is_null(self::$pdo)) {
 
             try {
-                $this->pdo = new \PDO("pgsql:dbname={$this->dbName};host={$this->dbHost};port={$this->dbPort}", $this->dbUser, $this->dbPassword);
+                self::$pdo = new \PDO("pgsql:dbname={$this->dbName};host={$this->dbHost};port={$this->dbPort}", $this->dbUser, $this->dbPassword);
             } catch (PDOException $e) {
                 die('Erreur de connexion à la base : ' . $e->getMessage());
             }
         }
 
-        return $this->pdo;
+        return self::$pdo;
     }
 }

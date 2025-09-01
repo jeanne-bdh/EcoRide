@@ -10,7 +10,7 @@ use PDO;
 
 class UsersRepository extends Repository
 {
-    private PDO $pdo;
+    protected PDO $pdo;
 
     public function __construct(PDO $pdo)
     {
@@ -48,8 +48,8 @@ class UsersRepository extends Repository
         }
 
         $statusSession = (new StatusSession())
-            ->setIdStatusSession($users['id_status'])
-            ->setLabelStatusSession($users['label_status']);
+            ->setIdStatusSession($users['id_status_session'])
+            ->setLabelStatusSession($users['label_status_session']);
 
         return (new Users())
             ->setIdUsers($users['id_users'])

@@ -24,23 +24,28 @@ class CarpoolController extends Controller
 
             if (!empty($cityDepart) && !empty($cityArrival) && !empty($dateDepart)) {
                 $res = $carpoolRepository->getSearchCarpoolCard($cityDepart, $cityArrival, $dateDepart);
-            }
-            var_dump($res);
-            exit;
 
-            if (!empty($res)) {
-                $this->render("pages/carpools/carpools_results", [
-                    "carpools" => $res,
-                    "cityDepart" => $cityDepart,
-                    "cityArrival" => $cityArrival,
-                    "dateDepart" => $dateDepart,
-                ]);
+                if (!empty($res)) {
+                    $this->render("pages/carpools/carpools_results", [
+                        "carpools" => $res,
+                        "cityDepart" => $cityDepart,
+                        "cityArrival" => $cityArrival,
+                        "dateDepart" => $dateDepart,
+                    ]);
+                    return;
+                } else {
+                    $errors[] = "Aucun covoiturage disponible";
+                }
             } else {
-                $errors[] = "Aucun covoiturage disponible";
+                $errors[] = "Veuillez remplir tous les champs";
             }
         }
+
         $this->render("pages/carpools/carpools_search", [
-            "errors" => $errors
+            "errors" => $errors,
+            "cityDepart" => $cityDepart,
+            "cityArrival" => $cityArrival,
+            "dateDepart" => $dateDepart,
         ]);
     }
 }

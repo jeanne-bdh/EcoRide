@@ -1,3 +1,5 @@
+<?php $errors = $errors ?? []; ?>
+
 <section class="container-form" id="container-form-home">
     <form method="GET" action="/carpools/results" id="search-Form">
         <div class="inputForm">
@@ -15,10 +17,12 @@
         <div class="inputBtn">
             <button type="submit" name="searchCarpool" class="btn-blue btn-green">Rechercher</button>
         </div>
-        <?php foreach ($errors as $errorMessage) { ?>
-            <div class="alert-container">
-                <?= $errorMessage; ?>
-            </div>
-        <?php } ?>
+        <?php if (!empty($errors)) : ?>
+            <?php foreach ($errors as $errorMessage) : ?>
+                <div class="alert-container">
+                    <?= htmlspecialchars($errorMessage); ?>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
     </form>
 </section>

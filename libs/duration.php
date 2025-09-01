@@ -1,5 +1,7 @@
 <?php
 
+//carpool_card
+/*
 function getDuration($startTime, $endTime)
 {
     $start = strtotime($startTime);
@@ -11,7 +13,11 @@ function getDuration($startTime, $endTime)
 
     return sprintf("%dh%02d", $hours, $minutes);
 }
+    */
 
+
+
+//new_carpool
 function validateDuration()
 {
     $errorsDuration = [];

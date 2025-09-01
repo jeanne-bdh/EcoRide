@@ -41,6 +41,7 @@ function getFutureCarpoolByUser(PDO $pdo, int $userId): array
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+/*
 function getSearchCarpoolCard(PDO $pdo, string $cityDepart, string $cityArrival, string $dateDepart): array
 {
     $stmt = $pdo->prepare(
@@ -65,6 +66,7 @@ function getSearchCarpoolCard(PDO $pdo, string $cityDepart, string $cityArrival,
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+    */
 
 function getCarpoolDetails(PDO $pdo, int $carpoolId): array | bool
 {
