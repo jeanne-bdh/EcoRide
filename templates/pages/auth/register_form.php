@@ -1,9 +1,4 @@
-<?php
-
-//require_once dirname(__DIR__, 2) . "/processes/register_process.php";
-require_once APP_ROOT . "/templates/partials/header.php";
-
-?>
+<?php require_once APP_ROOT . "/templates/partials/header.php"; ?>
 
 <main>
 
@@ -15,7 +10,7 @@ require_once APP_ROOT . "/templates/partials/header.php";
 
     <!-- FORMULAIRE -->
     <section class="container-form" id="container-form-register">
-        <form action="" method="POST">
+        <form action="/register/form" method="POST">
 
             <?php if (!empty($errors)) { ?>
                 <div class="alert-container">

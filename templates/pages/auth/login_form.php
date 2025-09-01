@@ -1,6 +1,5 @@
 <?php
 
-//require_once dirname(__DIR__, 2) . "/processes/login_process.php";
 require_once APP_ROOT . "/templates/partials/header.php";
 
 ?>
@@ -14,8 +13,10 @@ require_once APP_ROOT . "/templates/partials/header.php";
     ?>
 
     <!-- FORMULAIRE -->
+    <?php $errors = $errors ?? []; ?>
+
     <section class="container-form" id="container-form-login">
-        <form class="form-login" action="" method="POST">
+        <form class="form-login" action="/login/show" method="POST">
 
             <?php foreach ($errors as $errorMessage) { ?>
                 <div class="alert-container">
@@ -25,9 +26,9 @@ require_once APP_ROOT . "/templates/partials/header.php";
 
             <?php if (isset($_SESSION['register_success'])) { ?>
                 <div class="success">
-                    <p><?= $_SESSION['register_success'] ;?></p>
+                    <p><?= $_SESSION['register_success']; ?></p>
                 </div>
-                <?php unset($_SESSION['register_success']);
+            <?php unset($_SESSION['register_success']);
             } ?>
 
             <div class="inputForm">

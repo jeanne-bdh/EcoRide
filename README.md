@@ -66,9 +66,3 @@ BOUCHEND'HOMME Jeanne
 
 sass sass:assets/css --watch
 sass sass:public/assets/css --watch
-
-
-Utilisation databse :
-
-use App\Db\Database;
-$pdo = Database::getPDO();

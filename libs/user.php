@@ -1,5 +1,6 @@
 <?php
 
+/*
 function addUser(PDO $pdo, string $pseudo, string $email, string $password): bool|int
 {
     $query = "SELECT id_status_session FROM status_session WHERE label_status_session = 'Actif'";
@@ -34,6 +35,7 @@ function addUser(PDO $pdo, string $pseudo, string $email, string $password): boo
 
     return $stmt->execute();
 }
+    */
 
 function getUserCredit(PDO $pdo, $userId): int
 {
@@ -51,6 +53,7 @@ function getUserCredit(PDO $pdo, $userId): int
     }
 }
 
+/*
 function getUserForAdmin(PDO $pdo): bool|array
 {
     $query = "SELECT users.*, status_session.*
@@ -87,3 +90,4 @@ function userRestart(PDO $pdo, int $userId): bool
     $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
     return $stmt->execute();
 }
+    */

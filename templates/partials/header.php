@@ -1,6 +1,8 @@
 <?php
 
-require_once APP_ROOT . "/libs/session.php";
+use App\Service\SessionManager;
+
+$session = new SessionManager();
 
 ?>
 
@@ -52,8 +54,8 @@ require_once APP_ROOT . "/libs/session.php";
                     <a class="nav-link" href="/contact">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <?php if (isUserConnected()) { ?>
-                        <a class="hello-user" href="<?= getUserSessionLink(); ?>">Bonjour <?= $_SESSION['users']['pseudo']; ?> </a>
+                    <?php if ($session->isUserConnected()) { ?>
+                        <a class="hello-user" href="<?= $session->getUserSessionLink(); ?>">Bonjour <?= $session->getUserPseudo(); ?> </a>
                         <a href="/logout"><button class="btn-blue" type="button">Déconnexion</button></a>
                     <?php } else { ?>
                         <a href="/login"><button class="btn-blue" type="button">Connexion</button></a>

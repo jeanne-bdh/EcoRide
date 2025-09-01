@@ -1,7 +1,6 @@
 <?php
 
 require_once APP_ROOT . "/templates/partials/header.php";
-require_once dirname(__DIR__, 2) . "/processes/status_session_process.php";
 
 ?>
 
