@@ -11,6 +11,7 @@ class LogoutController extends Controller
         $session = new SessionManager();
         $session->logout();
 
-        $this->render("pages/auth/login_form");
+        header("Location: /login");
+        exit;
     }
 }

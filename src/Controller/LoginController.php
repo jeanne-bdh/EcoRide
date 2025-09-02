@@ -17,7 +17,7 @@ class LoginController extends Controller
         ]);
     }
 
-    public function show(): void
+    public function show()
     {
         $errors = [];
         $userRepository = new UsersRepository();
@@ -31,6 +31,8 @@ class LoginController extends Controller
                 $user = $userRepository->verifyUserLoginPassword($_POST['email'], $_POST['password']);
                 if ($user) {
                     $_SESSION['users'] = $user;
+                    header("Location: /session");
+                    exit;
                 } else {
                     $errors[] = "Identifiants incorrects";
                 }
@@ -44,20 +46,5 @@ class LoginController extends Controller
             "token" => $token,
             "errors" => $errors
         ]);
-    }
-
-    public function admin(): void
-    {
-        $this->render("pages/admin/admin_session");
-    }
-
-    public function user(): void
-    {
-        $this->render("pages/users/user_session");
-    }
-
-    public function employee(): void
-    {
-        $this->render("pages/employees/employee_session");
     }
 }

@@ -13,7 +13,7 @@ require_once APP_ROOT . "/templates/partials/header.php";
     ?>
 
     <section class="menu-session">
-        <a href="/pages/admin/account_suspension.php" class="card-session">
+        <a href="/admin" class="card-session">
             <h3>Suspension <br> de comptes</h3>
         </a>
     </section>

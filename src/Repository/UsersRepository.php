@@ -2,6 +2,9 @@
 
 namespace App\Repository;
 
+use App\Entity\Profiles;
+use App\Entity\StatusSession;
+use App\Entity\Users;
 use PDO;
 
 class UsersRepository extends Repository
@@ -163,14 +166,32 @@ class UsersRepository extends Repository
 
     public function getUserForAdmin(): bool|array
     {
-        $query = "SELECT users.*, status_session.*
-            FROM users
-            JOIN status_session ON status_session.id_status_session = users.id_status_session
-            WHERE users.id_role = 2
+        $query = "SELECT u.id_users, u.pseudo, u.email, u.lastname, u.firstName, s.label_status_session
+            FROM users u
+            JOIN status_session s ON s.id_status_session = u.id_status_session
+            WHERE u.id_role = 2
             ORDER BY id_users ASC";
         $stmt = $this->pdo->prepare($query);
         $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $lists = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+        $users = [];
+
+        foreach ($lists as $list) {
+            $statusSession = (new StatusSession())
+                    ->setLabelStatusSession($list['label_status_session']);
+
+                $user = (new Users())
+                    ->setIdUsers($list['id_users'])
+                    ->setPseudo($list['pseudo'])
+                    ->setEmail($list['email'])
+                    ->setLastname($list['lastname'])
+                    ->setFirstname($list['firstname'])
+                    ->setStatusSession($statusSession);
+
+            $users[] = $user;
+        }
+        return $users;
     }
 
     public function getStatusSession(int $userId): int
@@ -222,37 +243,4 @@ class UsersRepository extends Repository
             return 0;
         }
     }
-
-
-
-    /*
-        public function findById(int $idUsers): ?Users
-    {
-        $query = "SELECT u.*, r.*, p.*, s.*
-                FROM users u
-                JOIN roles r ON u.id_role = r.id_role
-                LEFT JOIN profiles p ON u.id_profil = p.id_profil
-                JOIN status_session s ON u.id_status = s.id_status
-                WHERE u.id_users = :id_users";
-
-        $stmt = $this->pdo->prepare($query);
-        $stmt->bindValue(':id_users', $idUsers, PDO::PARAM_INT);
-        $stmt->execute();
-
-        $users = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if (!$users) {
-            return null;
-        }
-
-        $profile = null;
-        if ($users['id_profile']) {
-            $profile = (new Profiles())
-                ->setIdProfile($users['id_profile'])
-                ->setLabelProfile($users['label_profile']);
-        }
-
-    
-    }
-            */
 }

@@ -14,7 +14,7 @@ require_once APP_ROOT . "/templates/partials/header.php";
 
     <!-- USERS LIST -->
     <table>
-        <thread>
+        <thead>
             <th>ID</th>
             <th>Pseudo</th>
             <th>Email</th>
@@ -22,21 +22,21 @@ require_once APP_ROOT . "/templates/partials/header.php";
             <th>Prénom</th>
             <th>Statut</th>
             <th>Action</th>
-        </thread>
+        </thead>
         <tbody>
             <?php foreach ($users as $user): ?>
                 <tr>
-                    <td><?= htmlspecialchars($user['id_users']); ?></td>
-                    <td><?= htmlspecialchars($user['pseudo']); ?></td>
-                    <td><?= htmlspecialchars($user['email']); ?></td>
-                    <td><?= htmlspecialchars($user['lastname']) ?? ''; ?></td>
-                    <td><?= htmlspecialchars($user['firstname']) ?? ''; ?></td>
-                    <td id="label-status-<?= $user['id_users'] ?>"><?= htmlspecialchars($user['label_status_session']); ?></td>
+                    <td><?= htmlspecialchars($user->getIdUsers()); ?></td>
+                    <td><?= htmlspecialchars($user->getPseudo()); ?></td>
+                    <td><?= htmlspecialchars($user->getEmail()); ?></td>
+                    <td><?= htmlspecialchars($user->getLastname()) ?? ''; ?></td>
+                    <td><?= htmlspecialchars($user->getFirstname()) ?? ''; ?></td>
+                    <td id="label-status-<?= $user->getIdUsers(); ?>"><?= htmlspecialchars($user->getStatusSession()->getLabelStatusSession()); ?></td>
                     <td>
-                        <?php if ($user['label_status_session'] === 'Actif') : ?>
-                            <button class="btn-red" id="btn-status-<?= $user['id_users'] ?>" type="button" onclick="statusSession(<?= $user['id_users'] ?>)">Bloquer</button>
-                        <?php elseif ($user['label_status_session'] === 'Suspendu') : ?>
-                            <button class="btn-blue" id="btn-status-<?= $user['id_users'] ?>" type="button" onclick="statusSession(<?= $user['id_users'] ?>)">Réactiver</button>
+                        <?php if ($user->getStatusSession()->getLabelStatusSession() === 'Actif') : ?>
+                            <button class="btn-red" id="btn-status-<?= $user->getIdUsers(); ?>" type="button" onclick="statusSession(<?= $user->getIdUsers(); ?>)">Bloquer</button>
+                        <?php elseif ($user->getStatusSession()->getLabelStatusSession() === 'Suspendu') : ?>
+                            <button class="btn-blue" id="btn-status-<?= $user->getIdUsers(); ?>" type="button" onclick="statusSession(<?= $user->getIdUsers(); ?>)">Réactiver</button>
                         <?php endif; ?>
                     </td>
                 </tr>

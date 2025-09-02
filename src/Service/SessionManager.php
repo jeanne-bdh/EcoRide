@@ -31,26 +31,11 @@ class SessionManager
     {
         return isset($_SESSION['users']);
     }
-
-    public function getUserSessionLink(): string
-    {
-        if (!isset($_SESSION['users']['id_role'])) {
-            return '/login';
-        }
-
-        $role = $_SESSION['users']['id_role'];
-        return match ($role) {
-            1 => '/admin',
-            3 => '/employee',
-            default => '/user'
-        };
-    }
-
+    
     public function logout(): void
     {
         session_regenerate_id(true);
         session_destroy();
         unset($_SESSION);
-        //$_SESSION = [];
     }
 }

@@ -1,7 +1,6 @@
 <?php
-require_once APP_ROOT . "/../libs/pdo.php";
-require_once APP_ROOT . "/../libs/user.php";
 
+/*
 $users = getUserForAdmin($pdo);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_users'])) {
@@ -30,3 +29,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_users'])) {
         echo "Statut de session invalide";
     }
 }
+*/

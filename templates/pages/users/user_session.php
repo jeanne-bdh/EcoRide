@@ -1,11 +1,6 @@
 <?php
 
-require_once dirname(__DIR__, 2) . "/templates/partials/header.php";
-require_once dirname(__DIR__, 2) . "/libs/pdo.php";
-require_once dirname(__DIR__, 2) . "/libs/user.php";
-require_once dirname(__DIR__, 2) . "/libs/personal.php";
-require_once dirname(__DIR__, 2) . "/processes/personal_process.php";
-require_once dirname(__DIR__, 2) . "/processes/session_process.php";
+require_once APP_ROOT . "/templates/partials/header.php";
 
 ?>
 
@@ -25,9 +20,9 @@ require_once dirname(__DIR__, 2) . "/processes/session_process.php";
 
     <!-- MENU SESSION -->
 
-    <?php foreach ($errorsPersonalInfos as $error) { ?>
+    <?php foreach ($errors as $errorMessage) { ?>
         <div class="alert-container" id="errorPersonalInfos">
-            <?= $error; ?>
+            <?= $errorMessage; ?>
         </div>
     <?php } ?>
 
@@ -50,4 +45,4 @@ require_once dirname(__DIR__, 2) . "/processes/session_process.php";
 
 </main>
 
-<?php require_once dirname(__DIR__, 2) . "/templates/partials/footer.php" ?>
+<?php require_once APP_ROOT . "/templates/partials/footer.php" ?>

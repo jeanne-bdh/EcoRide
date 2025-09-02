@@ -5,16 +5,22 @@ return [
     "/cookieManagement/" => ["controller" => "App\Controller\PageController", "action" => "cookieManagement"],
     "/legalInfos/" => ["controller" => "App\Controller\PageController", "action" => "legalInfos"],
     "/privacyPolicy/" => ["controller" => "App\Controller\PageController", "action" => "privacyPolicy"],
+
     "/logout/" => ["controller" => "App\Controller\LogoutController", "action" => "logout"],
+
     "/login/" => ["controller" => "App\Controller\LoginController", "action" => "login"],
     "/login/show/" => ["controller" => "App\Controller\LoginController", "action" => "show"],
-    "/admin/" => ["controller" => "App\Controller\LoginController", "action" => "admin"],
-    "/user/" => ["controller" => "App\Controller\LoginController", "action" => "user"],
-    "/employee/" => ["controller" => "App\Controller\LoginController", "action" => "employee"],
+
+    "/session/" => ["controller" => "App\Controller\SessionController", "action" => "session"],
+
+    "/admin/" => ["controller" => "App\Controller\AdminController", "action" => "admin"],
+
     "/register/" => ["controller" => "App\Controller\RegisterController", "action" => "register"],
     "/register/form/" => ["controller" => "App\Controller\RegisterController", "action" => "form"],
+
     "/carpools/search/" => ["controller" => "App\Controller\CarpoolController", "action" => "search"],
     "/carpools/results/" => ["controller" => "App\Controller\CarpoolController", "action" => "results"],
+
     "/contact/" => ["controller" => "App\Controller\ContactController", "action" => "contact"],
     "/contact/show/" => ["controller" => "App\Controller\ContactController", "action" => "show"],
 ];

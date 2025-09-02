@@ -55,7 +55,7 @@ $session = new SessionManager();
                 </li>
                 <li class="nav-item">
                     <?php if ($session->isUserConnected()) { ?>
-                        <a class="hello-user" href="<?= $session->getUserSessionLink(); ?>">Bonjour <?= $session->getUserPseudo(); ?> </a>
+                        <a class="hello-user" href="/session">Bonjour <?= $session->getUserPseudo(); ?> </a>
                         <a href="/logout"><button class="btn-blue" type="button">Déconnexion</button></a>
                     <?php } else { ?>
                         <a href="/login"><button class="btn-blue" type="button">Connexion</button></a>
