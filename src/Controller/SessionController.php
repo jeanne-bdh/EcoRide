@@ -20,11 +20,14 @@ class SessionController extends Controller
         $userId = $session->getUserId();
         $credit = $userRepository->getUserCredit($userId);
         $profile = $userRepository->getProfile($userId);
-        $roleId = $profile['id_role'];
+        $roleId = $profile['id_role'] ?? null;
+        $profileId = $profile['id_profil'] ?? null;
 
         if (!$profile || !isset($roleId)) {
             die("Le rôle de l'utilisateur est introuvable");
         }
+
+        $getNewCarpoolForm = $roleId == 2 && ($profileId == 2 || $profileId == 3);
 
         $view = match ($roleId) {
             1 => "pages/admin/admin_session",
@@ -32,9 +35,10 @@ class SessionController extends Controller
         };
 
         $this->render($view, [
-            "user"   => $userId,
+            "user" => $userId,
             "credit" => $credit,
-            "profile" => $profile
+            "profile" => $profile,
+            "getNewCarpoolForm" => $getNewCarpoolForm
         ]);
     }
 }

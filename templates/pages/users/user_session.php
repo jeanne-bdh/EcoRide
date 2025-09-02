@@ -27,8 +27,8 @@ require_once APP_ROOT . "/templates/partials/header.php";
     <?php } ?>
 
     <section class="menu-session">
-        <?php if ($roleId == 2 && ($profileId == 2 || $profileId == 3)): ?>
-            <a href="/pages/users/new-carpool/new_carpool_form.php" class="card-session">
+        <?php if ($getNewCarpoolForm): ?>
+            <a href="/newCarpool" class="card-session">
                 <h3>Saisir un voyage</h3>
             </a>
         <?php endif; ?>

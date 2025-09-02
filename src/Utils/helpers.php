@@ -29,15 +29,3 @@ function getDuration($startTime, $endTime)
 
     return sprintf("%dh%02d", $hours, $minutes);
 }
-
-function validateDate($date = 0)
-{
-    $errors = [];
-    $today = date("Y-m-d");
-
-    if ($date < $today) {
-        $errors[] = "La date ne peut être antérieure";
-    }
-
-    return $errors;
-}

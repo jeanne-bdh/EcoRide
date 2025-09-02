@@ -1,5 +1,5 @@
 <?php
-
+/*
 function saveNewCarpool(PDO $pdo, string $localDepart, string $localArrival, string $dateCarpool, string $timeDepart, string $timeArrival, int $price, int $usersId, int $carId): bool | int
 {
     $stmt = $pdo->prepare("INSERT INTO carpools (localisation_depart, localisation_arrival, date_depart, time_depart, time_arrival, price, id_users, id_status_carpool, id_car) VALUES (:localisation_depart, :localisation_arrival, :date_depart, :time_depart, :time_arrival, :price, :id_users, :id_status_carpool, :id_car)");
@@ -55,3 +55,4 @@ function insertCarpoolsUsers(PDO $pdo, int $userId, int $carpoolId, string $role
 
     return $stmt->execute();
 }
+    */

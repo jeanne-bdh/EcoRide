@@ -1,5 +1,5 @@
 <?php
-
+/*
 function validateDate($date = 0)
 {
     $errors = [];
@@ -11,3 +11,4 @@ function validateDate($date = 0)
 
     return $errors;
 }
+    */

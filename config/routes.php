@@ -15,6 +15,8 @@ return [
 
     "/personal/" => ["controller" => "App\Controller\PersonalController", "action" => "personal"],
 
+    "/newCarpool/" => ["controller" => "App\Controller\NewCarpoolController", "action" => "newCarpool"],
+
     "/admin/" => ["controller" => "App\Controller\AdminController", "action" => "admin"],
 
     "/register/" => ["controller" => "App\Controller\RegisterController", "action" => "register"],

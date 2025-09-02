@@ -1,7 +1,6 @@
 <?php
 
-require_once dirname(__DIR__, 3) . "/templates/partials/header.php";
-require_once dirname(__DIR__, 3) . "/processes/new_carpool_process.php";
+require_once APP_ROOT . "/templates/partials/header.php";
 
 ?>
 
@@ -9,7 +8,7 @@ require_once dirname(__DIR__, 3) . "/processes/new_carpool_process.php";
 
     <!-- HERO SECTION -->
     <?php
-    include_once dirname(__DIR__, 3) . "/templates/partials/hero_section.php";
+    include_once APP_ROOT . "/templates/partials/hero_section.php";
     heroSection("Saisir un voyage");
     ?>
 
@@ -18,8 +17,8 @@ require_once dirname(__DIR__, 3) . "/processes/new_carpool_process.php";
 
             <select class="form-select" name="car-select" aria-label="Sélectionner des filtres" required>
                 <option selected disabled>Sélectionner un véhicule</option>
-                <?php foreach ($userCars as $car): ?>
-                    <option value="<?= $car['id_car'] ?>"><?= htmlspecialchars($car['brand'] . " " . $car['model']) ?></option>
+                <?php foreach ($cars as $car): ?>
+                    <option value="<?= $car->getIdCar(); ?>"><?= htmlspecialchars($car->getBrand() . " " . $car->getModel()); ?></option>
                 <?php endforeach; ?>
             </select>
 
@@ -79,7 +78,7 @@ require_once dirname(__DIR__, 3) . "/processes/new_carpool_process.php";
             <div class="inputBtn">
                 <button type="submit" name="saveNewCarpool" class="btn-blue btn-green btn-form" id="btn-valid-new-carpool">Soumettre</button>
             </div>
-            <a class="link-future-carpool" href="/pages/users/future-carpool/future_carpool.php?view=future">> Accéder aux covoiturages à venir</a>
+            <a class="link-future-carpool" href="/carpools/future?view=future">> Accéder aux covoiturages à venir</a>
             <?php foreach ($messagesForm as $message) { ?>
                 <div class="success">
                     <?= $message; ?>
@@ -96,4 +95,4 @@ require_once dirname(__DIR__, 3) . "/processes/new_carpool_process.php";
 
 </main>
 
-<?php require_once dirname(__DIR__, 3) . "/templates/partials/footer.php" ?>
+<?php require_once APP_ROOT . "/templates/partials/footer.php" ?>

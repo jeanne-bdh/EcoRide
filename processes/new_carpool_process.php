@@ -1,5 +1,5 @@
 <?php
-
+/*
 require_once APP_ROOT . "/../libs/pdo.php";
 require_once APP_ROOT . "/../libs/user.php";
 require_once APP_ROOT . "/../libs/new_carpool.php";
@@ -38,3 +38,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['saveNewCarpool'])) {
         }
     }
 }
+    */

@@ -69,7 +69,7 @@ class CarpoolController extends Controller
 
         $this->render("pages/carpools/carpool_details", [
             "carpool" => $carpool,
-            "errors"  => $errors
+            "errors" => $errors
         ]);
     }
 
