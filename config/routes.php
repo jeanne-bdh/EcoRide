@@ -21,6 +21,8 @@ return [
     "/carpools/search/" => ["controller" => "App\Controller\CarpoolController", "action" => "search"],
     "/carpools/results/" => ["controller" => "App\Controller\CarpoolController", "action" => "results"],
     "/carpools/details/" => ["controller" => "App\Controller\CarpoolController", "action" => "details"],
+    "/carpools/history/" => ["controller" => "App\Controller\CarpoolController", "action" => "history"],
+    "/carpools/future/" => ["controller" => "App\Controller\CarpoolController", "action" => "future"],
 
     "/contact/" => ["controller" => "App\Controller\ContactController", "action" => "contact"],
     "/contact/show/" => ["controller" => "App\Controller\ContactController", "action" => "show"],

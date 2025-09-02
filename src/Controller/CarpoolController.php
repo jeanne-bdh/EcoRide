@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\CarpoolsRepository;
+use App\Service\SessionManager;
 
 class CarpoolController extends Controller
 {
@@ -70,5 +71,38 @@ class CarpoolController extends Controller
             "carpool" => $carpool,
             "errors"  => $errors
         ]);
+    }
+
+    public function history(): void
+    {
+        $session = new SessionManager();
+        if (!$session->isUserConnected()) {
+            header("Location: /login");
+            exit;
+        } else {
+            $userId = $session->getUserId();
+            $carpoolRepository = new CarpoolsRepository();
+            $carpools = $carpoolRepository->getPastCarpoolByUser($userId);
+
+            $this->render("pages/users/hist-carpool/hist_carpool", [
+                "carpools" => $carpools
+            ]);
+        }
+    }
+
+    public function future(): void
+    {
+        $session = new SessionManager();
+        if (!$session->isUserConnected()) {
+            header("Location: /login");
+            exit;
+        } else {
+            $userId = $session->getUserId();
+            $carpoolRepository = new CarpoolsRepository();
+            $carpools = $carpoolRepository->getFutureCarpoolByUser($userId);
+            $this->render("pages/users/future-carpool/future_carpool", [
+                "carpools" => $carpools
+            ]);
+        }
     }
 }

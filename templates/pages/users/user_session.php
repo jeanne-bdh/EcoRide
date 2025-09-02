@@ -32,10 +32,10 @@ require_once APP_ROOT . "/templates/partials/header.php";
                 <h3>Saisir un voyage</h3>
             </a>
         <?php endif; ?>
-        <a href="/pages/users/future-carpool/future_carpool.php?view=future" class="card-session">
+        <a href="/carpools/future?view=future" class="card-session">
             <h3>Covoiturages à venir</h3>
         </a>
-        <a href="/pages/users/hist-carpool/hist_carpool.php" class="card-session">
+        <a href="/carpools/history" class="card-session">
             <h3>Historique <br> des covoiturages</h3>
         </a>
         <a href="/pages/users/personal-infos/personal_infos.php" class="card-session">
