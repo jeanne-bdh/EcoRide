@@ -1,5 +1,5 @@
 <?php
-
+/*
 require_once APP_ROOT . "/../libs/pdo.php";
 require_once APP_ROOT . "/../libs/personal.php";
 require_once APP_ROOT . "/../libs/travel_type.php";
@@ -72,3 +72,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['savePersonalForm'])) 
         }
     }
 }
+    */

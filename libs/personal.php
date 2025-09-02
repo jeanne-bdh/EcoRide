@@ -1,5 +1,5 @@
 <?php
-
+/*
 function getUser(PDO $pdo, $userId): bool|array
 {
     $query = "SELECT *
@@ -99,3 +99,4 @@ function validateSeat()
 
     return $errorsSeat;
 }
+    */

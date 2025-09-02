@@ -1,7 +1,6 @@
 <?php
 
-require_once dirname(__DIR__, 3) . "/templates/partials/header.php";
-require_once dirname(__DIR__, 3) . "/processes/personal_process.php";
+require_once APP_ROOT . "/templates/partials/header.php";
 
 ?>
 
@@ -9,7 +8,7 @@ require_once dirname(__DIR__, 3) . "/processes/personal_process.php";
 
     <!-- HERO SECTION -->
     <?php
-    include_once dirname(__DIR__, 3) . "/templates/partials/hero_section.php";
+    include_once APP_ROOT . "/templates/partials/hero_section.php";
     heroSection("Modifications du profil");
     ?>
 
@@ -45,7 +44,7 @@ require_once dirname(__DIR__, 3) . "/processes/personal_process.php";
                     <div class="photo-upload">
                         <input type="file" class="inputForm" id="photo" name="photo">
                         <div id="preview-container">
-                            <img id="photo-preview" src="/uploads/person-circle.svg" alt="Choisir une photo">
+                            <img id="photo-preview" src="/assets/images/personal/person-circle.svg" alt="Choisir une photo">
                         </div>
                     </div>
                     <div class="inputForm" id="password-input">
@@ -95,14 +94,14 @@ require_once dirname(__DIR__, 3) . "/processes/personal_process.php";
                         <input type="date" id="dateRegister" name="dateRegister" value="<?= htmlspecialchars($carFirstRegist) ?>">
                     </div>
                     <div class="checkbox-block">
-                        <label for="smoker"><input type="checkbox" name="smoker" <?= ($carSmoker === 'Oui') ? 'checked' : '' ?>>Fumeurs acceptés</label>
+                        <label for="smoker"><input type="checkbox" name="smoker" id="smoker" <?= ($carSmoker === 'Oui') ? 'checked' : '' ?>>Fumeurs acceptés</label>
                     </div>
                     <div class="checkbox-block">
-                        <label for="animal"><input type="checkbox" name="animal" <?= ($carAnimal === 'Oui') ? 'checked' : '' ?>>Animaux acceptés</label>
+                        <label for="animal"><input type="checkbox" name="animal" id="animal" <?= ($carAnimal === 'Oui') ? 'checked' : '' ?>>Animaux acceptés</label>
                     </div>
                     <div class="inputForm">
                         <label for="preferences">Préférences</label>
-                        <textarea type="text" name="preferences"><?= htmlspecialchars($carPreferences) ?></textarea>
+                        <textarea type="text" name="preferences" id="preferences"><?= htmlspecialchars($carPreferences) ?></textarea>
                     </div>
                 </div>
             </div>
@@ -114,9 +113,9 @@ require_once dirname(__DIR__, 3) . "/processes/personal_process.php";
                     <?= $message; ?>
                 </div>
             <?php } ?>
-            <?php foreach ($errorsForm as $error) { ?>
+            <?php foreach ($errors as $errorMessage) { ?>
                 <div class="alert-container">
-                    <?= $error; ?>
+                    <?= $errorMessage; ?>
                 </div>
             <?php } ?>
         </form>
@@ -125,4 +124,4 @@ require_once dirname(__DIR__, 3) . "/processes/personal_process.php";
 
 </main>
 
-<?php require_once dirname(__DIR__, 3) . "/templates/partials/footer.php" ?>
+<?php require_once APP_ROOT . "/templates/partials/footer.php" ?>

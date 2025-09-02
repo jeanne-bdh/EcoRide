@@ -13,6 +13,8 @@ return [
 
     "/session/" => ["controller" => "App\Controller\SessionController", "action" => "session"],
 
+    "/personal/" => ["controller" => "App\Controller\PersonalController", "action" => "personal"],
+
     "/admin/" => ["controller" => "App\Controller\AdminController", "action" => "admin"],
 
     "/register/" => ["controller" => "App\Controller\RegisterController", "action" => "register"],

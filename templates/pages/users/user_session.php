@@ -38,7 +38,7 @@ require_once APP_ROOT . "/templates/partials/header.php";
         <a href="/carpools/history" class="card-session">
             <h3>Historique <br> des covoiturages</h3>
         </a>
-        <a href="/pages/users/personal-infos/personal_infos.php" class="card-session">
+        <a href="/personal" class="card-session">
             <h3>Modifications <br> du profil</h3>
         </a>
     </section>

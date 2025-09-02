@@ -1,5 +1,5 @@
 <?php
-
+/*
 function getTravelType (PDO $pdo,int $energyId): bool
 {
 
@@ -11,3 +11,4 @@ function getTravelType (PDO $pdo,int $energyId): bool
 
     return $query->execute();
 }
+*/
