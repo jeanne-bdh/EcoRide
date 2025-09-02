@@ -1,5 +1,5 @@
 function statusSession(idUser) {
-    fetch('/processes/status_session_process.php', {
+    fetch('/admin', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'

@@ -9,11 +9,6 @@ class AdminController extends Controller
     public function admin(): void
     {
         $userRepository = new UsersRepository();
-        $users = $userRepository->getUserForAdmin();
-
-        $this->render("pages/admin/account_suspension", [
-            "users" => $users
-        ]);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_users'])) {
             $userId = (int)($_POST['id_users']);
@@ -40,6 +35,13 @@ class AdminController extends Controller
                 http_response_code(400);
                 echo "Statut de session invalide";
             }
+            return;
         }
+
+        $users = $userRepository->getUserForAdmin();
+
+        $this->render("pages/admin/account_suspension", [
+            "users" => $users
+        ]);
     }
 }
