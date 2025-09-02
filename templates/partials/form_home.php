@@ -20,7 +20,7 @@
         <?php if (!empty($errors)) : ?>
             <?php foreach ($errors as $errorMessage) : ?>
                 <div class="alert-container">
-                    <?= htmlspecialchars($errorMessage); ?>
+                    <?= $errorMessage; ?>
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>

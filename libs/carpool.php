@@ -66,7 +66,6 @@ function getSearchCarpoolCard(PDO $pdo, string $cityDepart, string $cityArrival,
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
-    */
 
 function getCarpoolDetails(PDO $pdo, int $carpoolId): array | bool
 {
@@ -85,3 +84,4 @@ function getCarpoolDetails(PDO $pdo, int $carpoolId): array | bool
 
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
+    */

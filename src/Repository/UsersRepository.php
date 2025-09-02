@@ -173,7 +173,7 @@ class UsersRepository extends Repository
             ORDER BY id_users ASC";
         $stmt = $this->pdo->prepare($query);
         $stmt->execute();
-        $lists = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        $lists = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $users = [];
 

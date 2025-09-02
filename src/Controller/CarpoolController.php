@@ -48,4 +48,27 @@ class CarpoolController extends Controller
             "dateDepart" => $dateDepart,
         ]);
     }
+
+    public function details(): void
+    {
+        $carpoolRepository = new CarpoolsRepository();
+        $errors = [];
+        $carpool = null;
+
+        if (isset($_GET["id_carpool"])) {
+            $carpoolId = (int)$_GET["id_carpool"];
+            $carpool = $carpoolRepository->getCarpoolDetails((int) $carpoolId);
+
+            if (!$carpool) {
+                $errors[] = "Impossible d'afficher le détail du covoiturage";
+            }
+        } else {
+            $errors[] = "Aucun covoiturage sélectionné";
+        }
+
+        $this->render("pages/carpools/carpool_details", [
+            "carpool" => $carpool,
+            "errors"  => $errors
+        ]);
+    }
 }

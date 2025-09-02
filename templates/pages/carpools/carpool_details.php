@@ -1,13 +1,11 @@
 <?php
 
 require_once APP_ROOT . "/templates/partials/header.php";
-require_once dirname(__DIR__, 2) . "/libs/pdo.php";
-require_once dirname(__DIR__, 2) . "/libs/carpool.php";
-require_once dirname(__DIR__, 2) . "/libs/format_time.php";
-require_once dirname(__DIR__, 2) . "/libs/duration.php";
-require_once dirname(__DIR__, 2) . "/libs/review.php";
-require_once dirname(__DIR__, 2) . "/processes/details_carpool_process.php";
-require_once dirname(__DIR__, 2) . "/processes/participate_carpool_process.php";
+
+use App\Service\SessionManager;
+$session = new SessionManager();
+
+$errors = $errors ?? [];
 
 ?>
 
@@ -19,43 +17,45 @@ require_once dirname(__DIR__, 2) . "/processes/participate_carpool_process.php";
     heroSection("Détails du covoiturage");
     ?>
 
-    <?php foreach ($errors as $errorMessage) { ?>
-        <div class="alert-container">
-            <?= $errorMessage; ?>
-        </div>
-    <?php } ?>
+    <?php if (!empty($errors)) : ?>
+        <?php foreach ($errors as $errorMessage) : ?>
+            <div class="alert-container">
+                <?= $errorMessage; ?>
+            </div>
+        <?php endforeach; ?>
+    <?php endif; ?>
 
     <section>
         <?php
         $hideDetailsLink = true;
-        require_once APP_ROOT . "/templates/carpool_card.php";
+        require_once APP_ROOT . "/templates/partials/carpool_card.php";
         ?>
 
         <div class="carpool-card carpool-card-details-items" id="car-infos">
             <h6>Informations du véhicule</h6>
             <ul>
-                <li>Marque : <?= $carpool['brand']; ?></li>
-                <li>Modèle : <?= $carpool['model']; ?></li>
-                <li>Couleur : <?= $carpool['color']; ?></li>
-                <li>Energie : <?= $carpool['label_energy']; ?></li>
+                <li>Marque : <?= $carpool->getCar()->getBrand(); ?></li>
+                <li>Modèle : <?= $carpool->getCar()->getModel(); ?></li>
+                <li>Couleur : <?= $carpool->getCar()->getColor(); ?></li>
+                <li>Energie : <?= $carpool->getCar()->getEnergy()->getLabelEnergy(); ?></li>
             </ul>
         </div>
 
         <div class="carpool-card carpool-card-details-items" id="driver-preferences">
             <h6>Préférences du conducteur</h6>
             <ul>
-                <li>Non fumeur</li>
-                <li>Animaux acceptés</li>
-                <li><?= $carpool['preferences']; ?></li>
+                <li>Fumeurs acceptés : <?= $carpool->getCar()->getSmoker(); ?></li>
+                <li>Animaux acceptés : <?= $carpool->getCar()->getAnimal(); ?></li>
+                <li><?= $carpool->getCar()->getPreferences(); ?></li>
             </ul>
         </div>
 
         <div class="inputBtn">
-            <?php if (!isUserConnected()): ?>
+            <?php if (!$session->isUserConnected()): ?>
                 <a href="/login" class="btn-blue" id="btn-participate">Participer</a>
             <?php else: ?>
                 <form method="POST">
-                    <input type="hidden" name="id_carpool" value="<?= $carpool['id_carpool']; ?>">
+                    <input type="hidden" name="id_carpool" value="<?= $carpool->getIdCarpool(); ?>">
                     <button type="submit" class="btn-blue">Participer</button>
                     <?php foreach ($errors as $errorMessage) { ?>
                         <div class="alert-container">

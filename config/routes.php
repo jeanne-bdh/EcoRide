@@ -20,6 +20,7 @@ return [
 
     "/carpools/search/" => ["controller" => "App\Controller\CarpoolController", "action" => "search"],
     "/carpools/results/" => ["controller" => "App\Controller\CarpoolController", "action" => "results"],
+    "/carpools/details/" => ["controller" => "App\Controller\CarpoolController", "action" => "details"],
 
     "/contact/" => ["controller" => "App\Controller\ContactController", "action" => "contact"],
     "/contact/show/" => ["controller" => "App\Controller\ContactController", "action" => "show"],
