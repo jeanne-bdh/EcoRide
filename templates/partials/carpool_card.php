@@ -3,8 +3,8 @@
 <div class="carpool-card">
     <div class="carpool-card-top">
         <div class="tag" id="blue-tag">
-            <p><?= $carpool->getDateDepart()->format('d/m/Y');?></p>
-            
+            <p><?= $carpool->getDateDepart()->format('d/m/Y'); ?></p>
+
         </div>
         <div>
             <p class="p-credit"><?= $carpool->getPrice(); ?> crédit(s)</p>
@@ -61,8 +61,8 @@
         </div>
     </div>
 
-    <?php //require APP_ROOT . "/pages/users/future-carpool/future_carpool_card.php" ?>
+    <?php require APP_ROOT . "/templates/partials/carpool_actions_card.php" ?>
 
 </div>
 
-<?php //require_once APP_ROOT . "/pages/users/future-carpool/confirm_modal.php"; ?>
+<?php require_once APP_ROOT . "/templates/partials/confirm_modal.php"; ?>

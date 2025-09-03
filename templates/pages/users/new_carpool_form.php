@@ -78,7 +78,7 @@ require_once APP_ROOT . "/templates/partials/header.php";
             <div class="inputBtn">
                 <button type="submit" name="saveNewCarpool" class="btn-blue btn-green btn-form" id="btn-valid-new-carpool">Soumettre</button>
             </div>
-            <a class="link-future-carpool" href="/carpools/future?view=future">> Accéder aux covoiturages à venir</a>
+            <a class="link-future-carpool" href="/carpools/future">> Accéder aux covoiturages à venir</a>
             <?php foreach ($messagesForm as $message) { ?>
                 <div class="success">
                     <?= $message; ?>

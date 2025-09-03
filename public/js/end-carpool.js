@@ -1,5 +1,5 @@
 function endCarpool(idEndCarpool) {
-    fetch('/processes/end_carpool_process.php', {
+    fetch('/carpools/future', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'

@@ -80,7 +80,7 @@ class PersonalController extends Controller
                 }
             }
         }
-        $this->render("pages/users/personal-infos/personal_infos", [
+        $this->render("pages/users/personal_infos", [
             "errorsForm" => $errorsForm,
             "messagesForm" => $messagesForm,
             "userInfos" => $userInfos,

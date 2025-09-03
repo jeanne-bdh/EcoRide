@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_carpool'])) {
                 insertCarpoolsUsers($pdo, $userId, $carpoolId, $roleInCarpool, $statusInCarpool);
                 updateRemainingSeatInCarpool($pdo, $carpoolId);
 
-                header("Location: /pages/users/future-carpool/future_carpool.php?view=future");
+                header("Location: /pages/users/future_carpool.php?view=future");
                 exit;
             }
         }

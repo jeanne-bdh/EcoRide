@@ -8,7 +8,7 @@ function cancelCarpool(idCarpool) {
     confirmYes.onclick = () => {
         modal.classList.add('hidden');
 
-        fetch('/processes/cancel_carpool_process.php', {
+        fetch('/carpools/cancel', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'

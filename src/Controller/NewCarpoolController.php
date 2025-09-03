@@ -60,7 +60,7 @@ class NewCarpoolController extends Controller
                 }
             }
         }
-        $this->render("pages/users/new-carpool/new_carpool_form", [
+        $this->render("pages/users/new_carpool_form", [
             "errorsForm" => $errorsForm,
             "messagesForm" => $messagesForm,
             "carpoolId" => $carpoolId,
