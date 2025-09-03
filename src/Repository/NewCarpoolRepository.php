@@ -75,12 +75,12 @@ class NewCarpoolRepository extends Repository
         return $stmt->execute();
     }
 
-    public function validateDate($date = 0)
+    public function validateDate(string $date): array
     {
         $errors = [];
         $today = date("Y-m-d");
 
-        if ($date < $today) {
+        if (strtotime($date) < strtotime($today)) {
             $errors[] = "La date ne peut être antérieure";
         }
 

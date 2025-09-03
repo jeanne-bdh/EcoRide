@@ -41,7 +41,7 @@ class NewCarpoolController extends Controller
                 $errorsForm[] = "Aucun véhicule sélectionné";
             }
 
-            $errorsForm = array_merge($errorsForm, $newCarpoolRepository->validatePrice($price), $newCarpoolRepository->validateDuration($timeDepart, $timeArrival), $newCarpoolRepository->validateDate());
+            $errorsForm = array_merge($errorsForm, $newCarpoolRepository->validatePrice($price), $newCarpoolRepository->validateDuration($timeDepart, $timeArrival), $newCarpoolRepository->validateDate($dateCarpool));
 
             if (empty($errorsForm)) {
                 $carId = (int) $_POST['car-select'];
