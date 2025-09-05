@@ -136,7 +136,7 @@ class UsersRepository extends Repository
         $insertQuery = "INSERT INTO users (pseudo, email, password, id_status_session, id_role, credit)
                     VALUES (:pseudo, :email, :password, :statusId, :roleId, 20)";
 
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
         $stmt = $this->pdo->prepare($insertQuery);
         $stmt->bindValue(':pseudo', $pseudo);
@@ -178,15 +178,15 @@ class UsersRepository extends Repository
 
         foreach ($lists as $list) {
             $statusSession = (new StatusSession())
-                    ->setLabelStatusSession($list['label_status_session']);
+                ->setLabelStatusSession($list['label_status_session']);
 
-                $user = (new Users())
-                    ->setIdUsers($list['id_users'])
-                    ->setPseudo($list['pseudo'])
-                    ->setEmail($list['email'])
-                    ->setLastname($list['lastname'])
-                    ->setFirstname($list['firstname'])
-                    ->setStatusSession($statusSession);
+            $user = (new Users())
+                ->setIdUsers($list['id_users'])
+                ->setPseudo($list['pseudo'])
+                ->setEmail($list['email'])
+                ->setLastname($list['lastname'])
+                ->setFirstname($list['firstname'])
+                ->setStatusSession($statusSession);
 
             $users[] = $user;
         }
@@ -241,5 +241,13 @@ class UsersRepository extends Repository
         } else {
             return 0;
         }
+    }
+
+    public function updateCreditDriver($userId, $price): bool
+    {
+        $stmt = $this->pdo->prepare("UPDATE users SET credit = credit + :price - 2 WHERE id_users = :id_users");
+        $stmt->bindValue(':price', $price, PDO::PARAM_INT);
+        $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
+        return $stmt->execute();
     }
 }

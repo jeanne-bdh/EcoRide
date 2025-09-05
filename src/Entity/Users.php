@@ -17,6 +17,7 @@ class Users extends Entity
     protected Roles $role;
     protected ?Profiles $profile = null;
     protected StatusSession $statusSession;
+    protected ?CarpoolsUsers $carpoolsUsers;
 
     /**
      * Get the value of idUsers
@@ -263,6 +264,24 @@ class Users extends Entity
     public function setStatusSession(StatusSession $statusSession): self
     {
         $this->statusSession = $statusSession;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of profile
+     */
+    public function getCarpoolsUsers(): ?CarpoolsUsers
+    {
+        return $this->carpoolsUsers;
+    }
+
+    /**
+     * Set the value of profile
+     */
+    public function setCarpoolsUsers(?CarpoolsUsers $carpoolsUsers): self
+    {
+        $this->carpoolsUsers = $carpoolsUsers;
 
         return $this;
     }

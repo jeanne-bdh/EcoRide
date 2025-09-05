@@ -1,5 +1,5 @@
 <?php
-
+/*
 function getRoleInCarpool(PDO $pdo, $carpoolId, $userId): array
 {
     $stmt = $pdo->prepare("SELECT role_in_carpool, status_in_carpool
@@ -67,3 +67,4 @@ function updateEndStatusDriver(PDO $pdo, $carpoolId): bool
     $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
     return $stmt->execute();
 }
+    */

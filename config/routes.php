@@ -31,6 +31,10 @@ return [
 
     "/participate/" => ["controller" => "App\Controller\ParticipateController", "action" => "participate"],
 
+    "/carpools/start/" => ["controller" => "App\Controller\StartController", "action" => "start"],
+    
+    "/carpools/end/" => ["controller" => "App\Controller\EndController", "action" => "end"],
+
     "/contact/" => ["controller" => "App\Controller\ContactController", "action" => "contact"],
     "/contact/show/" => ["controller" => "App\Controller\ContactController", "action" => "show"],
 ];

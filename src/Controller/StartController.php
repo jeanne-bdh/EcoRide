@@ -2,19 +2,19 @@
 
 namespace App\Controller;
 
-use PDO;
+use App\Repository\CarpoolsRepository;
 
-class startController extends Controller
+class StartController extends Controller
 {
     public function start(): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_carpool'])) {
             $carpoolId = (int)($_POST['id_carpool']);
 
-            $stmt = $this->pdo->prepare("UPDATE carpools SET id_status_carpool = 3 WHERE id_carpool = :id_carpool");
-            $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
+            $carpoolRepository = new CarpoolsRepository();
+            $start = $carpoolRepository->startCarpool($carpoolId);
 
-            if ($stmt->execute()) {
+            if ($start) {
                 http_response_code(200);
                 echo "Démarré";
             } else {

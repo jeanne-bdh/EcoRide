@@ -1,5 +1,5 @@
 function startCarpool(idStartCarpool) {
-    fetch('/carpools/future', {
+    fetch('/carpools/start', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'

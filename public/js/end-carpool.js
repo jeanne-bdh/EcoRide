@@ -1,5 +1,5 @@
 function endCarpool(idEndCarpool) {
-    fetch('/carpools/future', {
+    fetch('/carpools/end', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -10,6 +10,7 @@ function endCarpool(idEndCarpool) {
             if (!response.ok) throw new Error('Erreur lors de la clôture du covoiturage');
             return response.text();
         })
+
         .then(() => {
             const buttons = document.querySelectorAll(`#btn-end-carpool-${idEndCarpool}`);
             buttons.forEach(btn => {

@@ -195,11 +195,11 @@ class CarpoolsRepository extends Repository
             JOIN users u ON cp.id_users = u.id_users
             JOIN cars c ON c.id_users = cp.id_users
             JOIN travel_types t ON c.id_travel_type = t.id_travel_type
-            WHERE cp.date_depart >= CURRENT_DATE
+            WHERE (cp.date_depart >= CURRENT_DATE)
             AND cu.id_users = :id_users
             AND label_status_carpool IN (\'Confirmé\', \'Démarré\')
             ORDER BY cp.date_depart ASC'
-            );
+        );
         $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
         $stmt->execute();
 
@@ -217,7 +217,7 @@ class CarpoolsRepository extends Repository
             $car = (new Cars())
                 ->setTravelType($travelType);
 
-            (new CarpoolsUsers())
+            $carpoolsUsers = (new CarpoolsUsers())
                 ->setIdUsers($user)
                 ->setRoleInCarpool($row['role_in_carpool']);
 
@@ -235,7 +235,8 @@ class CarpoolsRepository extends Repository
                 ->setPrice($row['price'])
                 ->setUser($user)
                 ->setCar($car)
-                ->setStatusCarpool($statusCarpool);
+                ->setStatusCarpool($statusCarpool)
+                ->setCarpoolsUsers($carpoolsUsers);
 
             $future[] = $carpool;
         }
@@ -257,5 +258,39 @@ class CarpoolsRepository extends Repository
             return $updateStmt->execute();
         }
         return false;
+    }
+
+    public function startCarpool(int $carpoolId): bool
+    {
+        $stmt = $this->pdo->prepare("UPDATE carpools SET id_status_carpool = 3 WHERE id_carpool = :id_carpool");
+        $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+
+    public function getPriceAndDriver($carpoolId): ?Carpools
+    {
+        $stmt = $this->pdo->prepare("SELECT price, id_users FROM carpools WHERE id_carpool = :id_carpool");
+        $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if (!$row) {
+            return null;
+        }
+
+        $user = (new Users())
+            ->setIdUsers($row['id_users']);
+
+        return (new Carpools())
+            ->setPrice($row['price'])
+            ->setUser($user);
+    }
+
+    public function endCarpool($carpoolId): bool
+    {
+        $stmt = $this->pdo->prepare("UPDATE carpools SET id_status_carpool = 4 WHERE id_carpool = :id_carpool");
+        $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
+        return $stmt->execute();
     }
 }
