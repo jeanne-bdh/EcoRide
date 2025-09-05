@@ -12,6 +12,7 @@
     <section class="container-form" id="container-form-register">
         <form action="/register/form" method="POST">
 
+            <?php $errors = $errors ?? []; ?>
             <?php if (!empty($errors)) { ?>
                 <div class="alert-container">
                     <?php foreach ($errors as $errorMessage) { ?>

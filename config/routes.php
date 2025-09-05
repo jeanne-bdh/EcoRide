@@ -29,6 +29,8 @@ return [
     "/carpools/future/" => ["controller" => "App\Controller\CarpoolController", "action" => "future"],
     "/carpools/cancel/" => ["controller" => "App\Controller\CarpoolController", "action" => "cancel"],
 
+    "/participate/" => ["controller" => "App\Controller\ParticipateController", "action" => "participate"],
+
     "/contact/" => ["controller" => "App\Controller\ContactController", "action" => "contact"],
     "/contact/show/" => ["controller" => "App\Controller\ContactController", "action" => "show"],
 ];

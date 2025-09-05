@@ -2,7 +2,6 @@
 
 namespace App\Repository;
 
-use App\Entity\Profiles;
 use App\Entity\StatusSession;
 use App\Entity\Users;
 use PDO;

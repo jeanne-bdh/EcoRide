@@ -1,5 +1,5 @@
 <?php
-
+/*
 function getPrice(PDO $pdo, int $carpoolId): int
 {
     $stmt = $pdo->prepare("SELECT price FROM carpools WHERE id_carpool = :id_carpool");
@@ -7,3 +7,4 @@ function getPrice(PDO $pdo, int $carpoolId): int
     $stmt->execute();
     return $stmt->fetchColumn();
 }
+    */

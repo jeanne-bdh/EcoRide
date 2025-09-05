@@ -3,6 +3,7 @@
 require_once APP_ROOT . "/templates/partials/header.php";
 
 use App\Service\SessionManager;
+
 $session = new SessionManager();
 
 $errors = $errors ?? [];
@@ -16,14 +17,6 @@ $errors = $errors ?? [];
     include_once APP_ROOT . "/templates/partials/hero_section.php";
     heroSection("Détails du covoiturage");
     ?>
-
-    <?php if (!empty($errors)) : ?>
-        <?php foreach ($errors as $errorMessage) : ?>
-            <div class="alert-container">
-                <?= $errorMessage; ?>
-            </div>
-        <?php endforeach; ?>
-    <?php endif; ?>
 
     <section>
         <?php
@@ -54,16 +47,16 @@ $errors = $errors ?? [];
             <?php if (!$session->isUserConnected()): ?>
                 <a href="/login" class="btn-blue" id="btn-participate">Participer</a>
             <?php else: ?>
-                <form method="POST">
-                    <input type="hidden" name="id_carpool" value="<?= $carpool->getIdCarpool(); ?>">
-                    <button type="submit" class="btn-blue">Participer</button>
-                    <?php foreach ($errors as $errorMessage) { ?>
-                        <div class="alert-container">
-                            <?= $errorMessage; ?>
-                        </div>
-                    <?php } ?>
-                </form>
-            <?php endif; ?>
+                    <form method="POST" action="/participate">
+                        <input type="hidden" name="id_carpool" value="<?= $carpool->getIdCarpool(); ?>">
+                        <button type="submit" class="btn-blue">Participer</button>
+                        <?php foreach ($errors as $errorMessage) : ?>
+                            <div class="alert-container">
+                                <?= $errorMessage; ?>
+                            </div>
+                        <?php endforeach ?>
+                    </form>
+                <?php endif; ?>
         </div>
 
     </section>

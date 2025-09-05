@@ -1,5 +1,5 @@
 <?php
-
+/*
 require_once APP_ROOT . "/../libs/pdo.php";
 require_once APP_ROOT . "/../libs/session.php";
 require_once APP_ROOT . "/../libs/seat.php";
@@ -58,9 +58,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_carpool'])) {
                 insertCarpoolsUsers($pdo, $userId, $carpoolId, $roleInCarpool, $statusInCarpool);
                 updateRemainingSeatInCarpool($pdo, $carpoolId);
 
-                header("Location: /pages/users/future_carpool.php?view=future");
+                header("Location: /carpools/future");
                 exit;
             }
         }
     }
 }
+*/

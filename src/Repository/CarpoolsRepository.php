@@ -195,7 +195,7 @@ class CarpoolsRepository extends Repository
             JOIN users u ON cp.id_users = u.id_users
             JOIN cars c ON c.id_users = cp.id_users
             JOIN travel_types t ON c.id_travel_type = t.id_travel_type
-            WHERE cp.date_depart > CURRENT_DATE
+            WHERE cp.date_depart >= CURRENT_DATE
             AND cu.id_users = :id_users
             AND label_status_carpool IN (\'Confirmé\', \'Démarré\')
             ORDER BY cp.date_depart ASC'

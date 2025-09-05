@@ -18,7 +18,6 @@ function getRemainingSeat(PDO $pdo, int $carpoolId, int $carId): bool|int
 
     return $update->execute();
 }
-*/
 
 function getRemainingSeatInCarpool(PDO $pdo, int $carpoolId): int
 {
@@ -34,3 +33,4 @@ function updateRemainingSeatInCarpool(PDO $pdo, int $carpoolId): bool
     $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
     return $stmt->execute();
 }
+    */

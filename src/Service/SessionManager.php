@@ -6,13 +6,12 @@ class SessionManager
 {
     public function __construct()
     {
-        session_set_cookie_params([
-            'lifetime' => 3600,
-            'path' => '/',
-            'httponly' => true
-        ]);
-
         if (session_status() === PHP_SESSION_NONE) {
+            session_set_cookie_params([
+                'lifetime' => 3600,
+                'path' => '/',
+                'httponly' => true
+            ]);
             session_start();
         }
     }
@@ -31,7 +30,7 @@ class SessionManager
     {
         return isset($_SESSION['users']);
     }
-    
+
     public function logout(): void
     {
         session_regenerate_id(true);

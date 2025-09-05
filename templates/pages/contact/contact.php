@@ -16,6 +16,7 @@ require_once APP_ROOT . "/templates/partials/header.php";
     <section class="container-form" id="container-form-contact">
         <form method="POST" id="contactForm">
 
+            <?php $errors = $errors ?? []; ?>
             <?php foreach ($successContact as $message) { ?>
                 <div class="success">
                     <?= $message; ?>

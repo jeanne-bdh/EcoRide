@@ -1,5 +1,5 @@
 <?php
-
+/*
 function getUserCheck(PDO $pdo, int $userId, int $carpoolId) : PDOStatement
 {
     $stmtUserCheck = $pdo->prepare("SELECT * FROM carpools_users WHERE id_users = :id_users AND id_carpool = :id_carpool");
@@ -9,3 +9,4 @@ function getUserCheck(PDO $pdo, int $userId, int $carpoolId) : PDOStatement
     $stmtUserCheck->execute();
     return $stmtUserCheck;
 }
+    */

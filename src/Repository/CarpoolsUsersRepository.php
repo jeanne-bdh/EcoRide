@@ -2,67 +2,48 @@
 
 namespace App\Repository;
 
-use App\Entity\Carpools;
-use App\Entity\CarpoolsUsers;
-use App\Entity\Users;
 use PDO;
 
-class CarpoolsRepository extends Repository
+class CarpoolsUsersRepository extends Repository
 {
-    private PDO $pdo;
-
-    public function __construct(PDO $pdo)
+    public function getUserCheck(int $userId, int $carpoolId)
     {
-        $this->pdo = $pdo;
+        $stmtUserCheck = $this->pdo->prepare("SELECT * FROM carpools_users WHERE id_users = :id_users AND id_carpool = :id_carpool");
+        $stmtUserCheck->bindValue(':id_users', $userId, PDO::PARAM_INT);
+        $stmtUserCheck->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
+
+        $stmtUserCheck->execute();
+        return $stmtUserCheck;
     }
 
-    public function find(int $idCarpool, int $idUsers): ?CarpoolsUsers
+    public function getPrice(int $carpoolId): int
     {
-        $query = "SELECT *
-                FROM carpools_users
-                WHERE id_carpool = :id_carpool
-                AND id_users = :id_users";
-
-        $stmt = $this->pdo->prepare($query);
-        $stmt->bindValue(':id_carpool', $idCarpool, PDO::PARAM_INT);
-        $stmt->bindValue(':id_users', $idUsers, PDO::PARAM_INT);
+        $stmt = $this->pdo->prepare("SELECT price FROM carpools WHERE id_carpool = :id_carpool");
+        $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
         $stmt->execute();
+        return $stmt->fetchColumn();
+    }
 
-        $carpoolsUsers = $stmt->fetch(PDO::FETCH_ASSOC);
+    public function getRemainingSeatInCarpool(int $carpoolId): int
+    {
+        $stmt = $this->pdo->prepare("SELECT remaining_seat FROM carpools WHERE id_carpool = :id_carpool");
+        $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchColumn();
+    }
 
-        if (!$carpoolsUsers) {
-            return null;
-        }
+    public function updateCreditPassenger(int $driverId, int $price): bool
+    {
+        $stmt = $this->pdo->prepare('UPDATE users SET credit = credit - :price WHERE id_users = :id_users');
+        $stmt->bindValue(':id_users', $driverId, PDO::PARAM_INT);
+        $stmt->bindValue(':price', $price, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
 
-        $statusCarpool = (new StatusCarpool())
-            ->setIdStatusCarpool($carpools['id_status_carpool'])
-            ->setLabelStatusCarpool($carpools['label_status_carpool']);
-
-        $car = (new Cars())
-            ->setIdCar($carpools['id_car'])
-            ->setModel($carpools['model'])
-            ->setBrand($carpools['brand'])
-            ->setColor($carpools['color'])
-            ->setNbPlate($carpools['nb_plate'])
-            ->setFirstRegist($carpools['first_regist'])
-            ->setSeatsNb($carpools['seats_nb'])
-            ->setSmoker($carpools['smoker'])
-            ->setAnimal($carpools['animal'])
-            ->setPreferences($carpools['preferences'])
-            ->setEnergy((new Energies())->setIdEnergy($carpools['id_energy']))
-            ->setUser((new Users())->setIdUsers($carpools['id_users']))
-            ->setTravelType((new TravelTypes())->setIdTravelType($carpools['id_travel_type']));
-
-        return (new Carpools())
-            ->setIdCarpool($carpools['id_carpool'])
-            ->setDateDepart(new \DateTime($carpools['date_depart']))
-            ->setTimeDepart(new \DateTime($carpools['time_depart']))
-            ->setTimeArrival(new \DateTime($carpools['time_arrival']))
-            ->setLocalisationDepart($carpools['localisation_depart'])
-            ->setLocalisationArrival($carpools['localisation_arrival'])
-            ->setRemainingSeat($carpools['remaining_seat'])
-            ->setPrice($carpools['price'])
-            ->setCar($car)
-            ->setStatusCarpool($statusCarpool);
+    public function updateRemainingSeatInCarpool(int $carpoolId): bool
+    {
+        $stmt = $this->pdo->prepare("UPDATE carpools SET remaining_seat = remaining_seat - 1 WHERE id_carpool = :id_carpool");
+        $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
+        return $stmt->execute();
     }
 }

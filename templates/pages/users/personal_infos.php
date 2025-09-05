@@ -1,6 +1,7 @@
 <?php
 
 require_once APP_ROOT . "/templates/partials/header.php";
+$errors = $errors ?? [];
 
 ?>
 
