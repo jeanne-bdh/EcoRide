@@ -150,7 +150,7 @@ class UsersRepository extends Repository
 
     public function verifyUserLoginPassword(string $email, string $password): bool|array
     {
-        $query = "SELECT * FROM users WHERE email = :email";
+        $query = "SELECT * FROM users WHERE email = :email AND id_status_session = 1";
         $stmt = $this->pdo->prepare($query);
         $stmt->bindValue(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
