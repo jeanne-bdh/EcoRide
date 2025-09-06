@@ -1,6 +1,7 @@
 <?php
 
 require_once APP_ROOT . "/templates/partials/header.php";
+
 $errors = $errors ?? [];
 
 ?>
@@ -109,16 +110,14 @@ $errors = $errors ?? [];
             <div class="inputBtn">
                 <button type="submit" name="savePersonalForm" class="btn-blue btn-form" id="btn-form">Enregistrer</button>
             </div>
+
             <?php foreach ($messagesForm as $message) { ?>
                 <div class="success">
                     <?= $message; ?>
                 </div>
             <?php } ?>
-            <?php foreach ($errors as $errorMessage) { ?>
-                <div class="alert-container">
-                    <?= $errorMessage; ?>
-                </div>
-            <?php } ?>
+
+            <?php include_once APP_ROOT . "/templates/errors/default.php"; ?>
         </form>
 
     </section>

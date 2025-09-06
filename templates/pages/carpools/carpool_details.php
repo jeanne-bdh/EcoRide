@@ -50,11 +50,8 @@ $errors = $errors ?? [];
                     <form method="POST" action="/participate">
                         <input type="hidden" name="id_carpool" value="<?= $carpool->getIdCarpool(); ?>">
                         <button type="submit" class="btn-blue">Participer</button>
-                        <?php foreach ($errors as $errorMessage) : ?>
-                            <div class="alert-container">
-                                <?= $errorMessage; ?>
-                            </div>
-                        <?php endforeach ?>
+                        
+                        <?php include_once APP_ROOT . "/templates/errors/default.php"; ?>
                     </form>
                 <?php endif; ?>
         </div>

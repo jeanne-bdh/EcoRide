@@ -2,8 +2,6 @@
 
 require_once APP_ROOT . "/templates/partials/header.php";
 
-$errors = $errors ?? [];
-
 ?>
 
 <main>
@@ -21,12 +19,6 @@ $errors = $errors ?? [];
     </section>
 
     <!-- MENU SESSION -->
-
-    <?php foreach ($errors as $errorMessage) { ?>
-        <div class="alert-container" id="errorPersonalInfos">
-            <?= $errorMessage; ?>
-        </div>
-    <?php } ?>
 
     <section class="menu-session">
         <?php if ($getNewCarpoolForm): ?>

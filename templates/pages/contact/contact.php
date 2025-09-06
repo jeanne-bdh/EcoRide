@@ -2,6 +2,8 @@
 
 require_once APP_ROOT . "/templates/partials/header.php";
 
+$errors = $errors ?? [];
+
 ?>
 
 <main>
@@ -14,19 +16,14 @@ require_once APP_ROOT . "/templates/partials/header.php";
 
     <!-- FORMULAIRE -->
     <section class="container-form" id="container-form-contact">
-        <form method="POST" id="contactForm">
+        <form method="POST" action="/contact/show" id="contactForm">
 
-            <?php $errors = $errors ?? []; ?>
             <?php foreach ($successContact as $message) { ?>
                 <div class="success">
                     <?= $message; ?>
                 </div>
             <?php } ?>
-            <?php foreach ($errors as $errorMessage) { ?>
-                <div class="alert-container">
-                    <?= $errorMessage; ?>
-                </div>
-            <?php } ?>
+            <?php include_once APP_ROOT . "/templates/errors/default.php"; ?>
 
             <div class="inputForm">
                 <label for="inputTitle">Titre</label>

@@ -1,4 +1,10 @@
-<?php require_once APP_ROOT . "/templates/partials/header.php"; ?>
+<?php
+
+require_once APP_ROOT . "/templates/partials/header.php";
+
+$errors = $errors ?? [];
+
+?>
 
 <main>
 
@@ -12,16 +18,7 @@
     <section class="container-form" id="container-form-register">
         <form action="/register/form" method="POST">
 
-            <?php $errors = $errors ?? []; ?>
-            <?php if (!empty($errors)) { ?>
-                <div class="alert-container">
-                    <?php foreach ($errors as $errorMessage) { ?>
-                        <div class="alert">
-                            <?= $errorMessage ?>
-                        </div>
-                    <?php } ?>
-                </div>
-            <?php } ?>
+            <?php include_once APP_ROOT . "/templates/errors/default.php"; ?>
 
             <div class="inputForm">
                 <label for="inputPseudoRegister">Pseudo :</label>

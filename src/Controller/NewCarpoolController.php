@@ -14,7 +14,7 @@ class NewCarpoolController extends Controller
         $userRepository = new UsersRepository();
         $session = new SessionManager();
 
-        $errorsForm = [];
+        $errors = [];
         $messagesForm = [];
 
         $userId = $session->getUserId();
@@ -38,12 +38,12 @@ class NewCarpoolController extends Controller
         if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['saveNewCarpool'])) {
 
             if (!isset($_POST['car-select']) || empty($_POST['car-select'])) {
-                $errorsForm[] = "Aucun véhicule sélectionné";
+                $errors[] = "Aucun véhicule sélectionné";
             }
 
-            $errorsForm = array_merge($errorsForm, $newCarpoolRepository->validatePrice($price), $newCarpoolRepository->validateDuration($timeDepart, $timeArrival), $newCarpoolRepository->validateDate($dateCarpool));
+            $errors = array_merge($errors, $newCarpoolRepository->validatePrice($price), $newCarpoolRepository->validateDuration($timeDepart, $timeArrival), $newCarpoolRepository->validateDate($dateCarpool));
 
-            if (empty($errorsForm)) {
+            if (empty($errors)) {
                 $carId = (int) $_POST['car-select'];
                 $carpoolId = $newCarpoolRepository->saveNewCarpool($localDepart, $localArrival, $dateCarpool, $timeDepart, $timeArrival, $price, $userId, $carId);
 
@@ -55,13 +55,13 @@ class NewCarpoolController extends Controller
                     if ($insertDriver) {
                         $messagesForm[] = "Votre voyage a été enregistré avec succès";
                     } else {
-                        $errorsForm[] = "Erreur lors de l'enregistrement du voyage";
+                        $errors[] = "Erreur lors de l'enregistrement du voyage";
                     }
                 }
             }
         }
         $this->render("pages/users/new_carpool_form", [
-            "errorsForm" => $errorsForm,
+            "errors" => $errors,
             "messagesForm" => $messagesForm,
             "carpoolId" => $carpoolId,
             "cars" => $cars,

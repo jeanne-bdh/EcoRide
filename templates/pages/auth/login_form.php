@@ -2,6 +2,8 @@
 
 require_once APP_ROOT . "/templates/partials/header.php";
 
+$errors = $errors ?? [];
+
 ?>
 
 <main>
@@ -13,16 +15,10 @@ require_once APP_ROOT . "/templates/partials/header.php";
     ?>
 
     <!-- FORMULAIRE -->
-    <?php $errors = $errors ?? []; ?>
-
     <section class="container-form" id="container-form-login">
         <form class="form-login" action="/login/show" method="POST">
 
-            <?php foreach ($errors as $errorMessage) { ?>
-                <div class="alert-container">
-                    <?= $errorMessage; ?>
-                </div>
-            <?php } ?>
+            <?php include_once APP_ROOT . "/templates/errors/default.php"; ?>
 
             <?php if (isset($_SESSION['register_success'])) { ?>
                 <div class="success">

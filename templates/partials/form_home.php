@@ -17,12 +17,6 @@
         <div class="inputBtn">
             <button type="submit" name="searchCarpool" class="btn-blue btn-green">Rechercher</button>
         </div>
-        <?php if (!empty($errors)) : ?>
-            <?php foreach ($errors as $errorMessage) : ?>
-                <div class="alert-container">
-                    <?= $errorMessage; ?>
-                </div>
-            <?php endforeach; ?>
-        <?php endif; ?>
+        <?php include_once APP_ROOT . "/templates/errors/default.php"; ?>
     </form>
 </section>

@@ -22,4 +22,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
         form.prepend(messageContainer);
     });
-});
+})

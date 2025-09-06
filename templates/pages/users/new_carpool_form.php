@@ -2,6 +2,8 @@
 
 require_once APP_ROOT . "/templates/partials/header.php";
 
+$errors = $errors ?? [];
+
 ?>
 
 <main>
@@ -79,16 +81,14 @@ require_once APP_ROOT . "/templates/partials/header.php";
                 <button type="submit" name="saveNewCarpool" class="btn-blue btn-green btn-form" id="btn-valid-new-carpool">Soumettre</button>
             </div>
             <a class="link-future-carpool" href="/carpools/future">> Accéder aux covoiturages à venir</a>
+
             <?php foreach ($messagesForm as $message) { ?>
                 <div class="success">
                     <?= $message; ?>
                 </div>
             <?php } ?>
-            <?php foreach ($errorsForm as $error) { ?>
-                <div class="alert-container">
-                    <?= $error; ?>
-                </div>
-            <?php } ?>
+            
+            <?php include_once APP_ROOT . "/templates/errors/default.php"; ?>
         </form>
 
     </section>

@@ -8,18 +8,12 @@ class ContactRepository
 {
     private $collection;
 
-    public function __construct()
+    public function __construct(Client $client)
     {
-        $client = new Client(getenv('MONGODB_URI'));
         $this->collection = $client->ecoride->contact;
     }
 
-    public function findAll(): array
-    {
-        return $this->collection->find()->toArray();
-    }
-
-    public function insert(string $title, string $email, string $message): void
+    public function insertContact(string $title, string $email, string $message): void
     {
         $this->collection->insertOne([
             "title" => $title,
