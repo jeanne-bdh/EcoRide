@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ]);
 
         echo json_encode(["Votre message a bien été envoyé"]);
-    } catch (Exception $e) {
+    } catch (\Exception $e) {
         http_response_code(500);
         echo json_encode(["Une erreur inattendue s’est produite sur le serveur"]);
     }

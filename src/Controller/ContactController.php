@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Exception\ExceptionPath;
 use App\Repository\ContactRepository;
 use MongoDB\Client;
 

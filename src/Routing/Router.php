@@ -3,7 +3,7 @@
 namespace App\Routing;
 
 use App\Controller\ErrorController;
-use App\Exception\ExceptionPath;
+use Exception;
 
 class Router
 {
@@ -18,7 +18,7 @@ class Router
         try {
             $path = $this->normalizePath($uri);
             if (!isset($this->routes[$path])) {
-                throw new ExceptionPath("La route n'existe pas");
+                throw new \Exception("La route n'existe pas");
             }
             $route = $this->routes[$path];
             
@@ -26,14 +26,14 @@ class Router
             $action = $route["action"];
 
             if (!class_exists($controllerPath)) {
-                throw new ExceptionPath("La classe n'existe pas");
+                throw new \Exception("La classe n'existe pas");
             }
             $controller = new $controllerPath();
             if (!method_exists($controller, $action)) {
-                throw new ExceptionPath("L'action n'existe pas");
+                throw new \Exception("L'action n'existe pas");
             }
             $controller->$action();
-        } catch(ExceptionPath $e) {
+        } catch(\Exception $e) {
             $errorController = new ErrorController();
             $errorController->show($e->getMessage());
         }

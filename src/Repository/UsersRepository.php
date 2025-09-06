@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\StatusSession;
 use App\Entity\Users;
+use Exception;
 use PDO;
 
 class UsersRepository extends Repository
@@ -16,7 +17,7 @@ class UsersRepository extends Repository
             if ($user["pseudo"] === "") {
                 $errors["pseudo"] = "Le champ pseudo est requis";
             } else {
-                if (strlen(trim($user["pseudo"]))  < 1) {
+                if (strlen(trim($user["pseudo"]))  < 2) {
                     $errors["pseudo"] = "Le pseudo doit avoir au moins 2 caractères";
                 }
             }
@@ -136,7 +137,14 @@ class UsersRepository extends Repository
         $insertQuery = "INSERT INTO users (pseudo, email, password, id_status_session, id_role, credit)
                     VALUES (:pseudo, :email, :password, :statusId, :roleId, 20)";
 
-        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+        $pepper = $_ENV['PEPPER'] ?? getenv('PEPPER') ?? null;
+
+        if (!$pepper) {
+            throw new \Exception("La clé PEPPER est manquante");
+        }
+        $pwd_peppered = hash_hmac("sha256", $password, $pepper);
+
+        $hashedPassword = password_hash($pwd_peppered, PASSWORD_BCRYPT);
 
         $stmt = $this->pdo->prepare($insertQuery);
         $stmt->bindValue(':pseudo', $pseudo);
@@ -156,7 +164,14 @@ class UsersRepository extends Repository
         $stmt->execute();
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($user && password_verify($password, $user['password'])) {
+        $pepper = $_ENV['PEPPER'] ?? getenv('PEPPER') ?? null;
+
+        if (!$pepper) {
+            throw new \Exception("La clé PEPPER est manquante");
+        }
+        $pwd_peppered = hash_hmac("sha256", $password, $pepper);
+
+        if ($user && password_verify($pwd_peppered, $user['password'])) {
             return $user;
         } else {
             return false;
