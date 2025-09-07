@@ -8,18 +8,22 @@ document.addEventListener("DOMContentLoaded", function () {
         const email = document.getElementById("inputEmailContact").value;
         const message = document.getElementById("inputMsgContact").value;
 
-        const res = await fetch("/contact/show/", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ title, email, message })
-        });
+        try {
+            const res = await fetch("/contact/show/", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ title, email, message })
+            });
 
-        const data = await res.json();
-        const form = document.getElementById("contactForm");
-        const messageContainer = document.createElement("div");
-        messageContainer.className = "success";
-        messageContainer.innerText = data[0] || "Message envoyé";
+            const data = await res.json();
+            const form = document.getElementById("contactForm");
+            const messageContainer = document.createElement("div");
+            messageContainer.className = "success";
+            messageContainer.innerText = data.success ?? data.error ?? "Erreur inconnue";
 
-        form.prepend(messageContainer);
+            form.prepend(messageContainer);
+        } catch (err) {
+            console.error("Erreur réseau :", err);
+        }
     });
 })

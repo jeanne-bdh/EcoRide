@@ -17,6 +17,8 @@ class ContactController extends Controller
 
     public function show(): void
     {
+        header("Content-Type: application/json");
+
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             http_response_code(405);
             echo json_encode(["Méthode non autorisée"]);
@@ -38,10 +40,10 @@ class ContactController extends Controller
 
             $contactRepository->insertContact($data['title'], $data['email'], $data['message']);
 
-            echo json_encode(["Votre message a bien été envoyé"]);
+            echo json_encode(["success" => "Votre message a bien été envoyé"]);
         } catch (\Throwable $e) {
             http_response_code(500);
-            echo json_encode(["Une erreur inattendue s’est produite sur le serveur"]);
+            echo json_encode(["error" => $e->getMessage()]);
         }
     }
 }
