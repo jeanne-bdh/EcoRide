@@ -243,7 +243,7 @@ class CarpoolsRepository extends Repository
         return $future;
     }
 
-    public function cancelCarpool(int $carpoolId)
+    public function cancelByDriver(int $carpoolId)
     {
         $stmt = $this->pdo->prepare("SELECT id_status_carpool FROM status_carpool WHERE label_status_carpool = 'Annulé'");
         $stmt->execute();
@@ -252,12 +252,34 @@ class CarpoolsRepository extends Repository
         if ($cancelStatus) {
             $cancelId = $cancelStatus['id_status_carpool'];
 
-            $updateStmt = $this->pdo->prepare("UPDATE carpools SET id_status_carpool = :id_status_carpool WHERE id_carpool = :id_carpool");
-            $updateStmt->bindValue(':id_status_carpool', $cancelId, PDO::PARAM_INT);
-            $updateStmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
-            return $updateStmt->execute();
+            $updateCp = $this->pdo->prepare("UPDATE carpools SET id_status_carpool = :id_status_carpool WHERE id_carpool = :id_carpool");
+            $updateCp->bindValue(':id_status_carpool', $cancelId, PDO::PARAM_INT);
+            $updateCp->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
+            $updateCp->execute();
+
+            $updateCu = $this->pdo->prepare("UPDATE carpools_users SET status_in_carpool = 'Annulé' WHERE id_carpool = :id_carpool");
+            $updateCu->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
+            return $updateCu->execute();
         }
-        return false;
+    }
+
+    public function getDriverInCarpool(int $carpoolId)
+    {
+        $stmt = $this->pdo->prepare("SELECT id_users FROM carpools WHERE id_carpool = :id_carpool");
+        $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
+        $stmt->execute();
+        $carpool = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if (!$carpool) {
+            return false;
+        }
+
+        $driver = (new Users())
+            ->setIdUsers($carpool['id_users']);
+
+        return (new Carpools())
+            ->setIdCarpool($carpool['id_carpool'])
+            ->setUser($driver);
     }
 
     public function startCarpool(int $carpoolId): bool
@@ -290,6 +312,13 @@ class CarpoolsRepository extends Repository
     public function endCarpool($carpoolId): bool
     {
         $stmt = $this->pdo->prepare("UPDATE carpools SET id_status_carpool = 4 WHERE id_carpool = :id_carpool");
+        $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+
+    public function updateRemainingSeatAfterCancel(int $carpoolId): bool
+    {
+        $stmt = $this->pdo->prepare("UPDATE carpools SET remaining_seat = remaining_seat + 1 WHERE id_carpool = :id_carpool");
         $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
         return $stmt->execute();
     }

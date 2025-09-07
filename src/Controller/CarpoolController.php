@@ -106,19 +106,4 @@ class CarpoolController extends Controller
             ]);
         }
     }
-
-    public function cancel(): void
-    {
-        $carpoolRepository = new CarpoolsRepository();
-        $carpoolId = (int)($_POST['id_carpool']);
-
-        if ($carpoolRepository->cancelCarpool($carpoolId)) {
-            http_response_code(200);
-            echo 'Annulé';
-        } else {
-            http_response_code(500);
-            echo 'Erreur lors de l’annulation';
-        }
-        exit;
-    }
 }

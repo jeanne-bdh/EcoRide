@@ -27,7 +27,8 @@ return [
     "/carpools/details/" => ["controller" => "App\Controller\CarpoolController", "action" => "details"],
     "/carpools/history/" => ["controller" => "App\Controller\CarpoolController", "action" => "history"],
     "/carpools/future/" => ["controller" => "App\Controller\CarpoolController", "action" => "future"],
-    "/carpools/cancel/" => ["controller" => "App\Controller\CarpoolController", "action" => "cancel"],
+
+    "/carpools/cancel/" => ["controller" => "App\Controller\CancelCarpoolController", "action" => "cancel"],
 
     "/participate/" => ["controller" => "App\Controller\ParticipateController", "action" => "participate"],
 

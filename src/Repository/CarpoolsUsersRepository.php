@@ -32,10 +32,10 @@ class CarpoolsUsersRepository extends Repository
         return $stmt->fetchColumn();
     }
 
-    public function updateCreditPassenger(int $driverId, int $price): bool
+    public function updateCreditPassenger(int $userId, int $price): bool
     {
         $stmt = $this->pdo->prepare('UPDATE users SET credit = credit - :price WHERE id_users = :id_users');
-        $stmt->bindValue(':id_users', $driverId, PDO::PARAM_INT);
+        $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
         $stmt->bindValue(':price', $price, PDO::PARAM_INT);
         return $stmt->execute();
     }
@@ -88,6 +88,17 @@ class CarpoolsUsersRepository extends Repository
                             WHERE id_carpool = :id_carpool
                             AND role_in_carpool = 'Chauffeur'");
         $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+
+    public function deletePassengerFromCarpool(int $carpoolId, int $userId): bool
+    {
+        $stmt = $this->pdo->prepare("DELETE FROM carpools_users
+                                        WHERE id_carpool = :id_carpool
+                                        AND id_users = :id_users
+                                        AND role_in_carpool = 'Passager'");
+        $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
+        $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
         return $stmt->execute();
     }
 }

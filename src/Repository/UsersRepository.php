@@ -265,4 +265,12 @@ class UsersRepository extends Repository
         $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
         return $stmt->execute();
     }
+
+    public function reCreditPassenger($userId, $price): bool
+    {
+        $stmt = $this->pdo->prepare('UPDATE users SET credit = credit + :price WHERE id_users = :id_users');
+        $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
+        $stmt->bindValue(':price', $price, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
 }
