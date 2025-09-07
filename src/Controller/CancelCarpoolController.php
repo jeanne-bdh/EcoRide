@@ -24,7 +24,7 @@ class CancelCarpoolController extends Controller
         if ($carpool->getUser()->getIdUsers() == $userId) {
             $carpoolRepository->cancelByDriver($carpoolId);
         } else {
-            $price = $carpoolsUsersRepository->getPrice($carpoolId);
+            $price = $carpoolRepository->getPrice($carpoolId);
             $userRepository->reCreditPassenger($userId, $price);
             $carpoolRepository->updateRemainingSeatAfterCancel($carpoolId);
             $carpoolsUsersRepository->deletePassengerFromCarpool($carpoolId, $userId);

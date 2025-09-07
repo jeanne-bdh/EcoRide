@@ -322,4 +322,19 @@ class CarpoolsRepository extends Repository
         $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
         return $stmt->execute();
     }
+
+    public function getPrice(int $carpoolId): int
+    {
+        $stmt = $this->pdo->prepare("SELECT price FROM carpools WHERE id_carpool = :id_carpool");
+        $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchColumn();
+    }
+    
+    public function updateRemainingSeatInCarpool(int $carpoolId): bool
+    {
+        $stmt = $this->pdo->prepare("UPDATE carpools SET remaining_seat = remaining_seat - 1 WHERE id_carpool = :id_carpool");
+        $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
 }

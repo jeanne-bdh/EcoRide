@@ -83,9 +83,9 @@ class ParticipateController extends Controller
                 return;
             }
 
-            $okCreditPassenger = $carpoolsUsersRepository->updateCreditPassenger($userId, $price);
+            $okCreditPassenger = $userRepository->updateCreditPassenger($userId, $price);
             $okInsert = $newCarpoolRepository->insertCarpoolsUsers($userId, $carpoolId, $roleInCarpool, $statusInCarpool);
-            $okSeat = $carpoolsUsersRepository->updateRemainingSeatInCarpool($carpoolId);
+            $okSeat = $carpoolRepository->updateRemainingSeatInCarpool($carpoolId);
 
             if ($okCreditPassenger && $okInsert && $okSeat) {
                 header('Location: /carpools/future');

@@ -16,37 +16,6 @@ class CarpoolsUsersRepository extends Repository
         return $stmtUserCheck;
     }
 
-    public function getPrice(int $carpoolId): int
-    {
-        $stmt = $this->pdo->prepare("SELECT price FROM carpools WHERE id_carpool = :id_carpool");
-        $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
-        $stmt->execute();
-        return $stmt->fetchColumn();
-    }
-
-    public function getRemainingSeatInCarpool(int $carpoolId): int
-    {
-        $stmt = $this->pdo->prepare("SELECT remaining_seat FROM carpools WHERE id_carpool = :id_carpool");
-        $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
-        $stmt->execute();
-        return $stmt->fetchColumn();
-    }
-
-    public function updateCreditPassenger(int $userId, int $price): bool
-    {
-        $stmt = $this->pdo->prepare('UPDATE users SET credit = credit - :price WHERE id_users = :id_users');
-        $stmt->bindValue(':id_users', $userId, PDO::PARAM_INT);
-        $stmt->bindValue(':price', $price, PDO::PARAM_INT);
-        return $stmt->execute();
-    }
-
-    public function updateRemainingSeatInCarpool(int $carpoolId): bool
-    {
-        $stmt = $this->pdo->prepare("UPDATE carpools SET remaining_seat = remaining_seat - 1 WHERE id_carpool = :id_carpool");
-        $stmt->bindValue(':id_carpool', $carpoolId, PDO::PARAM_INT);
-        return $stmt->execute();
-    }
-
     public function getRoleInCarpool($carpoolId, $userId): array
     {
         $stmt = $this->pdo->prepare("SELECT role_in_carpool, status_in_carpool
