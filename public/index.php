@@ -6,7 +6,7 @@ use Dotenv\Dotenv;
 use App\Routing\Router;
 
 define('APP_ROOT', dirname(__DIR__));
-define('APP_ENV', ".env.local");
+define('APP_ENV', $_ENV['DB_NAME']);
 
 session_start();
 

@@ -54,7 +54,6 @@ function loginUser() {
             return false;
         }
     }
-
 }
 
 document.addEventListener("DOMContentLoaded", () => {

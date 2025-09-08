@@ -51,6 +51,4 @@ class Router
     {
         return self::normalizePath($_SERVER["REQUEST_URI"]) === $path;
     }
-
-
 }

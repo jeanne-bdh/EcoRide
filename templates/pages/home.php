@@ -1,9 +1,4 @@
-<?php
-
-require_once APP_ROOT . "/templates/partials/header.php";
-//require_once APP_ROOT . "/processes/search_carpool_process.php";
-
-?>
+<?php require_once APP_ROOT . "/templates/partials/header.php"; ?>
 
 <main class="container-black">
 
