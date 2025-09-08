@@ -21,7 +21,7 @@ class Database
         $this->dbHost = getenv('DB_HOST');
         $this->dbUser = getenv('DB_USER');
         $this->dbPassword = getenv('DB_PASSWORD');
-        $this->dbPort = getenv('DB_PORT');
+        $this->dbPort = (int)getenv('DB_PORT');
         $this->dbName = getenv('DB_NAME');
     }
 
