@@ -18,13 +18,11 @@ class Database
 
     private function __construct()
     {
-        $config = parse_ini_file(APP_ROOT ."/". APP_ENV);
-
-        $this->dbHost = $config["db_host"];
-        $this->dbUser = $config["db_user"];
-        $this->dbPassword = $config["db_password"];
-        $this->dbPort = $config["db_port"];
-        $this->dbName = $config["db_name"];
+        $this->dbHost = getenv('DB_HOST');
+        $this->dbUser = getenv('DB_USER');
+        $this->dbPassword = getenv('DB_PASSWORD');
+        $this->dbPort = getenv('DB_PORT');
+        $this->dbName = getenv('DB_NAME');
     }
 
     public static function getInstance(): self
