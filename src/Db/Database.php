@@ -18,13 +18,21 @@ class Database
 
     private function __construct()
     {
-        $config = parse_ini_file(APP_ROOT ."/". APP_ENV);
+        $this->dbHost = $_ENV['DB_HOST'] ?? getenv('DB_HOST');
+        $this->dbUser = $_ENV['DB_USER'] ?? getenv('DB_USER');
+        $this->dbPassword = $_ENV['DB_PASSWORD'] ?? getenv('DB_PASSWORD');
+        $this->dbPort = $_ENV['DB_PORT'] ?? getenv('DB_PORT');
+        $this->dbName = $_ENV['DB_NAME'] ?? getenv('DB_NAME');
 
-        $this->dbHost = $config["db_host"];
-        $this->dbUser = $config["db_user"];
-        $this->dbPassword = $config["db_password"];
-        $this->dbPort = $config["db_port"];
-        $this->dbName = $config["db_name"];
+        if (
+            !$this->dbHost ||
+            !$this->dbUser ||
+            !$this->dbPassword ||
+            !$this->dbPort ||
+            !$this->dbName
+        ) {
+            throw new \RuntimeException('Variables de connexion à la base de données manquantes');
+        }
     }
 
     public static function getInstance(): self
@@ -45,7 +53,6 @@ class Database
                 die('Erreur de connexion à la base : ' . $e->getMessage());
             }
         }
-
         return self::$pdo;
     }
 }

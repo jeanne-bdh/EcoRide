@@ -6,13 +6,13 @@ use Dotenv\Dotenv;
 use App\Routing\Router;
 
 define('APP_ROOT', dirname(__DIR__));
-define('APP_ENV', ".env.local");
 
 session_start();
 
-$envFile = ($_SERVER['APP_ENV'] ?? 'prod') === 'prod' ? '.env' : '.env.local';
-$dotenv = Dotenv::createImmutable(__DIR__ . "/..", $envFile);
-$dotenv->load();
+if (file_exists(APP_ROOT . '/.env.local')) {
+    $dotenv = Dotenv::createImmutable(APP_ROOT, '.env.local');
+    $dotenv->load();
+}
 
 $router = new Router();
 $router->handleRequest($_SERVER["REQUEST_URI"]);
