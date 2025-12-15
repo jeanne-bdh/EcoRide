@@ -10,7 +10,8 @@ define('APP_ENV', ".env.local");
 
 session_start();
 
-$dotenv = Dotenv::createImmutable(__DIR__ . "/..", APP_ENV);
+$envFile = ($_SERVER['APP_ENV'] ?? 'prod') === 'prod' ? '.env' : '.env.local';
+$dotenv = Dotenv::createImmutable(__DIR__ . "/..", $envFile);
 $dotenv->load();
 
 $router = new Router();
